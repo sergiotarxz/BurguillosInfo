@@ -4,6 +4,7 @@ use Mojo::Base 'Mojolicious', -signatures;
 # This method will run once at server start
 sub startup ($self) {
 
+  $self->config(hypnotoad => {listen => ['http://localhost:3000']});
   # Router
   my $r = $self->routes;
 
