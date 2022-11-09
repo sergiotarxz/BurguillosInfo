@@ -1,0 +1,12 @@
+% use Mojo::DOM;
+% use Mojo::Util;
+%
+% use BurguillosInfo::Posts;
+% use BurguillosInfo::Categories;
+% my $categories = BurguillosInfo::Categories->new->Retrieve;
+% layout 'default', current_slug => $current_category->{slug}, categories => $categories;
+% title $post->{title};
+<div class="description">
+	<h2><%= $post->{title} %></h2>
+	<%== $post->{content} %>
+</div>

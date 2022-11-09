@@ -1,0 +1,217 @@
+$background: url(../img/parque_patos.jpg);
+$color: #2f4f4f;
+$background_div: #d8079e;
+$color_div: #fafcdd;
+$background-secondary: #635283;
+$color-secondary: #8eea6d;
+$accent-secondary: #fde68f;
+$primary-secondary: #590e11;
+html {
+    height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	min-height: 100%;
+	width: 100%;
+	height: 100%;
+	div.site-wrapper {
+		display: table;
+	        width: 100%;
+		height: 100%; /* For at least Firefox */
+		min-height: 100%;
+		color: $color;
+		background: $background;
+		filter: blur(10px);
+		background-size: cover;
+		overflow: hidden;
+	}
+	div.page-contents {
+		position: absolute;
+		position: fixed;
+		overflow-y: scroll;
+		z-index: 2;
+		background: $color_div;
+		color: $background_div;
+		top: 0%;
+		left: 0%;
+		height: 100%;
+		width: 100%;
+		b,p {
+			font-size: 40px;
+		}
+		h3 {
+			font-size: 47px;
+		}
+		h2 {
+			font-size: 53px;
+		}
+		h1 {
+			font-size: 60px;
+		}
+		div.description {
+			padding: 1%;
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-bottom: 1%;
+			margin-top: 10%;
+			div.articles {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				a {
+					width: 100%;
+					max-height: 500px;
+					overflow: hidden;
+					display:block;
+					text-decoration: none;
+					text-overflow: ellipsis;
+					margin-bottom: 10px;
+					article {
+						width: 90%;
+						b,p {
+							font-size: 38px;
+						}
+						h4 {
+							font-size: 44px;
+						}
+						h3 {
+							font-size: 47px;
+						}
+						h2 {
+							font-size: 53px;
+						}
+						h1 {
+							font-size: 60px;
+						}
+						padding-left: 3%;
+						padding-right: 3%;
+						padding-bottom: 3%;
+						padding-top: 0px; 
+						color: $color-secondary;
+						background: $background-secondary;
+						&:hover {
+							color: $background-secondary;
+							background: $color-secondary;
+							p.author {
+								color: $primary-secondary;
+							}
+						}
+						p.author {
+							color: $accent-secondary;
+							font-size: 30px;
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+		nav > a > img {
+			vertical-align: middle;
+			width: 30px;
+			height: 30px;
+		}
+		nav {
+			overflow: auto;
+			display: block;
+			font-size: 35px;
+			margin: 0px;
+			a.go-to-index img {
+				margin-top: 5%;
+			}
+			a {
+				display: inline-block;
+				height: 100%;
+				text-decoration: none;
+				background: $background_div;
+				color: $color_div;
+				padding: 10px;
+				margin: 0;
+				&.selected {
+					background: $color_div;
+					color: $background_div; 
+				}
+				&:hover {
+					background: $color_div;
+					color: $background_div; 
+				}
+			}
+			a.menu-expand {
+				position: relative;
+				float: right;
+			}
+		}
+
+		nav.mobile-shortcuts {
+			position: fixed;
+			background: $background_div;
+			width: 100%;
+		}
+		nav.desktop {
+			display: none;
+		
+		}
+		nav.mobile-foldable {
+			display: none;
+			background: $background-secondary;
+			color: $color-secondary;
+			a {
+				color: $color-secondary;
+				background: $background-secondary;
+				display: block;
+			}
+		}
+		nav.mobile-foldable.show {
+			display: block;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 50px;
+		}
+		
+	}
+
+}
+
+@media (min-width: 720px) {
+	body {
+		div.page-contents {
+			nav.mobile-foldable,nav.mobile-foldable.show {
+				display: none;
+			}
+			div.description {
+				margin-top: auto;
+			}
+			nav.desktop {
+				display: block;
+				height: auto;
+			}
+			nav.mobile-shortcuts {
+				display: none;
+			}
+			top: 2%;
+			left: 5%;
+			height: 96%;
+			width: 90%;
+		}
+	}
+}
+
+@media (min-width: 1222px) {
+	body {
+		div.page-contents {
+			div.description {
+				margin-top: auto;
+				div.articles {
+					a {
+						width: 49%;
+						margin-left: 1%;
+					}
+				}
+			}
+		}
+	}
+}

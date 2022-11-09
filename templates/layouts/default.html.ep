@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <script src="/js/index.js"></script>
+	  <link rel="stylesheet" href="/css/styles.css"/>
+	  <title><%= title %></title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+	<div class="site-wrapper">
+	</div>
+	<div class="page-contents">
+	<nav class="desktop"><% for my $category_key (sort {
+		       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
+		   } keys %$categories) {
+			   my $category = $categories->{$category_key};
+			   my $selected = defined($current_slug) && $category->{slug} eq $current_slug;
+			%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
+		   }
+	%></nav>
+	<nav class="mobile-shortcuts">
+		<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
+		<a href="#mobile-foldable" class="menu-expand"><img src="/img/menu.png" alt="Expandir el menú."/></a>
+	</nav>
+	<nav class="mobile-foldable" id="mobile-foldable"><% for my $category_key (sort {
+		       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
+		   } keys %$categories) {
+			   my $category = $categories->{$category_key};
+			%><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
+		   }
+	%></nav>
+
+	<%= content %></body>
+	</div>
+</html>

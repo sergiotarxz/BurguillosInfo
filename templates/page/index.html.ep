@@ -1,0 +1,33 @@
+% use Mojo::DOM;
+% use Mojo::Util;
+%
+% use BurguillosInfo::Posts;
+%
+% layout 'default', current_slug => $current_category->{slug};
+% title $current_category->{title};
+<div class="description">
+	<h2><%= $current_category->{title} %></h2>
+	<%== $current_category->{description} %>
+	<h3>Artículos</h3>
+	<div class="articles">
+% my ($cached_posts_by_category) = BurguillosInfo::Posts->new->Retrieve;
+% my $category_post = $cached_posts_by_category->{$current_category->{slug}};
+% if (defined $category_post) {
+% 	for my $post (@$category_post) {
+		<a href="/posts/<%=$post->{slug}%>">
+			<article>	
+				<h4><%=$post->{title}%></h4>
+%		my $xml = Mojo::DOM->new($post->{content});
+%		my $text = $xml->all_text;
+%		if (length($text) > 120) {
+%			$text = substr($text, 0, 100).'...';
+%		}
+				<p><%=$text%></p>
+				<p class="author">Escrito por <%=$post->{author}%></p>
+			</article>
+		</a>
+%	}
+% } else {
+	<p>Parece que aun no hay artículos.</p>
+% }
+</div>

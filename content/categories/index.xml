@@ -1,0 +1,11 @@
+<category>
+	<title>Portal de información de Burguillos.</title>
+	<description>
+		<p><b>burguillos.info no está afiliado con el Ayuntamiento de Burguillos.</b></p>
+
+		<p>Esta página está destinada a informar de los sucesos y negocios de nuestro pueblo, cualquiera puede redactar una noticia para que aparezca en este medio mientras pase un proceso de revisión por parte del staff de burguillos.info.</p>
+	</description>
+	<priority>0</priority>
+	<menu_text><img alt="Escudo de burguillos hypervinculo a página principal" src="/img/burguillos.png"/></menu_text>
+	<slug>index</slug>
+</category>
