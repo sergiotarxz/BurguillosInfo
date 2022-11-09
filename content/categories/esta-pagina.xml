@@ -1,0 +1,13 @@
+<category>
+	<title>Esta página.</title>
+	<description>
+		<p>¿Quieres promocionar tu negocio o asociación en burguillos.info?</p>
+		<p>¿O quizás buscas crear una noticia sobre burguillos para que aparezca en este medio?</p>
+		<p>Cualquiera puede redactar un artículo o una categoría en esta web, además es gratuíto si tienes conocimientos de git y html tan solo ve al <a href="https://git.owlcode.tech/sergiotarxz/burguillos.info">repositorio de git</a> crea una cuenta, clona el repositorio, busca en la carpeta content un artículo que puedas usar como base y crea un nuevo fichero usando el fichero previo como base, tras eso simplemente crea una pull request para que tus cambios puedan pasar a revisión. (Se recomienda que este proceso lo haga un informático desde Linux para poder probar los cambios para detectar errores triviales.)</p>
+		<p>¿Demasiado difícil para ti? En ese caso puedes redactar tu artículo y ponerte en contacto con <a href="mailto://contact@owlcode.tech">Owlcode</a> y te daremos precio por añadirlo a la web nosotros.</p>
+		<p>¿Quieres una web así? En el repositorio de git está todo el código fuente así que puedes clonar la estructura añadiendo y cambiando lo que gustes mientras cumplas con la licencia de Software Libre del proyecto AGPLv3 que requiere que también tu publiques el código con las mejoras que hayas hecho.</p>
+	</description>
+	<priority>2</priority>
+	<menu_text>Esta página</menu_text>
+	<slug>esta-pagina</slug>
+</category>

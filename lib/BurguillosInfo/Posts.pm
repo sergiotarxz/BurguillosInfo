@@ -31,7 +31,7 @@ sub Retrieve {
     }
     $cached_posts_by_category = {};
     $cached_posts_by_slug     = {};
-    for my $post_file ( $POSTS_DIR->children ) {
+    for my $post_file ( reverse $POSTS_DIR->children ) {
         warn "Bad file $post_file, omiting...", next
           if !-f $post_file || $post_file !~ /\.xml$/;
         my $dom   = Mojo::DOM->new( $post_file->slurp_utf8 );
