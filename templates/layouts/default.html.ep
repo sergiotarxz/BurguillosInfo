@@ -4,6 +4,7 @@
 	  <script src="/js/index.js"></script>
 	  <link rel="stylesheet" href="/css/styles.css"/>
 	  <title><%= title %></title>
+	  <meta property="og:title" content="<%= title %>"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
