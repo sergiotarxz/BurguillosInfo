@@ -132,14 +132,14 @@ body {
 				}
 			}
 		}
+		nav > a > img.open-menu-icon {
+			width: 30px;
+			height: 30px;
+		}
 		nav > a > img {
 			vertical-align: middle;
 			width: 26px;
 			height: 30px;
-			&.open-menu-icon {
-				width: 30;
-				height: 30;
-			}
 		}
 		nav {
 			overflow: auto;
