@@ -20,7 +20,10 @@
 			   my $selected = defined($current_slug) && $category->{slug} eq $current_slug;
 			%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
 		   }
-	%></nav>
+		%><a href="/all.rss" target="_blank" rel="noopener">
+			Suscribete <img class="rss-icon" src="/img/rss.svg"/>
+		</a>
+	</nav>
 	<nav class="mobile-shortcuts">
 		<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
 		<a href="#mobile-foldable" class="menu-expand"><img src="/img/menu.png" alt="Expandir el menú."/></a>

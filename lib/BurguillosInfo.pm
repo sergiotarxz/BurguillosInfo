@@ -11,6 +11,7 @@ sub startup ($self) {
   # Normal route to controller
   $r->get('/')->to('Page#index');
 #  $r->get('/:post')->to('Page#post');
+  $r->get('/<:category>.rss')->to('Page#category_rss');
   $r->get('/:category')->to('Page#category');
   $r->get('/posts/:slug')->to('Page#post');
 }

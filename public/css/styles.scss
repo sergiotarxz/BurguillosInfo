@@ -119,6 +119,18 @@ body {
 					}
 				}
 			}
+			a.suscribe-category-rss {
+				background: $background_div;
+				width: 40px;
+				height: 40px;
+				padding: 10px;
+				border-radius: 5px;
+				display: inline-block;
+				img {
+					width: 40px;
+					height: 40px;
+				}
+			}
 		}
 		nav > a > img {
 			vertical-align: middle;
