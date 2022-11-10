@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
 	  <script src="/js/index.js"></script>
 	  <link rel="stylesheet" href="/css/styles.css"/>
@@ -21,7 +21,7 @@
 			%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
 		   }
 		%><a href="/all.rss" target="_blank" rel="noopener">
-			Suscribete <img class="rss-icon" src="/img/rss.svg"/>
+			Suscribete <img alt="RSS icon" class="rss-icon" src="/img/rss.svg"/>
 		</a>
 	</nav>
 	<nav class="mobile-shortcuts">
