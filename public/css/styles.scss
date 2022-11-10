@@ -108,11 +108,13 @@ body {
 						border-radius: 20px;
 						padding: 5%;;
 						padding-top: 1%;
-						color: $color_div;
-						background: $background_div;
+						background: $color_div;
+						color: $background_div;
+						border: 3px solid $background_div;
 						&:hover {
-							color: $background_div;
-							background: $color_div;
+							background: $background_div;
+							color: $color_div;
+							border: 3px solid $color_div;
 						}
 						p.author {
 							font-size: 30px;
