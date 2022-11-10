@@ -22,12 +22,12 @@
 			%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
 		   }
 		%><a href="/all.rss" target="_blank" rel="noopener">
-			Suscribete <img alt="RSS icon" class="rss-icon" src="/img/rss.svg"/>
+			Suscribete <img class="rss-menu-icon" alt="RSS icon" class="rss-icon" src="/img/rss.svg"/>
 		</a>
 	</nav>
 	<nav class="mobile-shortcuts">
 		<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
-		<a href="#mobile-foldable" class="menu-expand"><img src="/img/menu.png" alt="Expandir el menú."/></a>
+		<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
 	</nav>
 	<nav class="mobile-foldable" id="mobile-foldable"><% for my $category_key (sort {
 		       $categories->{$a}{priority} <=> $categories->{$b}{priority} 

@@ -136,6 +136,10 @@ body {
 			vertical-align: middle;
 			width: 26px;
 			height: 30px;
+			&.open-menu-icon {
+				width: 30;
+				height: 30;
+			}
 		}
 		nav {
 			overflow: auto;
