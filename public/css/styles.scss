@@ -44,18 +44,14 @@ body {
 		table {
 			color: $background_div;
 			background: $color_div;
-		}
-		table tbody tr:first-child th {
-			border-top: 3px solid $background_div;
-		}
-		tr td:first-child,tr th:first-child {
-			border-left: 3px solid $background_div;
+			border: 3px solid $background_div;
+			border-collapse: collapse;
 		}
 		th,td {
+			border: 3px solid $background_div;
+			border-collapse: collapse;
 			padding-right: 10px;
 			margin: 0;
-			border-right: 3px solid $background_div;
-			border-bottom: 3px solid $background_div;
 		}
 		th,td {
 			font-size: 15px;
