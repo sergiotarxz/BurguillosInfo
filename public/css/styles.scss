@@ -42,15 +42,20 @@ body {
 		height: 100%;
 		width: 100%;
 		table {
-			padding: 10px;
-			background: $background_div;
-			color: $color_div;
-			border-radius: 10px;
+			color: $background_div;
+			background: $color_div;
+		}
+		table tbody tr:first-child th {
+			border-top: 3px solid $background_div;
+		}
+		tr td:first-child,tr th:first-child {
+			border-left: 3px solid $background_div;
 		}
 		th,td {
 			padding-right: 10px;
-			border: 3px solid $color_div;
 			margin: 0;
+			border-right: 3px solid $background_div;
+			border-bottom: 3px solid $background_div;
 		}
 		th,td {
 			font-size: 15px;
