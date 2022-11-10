@@ -32,7 +32,7 @@
 % }
 
 </div>
-<h3>Suscribete a esta catergoría.</h3>
+<h3>Suscribete a esta categoría.</h3>
 
 <a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
 	<img src="/img/rss.svg" alt="Icono de suscripción rss"/>

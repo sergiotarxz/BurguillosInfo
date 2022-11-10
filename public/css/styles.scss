@@ -1,5 +1,7 @@
 $background: url(../img/parque_patos.jpg);
+$background-page: #FEFEFA;
 $color: #2f4f4f;
+$color-page: #666362;
 $background_div: blueviolet;
 $color_div: #f2eb8c;
 $background-secondary: #635283;
@@ -33,8 +35,8 @@ body {
 		position: fixed;
 		overflow-y: scroll;
 		z-index: 2;
-		background: $color_div;
-		color: $background_div;
+		background: $background-page;
+		color: $color-page;
 		top: 0%;
 		left: 0%;
 		height: 100%;
@@ -98,21 +100,16 @@ body {
 						h1 {
 							font-size: 60px;
 						}
-						padding-left: 3%;
-						padding-right: 3%;
-						padding-bottom: 3%;
-						padding-top: 0px; 
-						color: $color-secondary;
-						background: $background-secondary;
+						border-radius: 20px;
+						padding: 5%;;
+						padding-top: 1%;
+						color: $color_div;
+						background: $background_div;
 						&:hover {
-							color: $background-secondary;
-							background: $color-secondary;
-							p.author {
-								color: $primary-secondary;
-							}
+							color: $background_div;
+							background: $color_div;
 						}
 						p.author {
-							color: $accent-secondary;
 							font-size: 30px;
 							text-align: right;
 						}
@@ -179,11 +176,11 @@ body {
 		}
 		nav.mobile-foldable {
 			display: none;
-			background: $background-secondary;
-			color: $color-secondary;
+			background: $background_div;
+			color: $color_div;
 			a {
-				color: $color-secondary;
-				background: $background-secondary;
+				background: $color_div;
+				color: $background_div;
 				display: block;
 			}
 		}
