@@ -6,7 +6,7 @@
 
 		<p>Esta página es software libre, puedes tomar cualquier parte del código de la página para tu propia web o programa mientras cumplas con la licencia AGPLv3 or later, puedes encontrar su código aquí.</p>
 	</description>
-	<priority>2</priority>
+	<priority>3</priority>
 	<menu_text>Esta página</menu_text>
 	<slug>esta-pagina</slug>
 </category>
