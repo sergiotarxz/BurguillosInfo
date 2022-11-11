@@ -14,29 +14,34 @@
 	<div class="site-wrapper">
 	</div>
 	<div class="page-contents">
-	<nav class="desktop"><% for my $category_key (sort {
-		       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
-		   } keys %$categories) {
-			   my $category = $categories->{$category_key};
-			   my $selected = defined($current_slug) && $category->{slug} eq $current_slug;
-			%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
-		   }
-		%><a href="/all.rss" target="_blank" rel="noopener">
-			Suscribete <img class="rss-menu-icon" alt="RSS icon" class="rss-icon" src="/img/rss.svg"/>
-		</a>
-	</nav>
-	<nav class="mobile-shortcuts">
-		<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
-		<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
-	</nav>
-	<nav class="mobile-foldable" id="mobile-foldable"><% for my $category_key (sort {
-		       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
-		   } keys %$categories) {
-			   my $category = $categories->{$category_key};
-			%><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
-		   }
-	%></nav>
+		<nav class="desktop"><% for my $category_key (sort {
+			       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
+			   } keys %$categories) {
+				   my $category = $categories->{$category_key};
+				   my $selected = defined($current_slug) && $category->{slug} eq $current_slug;
+				%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
+			   }
+			%></nav>
+		<nav class="mobile-shortcuts">
+			<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
+			<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
+		</nav>
+		<nav class="mobile-foldable" id="mobile-foldable"><% for my $category_key (sort {
+			       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
+			   } keys %$categories) {
+				   my $category = $categories->{$category_key};
+				%><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
+			   }
+		%></nav>
 
-	<%= content %></body>
+		<%= content %></body>
+		<hr/>
+		<div class="footer description">
+			<p>©2022 Sergio Iglesias</p>
+			<p>Enterate de todas las novedades de Burguillos.info:</p>
+			<a class="suscribe-category-rss" href="/all.rss">
+				 <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
+			</a>
+		</div>
 	</div>
 </html>

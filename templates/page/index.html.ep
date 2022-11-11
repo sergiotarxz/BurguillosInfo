@@ -36,9 +36,10 @@
 	<p>Parece que aun no hay artículos.</p>
 % }
 
-</div>
-<h3>Suscribete a esta categoría.</h3>
+	</div>
+	<h3>Suscribete a esta categoría.</h3>
 
-<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
-	<img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-</a>
+	<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
+		<img src="/img/rss.svg" alt="Icono de suscripción rss"/>
+	</a>
+</div>

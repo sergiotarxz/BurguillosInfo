@@ -208,6 +208,18 @@ body {
 			font-size: 50px;
 		}
 		
+		div.footer {
+			p,h1,h2,h3,h4,a {
+				font-size: initial;
+			}
+			a.suscribe-category-rss {
+				padding: 7px;
+			}
+			a.suscribe-category-rss,a.suscribe-category-rss > img {
+				width: 20px;
+				height: 20px;
+			}
+		}
 	}
 
 }
