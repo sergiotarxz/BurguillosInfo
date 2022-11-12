@@ -45,6 +45,9 @@ body {
 		left: 0%;
 		height: 100%;
 		width: 100%;
+		img {
+			max-width: 100%;
+		}
 		table {
 			color: $background_div;
 			background: $color_div;
