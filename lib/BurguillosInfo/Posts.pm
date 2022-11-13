@@ -6,6 +6,7 @@ use strict;
 use warnings;
 
 use Data::Dumper;
+use MIME::Base64;
 
 use Const::Fast;
 use Mojo::DOM;
@@ -14,9 +15,12 @@ use DateTime::Format::ISO8601;
 use SVG;
 use Capture::Tiny qw/capture/;
 
+
 const my $CURRENT_FILE => __FILE__;
 const my $POSTS_DIR =>
   path($CURRENT_FILE)->parent->parent->parent->child('content/posts');
+const my $BURGUILLOS_LOGO =>
+  path($CURRENT_FILE)->parent->parent->parent->child('public/img/burguillos.png');
 
 my $iso8601 = DateTime::Format::ISO8601->new;
 
@@ -99,12 +103,12 @@ sub PostPreviewOg {
     }
 
     my $svg = $self->_GenerateSVGPostPreview( $title, \@new_content );
-    my ($stdout) = capture {
+    my ($stdout, $stderr) = capture {
     	open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-	binmode ':utf8', $fh;
 	print $fh $svg;
 	close $fh;
     };
+    say STDERR $stderr;
     return $stdout; 
 }
 
@@ -136,8 +140,16 @@ sub _GenerateSVGPostPreview {
             'font-size' => 30,
         }
     );
+
+    $group->image(
+    	x => 10,
+	y => 5,
+	width => 40,
+	height => 40,
+	-href => 'data:image/png;base64,'.encode_base64($BURGUILLOS_LOGO->slurp)
+    );
     $group->text(
-	x => 10,
+	x => 60,
 	y => 40,
     	style => { 'font-size' => 50, fill => '#f2eb8c' }
     )->cdata('Burguillos.info');
