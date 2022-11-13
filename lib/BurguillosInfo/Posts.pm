@@ -228,7 +228,6 @@ sub _GenerateSVGPostPreview {
         )->cdata($line);
         $n++;
     }
-    path('a.svg')->spew($svg->xmlify);
     return $svg->xmlify;
 }
 
