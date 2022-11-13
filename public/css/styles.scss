@@ -151,11 +151,13 @@ body {
 		nav > a > img.open-menu-icon {
 			width: 30px;
 			height: 30px;
+			padding-top: 15px;
 		}
-		nav > a > img {
+		nav > a > img.index-image-menu {
 			vertical-align: middle;
-			width: 26px;
-			height: 30px;
+			width: 50px;
+			height: 50px;
+			padding-bottom: 10px;
 		}
 		nav {
 			overflow: auto;
@@ -166,12 +168,12 @@ body {
 				margin-top: 5%;
 			}
 			a {
-				display: inline-block;
+				padding-left: 10px;
+				padding-right: 10px;
 				height: 100%;
 				text-decoration: none;
 				background: $background_div;
 				color: $color_div;
-				padding: 10px;
 				margin: 0;
 				&.selected {
 					background: $color_div;
@@ -249,6 +251,12 @@ body {
 			nav.desktop {
 				display: block;
 				height: auto;
+				a {
+					display: table-cell;
+					img.index-image-menu {
+						padding-top: 15px;
+					}
+				}
 			}
 			nav.mobile-shortcuts {
 				display: none;
