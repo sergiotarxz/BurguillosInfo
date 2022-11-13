@@ -8,7 +8,8 @@
 	  <meta property="og:title" content="<%= title %>"/>
 	  <meta property="og:site_name" content="Burguillos.info" />
 % my $ogimage = stash 'ogimage';
-% if (defined $ogimage) {
+% my $user_agent = stash 'useragent';
+% if (defined $ogimage && $user_agent !~ /TelegramBot/) {
 	  <meta name="image" property="og:image" content="<%= $ogimage %>"/>
 % } else {
 	  <meta name="image" property="og:image" content="https://burguillos.info/img/burguillos.png">
