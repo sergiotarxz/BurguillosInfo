@@ -10,7 +10,18 @@
 % title $post->{title};
 <div class="description">
 	<h2><%= $post->{title} %></h2>
+% my $user_agent = stash 'useragent';
+% if ($user_agent !~ /LinkedInBot/) {
 	<%== $post->{content} %>
+% } else {
+%       my $content = $post->{content};
+%       my $dom = Mojo::DOM->new($content);
+%	my @images = $dom->find('img')->each;
+%	for my $image (@images) {
+%		$image->remove;
+%       }
+	<%== $dom->to_string() %>
+% }
 % my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
 % $date_article->set_time_zone('Europe/Madrid');
 	<p>Escrito por <%= $post->{author} %> con fecha <%= $date_article %>.<p>
