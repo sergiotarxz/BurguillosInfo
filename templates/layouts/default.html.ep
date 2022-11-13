@@ -7,7 +7,12 @@
 	  <meta name="description" content="Lee más sobre: <%= title %>"/>
 	  <meta property="og:title" content="<%= title %>"/>
 	  <meta property="og:site_name" content="Burguillos.info" />
+% my $ogimage = stash 'ogimage';
+% if (defined $ogimage) {
+	  <meta property="og:image" content="<%= $ogimage %>"/>
+% } else {
 	  <meta property="og:image" content="https://burguillos.info/img/burguillos.png">
+% }
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>

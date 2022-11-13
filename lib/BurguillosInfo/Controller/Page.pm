@@ -114,11 +114,12 @@ sub post {
       BurguillosInfo::Posts->new->Retrieve;
     my $categories       = BurguillosInfo::Categories->new->Retrieve;
     my $post             = $posts_slug->{$slug};
-    my $current_category = $categories->{ $post->{category} };
     if ( !defined $post ) {
         $self->render( template => '404', status => 404 );
         return;
     }
+    my $current_category = $categories->{ $post->{category} };
+    $self->stash(ogimage => 'https://burguillos.info/posts/'.$post->{slug}.'-preview.png');
     $self->render( post => $post, current_category => $current_category );
 }
 
@@ -136,5 +137,21 @@ sub category {
         categories       => $categories,
         current_category => $current_category
     );
+}
+
+sub get_post_preview {
+	my $self = shift;
+	my $slug = $self->param('slug');
+	my $post_model = BurguillosInfo::Posts->new;
+	my ( $posts_categories, $posts_slug ) = $post_model->Retrieve;
+	if ( !defined $posts_slug->{$slug} ) {
+		$self->render( template => '404', status => 404 );
+		return;
+	}
+	my $post = $posts_slug->{$slug};
+	$self->render(
+		format => 'png',
+		data => $post_model->PostPreviewOg($post)
+	);
 }
 1;

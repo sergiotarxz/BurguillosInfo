@@ -13,6 +13,7 @@ sub startup ($self) {
 #  $r->get('/:post')->to('Page#post');
   $r->get('/<:category>.rss')->to('Page#category_rss');
   $r->get('/:category')->to('Page#category');
+  $r->get('/posts/<:slug>-preview.png')->to('Page#get_post_preview');
   $r->get('/posts/:slug')->to('Page#post');
 }
 
