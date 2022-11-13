@@ -79,18 +79,25 @@ sub PostPreviewOg {
 
     my @content_divided_in_lines = split /\n/, $content;
     my @new_content;
-    my $n_chars_per_line = 60;
+    my $n_chars_per_line = 70;
 
     for my $line (@content_divided_in_lines) {
         if ( length($line) <= $n_chars_per_line ) {
             push @new_content, $line;
             next;
         }
+	my $last_word = '';
         while ( $line =~ /(.{1,${n_chars_per_line}})/g ) {
-            my $new_line = $1;
+            my $new_line = $last_word.$1;
+	    $new_line =~ s/(\S*)$//;
+	    $last_word = $1;
             push @new_content, $new_line;
         }
+	if ($last_word) {
+		$new_content[$#new_content] .= $last_word;
+	}
     }
+
     my $svg = $self->_GenerateSVGPostPreview( $title, \@new_content );
     my ($stdout) = capture {
     	open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
