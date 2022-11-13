@@ -147,7 +147,7 @@ sub _AttachImageSVG {
         $width = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
     }
 
-    my $x = int(($SVG_EMBEDDED_IMAGE_MAX_WIDTH/2) - ($width / 2));
+    my $x = int(($SVG_WIDTH/2) - ($width / 2));
     my $y = 90;
     my ($output) = capture {
     	system qw/file --mime-type/, $image;
