@@ -15,12 +15,15 @@ use DateTime::Format::ISO8601;
 use SVG;
 use Capture::Tiny qw/capture/;
 
-
-const my $CURRENT_FILE => __FILE__;
-const my $POSTS_DIR =>
-  path($CURRENT_FILE)->parent->parent->parent->child('content/posts');
-const my $BURGUILLOS_LOGO =>
-  path($CURRENT_FILE)->parent->parent->parent->child('public/img/burguillos.png');
+const my $CURRENT_FILE    => __FILE__;
+const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
+const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
+const my $POSTS_DIR       => $ROOT_PROJECT->child('content/posts');
+const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos.png');
+const my $SVG_WIDTH       => 1200;
+const my $SVG_HEIGHT      => 627;
+const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1000;
+const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 200;
 
 my $iso8601 = DateTime::Format::ISO8601->new;
 
@@ -55,6 +58,11 @@ sub Retrieve {
           or die "Missing slug at $post_file.";
         my $content = $dom->at(':root > content')->content
           or die "Missing content at $post_file.";
+        my $image_element = $dom->at(':root > img');
+	my $image;
+	if (defined $image_element) {
+		$image = $image_element->attr->{src};
+	}
 
         my $post = {
             title    => $title,
@@ -64,6 +72,7 @@ sub Retrieve {
             category => $category,
             slug     => $slug,
             content  => $content,
+            ( ( defined $image ) ? ( image => $image ) : () ),
         };
         $cached_posts_by_category->{$category} //= [];
         my $category_posts = $cached_posts_by_category->{$category};
@@ -90,34 +99,78 @@ sub PostPreviewOg {
             push @new_content, $line;
             next;
         }
-	my $last_word = '';
+        my $last_word = '';
         while ( $line =~ /(.{1,${n_chars_per_line}})/g ) {
-            my $new_line = $last_word.$1;
-	    $new_line =~ s/(\S*)$//;
-	    $last_word = $1;
+            my $new_line = $last_word . $1;
+            $new_line =~ s/(\S*)$//;
+            $last_word = $1;
             push @new_content, $new_line;
         }
-	if ($last_word) {
-		$new_content[$#new_content] .= $last_word;
-	}
+        if ($last_word) {
+            $new_content[$#new_content] .= $last_word;
+        }
     }
 
-    my $svg = $self->_GenerateSVGPostPreview( $title, \@new_content );
-    my ($stdout, $stderr) = capture {
-    	open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-	print $fh $svg;
-	close $fh;
+    my $svg =
+      $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
+    my ( $stdout, $stderr ) = capture {
+        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
+        print $fh $svg;
+        close $fh;
     };
     say STDERR $stderr;
-    return $stdout; 
+    return $stdout;
+}
+
+sub _AttachImageSVG {
+    my $self  = shift;
+    my $svg   = shift;
+    my $image = shift;
+    $image = $PUBLIC_DIR->child( './' . $image );
+    my ( $stdout, $stderr, $error ) = capture {
+        system qw/identify -format "%wx%h"/, $image;
+    };
+    if ($error) {
+        warn "$image not recognized by identify.";
+        return;
+    }
+    my ( $width, $height ) = $stdout =~ /^"(\d+)x(\d+)"$/;
+    if ( $height > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT ) {
+        $width /= $height / $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
+	$width = int($width);
+        $height = $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
+    }
+
+    if ( $width > $SVG_EMBEDDED_IMAGE_MAX_WIDTH ) {
+        $height /= $width / $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
+	$height = int($height);
+        $width = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
+    }
+
+    my $x = int(($SVG_EMBEDDED_IMAGE_MAX_WIDTH/2) - ($width / 2));
+    my $y = 90;
+    my ($output) = capture {
+    	system qw/file --mime-type/, $image;
+    };
+    my ($format) = $output =~ /(\S+)$/;
+    $svg->image(
+        x      => $x,
+        y      => $y,
+        width  => $width,
+        height => $height,
+        -href  => "data:$format;base64,"
+          . encode_base64( $image->slurp )
+    );
+    return $y + $height + 50;
 }
 
 sub _GenerateSVGPostPreview {
     my $self    = shift;
     my $title   = shift;
     my $content = shift;
+    my $image   = shift;
     my @content = @$content;
-    my $svg     = SVG->new( width => 1200, height => 627 );
+    my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
     $svg->rect(
         x      => 0,
         y      => 0,
@@ -142,21 +195,27 @@ sub _GenerateSVGPostPreview {
     );
 
     $group->image(
-    	x => 10,
-	y => 5,
-	width => 40,
-	height => 40,
-	-href => 'data:image/png;base64,'.encode_base64($BURGUILLOS_LOGO->slurp)
+        x      => 10,
+        y      => 5,
+        width  => 40,
+        height => 40,
+        -href  => 'data:image/png;base64,'
+          . encode_base64( $BURGUILLOS_LOGO->slurp )
     );
     $group->text(
-	x => 60,
-	y => 40,
-    	style => { 'font-size' => 50, fill => '#f2eb8c' }
+        x     => 60,
+        y     => 40,
+        style => { 'font-size' => 50, fill => '#f2eb8c' }
     )->cdata('Burguillos.info');
+    my $new_y;
 
+    if ( defined $image ) {
+        $new_y = $self->_AttachImageSVG( $group, $image );
+    }
+    $new_y //= 100;
     $group->text(
         x     => 10,
-        y     => 100,
+        y     => $new_y,
         style => { 'font-size' => 50 }
     )->cdata($title);
 
@@ -164,11 +223,12 @@ sub _GenerateSVGPostPreview {
     for my $line (@content) {
         $group->text(
             x     => 10,
-            y     => 140 + ( 30 * $n ),
+            y     => $new_y + 40 + ( 30 * $n ),
             style => { 'font-size' => 38 }
         )->cdata($line);
         $n++;
     }
+    path('a.svg')->spew($svg->xmlify);
     return $svg->xmlify;
 }
 
