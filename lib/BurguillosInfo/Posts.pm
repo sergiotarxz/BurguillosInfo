@@ -106,7 +106,7 @@ sub _GenerateSVGPostPreview {
     my $title   = shift;
     my $content = shift;
     my @content = @$content;
-    my $svg     = SVG->new( width => 1200, height => 630 );
+    my $svg     = SVG->new( width => 1200, height => 627 );
     $svg->rect(
         x      => 0,
         y      => 0,
@@ -118,7 +118,7 @@ sub _GenerateSVGPostPreview {
         x      => 0,
         y      => 50,
         width  => 1200,
-        height => 630,
+        height => 627,
         style  => { fill => '#F8F8FF' }
     );
 
