@@ -10,9 +10,9 @@
 % my $ogimage = stash 'ogimage';
 % my $user_agent = stash 'useragent';
 % if (defined $ogimage && $user_agent !~ /TelegramBot/) {
-	  <meta name="image" property="og:image" content="<%= $ogimage %>"/>
+	  <meta name="image" property="og:image" content="<%= $ogimage >?v=3"/>
 % } else {
-	  <meta name="image" property="og:image" content="https://burguillos.info/img/burguillos.png?v=1">
+	  <meta name="image" property="og:image" content="https://burguillos.info/img/burguillos.png?v=3">
 % }
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
