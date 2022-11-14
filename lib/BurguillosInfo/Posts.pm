@@ -12,6 +12,7 @@ use Const::Fast;
 use Mojo::DOM;
 use Path::Tiny;
 use DateTime::Format::ISO8601;
+use DateTime;
 use SVG;
 use Capture::Tiny qw/capture/;
 
@@ -25,8 +26,6 @@ const my $SVG_HEIGHT      => 627;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1000;
 const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 200;
 
-my $iso8601 = DateTime::Format::ISO8601->new;
-
 my $cached_posts_by_category;
 my $cached_posts_by_slug;
 
@@ -34,9 +33,30 @@ sub new {
     return bless {}, shift;
 }
 
+sub _ReturnCacheFilter {
+    my $self = shift;
+    my %posts_by_category_filtered;
+    my %posts_by_slug_filtered;
+    my $iso8601      = DateTime::Format::ISO8601->new;
+    my $current_date = DateTime->now;
+    for my $category ( keys %$cached_posts_by_category ) {
+        for my $post ( @{ $cached_posts_by_category->{$category} } ) {
+            my $date_post = $iso8601->parse_datetime( $post->{date} );
+            if ( $date_post > $current_date ) {
+                next;
+            }
+            $posts_by_slug_filtered{ $post->{slug} } = $post;
+            $posts_by_category_filtered{ $post->{category} } //= [];
+            push @{ $posts_by_category_filtered{ $post->{category} } }, $post;
+        }
+    }
+    return (\%posts_by_category_filtered, \%posts_by_slug_filtered);
+}
+
 sub Retrieve {
+    my $self = shift;
     if ( defined $cached_posts_by_category && defined $cached_posts_by_slug ) {
-        return ( $cached_posts_by_category, $cached_posts_by_slug );
+        return $self->_ReturnCacheFilter;
     }
     $cached_posts_by_category = {};
     $cached_posts_by_slug     = {};
@@ -59,10 +79,11 @@ sub Retrieve {
         my $content = $dom->at(':root > content')->content
           or die "Missing content at $post_file.";
         my $image_element = $dom->at(':root > img');
-	my $image;
-	if (defined $image_element) {
-		$image = $image_element->attr->{src};
-	}
+        my $image;
+
+        if ( defined $image_element ) {
+            $image = $image_element->attr->{src};
+        }
 
         my $post = {
             title    => $title,
@@ -79,7 +100,7 @@ sub Retrieve {
         $cached_posts_by_slug->{$slug} = $post;
         push @$category_posts, $post;
     }
-    return ( $cached_posts_by_category, $cached_posts_by_slug );
+    return $self->_ReturnCacheFilter;
 }
 
 sub PostPreviewOg {
@@ -137,20 +158,20 @@ sub _AttachImageSVG {
     my ( $width, $height ) = $stdout =~ /^"(\d+)x(\d+)"$/;
     if ( $height > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT ) {
         $width /= $height / $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
-	$width = int($width);
+        $width  = int($width);
         $height = $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
     }
 
     if ( $width > $SVG_EMBEDDED_IMAGE_MAX_WIDTH ) {
         $height /= $width / $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
-	$height = int($height);
-        $width = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
+        $height = int($height);
+        $width  = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
     }
 
-    my $x = int(($SVG_WIDTH/2) - ($width / 2));
-    my $y = 90;
+    my $x        = int( ( $SVG_WIDTH / 2 ) - ( $width / 2 ) );
+    my $y        = 90;
     my ($output) = capture {
-    	system qw/file --mime-type/, $image;
+        system qw/file --mime-type/, $image;
     };
     my ($format) = $output =~ /(\S+)$/;
     $svg->image(
@@ -158,8 +179,7 @@ sub _AttachImageSVG {
         y      => $y,
         width  => $width,
         height => $height,
-        -href  => "data:$format;base64,"
-          . encode_base64( $image->slurp )
+        -href  => "data:$format;base64," . encode_base64( $image->slurp )
     );
     return $y + $height + 50;
 }

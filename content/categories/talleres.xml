@@ -1,0 +1,10 @@
+<category>
+	<title>Talleres en Burguillos.</title>
+	<description>
+		<p>Aquí puedes encontrar información acerca de los talleres y actividades disponibles en Burguillos.</p>
+		<p>¿Quieres que tu taller o actividad aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+	</description>
+	<priority>3</priority>
+	<menu_text>Talleres</menu_text>
+	<slug>talleres</slug>
+</category>
