@@ -76,6 +76,7 @@ body {
 			font-size: 60px;
 		}
 		div.description {
+			word-wrap: break-word;
 			div.suscribirse-rss {
 				img {
 					max-height: 300px;
@@ -97,7 +98,11 @@ body {
 					text-overflow: ellipsis;
 					margin-bottom: 10px;
 					article {
+						word-wrap: break-word;
 						width: 90%;
+						p,h4,h3,h2 {
+							margin: 0px;
+						}
 						b,p {
 							font-size: 38px;
 						}
