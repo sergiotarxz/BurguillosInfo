@@ -190,15 +190,18 @@ body {
 				}
 			}
 			a.menu-expand {
-				position: relative;
-				float: right;
+				padding-bottom: 9px;
 			}
 		}
 
 		nav.mobile-shortcuts {
 			position: fixed;
-			background: $background_div;
+			display: flex;
 			width: 100%;
+			div {
+				width: 65%;
+				background: $background_div;
+			}
 		}
 		nav.desktop {
 			display: none;

@@ -30,9 +30,12 @@
 			%></nav>
 		<nav class="mobile-shortcuts">
 			<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
+			<div></div>
 			<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
 		</nav>
-		<nav class="mobile-foldable" id="mobile-foldable"><% for my $category_key (sort {
+		<nav class="mobile-foldable" id="mobile-foldable"><% 
+			   my $first = 1;
+		           for my $category_key (sort {
 			       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
 			   } keys %$categories) {
 				   my $category = $categories->{$category_key};
