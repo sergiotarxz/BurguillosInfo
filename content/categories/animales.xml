@@ -1,0 +1,13 @@
+<category>
+	<title>Animales y mascotas.</title>
+	<description>
+		<p>Esta catogoría sirve como medio para hacerse eco de las noticias y plataformas relevantes para el bienestar de la fauna y mascotas de Burguillos.</p>
+
+		<p>No se admitirán anuncios de compra-venta de animales tan solo adopciones solidarias y exclusivamente de animales domésticos esterilizados, en ningún caso se admitirá la transferencia de especies silvestres en este medio.</p>
+
+		<p>Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> si necesitas realizar algún anuncio acorde a esta categoría.</p>
+	</description>
+	<priority>4</priority>
+	<menu_text>Animales</menu_text>
+	<slug>animales-y-mascotas</slug>
+</category>
