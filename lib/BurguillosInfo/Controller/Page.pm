@@ -1,12 +1,12 @@
 package BurguillosInfo::Controller::Page;
 
-use BurguillosInfo::Categories;
-use BurguillosInfo::Posts;
-
 use v5.34.1;
 
 use strict;
 use warnings;
+
+use BurguillosInfo::Categories;
+use BurguillosInfo::Posts;
 
 use Data::Dumper;
 
