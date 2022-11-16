@@ -121,12 +121,12 @@ body {
 						h1 {
 							font-size: 60px;
 						}
-						border-radius: 20px;
 						padding: 5%;;
 						padding-top: 1%;
 						background: $color_div;
 						color: $background_div;
-						border: 3px solid $background_div;
+						box-shadow: 8px 8px 1px 0px #8ddfd6;
+						border: 3px solid black;
 						&:hover {
 							background: $background_div;
 							color: $color_div;
