@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+	  <head>
+		  <link rel="stylesheet" href="/css/styles.css"/>
+	  </head>
+	  <body>
+		<div class="site-wrapper">
+		</div>
+		<div class="page-contents">
+			<nav class="desktop">
+				<a href="/stats"><img class="index-image-menu" src="/img/burguillos.png"</img></a>
+			</nav>
+			<%= content %>
+		</div>
+	  </body>
+</html>

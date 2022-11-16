@@ -1,0 +1,8 @@
+% layout 'stats';
+<div class="description">
+	<h2>Login</h2>
+	<form enctype="application/json" method="post" action="/stats/login">
+	<input name="password" placeholder="Password" type="password"/>
+	<input type="submit" value="login">
+	</form>
+</div>

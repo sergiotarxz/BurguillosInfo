@@ -37,4 +37,35 @@ EOF
 	say "Registered $remote_address with user agent $user_agent visited $path with $params_json";
 }
 
+    sub get_global_data {
+    	my $self = shift;
+	my $c    = shift;
+	my $app = $c->app;
+    	my $dbh = BurguillosInfo::DB->connect($app);	
+	my $data = $dbh->selectrow_hashref(<<'EOF', undef);
+SELECT 
+	(
+		SELECT COUNT(DISTINCT remote_address) FROM requests
+	) as unique_ips,
+	(
+		SELECT COUNT(DISTINCT remote_address)
+		FROM requests
+		where date > NOW() - interval '1 day'
+	) as unique_ips_last_24_hours,
+	(
+		SELECT COUNT(DISTINCT remote_address)
+		FROM requests
+		where date > NOW() - interval '1 week'
+	) as unique_ips_last_week,
+	(
+		SELECT COUNT(DISTINCT remote_address)
+		FROM requests
+		where date > NOW() - interval '1 month'
+	) as unique_ips_last_month;
+
+
+EOF
+	return $data;
+    }
+
 1;
