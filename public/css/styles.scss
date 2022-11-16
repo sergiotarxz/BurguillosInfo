@@ -47,6 +47,9 @@ body {
 		width: 100%;
 		img {
 			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
 		table {
 			color: $background_div;
@@ -164,6 +167,12 @@ body {
 			height: 50px;
 			padding-bottom: 10px;
 		}
+		nav.desktop {
+			display: none;
+			a {
+				background: $background_div;
+			}
+		}
 		nav {
 			overflow: auto;
 			display: block;
@@ -177,14 +186,13 @@ body {
 				padding-right: 10px;
 				height: 100%;
 				text-decoration: none;
-				background: $background_div;
 				color: $color_div;
 				margin: 0;
-				&.selected {
+				&:hover {
 					background: $color_div;
 					color: $background_div; 
 				}
-				&:hover {
+				&.selected {
 					background: $color_div;
 					color: $background_div; 
 				}
@@ -198,22 +206,23 @@ body {
 			position: fixed;
 			display: flex;
 			width: 100%;
-			div {
-				width: 65%;
-				background: $background_div;
+			background: $background_div;
+			height: 60px;
+			a {
+				height: 100%;
+				width: (100% / 6);
 			}
-		}
-		nav.desktop {
-			display: none;
-		
+			div {
+				width: (100% * 4 / 6);
+			}
 		}
 		nav.mobile-foldable {
 			display: none;
 			background: $background_div;
 			color: $color_div;
 			a {
-				background: $color_div;
-				color: $background_div;
+				//background: $color_div;
+				//color: $background_div;
 				display: block;
 			}
 		}
@@ -242,7 +251,7 @@ body {
 
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1100px) {
 	body {
 		div.page-contents {
 			th,td {
