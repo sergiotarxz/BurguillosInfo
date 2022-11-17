@@ -6,4 +6,20 @@
 	<p>Unique visitors last 24 hours <%=$tracking_data->{unique_ips_last_24_hours}%></p>
 	<p>Unique visitors last week <%=$tracking_data->{unique_ips_last_week}%></p>
 	<p>Unique visitors last month <%=$tracking_data->{unique_ips_last_month}%></p>
+	<table>
+		<tr>
+			<th>Path</th>
+			<th>Visitors 24h</th>
+			<th>Visitors week</th>
+			<th>Visitors month</th>
+		</tr>
+% for my $row (@$tracking_by_url) {
+		<tr>
+			<td><%=$row->{path}%></td>
+			<td><%=$row->{unique_ips_last_24_hours}%></td>
+			<td><%=$row->{unique_ips_last_week}%></td>
+			<td><%=$row->{unique_ips_last_month}%></td>
+		</tr>
+%}
+	</table>
 </div>

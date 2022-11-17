@@ -6,10 +6,17 @@ use strict;
 use warnings;
 
 use JSON;
+use Const::Fast;
 
 use BurguillosInfo::DB;
 
 my $app;
+
+const my $SELECT_GLOBAL => <<'EOF';
+SELECT COUNT(DISTINCT (remote_address, user_agent))
+	FROM requests
+EOF
+
 
 sub new {
     my $class = shift;
@@ -42,24 +49,21 @@ EOF
 	my $c    = shift;
 	my $app = $c->app;
     	my $dbh = BurguillosInfo::DB->connect($app);	
-	my $data = $dbh->selectrow_hashref(<<'EOF', undef);
+	my $data = $dbh->selectrow_hashref(<<"EOF", undef);
 SELECT 
 	(
-		SELECT COUNT(DISTINCT (remote_address, user_agent)) FROM requests
+		$SELECT_GLOBAL
 	) as unique_ips,
 	(
-		SELECT COUNT(DISTINCT (remote_address, user_agent))
-		FROM requests
+		$SELECT_GLOBAL
 		where date > NOW() - interval '1 day'
 	) as unique_ips_last_24_hours,
 	(
-		SELECT COUNT(DISTINCT (remote_address, user_agent))
-		FROM requests
+		$SELECT_GLOBAL
 		where date > NOW() - interval '1 week'
 	) as unique_ips_last_week,
 	(
-		SELECT COUNT(DISTINCT (remote_address, user_agent))
-		FROM requests
+		$SELECT_GLOBAL
 		where date > NOW() - interval '1 month'
 	) as unique_ips_last_month;
 
@@ -67,5 +71,35 @@ SELECT
 EOF
 	return $data;
     }
+
+    sub get_data_for_urls {
+        my $self = shift;
+	my $c    = shift;
+	my $app = $c->app;
+    	my $dbh = BurguillosInfo::DB->connect($app);	
+	my $data = $dbh->selectall_arrayref(<<"EOF", {Slice => {}});
+SELECT paths.path,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path
+	) as unique_ips,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '1 day'
+	) as unique_ips_last_24_hours,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '1 week'
+	) as unique_ips_last_week,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '1 month'
+	) as unique_ips_last_month
+FROM paths;
+
+
+EOF
+	return $data;
+}
 
 1;

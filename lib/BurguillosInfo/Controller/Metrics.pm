@@ -36,7 +36,8 @@ sub stats {
 		return;
 	}
 	my $data = $tracking->get_global_data($self);
-	$self->render(tracking_data => $data);
+	my $data_per_url = $tracking->get_data_for_urls($self);
+	$self->render(tracking_data => $data, tracking_by_url => $data_per_url);
 }
 
 sub submit_login {
