@@ -45,20 +45,20 @@ EOF
 	my $data = $dbh->selectrow_hashref(<<'EOF', undef);
 SELECT 
 	(
-		SELECT COUNT(DISTINCT remote_address) FROM requests
+		SELECT COUNT(DISTINCT (remote_address, user_agent)) FROM requests
 	) as unique_ips,
 	(
-		SELECT COUNT(DISTINCT remote_address)
+		SELECT COUNT(DISTINCT (remote_address, user_agent))
 		FROM requests
 		where date > NOW() - interval '1 day'
 	) as unique_ips_last_24_hours,
 	(
-		SELECT COUNT(DISTINCT remote_address)
+		SELECT COUNT(DISTINCT (remote_address, user_agent))
 		FROM requests
 		where date > NOW() - interval '1 week'
 	) as unique_ips_last_week,
 	(
-		SELECT COUNT(DISTINCT remote_address)
+		SELECT COUNT(DISTINCT (remote_address, user_agent))
 		FROM requests
 		where date > NOW() - interval '1 month'
 	) as unique_ips_last_month;
