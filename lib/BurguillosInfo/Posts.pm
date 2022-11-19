@@ -134,13 +134,15 @@ sub PostPreviewOg {
 
     my $svg =
       $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
-    my ( $stdout, $stderr ) = capture {
-        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-        print $fh $svg;
-        close $fh;
-    };
-    say STDERR $stderr;
-    return $stdout;
+    my $svgexport = path($ENV{HOME})->child('node_modules/.bin/svgexport');
+    die "No svgexport." if !-f $svgexport;
+    my $tmpdir = Path::Tiny->tempdir();
+    my $input = $tmpdir->child('input.svg');
+    my $output = $tmpdir->child('output.png');
+
+    $input->spew_utf8($svg);
+    system $svgexport, $input, $output, 'png';
+    return $output->slurp;
 }
 
 sub _AttachImageSVG {
@@ -248,6 +250,7 @@ sub _GenerateSVGPostPreview {
         )->cdata($line);
         $n++;
     }
+    path($ROOT_PROJECT)->child('a.svg')->spew_utf8($svg->xmlify);
     return $svg->xmlify;
 }
 
