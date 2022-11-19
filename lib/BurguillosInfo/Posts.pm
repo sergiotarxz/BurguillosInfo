@@ -50,7 +50,7 @@ sub _ReturnCacheFilter {
             push @{ $posts_by_category_filtered{ $post->{category} } }, $post;
         }
     }
-    return (\%posts_by_category_filtered, \%posts_by_slug_filtered);
+    return ( \%posts_by_category_filtered, \%posts_by_slug_filtered );
 }
 
 sub Retrieve {
@@ -134,15 +134,14 @@ sub PostPreviewOg {
 
     my $svg =
       $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
-    my $svgexport = path($ENV{HOME})->child('node_modules/.bin/svgexport');
-    die "No svgexport." if !-f $svgexport;
-    my $tmpdir = Path::Tiny->tempdir();
-    my $input = $tmpdir->child('input.svg');
-    my $output = $tmpdir->child('output.png');
-
-    $input->spew_utf8($svg);
-    system $svgexport, $input, $output, 'png';
-    return $output->slurp;
+    my ( $stdout, $stderr ) = capture {
+        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
+	binmode $fh, 'utf8';
+        print $fh $svg;
+        close $fh;
+    };
+    say STDERR $stderr;
+    return $stdout;
 }
 
 sub _AttachImageSVG {
@@ -250,7 +249,7 @@ sub _GenerateSVGPostPreview {
         )->cdata($line);
         $n++;
     }
-    path($ROOT_PROJECT)->child('a.svg')->spew_utf8($svg->xmlify);
+    path($ROOT_PROJECT)->child('a.svg')->spew_utf8( $svg->xmlify );
     return $svg->xmlify;
 }
 
