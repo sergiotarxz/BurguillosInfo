@@ -17,22 +17,22 @@
 		<h3>Hamburguesas</h3>
 
 		<ol class="productos">
-			<li>Hamburguesa Simple. (Carne y queso.) <b>1.80€</b></li>
+			<li>Hamburguesa Simple. (Carne y queso.) <b>2€</b></li>
 			<li>Hamburguesa Completa. (Carne, cebolla, lechuga, tomate y queso.) <b>2.50€</b></li>
 			<li>Hamburguesa Super. (Carne, huevo, bacon, queso, cebolla y york.) <b>3.50€</b></li>
 			<li>Hamburguesa Yopi. (Filete pollo, queso, tomate, cebolla y lechuga.) <b>2.50€</b></li>
 
 		<h3>Bocadillos</h3>
 
-			<li>Bocadillo de pollo con queso. <b>2€</b></li>
+			<li>Bocadillo de pollo con queso. <b>2.50€</b></li>
 			<li>Bocadillo de pollo con cebolla, queso y tomate. <b>2.50€</b></li>
 			<li>Bocadillo de superpollo con queso, bacon, cochinito, tomate, cebolla y lechuga. <b>3€</b></li>
-			<li>Bocadillo de filete de lomo con queso. <b>2€</b></li>
-			<li>Bocadillo de filete de lomo con queso, tomate, cebolla y lechuga. <b>2.50€</b></li>
+			<li>Bocadillo de filete de lomo con queso. <b>2.50€</b></li>
+			<li>Bocadillo de filete de lomo con queso, tomate, cebolla y lechuga. <b>3€</b></li>
 			<li>Bocadillo de superlomo con queso, bacon, cochinito, tomate, cebolla y lechuga. <b>3€</b></li>
-			<li>Bocadillo de cochinito con queso. <b>1.80€</b></li>
+			<li>Bocadillo de cochinito con queso. <b>2€</b></li>
 			<li>Bocadillo de cochinito con queso, bacon, cebolla, tomate y lechuga. <b>3€</b></li>
-			<li>Bocadillo de lomo adobado con queso. <b>1.80€</b></li>
+			<li>Bocadillo de lomo adobado con queso. <b>2€</b></li>
 			<li>Bocadillo de lomo adobado con queso, bacon, cebolla, tomate y lechuga. <b>3€</b></li>
 			<li>Bocadillo de bacon y queso. <b>1.50€</b></li>
 			<li>Bocadillo vegetal con pollo. <b>3.50€</b></li>
