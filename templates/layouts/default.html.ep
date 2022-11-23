@@ -51,6 +51,9 @@
 			<a class="suscribe-category-rss" href="/all.rss">
 				 <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
 			</a>
+			<a class="suscribe-category-rss" href="https://social.burguillos.info/people/f2ed63704b62013bf35d58d090500000">
+				 <img src="/img/diaspora.png" alt="Icono de suscripción por Diaspora"/>
+			 </a>
 		</div>
 	</div>
 </html>
