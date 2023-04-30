@@ -7,6 +7,7 @@
 	<img src="/img/diaspora-article-preview.png"/>
 	<slug>social-burguillos-info</slug>
 	<content>
+                <h2 style="color: red; background: black;">Este servicio ha sido temporalmente descontinuado por falta de actualizaciones por parte de sus desarrolladores. Disculpen las molestias</h2>
 		<p>Hoy desde Burguillos.info os traemos por un lado un nuevo método de estar al tanto de las novedades de la web y por otro una forma nueva de comunicarte con los otros burguilleros y burguilleras.</p>
 
 		<p>La nueva web <a href="https://social.burguillos.info">social.burguillos.info</a> es eso y más, dicha web es una instancia de Diaspora, una red social de software libre que te permite interactuar con quien quieras de la red independientemente de en que instancia te encuentras mediante un algoritmo conocido como federación.</p>
