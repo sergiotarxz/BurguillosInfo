@@ -9,7 +9,7 @@
 	<content>
             <h2>Burguillos.info ha vuelto a la normalidad tras 5 días inoperativo, te explicamos las razones.</h2>
 
-            <img style="border: 1px black solid;" src="/img/fibra-cortada.jpg"/>
+            <img style="border: 1px black solid;" src="/img/fibra-cortada.jpg" alt="A fiber cable cutted down"/>
 
             <p>En burguillos.info siempre hemos pensado que tenía lógica tener el servidor localizado en Burguillos y no
             en otro país como Alemania. Debido a que ningún proveedor de VPS tiene localización en nuestro municipio decidimos
