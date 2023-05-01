@@ -192,9 +192,9 @@ body {
 
 @media (min-width: 1100px) {
   body div.page-contents {
-    top: 2%;
+    top: 0%;
     left: 5%;
-    height: 96%;
+    height: 100%;
     width: 90%; }
     body div.page-contents th, body div.page-contents td {
       font-size: 40px; }
