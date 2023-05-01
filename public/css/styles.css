@@ -118,7 +118,7 @@ body {
         body div.page-contents div.description a.suscribe-category-rss img {
           width: 40px;
           height: 40px; }
-    body div.page-contents nav > a > img.open-menu-icon {
+    body div.page-contents nav > a.menu-expand > img {
       width: 30px;
       height: 30px;
       padding-top: 15px; }
@@ -154,6 +154,12 @@ body {
           color: blueviolet; }
       body div.page-contents nav a.menu-expand {
         padding-bottom: 9px; }
+        body div.page-contents nav a.menu-expand .open-menu-icon-hover {
+          display: none; }
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon-hover {
+          display: block; }
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon {
+          display: none; }
     body div.page-contents nav.mobile-shortcuts {
       position: fixed;
       display: flex;
@@ -162,9 +168,9 @@ body {
       height: 60px; }
       body div.page-contents nav.mobile-shortcuts a {
         height: 100%;
-        width: 16.6666666667%; }
+        width: 16.66667%; }
       body div.page-contents nav.mobile-shortcuts div {
-        width: 66.6666666667%; }
+        width: 66.66667%; }
     body div.page-contents nav.mobile-foldable {
       display: none;
       background: blueviolet;
@@ -214,3 +220,4 @@ body {
     body div.page-contents div.description div.articles a {
       width: 45%;
       margin-left: 5%; } }
+

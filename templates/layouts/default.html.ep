@@ -31,7 +31,10 @@
 		<nav class="mobile-shortcuts">
 			<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
 			<div></div>
-			<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
+			<a href="#mobile-foldable" class="menu-expand">
+                <img class="open-menu-icon" src="img/hamburger-menu-yellow.png" alt="Expandir el menú."/>
+                <img class="open-menu-icon-hover" src="img/hamburger-menu-purple.png" alt="Expandir el menú."/>
+            </a>
 		</nav>
 		<nav class="mobile-foldable" id="mobile-foldable"><% 
 			   my $first = 1;
