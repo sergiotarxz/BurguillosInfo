@@ -72,6 +72,8 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap; }
+        body div.page-contents div.description div.articles img {
+          border: solid 1px black; }
         body div.page-contents div.description div.articles a {
           width: 100%;
           display: block;

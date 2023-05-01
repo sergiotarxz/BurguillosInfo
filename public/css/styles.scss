@@ -97,6 +97,9 @@ body {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
+                img {
+                    border: solid 1px black;
+                }
 				a {
 					width: 100%;
 					display:block;
