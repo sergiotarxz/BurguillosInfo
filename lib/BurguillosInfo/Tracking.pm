@@ -63,18 +63,16 @@ SELECT
 		$SELECT_GLOBAL
 		where date > NOW() - interval '1 month'
 	) as unique_ips_last_month;
-
-
 EOF
 	return $data;
     }
 
     sub get_data_for_urls {
         my $self = shift;
-	my $c    = shift;
-	my $app = $c->app;
-    	my $dbh = BurguillosInfo::DB->connect($app);	
-	my $data = $dbh->selectall_arrayref(<<"EOF", {Slice => {}});
+        my $c    = shift;
+        my $app = $c->app;
+        my $dbh = BurguillosInfo::DB->connect($app);	
+        my $data = $dbh->selectall_arrayref(<<"EOF", {Slice => {}});
 SELECT paths.path,
 	(
 		$SELECT_GLOBAL
@@ -88,8 +86,7 @@ SELECT paths.path,
 		$SELECT_GLOBAL
 		where requests.path = paths.path and date > NOW() - interval '1 month'
 	) as unique_ips_last_month
-FROM paths INNER JOIN requests on paths.path = requests.path
-WHERE requests.date > NOW() - interval '1 month';
+FROM paths;
 EOF
 	return $data;
 }
