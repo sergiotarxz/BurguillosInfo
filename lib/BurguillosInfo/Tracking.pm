@@ -104,20 +104,17 @@ EOF
         my $dbh = BurguillosInfo::DB->connect($app);	
         my $data = $dbh->selectall_arrayref(<<"EOF", {Slice => {}});
 SELECT paths.path,
-	(
-		$SELECT_GLOBAL
-		where requests.path = paths.path and date > NOW() - interval '1 day'
-	) as unique_ips_last_24_hours,
-	(
-		$SELECT_GLOBAL
-		where requests.path = paths.path and date > NOW() - interval '1 week'
-	) as unique_ips_last_week,
-	(
-		$SELECT_GLOBAL
-		where requests.path = paths.path and date > NOW() - interval '1 month'
-	) as unique_ips_last_month
+    COUNT(DISTINCT(requests_day.remote_address, requests_day.user_agent)) as unique_ips_last_24_hours,
+    COUNT(DISTINCT(requests_week.remote_address, requests_week.user_agent)) as unique_ips_last_week,
+    COUNT(DISTINCT(requests_month.remote_address, requests_month.user_agent)) as unique_ips_last_month
 FROM paths 
-WHERE paths.last_seen > NOW() - INTERVAL '1 month';
+LEFT join requests requests_day ON paths.path=requests_day.path
+LEFT join requests requests_month ON paths.path=requests_month.path
+LEFT join requests requests_week ON paths.path=requests_week.path
+WHERE paths.last_seen > NOW() - INTERVAL '1 month' AND
+    requests_day.date > NOW() - interval '1 day' AND
+    requests_week.date > NOW() - interval '1 week'
+GROUP BY paths.path
 EOF
 	return $data;
 }
