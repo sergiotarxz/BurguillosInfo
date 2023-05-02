@@ -10,8 +10,7 @@ use BurguillosInfo::Posts;
 
 use DateTime::Format::ISO8601;
 
-use XML::LibXML;
-use XML::LibXML::PrettyPrint;
+use XML::Twig;
 
 use Mojo::Base 'Mojolicious::Controller', '-signatures';
 
@@ -27,10 +26,8 @@ sub sitemap ($self) {
         $self->_append_category_dom( $dom, $category_key, $categories );
     }
     my $xml_string = "$dom";
-    my $document = XML::LibXML->load_xml(string => $xml_string);
-    my $pretty_print = XML::LibXML::PrettyPrint->new(indent_string => (" " x 4));
-    $pretty_print->pretty_print($document);
-    $xml_string = $document->toString();
+    my $document = XML::Twig->new(pretty_print=> 'indented');
+    $xml_string = $document->parse($xml_string)->sprint;
     $self->render(text => $xml_string, format => 'xml');
 }
 
