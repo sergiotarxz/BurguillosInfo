@@ -6,7 +6,7 @@
 % use BurguillosInfo::Posts;
 % use BurguillosInfo::Categories;
 % my $categories = BurguillosInfo::Categories->new->Retrieve;
-% layout 'default', current_slug => $current_category->{slug}, categories => $categories;
+% layout 'default', current_category_slug => $current_category->{slug}, categories => $categories;
 % title $post->{title};
 <div class="description">
 	<h2><%= $post->{title} %></h2>
