@@ -9,16 +9,16 @@
 % layout 'default', current_slug => $current_category->{slug};
 % title $current_category->{title};
 <div class="description">
-	<h2><%= $current_category->{title} %></h2>
+	<h1><%= $current_category->{title} %></h1>
 	<%== $current_category->{description} %>
 % my $children_categories = $current_category->{children};
 % if (@$children_categories) {
-    <h3>Quizás te interese.</h3>
+    <h2>Quizás te interese.</h2>
 %     for my $child_category (@$children_categories) {
       <p><a href="/<%=$child_category->{slug}%>"><%==$child_category->{title}%></a></p>
 %     }
 % }
-	<h3>Artículos</h3>
+	<h2>Artículos</h2>
 	<div class="articles">
 % my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
 % unless (@$category_posts) {
@@ -44,7 +44,7 @@
 %	}
 
 	</div>
-	<h3>Suscribete a esta categoría.</h3>
+	<h2>Suscribete a esta categoría.</h2>
 
 	<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
 		<img src="/img/rss.svg" alt="Icono de suscripción rss"/>
