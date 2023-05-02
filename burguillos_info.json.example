@@ -3,5 +3,6 @@
 	"bcrypt_pass_stats": ["change_for_bcrypted_password"],
 	"db": {
 		"database": "example"
-	}
+	},
+    "base_url": "https://burguillos.info"
 }

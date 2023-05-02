@@ -85,14 +85,22 @@ sub Retrieve {
             $image = $image_element->attr->{src};
         }
 
+        my $last_modification_date_element =
+          $dom->at(':root > last_modification_date');
+        my $last_modification_date;
+        if ( defined $last_modification_date_element ) {
+            $last_modification_date = $last_modification_date_element->content;
+        }
+
         my $post = {
-            title    => $title,
-            author   => $author,
-            date     => $date,
-            ogdesc   => $ogdesc,
-            category => $category,
-            slug     => $slug,
-            content  => $content,
+            title                  => $title,
+            author                 => $author,
+            date                   => $date,
+            ogdesc                 => $ogdesc,
+            category               => $category,
+            slug                   => $slug,
+            content                => $content,
+            ( (defined $last_modification_date) ? (last_modification_date => $last_modification_date) : () ),
             ( ( defined $image ) ? ( image => $image ) : () ),
         };
         $cached_posts_by_category->{$category} //= [];
@@ -136,7 +144,7 @@ sub PostPreviewOg {
       $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
     my ( $stdout, $stderr ) = capture {
         open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-	binmode $fh, 'utf8';
+        binmode $fh, 'utf8';
         print $fh $svg;
         close $fh;
     };
