@@ -53,9 +53,6 @@ EOF
 SELECT 
 	(
 		$SELECT_GLOBAL
-	) as unique_ips,
-	(
-		$SELECT_GLOBAL
 		where date > NOW() - interval '1 day'
 	) as unique_ips_last_24_hours,
 	(
