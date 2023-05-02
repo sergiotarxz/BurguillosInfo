@@ -52,11 +52,13 @@ sub _append_category_dom ( $self, $dom, $category_key, $categories ) {
     my $final_date_last_modification_category =
       _compare_dates_return_most_recent( $date_publish_category,
         $date_last_modification_category );
-    my $last_modification_tag =
-      Mojo::DOM->new_tag( lastmod => $final_date_last_modification_category );
+    if (defined $final_date_last_modification_category) {
+        my $last_modification_tag =
+          Mojo::DOM->new_tag( lastmod => $final_date_last_modification_category );
+        $url->child_nodes->first->append_content($last_modification_tag);
+    }
     my $priority_tag = Mojo::DOM->new_tag( priority => 0.6 );
     $url->child_nodes->first->append_content($location_tag);
-    $url->child_nodes->first->append_content($last_modification_tag);
     $url->child_nodes->first->append_content($priority_tag);
 
     $dom->child_nodes->first->append_content($url);
