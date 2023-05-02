@@ -29,6 +29,7 @@ sub startup ($self) {
     # Normal route to controller
     $r->get('/')->to('Page#index');
     $r->get('/sitemap.xml')->to('Sitemap#sitemap');
+    $r->get('/robots.txt')->to('Robots#robots');
 
     #  $r->get('/:post')->to('Page#post');
     $r->get('/stats')->to('Metrics#stats');
