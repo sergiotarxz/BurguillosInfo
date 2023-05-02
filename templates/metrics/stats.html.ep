@@ -1,4 +1,5 @@
 % layout 'stats';
+% my $base_url = config 'base_url';
 <div class="description">
 	<h2>Stats</h2>
 
@@ -14,7 +15,7 @@
 		</tr>
 % for my $row (@$tracking_by_url) {
 		<tr>
-			<td><%=$row->{path}%></td>
+			<td><%="${base_url}$row->{path}"%></td>
 			<td><%=$row->{unique_ips_last_24_hours}%></td>
 			<td><%=$row->{unique_ips_last_week}%></td>
 			<td><%=$row->{unique_ips_last_month}%></td>

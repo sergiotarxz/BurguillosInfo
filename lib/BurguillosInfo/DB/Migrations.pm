@@ -28,6 +28,7 @@ sub MIGRATIONS {
         'ALTER TABLE paths ADD column last_seen TIMESTAMP;',
         'ALTER TABLE paths ALTER COLUMN last_seen SET DEFAULT NOW();',
         'ALTER TABLE requests ADD PRIMARY KEY (uuid)',
+        'CREATE INDEX request_extra_index on requests (date, path);',
 	);
 }
 1;
