@@ -88,9 +88,8 @@ SELECT paths.path,
 		$SELECT_GLOBAL
 		where requests.path = paths.path and date > NOW() - interval '1 month'
 	) as unique_ips_last_month
-FROM paths;
-
-
+FROM paths INNER JOIN requests on paths.path = requests.path
+WHERE requests.date > NOW() - interval '1 month';
 EOF
 	return $data;
 }
