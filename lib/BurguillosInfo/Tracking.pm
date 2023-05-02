@@ -5,6 +5,8 @@ use v5.34.1;
 use strict;
 use warnings;
 
+use feature 'signatures';
+
 use JSON;
 use Const::Fast;
 
@@ -25,22 +27,50 @@ sub new {
     return bless {}, $class;
 }
 
-sub register_request {
-    my $self = shift;
-    my $c    = shift;
-    my $path = $c->req->url->path;
+sub _add_path($self, $url) {
     my $dbh = BurguillosInfo::DB->connect($app);
-    $dbh->do( <<'EOF', undef, $c->req->url->path );
-INSERT INTO paths (path) VALUES (?) ON CONFLICT DO NOTHING;
+    $dbh->do( <<'EOF', undef, $url );
+INSERT INTO paths (path) VALUES($1)
+ON CONFLICT (path) DO
+    UPDATE SET last_seen = NOW() where paths.path = $1;
 EOF
-    my $remote_address = $c->tx->remote_address;
-    my $user_agent     = $c->req->headers->user_agent;
-    my $params_json    = encode_json( $c->req->params->to_hash );
+}
+
+sub _update_null_last_seen_paths_if_any($self) {
+    my $dbh = BurguillosInfo::DB->connect($app);
+    $dbh->do( <<'EOF', undef);
+
+UPDATE paths
+SET last_seen = requests_for_path.last_date
+FROM (
+    SELECT requests.path, max(requests.date) as last_date
+    FROM requests
+    GROUP BY requests.path
+) requests_for_path 
+WHERE paths.last_seen IS NULL AND requests_for_path.path = paths.path;
+EOF
+}
+
+sub _register_request_query($self, $remote_address, $user_agent, $params_json, $path) {
+    my $dbh = BurguillosInfo::DB->connect($app);
     $dbh->do(
 	<<'EOF', undef, $remote_address, $user_agent, $params_json, $path );
 INSERT INTO requests(remote_address, user_agent, params, path)
 	VALUES (?, ?, ?, ?);
 EOF
+}
+
+sub register_request {
+    my $self = shift;
+    my $c    = shift;
+    my $path = $c->req->url->path;
+    my $dbh = BurguillosInfo::DB->connect($app);
+    $self->_add_path($path);
+    $self->_update_null_last_seen_paths_if_any();
+    my $remote_address = $c->tx->remote_address;
+    my $user_agent     = $c->req->headers->user_agent;
+    my $params_json    = encode_json( $c->req->params->to_hash );
+    $self->_register_request_query($remote_address, $user_agent, $params_json, $path);
 	say "Registered $remote_address with user agent $user_agent visited $path with $params_json";
 }
 
