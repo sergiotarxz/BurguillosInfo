@@ -5,8 +5,12 @@ use v5.34.1;
 use strict;
 use warnings;
 
+use feature 'signatures';
+
 use Data::Dumper;
 use MIME::Base64;
+
+use BurguillosInfo::Categories;
 
 use Const::Fast;
 use Mojo::DOM;
@@ -41,7 +45,13 @@ sub _ReturnCacheFilter {
     my $current_date = DateTime->now;
     for my $category ( keys %$cached_posts_by_category ) {
         for my $post ( @{ $cached_posts_by_category->{$category} } ) {
-            my $date_post = $iso8601->parse_datetime( $post->{date} );
+            my $date_post;
+            eval {
+                $date_post = $iso8601->parse_datetime( $post->{date} );
+            };
+            if ($@) {
+                print Data::Dumper::Dumper $post;
+            }
             if ( $date_post > $current_date ) {
                 next;
             }
@@ -53,62 +63,112 @@ sub _ReturnCacheFilter {
     return ( \%posts_by_category_filtered, \%posts_by_slug_filtered );
 }
 
+sub _GeneratePostFromFile ( $self, $post_file ) {
+    warn "Bad file $post_file, omiting...", return 
+      if !-f $post_file || $post_file !~ /\.xml$/;
+    my $dom   = Mojo::DOM->new( $post_file->slurp_utf8 );
+    my $title = $dom->at(':root > title')->text
+      or die "Missing title at $post_file.";
+    my $author = $dom->at(':root > author')->text
+      or die "Missing author at $post_file.";
+    my $date = $dom->at(':root > date')->text
+      or die "Missing date at $post_file.";
+    my $ogdesc = $dom->at(':root > ogdesc')->text
+      or die "Missing ogdesc at $post_file";
+    my $category = $dom->at(':root > category')->text
+      or die "Missing category at $post_file.";
+    my $slug = $dom->at(':root > slug')->text
+      or die "Missing slug at $post_file.";
+    my $content = $dom->at(':root > content')->content
+      or die "Missing content at $post_file.";
+    my $image_element = $dom->at(':root > img');
+    my $image;
+
+    if ( defined $image_element ) {
+        $image = $image_element->attr->{src};
+    }
+
+    my $last_modification_date_element =
+      $dom->at(':root > last_modification_date');
+    my $last_modification_date;
+    if ( defined $last_modification_date_element ) {
+        $last_modification_date = $last_modification_date_element->content;
+    }
+
+    return {
+        title    => $title,
+        author   => $author,
+        date     => $date,
+        ogdesc   => $ogdesc,
+        category => $category,
+        slug     => $slug,
+        content  => $content,
+        (
+              ( defined $last_modification_date )
+            ? ( last_modification_date => $last_modification_date )
+            : ()
+        ),
+        ( ( defined $image ) ? ( image => $image ) : () ),
+    };
+}
+
+sub _GeneratePostCache ($self) {
+    $cached_posts_by_category = {};
+    $cached_posts_by_slug     = {};
+    for my $post_file ( sort { $b cmp $a } $POSTS_DIR->children ) {
+        my $post = $self->_GeneratePostFromFile($post_file);
+        if (!defined $post) {
+            next;
+        }
+        my $category       = $post->{category};
+        $cached_posts_by_category->{$category} //= [];
+        my $slug           = $post->{slug};
+        my $category_posts = $cached_posts_by_category->{$category};
+        $cached_posts_by_slug->{$slug} = $post;
+        push @$category_posts, $post;
+    }
+}
+
 sub Retrieve {
     my $self = shift;
     if ( defined $cached_posts_by_category && defined $cached_posts_by_slug ) {
         return $self->_ReturnCacheFilter;
     }
-    $cached_posts_by_category = {};
-    $cached_posts_by_slug     = {};
-    for my $post_file ( sort { $b cmp $a } $POSTS_DIR->children ) {
-        warn "Bad file $post_file, omiting...", next
-          if !-f $post_file || $post_file !~ /\.xml$/;
-        my $dom   = Mojo::DOM->new( $post_file->slurp_utf8 );
-        my $title = $dom->at(':root > title')->text
-          or die "Missing title at $post_file.";
-        my $author = $dom->at(':root > author')->text
-          or die "Missing author at $post_file.";
-        my $date = $dom->at(':root > date')->text
-          or die "Missing date at $post_file.";
-        my $ogdesc = $dom->at(':root > ogdesc')->text
-          or die "Missing ogdesc at $post_file";
-        my $category = $dom->at(':root > category')->text
-          or die "Missing category at $post_file.";
-        my $slug = $dom->at(':root > slug')->text
-          or die "Missing slug at $post_file.";
-        my $content = $dom->at(':root > content')->content
-          or die "Missing content at $post_file.";
-        my $image_element = $dom->at(':root > img');
-        my $image;
-
-        if ( defined $image_element ) {
-            $image = $image_element->attr->{src};
-        }
-
-        my $last_modification_date_element =
-          $dom->at(':root > last_modification_date');
-        my $last_modification_date;
-        if ( defined $last_modification_date_element ) {
-            $last_modification_date = $last_modification_date_element->content;
-        }
-
-        my $post = {
-            title                  => $title,
-            author                 => $author,
-            date                   => $date,
-            ogdesc                 => $ogdesc,
-            category               => $category,
-            slug                   => $slug,
-            content                => $content,
-            ( (defined $last_modification_date) ? (last_modification_date => $last_modification_date) : () ),
-            ( ( defined $image ) ? ( image => $image ) : () ),
-        };
-        $cached_posts_by_category->{$category} //= [];
-        my $category_posts = $cached_posts_by_category->{$category};
-        $cached_posts_by_slug->{$slug} = $post;
-        push @$category_posts, $post;
-    }
+    $self->_GeneratePostCache();
     return $self->_ReturnCacheFilter;
+}
+
+my $cache_all_post_categories = {};
+sub RetrieveAllPostsForCategory ( $self, $category_name ) {
+    if (defined $cache_all_post_categories->{$category_name}) {
+        return $cache_all_post_categories->{$category_name};
+    }
+    my $categories = BurguillosInfo::Categories->new->Retrieve;
+    my $category   = $categories->{$category_name};
+    my $posts      = $self->RetrieveDirectPostsForCategory($category_name);
+    for my $child_category ( $category->{children}->@* ) {
+        my $child_category_name = $child_category->{slug};
+        push @$posts,
+          @{$self->RetrieveDirectPostsForCategory($child_category_name)};
+    }
+    @$posts = sort { 
+        DateTime::Format::ISO8601->parse_datetime($b->{date}) <=> 
+        DateTime::Format::ISO8601->parse_datetime($a->{date}) 
+    } @$posts;
+    $cache_all_post_categories->{$category_name} = $posts;
+    return $posts;
+}
+
+sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
+    my ($post_by_category) = $self->Retrieve;
+    my $categories         = BurguillosInfo::Categories->new->Retrieve;
+    my $category           = $categories->{$category_name};
+    if ( !defined $category ) {
+        die "$category_name category does not exists";
+    }
+    my $posts = $post_by_category->{$category_name};
+    $posts //= [];
+    return [@$posts];
 }
 
 sub PostPreviewOg {

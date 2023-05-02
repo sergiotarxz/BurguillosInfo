@@ -64,7 +64,7 @@ sub category_rss {
             'Todas las noticias de la categoria de Burguillos.info '
               . $category->{title} );
         my $link_tag = Mojo::DOM->new_tag( 'link',
-            'https://burguillos.info/' . $category->{slur} );
+            'https://burguillos.info/' . $category->{slug} );
         $channel_tag->child_nodes->first->append_content($title_tag);
         $channel_tag->child_nodes->first->append_content($description_tag);
         $channel_tag->child_nodes->first->append_content($link_tag);

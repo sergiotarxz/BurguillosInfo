@@ -1,3 +1,4 @@
+% use Data::Dumper;
 % use DateTime::Format::ISO8601;
 %
 % use Mojo::DOM;
@@ -10,12 +11,20 @@
 <div class="description">
 	<h2><%= $current_category->{title} %></h2>
 	<%== $current_category->{description} %>
+% my $children_categories = $current_category->{children};
+% if (@$children_categories) {
+    <h3>Quizás te interese.</h3>
+%     for my $child_category (@$children_categories) {
+      <p><a href="/<%=$child_category->{slug}%>"><%==$child_category->{title}%></a></p>
+%     }
+% }
 	<h3>Artículos</h3>
 	<div class="articles">
-% my ($cached_posts_by_category) = BurguillosInfo::Posts->new->Retrieve;
-% my $category_post = $cached_posts_by_category->{$current_category->{slug}};
-% if (defined $category_post) {
-% 	for my $post (@$category_post) {
+% my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
+% unless (@$category_posts) {
+        <p>Parece que aun no hay artículos.</p>
+% }
+% for my $post (@$category_posts) {
 		<a href="/posts/<%=$post->{slug}%>">
 			<article><%
  		my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
@@ -33,9 +42,6 @@
 				%><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p></article>
 		</a>
 %	}
-% } else {
-	<p>Parece que aun no hay artículos.</p>
-% }
 
 	</div>
 	<h3>Suscribete a esta categoría.</h3>
