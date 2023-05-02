@@ -78,10 +78,6 @@ EOF
 SELECT paths.path,
 	(
 		$SELECT_GLOBAL
-		where requests.path = paths.path
-	) as unique_ips,
-	(
-		$SELECT_GLOBAL
 		where requests.path = paths.path and date > NOW() - interval '1 day'
 	) as unique_ips_last_24_hours,
 	(
