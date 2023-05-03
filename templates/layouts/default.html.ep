@@ -2,6 +2,7 @@
 % my $categories = stash 'categories';
 % my $current_category_slug = stash 'current_category_slug';
 % my $description_og = stash 'description_og';
+% $description_og =~ s/\s+/ /g;
 % $description_og = substr $description_og, 0, 300;
 % $description_og =~ s/\s\S+$//;
 % $description_og.='...';
