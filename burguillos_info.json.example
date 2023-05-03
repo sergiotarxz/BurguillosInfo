@@ -4,5 +4,6 @@
 	"db": {
 		"database": "example"
 	},
-    "base_url": "https://burguillos.info"
+    "base_url": "https://burguillos.info",
+    "listen": "https:localhost:3555"
 }

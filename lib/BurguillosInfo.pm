@@ -19,7 +19,7 @@ sub startup ($self) {
     );
     my $config = $self->plugin('JSONConfig');
     $self->config(
-        hypnotoad => { proxy => 1, listen => ['http://localhost:3000'] } );
+        hypnotoad => { proxy => 1, listen => [$self->config('listen') // 'http://localhost:3000'] } );
     $self->config( css_version => int( rand(10000) ) );
     $self->secrets( $self->config->{secrets} );
 
