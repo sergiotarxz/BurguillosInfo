@@ -2,12 +2,13 @@
 	<author>Burguillos.info</author>
 	<date>2023-05-01T15:35+00:00</date>
     <last_modification_date>2023-05-03T15:35+00:00</last_modification_date>
-	<title>Pizzería los Naranjos.</title>
-	<ogdesc>Pizzería los Naranjos.</ogdesc>
+	<title>Carta y Menú de Los Naranjos en Burguillos.</title>
+	<ogdesc>Carta y Menú de Los Naranjos en Burguillos.</ogdesc>
     <img src="/img/pizzeria-los-naranjos-preview.png"/>
 	<category>donde-comer</category>
 	<slug>pizzeria-los-naranjos</slug>
 	<content>
+        <h2>Pizzería, Hamburguesería, Kebab, Cartes, Pescado, Aliños.</h2>
         <img style="border: 1px black solid;" src="/img/pizzeria-los-naranjos.jpg" alt="The front door of the pizzeria"/>
         <p>Hoy añadimos a este directorio un clásico en las cenas de los fines
             de semana de los habitantes de Burguillos, la Pizzería los Naranjos.</p>
