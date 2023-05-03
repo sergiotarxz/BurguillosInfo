@@ -119,7 +119,7 @@ sub post {
         return;
     }
     my $current_category = $categories->{ $post->{category} };
-    $self->stash(ogimage => 'https://burguillos.info/posts/'.$post->{slug}.'-preview.png');
+    $self->stash(ogimage => 'https://burguillos.info/posts/'.$post->{slug}.'-preview.webp');
     $self->stash(useragent => $self->req->headers->user_agent);
     $self->render( post => $post, current_category => $current_category );
 }
@@ -151,7 +151,7 @@ sub get_post_preview {
 	}
 	my $post = $posts_slug->{$slug};
 	$self->render(
-		format => 'png',
+		format => 'webp',
 		data => $post_model->PostPreviewOg($post)
 	);
 }

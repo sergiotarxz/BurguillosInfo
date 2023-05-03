@@ -4,7 +4,7 @@
 	<title>Servidor de chat de Burguillos.</title>
 	<ogdesc>Servidor de chat de Burguillos.</ogdesc>
 	<category>index</category>
-	<img src="/img/xmpp-preview.png"/>
+	<img src="/img/xmpp-preview.webp"/>
 	<slug>chat-burguillos</slug>
 	<content>
 		<p>Desde Burguillos.info creemos en las tecnologías de comunicación descentralizadas, debido a ello configuramos hace poco un servidor de Diaspora* para que los burguilleros y burguilleras puedan usarlo como foro sustituyendo a Facebook.</p>
@@ -26,22 +26,22 @@
 		<p>En primer lugar tendrás que descargar un cliente de XMPP, os recomiendo usar <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&gl=US">Conversations</a> ya que implementa encriptación de extremo a extremo, lo que significa que el dueño de tu servidor nunca podrá leer tus mensajes. (Si usas bien esa feature verificando las claves para evitar que sean interceptadas.)</p>
 
 		<p>Una vez lo hayas instalado, cuando abras la nueva aplicación encontrarás una pantalla como esta.</p>
-		<img alt="Pantalla de bienvenida de Conversations" src="/img/xmpp-1.jpg"/>
+		<img alt="Pantalla de bienvenida de Conversations" src="/img/xmpp-1.webp"/>
 
 		<p>Como aun no tenemos una cuenta pulsaremos sobre "Create new account".</p>
 
-		<img alt="Pantalla de selección entre servidor por defecto o custom." src="/img/xmpp-2.jpg"/>
+		<img alt="Pantalla de selección entre servidor por defecto o custom." src="/img/xmpp-2.webp"/>
 
 		<p>Una vez hayamos pulsado nos hará una nueva pregunta, si queremos usar el proveedor de Conversations.im o otro.</p>
 
 		<p>Para favorecer la descentralización y aprovechar el servidor del pueblo pulsaremos sobre "Use my own provider", si quisieses escoger la primera opción también podrías hablar con la gente suscrita a Burguillos.info, la única desventaja es que no podrías ver las salas públicas creadas en Burguillos.info, tendrías que buscarlas manualmente por su nombre.</p>
 
-		<img alt="Pantalla de introducción de datos" src="/img/xmpp-3.jpg"/>
+		<img alt="Pantalla de introducción de datos" src="/img/xmpp-3.webp"/>
 
 		<p>Ahora la aplicación nos pide que introduzcamos el nuevo usuario a crear, para crear tu nombre de usuario deberás hacerlo como si fuese un email terminado en @burguillos.info, por ejemplo manuelsanchez@burguillos.info, anarodriguez@burguillos.info, asociacionX@burguillos.info...</p>
 		<p>Debes tener cuídado al introducir la contraseña, ya que si la pierdes no tendrás ninguna forma de recuperarla y perderás el acceso a la cuenta, de todos modos crear una nueva es gratis y puedes tener tantas como quieras.</p>
 
-		<img alt="Pantalla de selección de avatar" src="/img/xmpp-4.jpg"/>
+		<img alt="Pantalla de selección de avatar" src="/img/xmpp-4.webp"/>
 
 		<p>Ahora nos da la opción de introducir un avatar para hacer nuestra cuenta única y que la gente pueda reconocernos en la red, un avatar es una pequeña imagen que puede ser una foto tuya, de tu mascota, de algo que te guste...</p>
 

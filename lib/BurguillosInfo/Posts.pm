@@ -24,7 +24,7 @@ const my $CURRENT_FILE    => __FILE__;
 const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
 const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
 const my $POSTS_DIR       => $ROOT_PROJECT->child('content/posts');
-const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos.png');
+const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos.webp');
 const my $SVG_WIDTH       => 1200;
 const my $SVG_HEIGHT      => 627;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1000;
@@ -219,7 +219,7 @@ sub PostPreviewOg {
     my $svg =
       $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
     my ( $stdout, $stderr ) = capture {
-        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
+        open my $fh, '|-', qw{convert /dev/stdin webp:fd:1};
         binmode $fh, 'utf8';
         print $fh $svg;
         close $fh;
@@ -276,7 +276,7 @@ sub _GenerateSVGPostPreview {
     my $content = shift;
     my $image   = shift;
     if ($image =~ /\.jpe?g$/) {
-        my $new_image = $image =~ s/\.jpe?g$/.generated.png/r;
+        my $new_image = $image =~ s/\.jpe?g$/.generated.webp/r;
         my $dir = 'public';
         if (!-e $new_image) {
             system 'convert', "$dir/$image", "$dir/$new_image";
@@ -313,7 +313,7 @@ sub _GenerateSVGPostPreview {
         y      => 5,
         width  => 40,
         height => 40,
-        -href  => 'data:image/png;base64,'
+        -href  => 'data:image/webp;base64,'
           . encode_base64( $BURGUILLOS_LOGO->slurp )
     );
     $group->text(

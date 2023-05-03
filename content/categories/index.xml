@@ -6,6 +6,6 @@
 		<p>Esta página está destinada a informar de los sucesos y negocios de nuestro pueblo, cualquiera puede redactar una noticia para que aparezca en este medio mientras pase un proceso de revisión por parte del staff de Burguillos.info.</p>
 	</description>
 	<priority>0</priority>
-	<menu_text><img alt="Principio" class="index-image-menu" src="/img/burguillos.png?v=1"/></menu_text>
+	<menu_text><img alt="Principio" class="index-image-menu" src="/img/burguillos.webp?v=1"/></menu_text>
 	<slug>index</slug>
 </category>

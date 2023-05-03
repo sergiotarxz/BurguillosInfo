@@ -5,7 +5,7 @@
 	<title>El Bocatón - Burguillos - Carta y Menú</title>
 	<ogdesc>El Bocatón - Burguillos - Carta y Menú</ogdesc>
 	<category>donde-comer</category>
-	<img src="/img/bocaton-preview.png"/>
+	<img src="/img/bocaton-preview.webp"/>
 	<slug>el-bocaton</slug>
     <attributes>
         <attribute>reparto-a-domicilio-comida</attribute>
@@ -14,7 +14,7 @@
     </attributes>
 	<content>
         <h2>Café - Bar - Pastelería - Pizzeria - Hamburguesería</h2>
-		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.jpg"/>
+		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.webp"/>
 		<p>Damos la bienvenida a un nuevo negocio al directorio de Burguillos.info, El Bocatón.</p>
 
 		<p>El Bocatón es un Café - Bar ubicado al lado del Parque del Barrio Lejos, (Calle Naranjo, 11) ideal para tomarte algo mientras tus hijos juegan en el parque.</p>
@@ -52,7 +52,7 @@
 		<h3>Chapata Pizza</h3>
 
 		<p>Adjuntamos imagen de la Chapata Pizza para que podáis verla antes de mostar las opciones.</p>
-		<img alt="Chapata Pizza" src="/img/chapata-pizza.jpg"/>
+		<img alt="Chapata Pizza" src="/img/chapata-pizza.webp"/>
 
 		<ol>
 			<li>Completa con dos ingredientes. <b>4€</b></li>

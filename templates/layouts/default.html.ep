@@ -23,8 +23,8 @@
       <meta name="image" property="og:image" content="<%= $ogimage %>?v=3"/>
       <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
-      <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.png?v=4">
-      <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.png?v=4">
+      <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
+      <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
 % }
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

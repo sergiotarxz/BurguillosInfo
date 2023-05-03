@@ -36,7 +36,7 @@ sub startup ($self) {
     $r->get('/<:category>.rss')->to('Page#category_rss');
     $r->get('/:category_slug/atributo/:attribute_slug')->to('Attribute#get');
     $r->get('/:category')->to('Page#category');
-    $r->get('/posts/<:slug>-preview.png')->to('Page#get_post_preview');
+    $r->get('/posts/<:slug>-preview.webp')->to('Page#get_post_preview');
     $r->get('/posts/:slug')->to('Page#post');
     $r->get('/filtros')->to('Filter#list');
     $r->get('/filtros/:slug')->to('Filter#get');
