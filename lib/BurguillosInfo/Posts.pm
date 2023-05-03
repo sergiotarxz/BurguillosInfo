@@ -259,6 +259,7 @@ sub _AttachImageSVG {
         system qw/file --mime-type/, $image;
     };
     my ($format) = $output =~ /(\S+)$/;
+    say $format;
     $svg->image(
         x      => $x,
         y      => $y,
@@ -274,6 +275,14 @@ sub _GenerateSVGPostPreview {
     my $title   = shift;
     my $content = shift;
     my $image   = shift;
+    if ($image =~ /\.jpe?g$/) {
+        my $new_image = $image =~ s/\.jpe?g$/.generated.png/r;
+        my $dir = 'public';
+        if (!-e $new_image) {
+            system 'convert', "$dir/$image", "$dir/$new_image";
+        }
+        $image = $new_image;
+    }
     my @content = @$content;
     my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
     $svg->rect(
