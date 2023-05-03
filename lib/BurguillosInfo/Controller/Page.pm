@@ -119,7 +119,7 @@ sub post {
         return;
     }
     my $current_category = $categories->{ $post->{category} };
-    $self->stash(ogimage => 'https://burguillos.info/posts/'.$post->{slug}.'-preview.webp');
+    $self->stash(ogimage => 'https://burguillos.info/posts/'.$post->{slug}.'-preview.png');
     $self->stash(useragent => $self->req->headers->user_agent);
     $self->render( post => $post, current_category => $current_category );
 }

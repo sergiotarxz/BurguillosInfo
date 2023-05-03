@@ -219,7 +219,7 @@ sub PostPreviewOg {
     my $svg =
       $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
     my ( $stdout, $stderr ) = capture {
-        open my $fh, '|-', qw{convert /dev/stdin webp:fd:1};
+        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
         binmode $fh, 'utf8';
         print $fh $svg;
         close $fh;
@@ -276,7 +276,7 @@ sub _GenerateSVGPostPreview {
     my $content = shift;
     my $image   = shift;
     if ($image =~ /\.jpe?g$/) {
-        my $new_image = $image =~ s/\.jpe?g$/.generated.webp/r;
+        my $new_image = $image =~ s/\.jpe?g$/.generated.png/r;
         my $dir = 'public';
         if (!-e $new_image) {
             system 'convert', "$dir/$image", "$dir/$new_image";
