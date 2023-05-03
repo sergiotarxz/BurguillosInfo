@@ -19,6 +19,7 @@ my $build = Module::Build->new(
         'DateTime::Format::Mail.pm' => 0,
         'SVG' => 0,
         'XML::Twig' => 0,
+        'JSON' => 0,
     },
 );
 $build->create_build_script;
