@@ -2,12 +2,13 @@
 	<author>Burguillos.info</author>
 	<date>2022-11-18T00:00+00:00</date>
 	<last_modification_date>2023-05-02T00:00+00:00</last_modification_date>
-	<title>El Bocatón - Café - Bar - Pastelería - Pizzeria - Hamburguesería.</title>
-	<ogdesc>El Bocatón - Café - Bar - Pastelería - Pizzeria - Hamburguesería.</ogdesc>
+	<title>El Bocatón - Burguillos - Carta y Menú</title>
+	<ogdesc>El Bocatón - Burguillos - Carta y Menú</ogdesc>
 	<category>donde-comer</category>
 	<img src="/img/bocaton-preview.png"/>
 	<slug>el-bocaton</slug>
 	<content>
+        <h2>Café - Bar - Pastelería - Pizzeria - Hamburguesería</h2>
 		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.jpg"/>
 		<p>Damos la bienvenida a un nuevo negocio al directorio de Burguillos.info, El Bocatón.</p>
 
