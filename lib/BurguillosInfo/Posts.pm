@@ -233,6 +233,7 @@ sub _AttachImageSVG {
     my $svg   = shift;
     my $image = shift;
     $image = $PUBLIC_DIR->child( './' . $image );
+    path($image = $self->_toPng($image));
     my ( $stdout, $stderr, $error ) = capture {
         system qw/identify -format "%wx%h"/, $image;
     };
@@ -259,7 +260,6 @@ sub _AttachImageSVG {
         system qw/file --mime-type/, $image;
     };
     my ($format) = $output =~ /(\S+)$/;
-    say $format;
     $svg->image(
         x      => $x,
         y      => $y,
@@ -270,19 +270,23 @@ sub _AttachImageSVG {
     return $y + $height + 50;
 }
 
+sub _toPng($self, $image) {
+    if ($image =~ /\.\w+$/) {
+        my $new_image = $image =~ s/\.\w+$/.generated.png/r;
+        say $new_image;
+        if (!-e $new_image) {
+            system 'convert', "$image", "$new_image";
+        }
+        $image = $new_image;
+    }
+    return path($image);
+}
+
 sub _GenerateSVGPostPreview {
     my $self    = shift;
     my $title   = shift;
     my $content = shift;
     my $image   = shift;
-    if ($image =~ /\.jpe?g$/) {
-        my $new_image = $image =~ s/\.jpe?g$/.generated.png/r;
-        my $dir = 'public';
-        if (!-e $new_image) {
-            system 'convert', "$dir/$image", "$dir/$new_image";
-        }
-        $image = $new_image;
-    }
     my @content = @$content;
     my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
     $svg->rect(
@@ -308,13 +312,15 @@ sub _GenerateSVGPostPreview {
         }
     );
 
+    my $burguillos_logo_png = path($self->_toPng($BURGUILLOS_LOGO));
+    say ''.$burguillos_logo_png;
     $group->image(
         x      => 10,
         y      => 5,
         width  => 40,
         height => 40,
-        -href  => 'data:image/webp;base64,'
-          . encode_base64( $BURGUILLOS_LOGO->slurp )
+        -href  => 'data:image/png;base64,'
+          . encode_base64( $burguillos_logo_png->slurp )
     );
     $group->text(
         x     => 60,
