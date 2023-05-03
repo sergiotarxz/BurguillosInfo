@@ -151,7 +151,7 @@ sub get_post_preview {
 	}
 	my $post = $posts_slug->{$slug};
 	$self->render(
-		format => 'webp',
+		format => 'png',
 		data => $post_model->PostPreviewOg($post)
 	);
 }
