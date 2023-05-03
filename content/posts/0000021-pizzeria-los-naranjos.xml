@@ -9,6 +9,8 @@
 	<slug>pizzeria-los-naranjos</slug>
     <attributes>
         <attribute>reparto-a-domicilio-comida</attribute>
+        <attribute>hamburguesas</attribute>
+        <attribute>pizzerias</attribute>
     </attributes>
 	<content>
         <h2>Pizzería, Hamburguesería, Kebab, Pescado, Aliños.</h2>

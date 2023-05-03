@@ -1,16 +1,22 @@
 <post>
 	<author>Burguillos.info</author>
 	<date>2022-11-11T23:09+00:00</date>
-	<title>La Tienda de Noemi.</title>
-	<ogdesc>La Tienda de Noemi.</ogdesc>
+	<title>Carta y Menú de la Tienda de Noemi en Burguillos.</title>
+	<last_modification_date>2023-05-03T20:10+00:00</last_modification_date>
+    <img src="/img/noemi.jpg"/>
+	<ogdesc>Carta y Menú de la Tienda de Noemi en Burguillos.</ogdesc>
 	<category>donde-comer</category>
 	<slug>tienda-noemi</slug>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+    </attributes>
 	<content>
+        <h2>Hamburguesas, Pollofres, Gofres, Buñuelos, Montaditos, Salchipapas, entra y descubrelo.</h2>
 		<p>Hoy os traemos un negocio de nueva apertura, "La Tienda de Noemi" localizado en Calle Albahaca Local 2 ACC, ideal para comer en Burguillos.</p>
 
 		<p>Este negocio abre de 17:00 a 22:00 de Lunes a Jueves y de 17:00 a 00:00 de Viernes a Domingo.</p>
 
-		<p>Además de vender multitud de bebidas, esta tienda ofrece bocadillos y otros productos preparados como buñuelos, además puedes dejar tu pedido encargado por teléfono en <a href="tel://+34698901484">698901484</a>.</p> 
+		<p>Además de vender multitud de bebidas, esta tienda ofrece bocadillos y otros productos preparados como buñuelos, además puedes dejar tu pedido encargado por teléfono en <a href="tel://+34698901484">698901484</a>, deberás recogerlo en el establecimiento.</p> 
 
 		<p>A continuación listamos el menú completo de comidas para haceros la boca agua.</p>
 
