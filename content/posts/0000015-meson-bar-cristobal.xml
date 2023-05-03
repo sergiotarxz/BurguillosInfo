@@ -1,8 +1,9 @@
 <post>
 	<author>Burguillos.info</author>
 	<date>2022-11-22T09:47+00:00</date>
-	<title>Mesón - Bar - Cristobal</title>
-	<ogdesc>Mesón - Bar - Cristobal</ogdesc>
+	<title>Mesón - Bar - Cristobal - Carta y Menú.</title>
+	<ogdesc>Mesón - Bar - Cristobal - Carta y Menú.</ogdesc>
+    <last_modification_date>2023-05-03T02:34+02:00</last_modification_date>
 	<category>donde-comer</category>
 	<slug>bar-cristobal</slug>
 	<img src="/img/cristobal-preview.png"/>
@@ -15,7 +16,7 @@
 
 		<p>A continuación procedemos a dejar la carta para que podáis realizar el pedido que deseeis:</p>
 
-		<h3>Entrantes</h3>
+		<h2>Entrantes</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -66,7 +67,7 @@
 				<td>-</td>
 			</tr>
 		</table>
-		<h3>Aperitivos</h3>
+		<h2>Aperitivos</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -117,7 +118,7 @@
 				<td>8€</td>
 			</tr>
 		</table>
-		<h3>Pescados</h3>
+		<h2>Pescados</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -199,7 +200,7 @@
 				<td>--</td>
 			</tr>
 		</table>
-		<h3>En temporada</h3>
+		<h2>En temporada</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -220,7 +221,7 @@
 				<td>10€</td>
 			</tr>
 		</table>
-		<h3>Carnes</h3>
+		<h2>Carnes</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -319,7 +320,7 @@
 				<td>--</td>
 			</tr>
 		</table>
-		<h3>Ibéricos</h3>
+		<h2>Ibéricos</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -352,7 +353,7 @@
 				<td>14€</td>
 			</tr>
 		</table>
-		<h3>Cazuelitas</h3>
+		<h2>Cazuelitas</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -391,7 +392,7 @@
 				<td>12€</td>
 			</tr>
 		</table>
-		<h3>Postres</h3>
+		<h2>Postres</h2>
 		<ol>
 			<li>Arroz con leche <b>2.50€</b></li>
 			<li>Natillas <b>2.50€</b></li>
