@@ -4,7 +4,9 @@
 		<p>¿Quieres promocionar tu negocio o asociación en Burguillos.info?</p>
 		<p>Contacta con <a href="mailto:contact@owlcode.tech">Owlcode</a> y te informaremos de los pasos a tomar.</p>
 
-		<p>Esta página es software libre, puedes tomar cualquier parte del código de la página para tu propia web o programa mientras cumplas con la licencia AGPLv3 or later, puedes encontrar su código aquí.</p>
+		<p>Esta página es software libre, puedes tomar cualquier parte del código de la página para tu propia web o programa mientras cumplas con la licencia AGPLv3 or later, puedes encontrar su código <a href="https://git.owlcode.tech/sergiotarxz/burguillos.info">aquí</a>.</p>
+
+        <p>Si tienes conocimientos de HTML puedes crear tu propio artículo enviando una pull request a este enlace creando un fichero nuevo en content/posts, si no tienes conocimientos de HTML puedes contactar con nosotros y crearemos el artículo con el contenido que desees.</p>
 	</description>
 	<priority>999</priority>
 	<menu_text>Esta página</menu_text>
