@@ -40,6 +40,7 @@ sub Retrieve($self) {
           or die "Missing menu_text at $category_file";
         defined (my $priority = $dom->at(':root > priority')->text)
           or die "Missing priority at $category_file";
+        my $attributes = $self->_GetAttributes($dom, $category_file);
         my $parent_tag = $dom->at(':root > parent');
         my $parent;
         if (defined $parent_tag) {
@@ -56,12 +57,41 @@ sub Retrieve($self) {
                 (parent => $parent) :
                 ()
             ),
+            attributes => $attributes,
         };
         $cached_categories->{$slug} = $category;
     }
     $self->_AvoidGrandChildCategories($cached_categories);
     $self->_PopulateChildrenField($cached_categories);
     return $cached_categories;
+}
+
+sub _GetAttributes($self, $dom, $category_file) {
+    my $attributes_tag = $dom->at(':root > attributes');
+    my %attributes;
+    if (defined $attributes_tag) {
+        my @attribute_tag_list = $attributes_tag->find('attributes > attribute')->each;
+        for my $attribute_tag (@attribute_tag_list) {
+            defined (my $menu_text = $attribute_tag->at('attribute > menu_text')->content)
+              or die "Missing attribute menu_text at $category_file";
+            defined (my $description = $attribute_tag->at('attribute > description')->content)
+              or die "Missing attribute description at $category_file";
+            defined (my $title = $attribute_tag->at('attribute > title')->text)
+              or die "Missing attribute title at $category_file";
+            defined (my $identifier = $attribute_tag->at('attribute > identifier')->text)
+              or die "Missing attribute identifier at $category_file";
+            defined (my $priority = $attribute_tag->at('attribute > priority')->text)
+              or die "Missing attribute priority at $category_file";
+            $attributes{$identifier} = {
+              title => $title,
+              identifier => $identifier,
+              priority => $priority,
+              menu_text => $menu_text,
+              description => $description,
+            };
+        }
+    }
+    return \%attributes;
 }
 
 sub _PopulateChildrenField($self, $categories) {

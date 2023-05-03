@@ -28,7 +28,7 @@
 		<%= content %></body>
 		<hr/>
 		<div class="footer description">
-			<p>©2022 Sergio Iglesias</p>
+			<p>©2022-2023 Sergio Iglesias</p>
 			<p>Enterate de todas las novedades de Burguillos.info:</p>
 			<a class="suscribe-category-rss" href="/all.rss">
 				 <img src="/img/rss.svg" alt="Icono de suscripción rss"/>

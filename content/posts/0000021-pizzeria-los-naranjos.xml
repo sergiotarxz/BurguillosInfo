@@ -7,8 +7,11 @@
     <img src="/img/pizzeria-los-naranjos-preview.png"/>
 	<category>donde-comer</category>
 	<slug>pizzeria-los-naranjos</slug>
+    <attributes>
+        <attribute>reparto-a-domicilio-comida</attribute>
+    </attributes>
 	<content>
-        <h2>Pizzería, Hamburguesería, Kebab, Cartes, Pescado, Aliños.</h2>
+        <h2>Pizzería, Hamburguesería, Kebab, Pescado, Aliños.</h2>
         <img style="border: 1px black solid;" src="/img/pizzeria-los-naranjos.jpg" alt="The front door of the pizzeria"/>
         <p>Hoy añadimos a este directorio un clásico en las cenas de los fines
             de semana de los habitantes de Burguillos, la Pizzería los Naranjos.</p>

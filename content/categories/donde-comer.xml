@@ -9,4 +9,21 @@
 	<priority>0</priority>
 	<menu_text>Donde comer</menu_text>
 	<slug>donde-comer</slug>
+    <attributes>
+        <attribute>
+            <title>Pedir comida a domicilio en Burguillos.</title>
+            <identifier>reparto-a-domicilio-comida</identifier>
+            <priority>0</priority>
+            <menu_text>Listado de sitios de comida con reparto a domicilio.</menu_text>
+            <description>
+                <h2>Cartas y Menús de Pizzerías, Hamburgueserías, Kebab, Restaurantes, Bares, etc.</h2>
+
+                <p>Te filtramos todos los sitios según si puedes pedir a domicilio en Burguillos, todos
+                    los negocios listados incluyen carta, menú y teléfono de contacto. (O el medio
+                    de contacto pertinente para el negocio en caso de no ser el teléfono.)</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+    </attributes>
 </category>

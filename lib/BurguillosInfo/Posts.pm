@@ -83,6 +83,7 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
       or die "Missing content at $post_file.";
     my $image_element = $dom->at(':root > img');
     my $image;
+    my $attributes = $self->_GetAttributes($post_file, $dom);
 
     if ( defined $image_element ) {
         $image = $image_element->attr->{src};
@@ -109,7 +110,22 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
             : ()
         ),
         ( ( defined $image ) ? ( image => $image ) : () ),
+        attributes => $attributes,
     };
+}
+
+sub _GetAttributes($self, $post_file, $dom) {
+    my $attributes_tag = $dom->at(':root > attributes');
+    my %attributes;
+    if (defined $attributes_tag) {
+        my @attribute_list = $attributes_tag->find('attributes > attribute')->map('text')->each;
+        %attributes = map { 
+            my $identifier = $_;
+            ($identifier => 1);
+        } @attribute_list;
+    }
+    return \%attributes;
+
 }
 
 sub _GeneratePostCache ($self) {

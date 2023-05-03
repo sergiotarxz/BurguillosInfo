@@ -7,6 +7,9 @@
 	<category>donde-comer</category>
 	<img src="/img/bocaton-preview.png"/>
 	<slug>el-bocaton</slug>
+    <attributes>
+        <attribute>reparto-a-domicilio-comida</attribute>
+    </attributes>
 	<content>
         <h2>Café - Bar - Pastelería - Pizzeria - Hamburguesería</h2>
 		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.jpg"/>

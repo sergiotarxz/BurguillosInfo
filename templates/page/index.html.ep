@@ -12,38 +12,19 @@
 	<h1><%= $current_category->{title} %></h1>
 	<%== $current_category->{description} %>
 % my $children_categories = $current_category->{children};
-% if (@$children_categories) {
+% my $attributes = $current_category->{attributes};
+% if (@$children_categories || %$attributes) {
     <h2>Quizás te interese.</h2>
 %     for my $child_category (@$children_categories) {
       <p><a href="/<%=$child_category->{slug}%>"><%==$child_category->{title}%></a></p>
 %     }
+%     for my $attribute_slug (keys %$attributes) {
+%         my $attribute = $attributes->{$attribute_slug};
+      <p><a href="<%="/$current_category->{slug}/atributo/$attribute->{identifier}"%>"><%==$attribute->{menu_text}%></a></p>
+%     }
 % }
-	<h2>Artículos</h2>
-	<div class="articles">
 % my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
-% unless (@$category_posts) {
-        <p>Parece que aun no hay artículos.</p>
-% }
-% for my $post (@$category_posts) {
-		<a href="/posts/<%=$post->{slug}%>">
-			<article><%
- 		my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
-		$date_article->set_time_zone('Europe/Madrid');
-				%><p class="date"><%= ''.$date_article %></p><%
- 		if (defined $post->{image}) {
-				%><img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/><%
-               }
-				%><h4><%=$post->{title}%></h4><%
-		my $xml = Mojo::DOM->new($post->{content});
-		my $text = $xml->all_text;
-		if (length($text) > 120) {
-			$text = substr($text, 0, 100).'...';
-		}
-				%><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p></article>
-		</a>
-%	}
-
-	</div>
+%= include 'page/_list_posts', posts => $category_posts; 
 	<h2>Suscribete a esta categoría.</h2>
 
 	<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">

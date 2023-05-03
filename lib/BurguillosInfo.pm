@@ -20,8 +20,8 @@ sub startup ($self) {
     my $config = $self->plugin('JSONConfig');
     $self->config(
         hypnotoad => { proxy => 1, listen => ['http://localhost:3000'] } );
-    $self->config(css_version => int(rand(10000)));
-    $self->secrets($self->config->{secrets});
+    $self->config( css_version => int( rand(10000) ) );
+    $self->secrets( $self->config->{secrets} );
 
     # Router
     my $r = $self->routes;
@@ -34,9 +34,12 @@ sub startup ($self) {
     #  $r->get('/:post')->to('Page#post');
     $r->get('/stats')->to('Metrics#stats');
     $r->get('/<:category>.rss')->to('Page#category_rss');
+    $r->get('/:category_slug/atributo/:attribute_slug')->to('Attribute#get');
     $r->get('/:category')->to('Page#category');
     $r->get('/posts/<:slug>-preview.png')->to('Page#get_post_preview');
     $r->get('/posts/:slug')->to('Page#post');
+    $r->get('/filtros')->to('Filter#list');
+    $r->get('/filtros/:slug')->to('Filter#get');
     $r->get('/stats/login')->to('Metrics#login');
     $r->post('/stats/login')->to('Metrics#submit_login');
 }

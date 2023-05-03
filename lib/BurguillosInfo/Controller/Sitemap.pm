@@ -57,11 +57,23 @@ sub _append_category_dom ( $self, $dom, $category_key, $categories ) {
           Mojo::DOM->new_tag( lastmod => $final_date_last_modification_category );
         $url->child_nodes->first->append_content($last_modification_tag);
     }
+    $self->_append_attributes_category_sitemap($dom, $category_key, $categories);
     my $priority_tag = Mojo::DOM->new_tag( priority => 0.6 );
     $url->child_nodes->first->append_content($location_tag);
     $url->child_nodes->first->append_content($priority_tag);
 
     $dom->child_nodes->first->append_content($url);
+}
+
+sub _append_attributes_category_sitemap($self, $dom, $category_key, $categories) {
+    my $base_url   = $self->config('base_url');
+    my $category = $categories->{$category_key};
+    for my $attribute (keys $category->{attributes}->%*) {
+        my $url          = Mojo::DOM->new_tag('url');
+        my $location_tag = Mojo::DOM->new_tag( loc => "$base_url/$category_key/atributo/$attribute" );
+        $url->child_nodes->first->append_content($location_tag);
+        $dom->child_nodes->first->append_content($url);
+    }
 }
 
 sub _generate_url_for_post ( $self, $post ) {

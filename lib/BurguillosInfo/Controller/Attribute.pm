@@ -1,0 +1,37 @@
+package BurguillosInfo::Controller::Attribute;
+use v5.34.1;
+
+use strict;
+use warnings;
+
+use Data::Dumper;
+
+use BurguillosInfo::Categories;
+
+use Mojo::Base 'Mojolicious::Controller', -signatures;
+
+sub get ($self) {
+    my $category_slug  = $self->param('category_slug');
+    my $attribute_slug = $self->param('attribute_slug');
+
+    my $categories = BurguillosInfo::Categories->new->Retrieve;
+    my $category   = $categories->{$category_slug};
+    if ( !defined $category ) {
+        return $self->reply->not_found;
+    }
+    my $attribute = $category->{attributes}{$attribute_slug};
+    if ( !defined $attribute ) {
+        return $self->reply->not_found;
+    }
+    my $posts = BurguillosInfo::Posts->RetrieveDirectPostsForCategory(
+        $category->{slug} );
+    $posts = [ grep { defined $_->{attributes}{$attribute_slug} } @$posts ];
+    $self->render(
+        template   => 'page/attribute',
+        category   => $category,
+        attribute  => $attribute,
+        categories => $categories,
+        posts      => $posts,
+    );
+}
+1;
