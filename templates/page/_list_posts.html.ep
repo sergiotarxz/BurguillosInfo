@@ -13,7 +13,7 @@
     if (defined $post->{image}) {
             %><img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/><%
            }
-            %><h4><%=$post->{title}%></h4><%
+            %><h3><%=$post->{title}%></h3><%
     my $xml = Mojo::DOM->new($post->{content});
     my $text = $xml->all_text;
     if (length($text) > 120) {
