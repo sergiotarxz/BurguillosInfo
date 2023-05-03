@@ -1,12 +1,15 @@
 % use Data::Dumper;
 % use DateTime::Format::ISO8601;
+% use Mojo::DOM;
 %
 % use Mojo::DOM;
 % use Mojo::Util;
 %
 % use BurguillosInfo::Posts;
 %
-% layout 'default', current_category_slug => $current_category->{slug};
+% my $description_og = '<div>'.$current_category->{description}.'</div>';
+% $description_og = Mojo::DOM->new($description_og)->all_text;
+% layout 'default', current_category_slug => $current_category->{slug}, description_og => $description_og;
 % title $current_category->{title};
 <div class="description">
 	<h1><%= $current_category->{title} %></h1>

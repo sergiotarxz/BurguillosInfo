@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 % my $categories = stash 'categories';
 % my $current_category_slug = stash 'current_category_slug';
+% my $description_og = stash 'description_og';
+% $description_og = substr $description_og, 0, 300;
+% $description_og =~ s/\s\S+$//;
+% $description_og.='...';
+% my $base_url = config 'base_url';
 <html lang="es">
   <head>
 	  <script src="/js/index.js"></script>
 % my $css_version = config 'css_version';
       <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
 	  <title><%= title %></title>
-	  <meta name="description" content="Lee más sobre: <%= title %>"/>
+      <meta name="description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
 	  <meta property="og:title" content="<%= title %>"/>
-	  <meta property="og:site_name" content="Burguillos.info" />
+	  <meta property="og:site_name" content="burguillos.info" />
 % my $ogimage = stash 'ogimage';
 % my $user_agent = stash 'useragent';
-% if (defined $ogimage && $user_agent !~ /TelegramBot/) {
-	  <meta name="image" property="og:image" content="<%= $ogimage %>?v=3"/>
+    
+% if (defined $ogimage) {
+      <meta name="image" property="og:image" content="<%= $ogimage %>?v=3"/>
+      <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
-	  <meta name="image" property="og:image" content="https://burguillos.info/img/burguillos.png?v=4">
+      <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.png?v=4">
+      <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.png?v=4">
 % }
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="twitter:card" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
 	<div class="site-wrapper">
