@@ -9,7 +9,7 @@
 % my $description_og = '<div>'.$post->{content}.'</div>';
 % $description_og = Mojo::DOM->new($description_og)->all_text;
 % my $base_url = config 'base_url';
-% layout 'default', current_category_slug => $current_category->{slug}, categories => $categories, description_og => $description_og, ogimage => "$base_url/posts/$post->{slug}-preview.webp?v=4";
+% layout 'default', current_category_slug => $current_category->{slug}, categories => $categories, description_og => $description_og, ogimage => "$base_url/posts/$post->{slug}-preview.png?v=4";
 % title $post->{title};
 <div class="description">
 	<h1><%= $post->{title} %></h1>
