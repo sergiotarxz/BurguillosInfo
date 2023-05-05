@@ -66,24 +66,6 @@ body {
 			padding-right: 10px;
 			margin: 0;
 		}
-		th,td {
-			font-size: 15px;
-		}
-		b,p,li {
-			font-size: 40px;
-		}
-        h4 {
-            font-size: 40px;
-        }
-		h3 {
-			font-size: 47px;
-		}
-		h2 {
-			font-size: 53px;
-		}
-		h1 {
-			font-size: 60px;
-		}
 		div.description {
 			input {
 				display: block;
@@ -118,21 +100,6 @@ body {
 						p,h4,h3,h2 {
 							margin: 0px;
 						}
-						b,p {
-							font-size: 38px;
-						}
-						h4 {
-							font-size: 44px;
-						}
-						h3 {
-							font-size: 47px;
-						}
-						h2 {
-							font-size: 53px;
-						}
-						h1 {
-							font-size: 60px;
-						}
 						padding: 5%;;
 						padding-top: 1%;
 						background: $color_div;
@@ -144,11 +111,9 @@ body {
 							color: $color_div;
 						}
 						p.date {
-							font-size: 20px;
 							text-align: right;
 						}
 						p.author {
-							font-size: 30px;
 							text-align: right;
 						}
 					}
@@ -188,7 +153,7 @@ body {
 		nav {
 			overflow: auto;
 			display: block;
-			font-size: 35px;
+			font-size: 25px;
 			margin: 0px;
 			a.go-to-index img {
 				margin-top: 5%;
@@ -255,7 +220,6 @@ body {
 
 		h1 {
 			text-align: center;
-			font-size: 50px;
 		}
 		
 		div.footer {
@@ -277,9 +241,6 @@ body {
 @media (min-width: 1100px) {
 	body {
 		div.page-contents {
-			th,td {
-				font-size: 40px;
-			}
 			nav.mobile-foldable,nav.mobile-foldable.show {
 				display: none;
 			}

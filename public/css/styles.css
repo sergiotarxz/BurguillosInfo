@@ -49,18 +49,6 @@ body {
       border-collapse: collapse;
       padding-right: 10px;
       margin: 0; }
-    body div.page-contents th, body div.page-contents td {
-      font-size: 15px; }
-    body div.page-contents b, body div.page-contents p, body div.page-contents li {
-      font-size: 40px; }
-    body div.page-contents h4 {
-      font-size: 40px; }
-    body div.page-contents h3 {
-      font-size: 47px; }
-    body div.page-contents h2 {
-      font-size: 53px; }
-    body div.page-contents h1 {
-      font-size: 60px; }
     body div.page-contents div.description {
       word-wrap: break-word;
       padding: 1%;
@@ -95,24 +83,12 @@ body {
             border: 3px solid black; }
             body div.page-contents div.description div.articles a article p, body div.page-contents div.description div.articles a article h4, body div.page-contents div.description div.articles a article h3, body div.page-contents div.description div.articles a article h2 {
               margin: 0px; }
-            body div.page-contents div.description div.articles a article b, body div.page-contents div.description div.articles a article p {
-              font-size: 38px; }
-            body div.page-contents div.description div.articles a article h4 {
-              font-size: 44px; }
-            body div.page-contents div.description div.articles a article h3 {
-              font-size: 47px; }
-            body div.page-contents div.description div.articles a article h2 {
-              font-size: 53px; }
-            body div.page-contents div.description div.articles a article h1 {
-              font-size: 60px; }
             body div.page-contents div.description div.articles a article:hover {
               background: blueviolet;
               color: #f2eb8c; }
             body div.page-contents div.description div.articles a article p.date {
-              font-size: 20px;
               text-align: right; }
             body div.page-contents div.description div.articles a article p.author {
-              font-size: 30px;
               text-align: right; }
       body div.page-contents div.description a.suscribe-category-rss {
         background: blueviolet;
@@ -141,7 +117,7 @@ body {
     body div.page-contents nav {
       overflow: auto;
       display: block;
-      font-size: 35px;
+      font-size: 25px;
       margin: 0px; }
       body div.page-contents nav a.go-to-index img {
         margin-top: 5%; }
@@ -186,8 +162,7 @@ body {
     body div.page-contents nav.mobile-foldable.show {
       display: block; }
     body div.page-contents h1 {
-      text-align: center;
-      font-size: 50px; }
+      text-align: center; }
     body div.page-contents div.footer p, body div.page-contents div.footer h1, body div.page-contents div.footer h2, body div.page-contents div.footer h3, body div.page-contents div.footer h4, body div.page-contents div.footer a {
       font-size: initial; }
     body div.page-contents div.footer a.suscribe-category-rss {
@@ -202,8 +177,6 @@ body {
     left: 5%;
     height: 100%;
     width: 90%; }
-    body div.page-contents th, body div.page-contents td {
-      font-size: 40px; }
     body div.page-contents nav.mobile-foldable, body div.page-contents nav.mobile-foldable.show {
       display: none; }
     body div.page-contents div.description {
