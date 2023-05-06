@@ -1,0 +1,668 @@
+<post>
+	<author>Burguillos.info</author>
+	<date>2023-05-05T22:21+00:00</date>
+	<title>Carta y Menú del bar-restaurante Durán en Burguillos.</title>
+	<ogdesc>Carta y Menú del bar-restaurante Durán en Burguillos.</ogdesc>
+    <img src="/img/duran.webp"/>
+	<category>donde-comer</category>
+    <attributes>
+        <attributes>hamburguesas</attributes>
+    </attributes>
+	<slug>bar-restaurante-duran</slug>
+	<content>
+        <img alt="Front door of 'Bar-Restaurante Durán'" style="border: solid 1px black;" src="/img/duran.webp"/>
+
+        <h2>Información de contacto para preparación de pedidos.</h2>
+
+        <p>El Bar-Restaurante Durán, ubicado en avenida de Andalucía número 4 ofrece una propuesta única con sus platos de calidad excepcional.</p>
+
+        <p>Os recomendamos probar los crepes de pollo, desde Burguillos.info los hemos probado y hemos quedado encantados por lo deliciosos que están.</p>
+
+        <p>El teléfono de contacto es <a href="tel:+34604404294">604 404 294</a>, se pueden pedir platos para recoger más adelante, pero por el momento no admiten pedidos a domicilio.</p>
+
+        <p>Si deseas una salsa a parte la tendrás por 50 centimos extra.</p>
+
+        <p>Procedemos a transcribir la carta a continuación:</p>
+
+        <h3>Aliños</h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio media ración</th>
+                <th>Precio ración</th>
+            </tr>
+            <tr>
+                <td>Ensaladilla</td>
+                <td>2.50€</td>
+                <td>5.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Aliño de pulpo</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Aliño de hueva</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Salpicón de marisco</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Coctel de marisco</td>
+                <td>---</td>
+                <td>3.50€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Ensalada mixta</td>
+                <td>---</td>
+                <td>6.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Ensalada cesar</td>
+                <td>---</td>
+                <td>7.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Ensalada de la casa</td>
+                <td>---</td>
+                <td>7.50€</td>
+                <td>---</td>
+            </tr>
+        </table>
+
+        <h3>Guisos</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Carrillada</td>
+                <td>4.00€</td>
+            </tr>
+        </table>
+
+        <h3>Hamburguesas</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio simple</th>
+                <th>Precio completa</th>
+            </tr>
+            <tr>
+                <td>Pollo</td>
+                <td>2.50€</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Buey</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Crujiente</td>
+                <td>---</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Del Durán</td>
+                <td>---</td>
+                <td>7.50€</td>
+            </tr>
+        </table>
+
+        <h3>Aperitivos</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio media ración</th>
+                <th>Precio ración</th>
+            </tr>
+            <tr>
+                <td>Croquetas de pollo</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Croquetas de jamón</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Croquetas de gambas</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Variado de croquetas</td>
+                <td>---</td>
+                <td>---</td>
+                <td>11.00€</td>
+            </tr>
+            <tr>
+                <td>Papas bravas</td>
+                <td>2.50€</td>
+                <td>5.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Papas de la casa</td>
+                <td>2.50€</td>
+                <td>5.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Papas alioli calientes</td>
+                <td>2.50€</td>
+                <td>5.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Gratinadas 4 quesos con bacon</td>
+                <td>---</td>
+                <td>---</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Gratinadas a la carbonara</td>
+                <td>---</td>
+                <td>---</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Lagrimitas de pollo</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Tocinito</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Alitas a la barbacoa</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Bartolito</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Queso frito</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Taleguillas de queso</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Pollo al cajun</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+                <td>12.00€</td>
+            </tr>
+        </table>
+
+        <h3>Montaditos</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Pollo o lomo</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Jamón y queso</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Melva con pimientos</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Gambas con alioli</td>
+                <td>3.00€</td>
+            </tr>
+        </table>
+
+        <h3>Carnes</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio media ración</th>
+                <th>Precio ración</th>
+            </tr>
+            <tr>
+                <td>Carne asada</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Pechuga</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Pollo crujiente</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+                <td>12.00€</td>
+            </tr>
+            <tr>
+                <td>Tosta de solomillo</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+                <td>12.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo con queso y cebolla caramelizada</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Mini serranito pollo/lomo o tortilla</td>
+                <td>---</td>
+                <td>3.50€</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Serranito pollo/lomo o tortilla</td>
+                <td>---</td>
+                <td>5.00€</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Berenjena rellena</td>
+                <td>---</td>
+                <td>---</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Solomillo de pavo</td>
+                <td>---</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Churrasco de cerdo</td>
+                <td>---</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Brocheta de solomillo</td>
+                <td>---</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Cachopo</td>
+                <td>---</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo mostaza crujiente</td>
+                <td>---</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td colspan="4">(Salsa a elejir) Alioli, mojo picón, verde, carbonara, roque y whisky</td>
+            </tr>
+        </table>
+
+        <h3>Pescados</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio media ración</th>
+                <th>Precio ración</th>
+            </tr>
+            <tr>
+                <td>Adobo</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Boquerones</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Chipirón plancha o frito</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Chocos fritos</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Brocheta de marisco</td>
+                <td>---</td>
+                <td>---</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Lomito de merluza</td>
+                <td>---</td>
+                <td>---</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Solomillo de atún</td>
+                <td>---</td>
+                <td>---</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Pez espada</td>
+                <td>---</td>
+                <td>---</td>
+                <td>10.00€</td>
+            </tr>
+            <tr>
+                <td>Merluza a la marinera</td>
+                <td>---</td>
+                <td>---</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Choco a la plancha</td>
+                <td>---</td>
+                <td>---</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Pulpo a la gallega</td>
+                <td>---</td>
+                <td>---</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Cazuela de gulas, chipirones, almejas y langostinos</td>
+                <td>---</td>
+                <td>---</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Gambas al ajillo</td>
+                <td>---</td>
+                <td>---</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Saquito de gambas</td>
+                <td>---</td>
+                <td>---</td>
+                <td>5.00€</td>
+            </tr>
+        </table>
+        
+        <h3>Panes</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Gambas y alioli</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Salmorejo y bacalao</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Gordi (Mojo Picón)</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Salmorejo y jamón</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Chicharrón de Cádiz y queso</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Queso de rulo, bacon y nueces</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Gulas y huevos de codorniz</td>
+                <td>8.00€</td>
+            </tr>
+        </table>
+
+        <h3>Revuelto</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Bacalao dorado</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Gulas y langostinos</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Morcilla de arroz y piñones</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Huevos rotos con gulas y langostinos</td>
+                <td>8.00€</td>
+            </tr>
+        </table>
+
+        <h3>Sugerencias</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Crepes de carrilla</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Crepes de pollo</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Champiñones rellenos</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Conos de langostinos</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Fideos tostados</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo mozárabe</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Rollitos serranos</td>
+                <td>3.50€/7.00€</td>
+            </tr>
+            <tr>
+                <td>Perrito del kiki</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Torre serrana</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Cazuela de chipirón, langostinos, gulas y almejas</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Queso frito, boquerones y salmorejo</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Patatas arrieras</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Tabla de queso frito</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Morcilla crocante</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Donut de queso</td>
+                <td>4.50€</td>
+            </tr>
+        </table>
+
+        <h3>Para los peques</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio media ración</th>
+                <th>Precio ración</th>
+            </tr>
+            <tr>
+                <td>Perritos</td>
+                <td>---</td>
+                <td>---</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Nuggets</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+                <td>10.50€</td>
+            </tr>
+            <tr>
+                <td>Mini hamburguesas</td>
+                <td>---</td>
+                <td>---</td>
+                <td>3.50€</td>
+            </tr>
+        </table>
+
+        <h3>Postres</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Coulant de chocolate</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Gofres</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Gofres + helado</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Gofres especial chocolate</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Crepes</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Crepes + helado</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Crepes especial chocolate</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Tartas caseras</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Brownei de galleta</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Torrija caramelizada</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Batidos helado (Sabores a elegir)</td>
+                <td>4.00€</td>
+            </tr>
+        </table>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
