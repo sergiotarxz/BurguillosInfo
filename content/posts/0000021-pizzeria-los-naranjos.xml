@@ -12,7 +12,7 @@
         <attribute>hamburguesas</attribute>
         <attribute>pizzerias</attribute>
     </attributes>
-	<content>
+    <content>
         <h2>Pizzería, Hamburguesería, Kebab, Pescado, Aliños.</h2>
         <img style="border: 1px black solid;" src="/img/pizzeria-los-naranjos.webp" alt="The front door of the pizzeria"/>
         <p>Hoy añadimos a este directorio un clásico en las cenas de los fines
@@ -489,7 +489,7 @@
 
         <p>Además de todo esto hacen <b>Paella y Arroz con bogavante</b> por encargo.</p>
 
-		<p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
 
-	</content>
+    </content>
 </post>

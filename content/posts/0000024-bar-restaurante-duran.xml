@@ -6,10 +6,10 @@
     <img src="/img/duran.webp"/>
 	<category>donde-comer</category>
     <attributes>
-        <attributes>hamburguesas</attributes>
+        <attribute>hamburguesas</attribute>
     </attributes>
-	<slug>bar-restaurante-duran</slug>
-	<content>
+    <slug>bar-restaurante-duran</slug>
+    <content>
         <img alt="Front door of 'Bar-Restaurante Durán'" style="border: solid 1px black;" src="/img/duran.webp"/>
 
         <h2>Información de contacto para preparación de pedidos.</h2>
