@@ -1,14 +1,14 @@
 <post>
-	<author>Burguillos.info</author>
-	<date>2023-05-05T22:21+00:00</date>
-	<title>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</title>
-	<ogdesc>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</ogdesc>
+    <author>Burguillos.info</author>
+    <date>2023-05-05T22:21+00:00</date>
+    <title>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</title>
+    <ogdesc>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</ogdesc>
     <img src="/img/duran.webp"/>
-	<category>donde-comer</category>
+    <category>donde-comer</category>
     <attributes>
         <attribute>hamburguesas</attribute>
     </attributes>
-    <slug>bar-restaurante-duran</slug>
+    <slug>cafe-bar-beluche</slug>
     <content>
         <img alt="Front door of 'Bar-Restaurante Durán - Centro de día'" style="border: solid 1px black;" src="/img/duran.webp"/>
 
@@ -351,7 +351,7 @@
                 <td>7.00€</td>
             </tr>
             <tr>
-                <td colspan="4">(Salsa a elejir) Alioli, mojo picón, verde, carbonara, roque y whisky</td>
+        <td colspan="4">(Salsa a elejir) Alioli, mojo picón, verde, carbonara, roque y whisky        </td>
             </tr>
         </table>
 
@@ -449,7 +449,7 @@
                 <td>5.00€</td>
             </tr>
         </table>
-        
+
         <h3>Panes</h3>
 
         <table>

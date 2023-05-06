@@ -1,0 +1,322 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-05-06Td15:33+00:00</date>
+    <title>Carta y Menú del Café - Bar Beluche en Burguillos.</title>
+    <ogdesc>Carta y Menú del Café - Bar Beluche en Burguillos.</ogdesc>
+    <img src="/img/beluche.webp"/>
+    <category>donde-comer</category>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
+    </attributes>
+    <slug>cafe-bar-beluche</slug>
+    <content>
+        <img alt="Front door of 'Café-Bar Beluche'" style="border: solid 1px black;" src="/img/beluche.webp"/>
+
+        <h2>Información de contacto para preparación de pedidos y envío a domicilio.</h2>
+
+        <p>El Café - Bar Beluche es uno de los lugares favoritos de los habitantes de Burguillos para comer o simplemente tomar un refresco o un café.</p>
+
+        <p>Su ubicación en calle Albahaca número 13 es inmejorable, ofreciendo terrazas a parte de mesas en el interior.</p>
+        <p>Los teléfonos de contacto son <a href="tel:+34694200713">694 200 713</a> y <a href="tel:+34691492054">691 492 054</a>, puedes usarlos para reservar, pedir comida a domicilio o pedir que te preparen platos para llevar.</p>
+
+        <p>Procedemos a transcribir la carta a continuación:</p>
+
+        <h3>Ensaladas</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Mixta</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>César</td>
+                <td>6.50€</td>
+            </tr>
+        </table>
+        
+
+        <h3>Revueltos</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Gula langostinos</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Bacalao dorado</td>
+                <td>7.50€</td>
+            </tr>
+        </table>
+
+        <h3>Para compartir</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Papas bravas</td>
+                <td>3.00€</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Papas de mi prima</td>
+                <td>3.50€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Papas arrieras</td>
+                <td>3.80€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Bartolitos. (Langostinos con bacon)</td>
+                <td>3.80€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Queso rulo con bacon, nueces y miel de caña</td>
+                <td>3.80€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Morcilla crocanti</td>
+                <td>3.50€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Muss de pato</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Duo de rulo y muss de pato</td>
+                <td>---</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Talegitas de queso</td>
+                <td>3.50€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Champiñones con alioli y jamón</td>
+                <td>3.50€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Fideos tostados</td>
+                <td>---</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Variado de croquetas</td>
+                <td>---</td>
+                <td>11.00€</td>
+            </tr>
+        </table>
+
+        <h3>Rico rico</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Pastel de berenjenas</td>
+                <td>---</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Timbal de arroz con chipirones y alioli</td>
+                <td>4.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Gambas al ajillo</td>
+                <td>---</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Flauta de jamón york y queso</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Saquitos de gambas y salsa de mango</td>
+                <td>---</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Medallones de solomillo. (Roque, whisky, mojo)</td>
+                <td>3.50€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Solomillo rulo de queso y miel de caña</td>
+                <td>4.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Carrillada ibérica</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Pollo bechamel</td>
+                <td>3.60€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Pollo kentucky</td>
+                <td>---</td>
+                <td>3.50€</td>
+            </tr>
+        </table>
+
+        <h3>Pescados</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Chipirones</td>
+                <td>3.90€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Pez espada</td>
+                <td>---</td>
+                <td>12.00€</td>
+            </tr>
+            <tr>
+                <td>Merluza confitada</td>
+                <td>---</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Bacalao confitado</td>
+                <td>---</td>
+                <td>9.00€</td>
+            </tr>
+        </table>
+
+        <h3>Carnes</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Solomillo ibérico</td>
+                <td>---</td>
+                <td>12.00€</td>
+            </tr>
+            <tr>
+                <td>Presa ibérica</td>
+                <td>---</td>
+                <td>14.00€</td>
+            </tr>
+            <tr>
+                <td>Pluma ibérica</td>
+                <td>---</td>
+                <td>13.00€</td>
+            </tr>
+            <tr>
+                <td>Presa con mostaza</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo de pavo</td>
+                <td>---</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Medallones de solomillo</td>
+                <td>3.50€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Hamburguesa de buey</td>
+                <td>---</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Abanico ibérico</td>
+                <td>---</td>
+                <td>11.00€</td>
+            </tr>
+            <tr>
+                <td>Mini hamburguesa</td>
+                <td>---</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Montadito de pollo o lomo</td>
+                <td>---</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Mini de pollo o lomo</td>
+                <td>---</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Serranito</td>
+                <td>---</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Montadito de gambas con alioli</td>
+                <td>---</td>
+                <td>3.20€</td>
+            </tr>
+        </table>
+
+        <h3>Postres</h3>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Gofres con nata y chocolate</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Tortitas americanas</td>
+                <td>3.80€</td>
+            </tr>
+            <tr>
+                <td>Tartas (Porción)</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Coulant con helado de vainilla</td>
+                <td>4.00€</td>
+            </tr>
+        </table>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
