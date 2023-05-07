@@ -1,5 +1,5 @@
 "use strict";
-import tablesort from 'tablesort';
+import Tablesort from 'tablesort';
 require('tablesort/src/sorts/tablesort.number');
 
 window.onload = () => {
@@ -23,6 +23,6 @@ window.onload = () => {
                 }
             }
         }
-        tablesort(table)
+        new Tablesort(table)
     }
 };
