@@ -1,5 +1,6 @@
 "use strict";
 import tablesort from 'tablesort';
+require('tablesort/src/sorts/tablesort.number');
 
 window.onload = () => {
     const menu_expand = document.querySelector('a.menu-expand');
