@@ -12,7 +12,7 @@
     </attributes>
     <slug>pizzeria-pepin</slug>
     <content>
-        <img alt="Front door of 'Pizzería - Hamburguesería - Baguetería Pepín'" style="border: solid 1px black;" src="/img/pepin.webp"/>
+        <img width="50%" alt="Front door of 'Pizzería - Hamburguesería - Baguetería Pepín'" style="border: solid 1px black;" src="/img/pepin.webp"/>
 
         <h2>Información de contacto para preparación de pedidos y envío a domicilio.</h2>
 
