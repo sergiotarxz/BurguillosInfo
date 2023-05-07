@@ -47,7 +47,7 @@ body {
       width: 100%;
       table-layout: fixed; }
       body div.page-contents table td, body div.page-contents table th {
-        font-size: 9px; }
+        font-size: 12px; }
     body div.page-contents th, body div.page-contents td {
       border: 3px solid blueviolet;
       border-collapse: collapse;
