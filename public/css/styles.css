@@ -68,17 +68,31 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap; }
-        body div.page-contents div.description div.articles img {
-          border: solid 1px black; }
+        body div.page-contents div.description div.articles div.image-container {
+          margin-left: 2.5%;
+          margin-top: 10px;
+          height: 95%;
+          width: 95%;
+          display: flex;
+          min-height: 130px;
+          justify-content: center;
+          align-items: center; }
+          body div.page-contents div.description div.articles div.image-container img {
+            max-height: 100%;
+            max-width: 100%;
+            min-width: 277px;
+            border: solid 1px black; }
         body div.page-contents div.description div.articles a {
+          min-height: 90%;
           width: 100%;
           display: block;
           text-decoration: none;
           text-overflow: ellipsis;
-          margin-bottom: 10px; }
+          margin-bottom: 30px; }
           body div.page-contents div.description div.articles a article {
             word-wrap: break-word;
             width: 90%;
+            height: 90%;
             padding: 5%;
             padding-top: 1%;
             background: #f2eb8c;
@@ -87,6 +101,13 @@ body {
             border: 3px solid black; }
             body div.page-contents div.description div.articles a article p, body div.page-contents div.description div.articles a article h4, body div.page-contents div.description div.articles a article h3, body div.page-contents div.description div.articles a article h2 {
               margin: 0px; }
+            body div.page-contents div.description div.articles a article p {
+              font-size: 0.9rem; }
+            body div.page-contents div.description div.articles a article div.article-up-part {
+              height: 12em; }
+            body div.page-contents div.description div.articles a article div.article-down-part {
+              margin-top: 2em;
+              height: 9em; }
             body div.page-contents div.description div.articles a article:hover {
               background: blueviolet;
               color: #f2eb8c; }
@@ -201,9 +222,16 @@ body {
     body div.page-contents nav.mobile-shortcuts {
       display: none; } }
 
-@media (min-width: 1222px) {
+@media (min-width: 694px) {
   body div.page-contents div.description {
     margin-top: auto; }
     body div.page-contents div.description div.articles a {
       width: 45%;
       margin-left: 5%; } }
+
+@media (min-width: 1333px) {
+  body div.page-contents div.description {
+    margin-top: auto; }
+    body div.page-contents div.description div.articles a {
+      width: 30%;
+      margin-left: 3%; } }

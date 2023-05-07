@@ -9,17 +9,22 @@
         <article><%
     my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
     $date_article->set_time_zone('Europe/Madrid');
-            %><p class="date"><%= ''.$date_article %></p><%
+            %><div class="article-up-part">
+                <p class="date"><%= ''.$date_article %></p><%
     if (defined $post->{image}) {
-            %><img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/><%
-           }
-            %><h3><%=$post->{title}%></h3><%
+        %><div class="image-container">
+                <img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/>
+          </div><%
+    }
+            %></div><div class="article-down-part">
+                <h3><%=$post->{title}%></h3><%
     my $xml = Mojo::DOM->new($post->{content});
     my $text = $xml->all_text;
     if (length($text) > 120) {
         $text = substr($text, 0, 100).'...';
     }
-            %><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p></article>
+                %><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p>
+            </div></article>
     </a>
 %	}
 </div>
