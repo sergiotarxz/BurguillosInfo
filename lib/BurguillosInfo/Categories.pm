@@ -11,6 +11,8 @@ use Const::Fast;
 use Mojo::DOM;
 use Path::Tiny;
 
+use BurguillosInfo::Preview;
+
 const my $CURRENT_FILE => __FILE__;
 const my $CATEGORIES_DIR =>
   path($CURRENT_FILE)->parent->parent->parent->child('content/categories');
@@ -119,5 +121,11 @@ sub _AvoidGrandChildCategories($self, $categories) {
             die "$category_slug category is grandchild of $categories->{$parent}{parent}) category and this is not allowed.";
         }
     }
+}
+
+sub PreviewOg($self, $category) {
+    my $title = $category->{title};
+    my $description = $category->{description};
+    return BurguillosInfo::Preview->Generate($title, $description, undef);
 }
 1;

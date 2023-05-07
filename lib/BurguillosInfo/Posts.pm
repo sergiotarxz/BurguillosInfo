@@ -17,18 +17,13 @@ use Mojo::DOM;
 use Path::Tiny;
 use DateTime::Format::ISO8601;
 use DateTime;
-use SVG;
-use Capture::Tiny qw/capture/;
+
+use BurguillosInfo::Preview;
 
 const my $CURRENT_FILE    => __FILE__;
 const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
 const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
 const my $POSTS_DIR       => $ROOT_PROJECT->child('content/posts');
-const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos.webp');
-const my $SVG_WIDTH       => 1200;
-const my $SVG_HEIGHT      => 627;
-const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1000;
-const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 200;
 
 my $cached_posts_by_category;
 my $cached_posts_by_slug;
@@ -187,169 +182,15 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
     return [@$posts];
 }
 
-sub PostPreviewOg {
+sub PreviewOg {
     my $self    = shift;
     my $post    = shift;
     my $title   = $post->{title};
     my $content = $post->{content};
-    my $dom     = Mojo::DOM->new($content);
-    $content = $dom->all_text;
-
-    my @content_divided_in_lines = split /\n/, $content;
-    my @new_content;
-    my $n_chars_per_line = 70;
-
-    for my $line (@content_divided_in_lines) {
-        if ( length($line) <= $n_chars_per_line ) {
-            push @new_content, $line;
-            next;
-        }
-        my $last_word = '';
-        while ( $line =~ /(.{1,${n_chars_per_line}})/g ) {
-            my $new_line = $last_word . $1;
-            $new_line =~ s/(\S*)$//;
-            $last_word = $1;
-            push @new_content, $new_line;
-        }
-        if ($last_word) {
-            $new_content[$#new_content] .= $last_word;
-        }
-    }
-
-    my $svg =
-      $self->_GenerateSVGPostPreview( $title, \@new_content, $post->{image} );
-    my ( $stdout, $stderr ) = capture {
-        open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-        binmode $fh, 'utf8';
-        print $fh $svg;
-        close $fh;
-    };
-    say STDERR $stderr;
-    return $stdout;
+    my $image_file = $post->{image};
+    return BurguillosInfo::Preview->Generate($title, $content, $image_file);
 }
 
-sub _AttachImageSVG {
-    my $self  = shift;
-    my $svg   = shift;
-    my $image = shift;
-    $image = $PUBLIC_DIR->child( './' . $image );
-    path($image = $self->_toPng($image));
-    my ( $stdout, $stderr, $error ) = capture {
-        system qw/identify -format "%wx%h"/, $image;
-    };
-    if ($error) {
-        warn "$image not recognized by identify.";
-        return;
-    }
-    my ( $width, $height ) = $stdout =~ /^"(\d+)x(\d+)"$/;
-    if ( $height > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT ) {
-        $width /= $height / $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
-        $width  = int($width);
-        $height = $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
-    }
 
-    if ( $width > $SVG_EMBEDDED_IMAGE_MAX_WIDTH ) {
-        $height /= $width / $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
-        $height = int($height);
-        $width  = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
-    }
-
-    my $x        = int( ( $SVG_WIDTH / 2 ) - ( $width / 2 ) );
-    my $y        = 90;
-    my ($output) = capture {
-        system qw/file --mime-type/, $image;
-    };
-    my ($format) = $output =~ /(\S+)$/;
-    $svg->image(
-        x      => $x,
-        y      => $y,
-        width  => $width,
-        height => $height,
-        -href  => "data:$format;base64," . encode_base64( $image->slurp )
-    );
-    return $y + $height + 50;
-}
-
-sub _toPng($self, $image) {
-    if ($image =~ /\.\w+$/) {
-        my $new_image = $image =~ s/\.\w+$/.generated.png/r;
-        say $new_image;
-        if (!-e $new_image) {
-            system 'convert', "$image", "$new_image";
-        }
-        $image = $new_image;
-    }
-    return path($image);
-}
-
-sub _GenerateSVGPostPreview {
-    my $self    = shift;
-    my $title   = shift;
-    my $content = shift;
-    my $image   = shift;
-    my @content = @$content;
-    my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
-    $svg->rect(
-        x      => 0,
-        y      => 0,
-        width  => 1200,
-        height => 50,
-        style  => { fill => 'blueviolet' }
-    );
-    $svg->rect(
-        x      => 0,
-        y      => 50,
-        width  => 1200,
-        height => 627,
-        style  => { fill => '#F8F8FF' }
-    );
-
-    my $group = $svg->group(
-        id    => 'group',
-        style => {
-            font        => 'Arial',
-            'font-size' => 30,
-        }
-    );
-
-    my $burguillos_logo_png = path($self->_toPng($BURGUILLOS_LOGO));
-    say ''.$burguillos_logo_png;
-    $group->image(
-        x      => 10,
-        y      => 5,
-        width  => 40,
-        height => 40,
-        -href  => 'data:image/png;base64,'
-          . encode_base64( $burguillos_logo_png->slurp )
-    );
-    $group->text(
-        x     => 60,
-        y     => 40,
-        style => { 'font-size' => 50, fill => '#f2eb8c' }
-    )->cdata('Burguillos.info');
-    my $new_y;
-
-    if ( defined $image ) {
-        $new_y = $self->_AttachImageSVG( $group, $image );
-    }
-    $new_y //= 100;
-    $group->text(
-        x     => 10,
-        y     => $new_y,
-        style => { 'font-size' => 50 }
-    )->cdata($title);
-
-    my $n = 0;
-    for my $line (@content) {
-        $group->text(
-            x     => 10,
-            y     => $new_y + 40 + ( 30 * $n ),
-            style => { 'font-size' => 38 }
-        )->cdata($line);
-        $n++;
-    }
-    path($ROOT_PROJECT)->child('a.svg')->spew_utf8( $svg->xmlify );
-    return $svg->xmlify;
-}
 
 1;
