@@ -9,9 +9,9 @@
 	<table>
 		<tr>
 			<th>Path</th>
-			<th>Visitors 24h</th>
-			<th>Visitors week</th>
-			<th>Visitors month</th>
+			<th data-sort-method="number">Visitors 24h</th>
+			<th data-sort-method="number">Visitors week</th>
+			<th data-sort-method="number">Visitors month</th>
 		</tr>
 % for my $row (@$tracking_by_url) {
 		<tr>
