@@ -13,7 +13,7 @@ window.onload = () => {
     }
 
     for (const table of tables) {
-        const header = document.querySelector('tr');
+        const header = table.querySelector('tr');
         if (header !== null) {
             header.setAttribute('data-sort-method', 'none')
             for (const th of header.querySelectorAll('th')) {
