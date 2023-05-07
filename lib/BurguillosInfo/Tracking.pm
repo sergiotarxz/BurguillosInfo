@@ -101,10 +101,11 @@ EOF
     return $data;
 }
 
+my $GOOGLE_REFERER_REGEX = "'^https?://(?:www\\.)?google\\.\\w'";
 my $GOOGLE_SELECT = "$SELECT_GLOBAL
 where requests.path = paths.path 
     and requests.referer IS NOT NULL
-    and requests.referer ~* '^https?://(?:www\\.)?google\\.\\w'
+    and requests.referer ~* $GOOGLE_REFERER_REGEX
     and date > NOW()";
 
 sub get_google_data {
@@ -135,8 +136,11 @@ sub get_google_data {
     (
         $GOOGLE_SELECT - interval '1 month'
     ) as unique_ips_last_month
-FROM paths 
-WHERE paths.last_seen > NOW() - INTERVAL '1 month';
+FROM paths right join requests on paths.path = requests.path 
+WHERE paths.last_seen > NOW() - INTERVAL '1 month'
+    and requests.referer ~* $GOOGLE_REFERER_REGEX
+GROUP BY
+    paths.path;
 EOF
     return $data;
 }
