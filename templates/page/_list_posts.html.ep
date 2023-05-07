@@ -16,7 +16,7 @@
                 <img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/>
           </div><%
     }
-            %></div><div class="article-down-part">
+            %></div><div class="article-down-part"><div>
                 <h3><%=$post->{title}%></h3><%
     my $xml = Mojo::DOM->new($post->{content});
     my $text = $xml->all_text;
@@ -24,7 +24,7 @@
         $text = substr($text, 0, 100).'...';
     }
                 %><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p>
-            </div></article>
+            </div></div></article>
     </a>
 %	}
 </div>

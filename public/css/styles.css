@@ -107,7 +107,10 @@ body {
               height: 12em; }
             body div.page-contents div.description div.articles a article div.article-down-part {
               margin-top: 2em;
-              height: 9em; }
+              height: 9em;
+              display: flex;
+              align-items: end;
+              padding-bottom: 2em; }
             body div.page-contents div.description div.articles a article:hover {
               background: blueviolet;
               color: #f2eb8c; }

@@ -152,6 +152,9 @@ body {
             div.article-down-part {
                 margin-top: 2em; 
                 height: 9em;
+                display: flex;
+                align-items: end;
+                padding-bottom: 2em;
             }
 
             padding: 5%;
