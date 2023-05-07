@@ -139,6 +139,7 @@ sub get_google_data {
 FROM paths right join requests on paths.path = requests.path 
 WHERE paths.last_seen > NOW() - INTERVAL '1 month'
     and requests.referer ~* $GOOGLE_REFERER_REGEX
+    and requests.date > NOW() - INTERVAL '1 month'
 GROUP BY
     paths.path;
 EOF
