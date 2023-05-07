@@ -17,7 +17,9 @@ window.onload = () => {
         if (header !== null) {
             header.setAttribute('data-sort-method', 'none')
             for (const th of header.querySelectorAll('th')) {
-                th.setAttribute('data-sort-method', 'thead')
+                if (th.getAttribute('data-sort-method') == null) {
+                    th.setAttribute('data-sort-method', 'thead')
+                }
             }
         }
         tablesort(table)
