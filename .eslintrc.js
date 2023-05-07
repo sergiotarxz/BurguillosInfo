@@ -1,0 +1,26 @@
+module.exports = {
+    env: {
+        browser: true,
+        es2021: true
+    },
+    overrides: [
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: 'tsconfig.json'
+    },
+    plugins: [ ],
+    rules: {
+        indent: ['error', 4, { SwitchCase: 1 }],
+    },
+    settings: {
+        'import/resolver': {
+            typescript: {
+                project: [
+                    'tsconfig.json'
+                ]
+            }
+        }
+    }
+}

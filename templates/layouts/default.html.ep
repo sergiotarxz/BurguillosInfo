@@ -9,7 +9,7 @@
 % my $base_url = config 'base_url';
 <html lang="es">
   <head>
-	  <script src="/js/index.js"></script>
+      <script src="/js/bundle.js"></script>
 % my $css_version = config 'css_version';
       <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
 	  <title><%= title %></title>
