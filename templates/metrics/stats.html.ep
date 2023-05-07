@@ -32,4 +32,30 @@
 		</tr>
 %}
 	</table>
+        <h3>Google data.</h3>
+	<table>
+		<tr>
+			<th>Path</th>
+			<th data-sort-method="number">Visitors 1h</th>
+			<th data-sort-method="number">Visitors 3h</th>
+			<th data-sort-method="number">Visitors 6h</th>
+			<th data-sort-method="number">Visitors 12h</th>
+			<th data-sort-method="number">Visitors 24h</th>
+			<th data-sort-method="number">Visitors week</th>
+			<th data-sort-method="number">Visitors month</th>
+		</tr>
+% for my $row (@$google_data) {
+		<tr>
+			<td><%="${base_url}$row->{path}"%></td>
+			<td><%=$row->{unique_ips_last_1_hour}%></td>
+			<td><%=$row->{unique_ips_last_3_hours}%></td>
+			<td><%=$row->{unique_ips_last_6_hours}%></td>
+			<td><%=$row->{unique_ips_last_12_hours}%></td>
+			<td><%=$row->{unique_ips_last_24_hours}%></td>
+			<td><%=$row->{unique_ips_last_week}%></td>
+			<td><%=$row->{unique_ips_last_month}%></td>
+		</tr>
+%}
+	</table>
+
 </div>

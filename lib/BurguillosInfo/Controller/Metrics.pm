@@ -37,8 +37,10 @@ sub stats {
 	}
 	my $data = $tracking->get_global_data($self);
 	my $data_per_url = $tracking->get_data_for_urls($self);
+        my $google_data = $tracking->get_google_data($self);
         $self->_filter_data_per_url($data_per_url);
-	$self->render(tracking_data => $data, tracking_by_url => $data_per_url);
+        $self->_filter_data_per_url($google_data);
+	$self->render(tracking_data => $data, tracking_by_url => $data_per_url, google_data => $google_data);
 }
 
 sub _filter_data_per_url($self, $data_per_url) {
