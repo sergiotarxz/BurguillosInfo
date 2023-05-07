@@ -1,0 +1,409 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-05-06T22:14+00:00</date>
+    <title>Carta y Menú de la Pizzería - Hamburguesería - Baguetería Pepín</title>
+    <ogdesc>Carta y Menú de la Pizzería - Hamburguesería - Baguetería Pepín</ogdesc>
+    <img src="/img/pepin.webp"/>
+    <category>donde-comer</category>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+        <attribute>pizzerias</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
+    </attributes>
+    <slug>pizzeria-pepin</slug>
+    <content>
+        <img alt="Front door of 'Pizzería - Hamburguesería - Baguetería Pepín'" style="border: solid 1px black;" src="/img/pepin.webp"/>
+
+        <h2>Información de contacto para preparación de pedidos y envío a domicilio.</h2>
+
+        <p>La Pizzería - Hamburguesería - Baguetería Pepín.- Ubicada en calle Los Álamos número 13.- Es el lugar perfecto para una comida en familia o con amigos, además tienes la posibilidad de realizar tu pedido a domicilio.</p>
+
+        <p>El teléfono de contacto para los pedidos a domicilio es <a href="tel:+34692149337">692 149 337</a>.</p>
+
+        <p>Procedemos a transcribir la carta a continuación:</p>
+
+        <h3>Pizzas.</h3>
+
+        <p>Por el precio indicado en la carta puedes pedir una pizza con dos ingredientes, a partir del tercero el precio se incrementa de esta forma:</p>
+        
+        <h4>Precio ingredientes.</h4>
+
+        <table>
+            <tr>
+                <th>Tipo de pizza</th>
+                <th>Incremento de precio por ingrediente extra</th>
+            </tr>
+            <tr>
+                <td>Pequeña</td>
+                <td>0.50€</td>
+            </tr>
+            <tr>
+                <td>Mediana</td>
+                <td>0.60€</td>
+            </tr>
+            <tr>
+                <td>Grande</td>
+                <td>0.70€</td>
+            </tr>
+        </table>
+
+        <h4>Tabla de precios pizzas.</h4>
+
+        <p>Las siguientes ofertas aplican al precio de las pizzas, si pides dos medianas te sale por 10€, mientras que si pides dos grandes por 17€. Ademas una pizza grande con 6 o más ingredientes te permite tener una pizza extra pequeña de forma gratuíta.</p>
+
+        <table>
+            <tr>
+                <th>Tipo de pizza</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Pequeña</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Mediana</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Grande</td>
+                <td>9.00€</td>
+            </tr>
+        </table>
+
+        <h4>Ingredientes a escoger.</h4>
+
+        <ul>
+            <li>Jamón york.</li>
+            <li>Roquefort.</li>
+            <li>Chorizo.</li>
+            <li>Salchicha.</li>
+            <li>Gambas.</li>
+            <li>Aceitunas.</li>
+            <li>Jamón.</li>
+            <li>Cebolla.</li>
+            <li>Bacon.</li>
+            <li>Maíz.</li>
+            <li>Piña.</li>
+            <li>Pimiento rojo.</li>
+            <li>Pimiento verde.</li>
+            <li>Pepinillo.</li>
+            <li>Huevo.</li>
+            <li>Champiñones.</li>
+            <li>Anchoas.</li>
+            <li>Atún.</li>
+            <li>Carne.</li>
+            <li>Salsa barbacoa.</li>
+            <li>Salsa carbonara.</li>
+            <li>Ternera.</li>
+            <li>Peperoni.</li>
+            <li>Cheddar.</li>
+        </ul>
+
+        <h3>Hamburguesas.</h3>
+
+        <h4>Hamburguesas sin menú.</h4>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Ingredientes</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Hamburguesa de Buey</td>
+                <td>---</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td>Carne y queso</td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Sabrosa</td>
+                <td>Carne, bacon, cebolla y queso</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Súper</td>
+                <td>Dos carnes, lechuga, tomate, cebolla y queso</td>
+                <td>2.80€</td>
+            </tr>
+            <tr>
+                <td>Completa</td>
+                <td>Carne, huevo, lechuga, tomate, cebolla y queso</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Dipo</td>
+                <td>Filete de pollo, lechuga, tomate, cebolla y queso</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Jomi</td>
+                <td>Carne, cochinito, tomate, pepinillo y queso</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Crujiente de pollo</td>
+                <td>---</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Perrito caliente</td>
+                <td>---</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Nuggets</td>
+                <td>---</td>
+                <td>2.80€</td>
+            </tr>
+        </table>
+
+        <h4>Hamburguesas con menú.</h4>
+
+        <p>Todos los menús incluyen patatas y refresco.</p>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Mini menú (Hamburguesa Normal)</td>
+                <td>3.60€</td>
+            </tr>
+            <tr>
+                <td>Mega menú (Hamburguesa Completa)</td>
+                <td>4.60€</td>
+            </tr>
+            <tr>
+                <td>Menú Sabrosa</td>
+                <td>4.60€</td>
+            </tr>
+            <tr>
+                <td>Menú Dipo</td>
+                <td>4.60€</td>
+            </tr>
+            <tr>
+                <td>Menú Jomi</td>
+                <td>4.60€</td>
+            </tr>
+            <tr>
+                <td>Menú Nuggets</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Menú Perrito</td>
+                <td>4.60€</td>
+            </tr>
+            <tr>
+                <td>Super Menú</td>
+                <td>4.90€</td>
+            </tr>
+        </table>
+
+        <h3>Baguettes.</h3>
+
+        <h4>Baguettes sin menú.</h4>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Cochinito</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Tortilla de patatas</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Bacon y queso</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Jamón y queso</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Tortilla francesa</td>
+                <td>2.80€</td>
+            </tr>
+            <tr>
+                <td>Pollo y lechuga</td>
+                <td>3.70€</td>
+            </tr>
+            <tr>
+                <td>Vegetal</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Filete de lomo</td>
+                <td>3.70€</td>
+            </tr>
+            <tr>
+                <td>Chorizo y roquefort</td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Atún y pimiento</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Pollo y vegetal</td>
+                <td>3.90€</td>
+            </tr>
+        </table>
+
+        <h4>Baguettes con menú.</h4>
+
+        <p>Los menús incluyen patatas y refresco.</p>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Cochinito</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Bacon</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Vegetal</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Atún y pimientos</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Chorizo y roquefort</td>
+                <td>4.30€</td>
+            </tr>
+            <tr>
+                <td>Pollo y lechuga</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Pollo y vegetal</td>
+                <td>5.60€</td>
+            </tr>
+            <tr>
+                <td>Tortilla de patatas</td>
+                <td>4.80€</td>
+            </tr>
+            <tr>
+                <td>Tortilla francesa</td>
+                <td>4.70€</td>
+            </tr>
+            <tr>
+                <td>Lomo</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Jamón y queso</td>
+                <td>4.80€</td>
+            </tr>
+        </table>
+
+        <h3>Complementos</h3>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Palomitas de queso</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Croquetas de jamón</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Churrasco de cerdo</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Pechuga de pollo</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Cartucho de patatas fritas pequeño</td>
+                <td>1.00€</td>
+            </tr>
+            <tr>
+                <td>Cartucho de patatas fritas grande</td>
+                <td>2.00€</td>
+            </tr>
+            <tr>
+                <td>Serranito de lomo o pollo</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Patatas bravas</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Montadito de pollo</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Patatas gratinadas con bacon y cheddar</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Salsa a elegir (Mojo picón, alioli, barbacoa)</td>
+                <td>0.40€</td>
+            </tr>
+        </table>
+
+        <h3>Ensaladas</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Ingredientes</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Mixta</td>
+                <td>Lechuga, tomate, cebolla y huevo</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Especial</td>
+                <td>Lechuga, tomate, huevo, atún, cebolla, jamón york y piña</td>
+                <td>4.00€</td>
+            </tr>
+        </table>
+
+        <h3>Bebidas</h3>
+
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Cerveza o zumo</td>
+                <td>1.00€</td>
+            </tr>
+            <tr>
+                <td>Refresco</td>
+                <td>1.20€</td>
+            </tr>
+        </table>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
