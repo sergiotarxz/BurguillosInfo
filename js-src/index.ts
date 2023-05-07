@@ -1,5 +1,6 @@
 "use strict";
 import Tablesort from 'tablesort';
+window.Tablesort = require('tablesort');
 require('tablesort/src/sorts/tablesort.number');
 
 window.onload = () => {
