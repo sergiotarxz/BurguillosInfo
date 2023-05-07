@@ -9,7 +9,7 @@ use Data::Dumper;
 
 use BurguillosInfo::Tracking;
 
-use Mojo::Base 'Mojolicious::Controller';
+use Mojo::Base 'Mojolicious::Controller', '-signatures';
 
 use DateTime::Format::ISO8601;
 use DateTime::Format::Mail;
@@ -37,7 +37,25 @@ sub stats {
 	}
 	my $data = $tracking->get_global_data($self);
 	my $data_per_url = $tracking->get_data_for_urls($self);
+        $self->_filter_data_per_url($data_per_url);
 	$self->render(tracking_data => $data, tracking_by_url => $data_per_url);
+}
+
+sub _filter_data_per_url($self, $data_per_url) {
+    my $filter = $self->param('filter');
+    if (!defined $filter) {
+        return;
+    }
+    my @new_data_per_url; 
+    if ($filter eq 'remove-extensions') {
+        for my $url (@$data_per_url) {
+            if ($url->{path} =~ /\.\w+$/) {
+                next;
+            }
+            push @new_data_per_url, $url;
+        }
+    }
+    @$data_per_url = @new_data_per_url;
 }
 
 sub submit_login {
