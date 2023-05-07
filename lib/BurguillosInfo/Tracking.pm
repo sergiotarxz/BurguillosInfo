@@ -106,6 +106,22 @@ EOF
 SELECT paths.path,
 	(
 		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '1 hour'
+	) as unique_ips_last_1_hour,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '3 hour'
+	) as unique_ips_last_3_hours,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '6 hour'
+	) as unique_ips_last_6_hours,
+	(
+		$SELECT_GLOBAL
+		where requests.path = paths.path and date > NOW() - interval '12 hour'
+	) as unique_ips_last_12_hours,
+	(
+		$SELECT_GLOBAL
 		where requests.path = paths.path and date > NOW() - interval '1 day'
 	) as unique_ips_last_24_hours,
 	(
