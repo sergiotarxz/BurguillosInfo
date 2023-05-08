@@ -3,7 +3,7 @@
 % my $current_category_slug = stash 'current_category_slug';
 % my $description_og = stash 'description_og';
 % $description_og =~ s/\s+/ /g;
-% $description_og = substr $description_og, 0, 300;
+% $description_og = substr $description_og, 0, 160;
 % $description_og =~ s/\s\S+$//;
 % $description_og.='...';
 % my $base_url = config 'base_url';
