@@ -54,12 +54,12 @@ body {
       padding-right: 10px;
       margin: 0; }
     body div.page-contents div.description {
+      margin-top: 60px;
       word-wrap: break-word;
       padding: 1%;
       margin-left: 3%;
       margin-right: 3%;
-      margin-bottom: 1%;
-      margin-top: 10%; }
+      margin-bottom: 1%; }
       body div.page-contents div.description input {
         display: block; }
       body div.page-contents div.description div.suscribirse-rss img {
@@ -178,9 +178,9 @@ body {
       height: 60px; }
       body div.page-contents nav.mobile-shortcuts a {
         height: 100%;
-        width: 16.6666666667%; }
+        width: 16.66667%; }
       body div.page-contents nav.mobile-shortcuts div {
-        width: 66.6666666667%; }
+        width: 66.66667%; }
     body div.page-contents nav.mobile-foldable {
       display: none;
       background: blueviolet;
@@ -204,13 +204,11 @@ body {
     font-size: 20px; } }
 
 @media (min-width: 694px) {
-  body div.page-contents div.description {
-    margin-top: auto; }
-    body div.page-contents div.description div.articles a {
-      width: 45%;
-      margin-left: 5%; }
-      body div.page-contents div.description div.articles a:nth-child(2n+1) {
-        margin-left: 0%; } }
+  body div.page-contents div.description div.articles a {
+    width: 45%;
+    margin-left: 5%; }
+    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+      margin-left: 0%; } }
 
 @media (min-width: 1100px) {
   body div.page-contents {
@@ -222,8 +220,7 @@ body {
       display: none; }
     body div.page-contents div.description {
       margin-left: 10%;
-      margin-right: 10%;
-      margin-top: auto; }
+      margin-right: 10%; }
     body div.page-contents nav.desktop {
       display: block;
       height: auto; }
@@ -235,12 +232,11 @@ body {
       display: none; } }
 
 @media (min-width: 1333px) {
-  body div.page-contents div.description {
-    margin-top: auto; }
-    body div.page-contents div.description div.articles a {
-      width: 30%;
+  body div.page-contents div.description div.articles a {
+    width: 30%;
+    margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(2n+1) {
       margin-left: 3%; }
-      body div.page-contents div.description div.articles a:nth-child(2n+1) {
-        margin-left: 3%; }
-      body div.page-contents div.description div.articles a:nth-child(3n+1) {
-        margin-left: 0%; } }
+    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+      margin-left: 0%; } }
+

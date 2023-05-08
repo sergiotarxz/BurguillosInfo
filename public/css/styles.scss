@@ -85,6 +85,7 @@ body {
     }
 
     div.description {
+        margin-top: 60px;
       input {
         display: block;
       }
@@ -101,7 +102,6 @@ body {
       margin-left: 3%;
       margin-right: 3%;
       margin-bottom: 1%;
-      margin-top: 10%;
 
       div.articles {
         display: flex;
@@ -334,7 +334,6 @@ body {
   body {
     div.page-contents {
       div.description {
-        margin-top: auto;
 
         div.articles {
           a {
@@ -360,7 +359,6 @@ body {
       div.description {
         margin-left: 10%;
         margin-right: 10%;
-        margin-top: auto;
       }
 
       nav.desktop {
@@ -392,7 +390,6 @@ body {
   body {
     div.page-contents {
       div.description {
-        margin-top: auto;
 
         div.articles {
           a {
