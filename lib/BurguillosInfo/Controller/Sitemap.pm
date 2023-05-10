@@ -83,7 +83,7 @@ sub _generate_url_for_post ( $self, $post ) {
     my $final_date_last_modification_post =
       _compare_dates_return_most_recent( $date, $date_last_modification_post );
     my $base_url   = $self->config('base_url');
-    my $url_resource = "$base_url/@{[$post->{slug}]}";
+    my $url_resource = "$base_url/posts/@{[$post->{slug}]}";
     my $last_modification_tag =
       Mojo::DOM->new_tag( lastmod => $final_date_last_modification_post );
     my $location_tag = Mojo::DOM->new_tag( loc => $url_resource );
