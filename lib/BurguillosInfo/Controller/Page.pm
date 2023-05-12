@@ -31,7 +31,7 @@ sub rickroll($self) {
     if ($self->req->headers->user_agent =~ /bot/i) {
         return $self->render(text => '');
     }
-    $self->res->headers->location('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    $self->res->headers->location('ibaillanos.tv');
     $self->render(text => '', status => 302);
 }
 
