@@ -31,7 +31,7 @@ sub rickroll($self) {
     if ($self->req->headers->user_agent =~ /bot/i) {
         return $self->render(text => '');
     }
-    $self->res->headers->location('ibaillanos.tv');
+    $self->res->headers->location('http://ibaillanos.tv');
     $self->render(text => '', status => 302);
 }
 
