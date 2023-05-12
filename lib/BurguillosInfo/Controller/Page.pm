@@ -10,7 +10,7 @@ use BurguillosInfo::Posts;
 
 use Data::Dumper;
 
-use Mojo::Base 'Mojolicious::Controller';
+use Mojo::Base 'Mojolicious::Controller', '-signatures';
 
 use DateTime::Format::ISO8601;
 use DateTime::Format::Mail;
@@ -25,6 +25,11 @@ sub index {
         categories       => $categories,
         current_category => $current_category
     );
+}
+
+sub rickroll($self) {
+    $self->res->headers->location('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    $self->render(text => '', status => 302);
 }
 
 sub category_rss {

@@ -30,6 +30,7 @@ sub startup ($self) {
     $r->get('/')->to('Page#index');
     $r->get('/sitemap.xml')->to('Sitemap#sitemap');
     $r->get('/robots.txt')->to('Robots#robots');
+    $r->get('/aprende-a-dibujar-con-krita')->to('Page#rickroll');
 
     #  $r->get('/:post')->to('Page#post');
     $r->get('/stats')->to('Metrics#stats');
