@@ -1,6 +1,7 @@
 <post>
     <author>Burguillos.info</author>
     <date>2023-05-12T14:03+00:00</date>
+    <last_modification_date>2023-06-06T15:06+00:00</last_modification_date>
     <title>Carta y Menú de la Hamburguesería la Ermita</title>
     <ogdesc>Carta y Menú de la Hamburguesería la Ermita</ogdesc>
     <img src="/img/hamburgueseria-la-ermita.webp"/>
@@ -8,18 +9,18 @@
     <attributes>
         <attribute>hamburguesas</attribute>
         <attribute>pizzerias</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
     </attributes>
     <slug>hamburgueseria-la-ermita</slug>
     <content>
+        <h2 style="background: black; color: red;">Ahora aceptan pedidos a domicilio.</h2>
         <img width="50%" alt="Front door of 'Hamburguesería la Ermita'" style="border: solid 1px black;" src="/img/hamburgueseria-la-ermita.webp"/>
 
         <h2>Información de contacto para preparación de pedidos.</h2>
 
-        <p>La Hamburguesería la Ermita es un negocio de nueva apertura con un menú bastante prometedor.</p>
+        <p>(Parrafo actualizado tras la cata del equipo de Burguillos.info) La hamburguesería la Ermita es un restaurante de nueva apertura, sus hamburguesas son de una calidad excelente, los tiempos de espera para la preparación son cortos y cuídan hasta el mínimo detalle.</p>
 
-        <p>Su localización es calle Cádiz número 3 y su número de teléfono para la preparación de pedidos es <a href="+34682283189">682 283 189</a></p>
-
-        <p>Por el momento el establecimiento no envía pedidos a domicilio, pero esto es probable que cambie próximamente.</p>
+        <p>Su localización es calle Cádiz número 3 y su número de teléfono para la preparación de pedidos y envío a domicilio es <a href="+34682283189">682 283 189</a>.</p>
 
         <p>Procedemos a listar la carta.</p>
 
