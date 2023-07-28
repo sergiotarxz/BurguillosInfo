@@ -8,6 +8,7 @@
 	<category>donde-comer</category>
 	<slug>tienda-noemi</slug>
     <attributes>
+        <attribute>reparto-a-domicilio-comida</attribute>
         <attribute>hamburguesas</attribute>
     </attributes>
 	<content>
