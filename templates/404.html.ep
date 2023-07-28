@@ -1,7 +1,7 @@
 % use Mojo::Util;
 % use BurguillosInfo::Categories;
-% layout 'default', current_slug => undef, categories => BurguillosInfo::Categories->new->Retrieve;
+% layout 'default', current_category_slug => undef, categories => BurguillosInfo::Categories->new->Retrieve;
 <div class="description">
 	<h2>Esta página no existe.</h2>
-	<p>Si un enlace te ha llevado aquí, reporta el error a <a href="mailto://contact@owlcode.tech">los administradores</a>.</p>
+	<p>Si un enlace te ha llevado aquí, reporta el error a <a href="mailto:contact@owlcode.tech">los administradores</a>.</p>
 </div>

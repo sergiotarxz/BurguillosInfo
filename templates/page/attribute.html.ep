@@ -1,0 +1,20 @@
+% use Data::Dumper;
+% use DateTime::Format::ISO8601;
+%
+% use Mojo::DOM;
+% use Mojo::Util;
+%
+% use BurguillosInfo::Posts;
+%
+% my $category = stash 'category';
+% my $attribute = stash 'attribute';
+% my $description_og = '<div>'.$attribute->{description}.'</div>';
+% $description_og = Mojo::DOM->new($description_og)->all_text;
+% my $posts = stash 'posts';
+% layout 'default', current_category_slug => $category->{slug}, description_og => $description_og;
+% title $attribute->{title};
+<div class="description">
+	<h1><%= $attribute->{title} %></h1>
+	<%== $attribute->{description} %>
+%= include 'page/_list_posts', posts => $posts; 
+</div>

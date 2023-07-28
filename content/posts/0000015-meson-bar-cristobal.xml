@@ -1,21 +1,26 @@
 <post>
 	<author>Burguillos.info</author>
 	<date>2022-11-22T09:47+00:00</date>
-	<title>Mesón - Bar - Cristobal</title>
-	<ogdesc>Mesón - Bar - Cristobal</ogdesc>
-	<category>comercios</category>
+	<title>Mesón - Bar - Cristobal - Carta y Menú.</title>
+	<ogdesc>Mesón - Bar - Cristobal - Carta y Menú.</ogdesc>
+    <last_modification_date>2023-05-03T02:34+02:00</last_modification_date>
+	<category>donde-comer</category>
 	<slug>bar-cristobal</slug>
-	<img src="/img/cristobal-preview.png"/>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+    </attributes>
+	<img src="/img/cristobal-preview.webp"/>
 	<content>
-		<img alt="Entrada al Mesón - Bar Cristobal." src="/img/cristobal.jpg"/>
-		<p>El Mesón - Bar Cristobal ubicado en la Calle los Palmeros número 30 es una opción ideal para tomarte un café o comer en Burguillos.</p>
+        <h2 style="background: black; color: red;">Menú actualizado con nuevos precios y productos 2023-05-03</h2>
+		<img alt="Entrada al Mesón - Bar Cristobal." src="/img/cristobal.webp"/>
+		<p>El Mesón - Bar Cristobal ubicado en la Calle los Palmeros número 32 es una opción ideal para tomarte un café o comer en Burguillos.</p>
 		<p>Además acepta pedidos a domicilio durante los meses Noviembre, Diciembre, Enero y Febrero de Martes a Domingo durante las noches.</p>
 
 		<p>El número de teléfono de contacto es <a href="tel:+34621210460">621210460</a>.</p>
 
 		<p>A continuación procedemos a dejar la carta para que podáis realizar el pedido que deseeis:</p>
 
-		<h3>Entrantes</h3>
+		<h2>Entrantes</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -55,18 +60,18 @@
 			</tr>
 			<tr>
 				<td>Ensalada Mixta</td>
+				<td>-</td>
+				<td>-</td>
 				<td>4€</td>
-				<td>-</td>
-				<td>-</td>
 			</tr>
 			<tr>
 				<td>Ensalada Normal</td>
+				<td>-</td>
+				<td>-</td>
 				<td>3€</td>
-				<td>-</td>
-				<td>-</td>
 			</tr>
 		</table>
-		<h3>Aperitivos</h3>
+		<h2>Aperitivos</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -117,7 +122,166 @@
 				<td>8€</td>
 			</tr>
 		</table>
-		<h3>Pescados</h3>
+        <h2>En Temporada</h2>
+        <table>
+            <tr>
+                <th></th>
+                <th>Tapa</th>
+                <th>1/2 Ración</th>
+                <th>Ración</th>
+            </tr>
+            <tr>
+                <td>Cabrillas</td>
+                <td>2.50€</td>
+                <td>5€</td>
+                <td>10€</td>
+            </tr>
+            <tr>
+                <td>Caracoles</td>
+                <td>2.50€</td>
+                <td>5€</td>
+                <td>10€</td>
+            </tr>
+        </table>
+		<h2>Ibéricos</h2>
+		<table>
+			<tr>
+				<th></th>
+				<th>Tapa</th>
+				<th>1/2 Ración</th>
+				<th>Ración</th>
+			</tr>
+			<tr>
+				<td>Secreto</td>
+				<td>--</td>
+				<td>S-P</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Lagrimitas</td>
+				<td>3.50€</td>
+				<td>7€</td>
+				<td>14€</td>
+			</tr>
+			<tr>
+				<td>Lagarto</td>
+				<td>3.50€</td>
+				<td>7€</td>
+				<td>14€</td>
+			</tr>
+			<tr>
+				<td>Tocinito</td>
+				<td>3€</td>
+				<td>6€</td>
+				<td>12€</td>
+			</tr>
+		</table>
+		<h2>Carnes</h2>
+		<table>
+			<tr>
+				<th></th>
+				<th>Tapa</th>
+				<th>1/2 Ración</th>
+				<th>Ración</th>
+			</tr>
+			<tr>
+				<td>Carne Asá</td>
+				<td>3€</td>
+				<td>6€</td>
+				<td>12€</td>
+			</tr>
+			<tr>
+				<td>Solomillo al Whisky</td>
+				<td>3.50€</td>
+				<td>8€</td>
+				<td>16€</td>
+			</tr>
+			<tr>
+				<td>Solomillo a la Pimienta</td>
+				<td>3.50€</td>
+				<td>8€</td>
+				<td>16€</td>
+			</tr>
+			<tr>
+				<td>Solomillo al Roquefort</td>
+				<td>3.50€</td>
+				<td>8€</td>
+				<td>16€</td>
+			</tr>
+			<tr>
+				<td>Churrasco de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>5.50€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Mini Serranito de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>3€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Serranito de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>5€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Montadito de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>2.50€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Montadito de Gambas</td>
+				<td>--</td>
+				<td>3€</td>
+				<td>--</td>
+			</tr>
+            <tr>
+                <td>Mantecadito de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>3€</td>
+				<td>--</td>
+            </tr>
+			<tr>
+				<td>Pechuga de Pollo</td>
+				<td>--</td>
+				<td>5.50€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Pinchito de Pollo/Cerdo</td>
+				<td>--</td>
+				<td>3€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Brocheta de Solomillo</td>
+				<td>--</td>
+				<td>7€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Hamburguesa Simple</td>
+				<td>--</td>
+				<td>2.50€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Hamburguesa Completa</td>
+				<td>--</td>
+				<td>3€</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>Hamburguesa de Buey</td>
+				<td>--</td>
+				<td>5€</td>
+				<td>--</td>
+			</tr>
+		</table>
+        <h2>Pescados</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -180,6 +344,12 @@
 				<td>8€</td>
 				<td>14€</td>
 			</tr>
+            <tr>
+                <td>Pescado Variado.</td>
+                <td>-</td>
+                <td>7€</td>
+                <td>-</td>
+            </tr>
 			<tr>
 				<td>Pez Espada</td>
 				<td>--</td>
@@ -199,160 +369,7 @@
 				<td>--</td>
 			</tr>
 		</table>
-		<h3>En temporada</h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Tapa</th>
-				<th>1/2 Ración</th>
-				<th>Ración</th>
-			</tr>
-			<tr>
-				<td>Cabrillas</td>
-				<td>2.50€</td>
-				<td>5€</td>
-				<td>10€</td>
-			</tr>
-			<tr>
-				<td>Caracoles</td>
-				<td>2.50€</td>
-				<td>5€</td>
-				<td>10€</td>
-			</tr>
-		</table>
-		<h3>Carnes</h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Tapa</th>
-				<th>1/2 Ración</th>
-				<th>Ración</th>
-			</tr>
-			<tr>
-				<td>Carne Asá</td>
-				<td>3€</td>
-				<td>6€</td>
-				<td>12€</td>
-			</tr>
-			<tr>
-				<td>Churrasco de Pollo/Cerdo</td>
-				<td>--</td>
-				<td>5.50€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Mini Serranito de Pollo/Cerdo</td>
-				<td>--</td>
-				<td>3€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Serranito de Pollo/Cerdo</td>
-				<td>--</td>
-				<td>5€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Montadito de Pollo/Cerdo</td>
-				<td>--</td>
-				<td>2.50€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Montadito de Gambas</td>
-				<td>--</td>
-				<td>3€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Pechuga de Pollo</td>
-				<td>--</td>
-				<td>5.50€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Pinchito de Pollo/Cerdo</td>
-				<td>--</td>
-				<td>3€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Solomillo al Whisky</td>
-				<td>3.50€</td>
-				<td>8€</td>
-				<td>16€</td>
-			</tr>
-			<tr>
-				<td>Solomillo a la Pimienta</td>
-				<td>3.50€</td>
-				<td>8€</td>
-				<td>16€</td>
-			</tr>
-			<tr>
-				<td>Solomillo al Roquefort</td>
-				<td>3.50€</td>
-				<td>8€</td>
-				<td>16€</td>
-			</tr>
-			<tr>
-				<td>Brocheta de Solomillo</td>
-				<td>--</td>
-				<td>7€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Hamburguesa Simple</td>
-				<td>--</td>
-				<td>2.50€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Hamburguesa Completa</td>
-				<td>--</td>
-				<td>3€</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Hamburguesa de Buey</td>
-				<td>--</td>
-				<td>5€</td>
-				<td>--</td>
-			</tr>
-		</table>
-		<h3>Ibéricos</h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Tapa</th>
-				<th>1/2 Ración</th>
-				<th>Ración</th>
-			</tr>
-			<tr>
-				<td>Secreto</td>
-				<td>--</td>
-				<td>S-P</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Lagrimitas</td>
-				<td>3.50€</td>
-				<td>7€</td>
-				<td>14€</td>
-			</tr>
-			<tr>
-				<td>Lagarto</td>
-				<td>3.50€</td>
-				<td>7€</td>
-				<td>14€</td>
-			</tr>
-			<tr>
-				<td>Tocinito</td>
-				<td>3.50€</td>
-				<td>7€</td>
-				<td>14€</td>
-			</tr>
-		</table>
-		<h3>Cazuelitas</h3>
+        <h2>Cazuelitas</h2>
 		<table>
 			<tr>
 				<th></th>
@@ -362,6 +379,18 @@
 			</tr>
 			<tr>
 				<td>Atún Encebollado</td>
+				<td>3€</td>
+				<td>6€</td>
+				<td>12€</td>
+			</tr>
+			<tr>
+				<td>Bacalao con Tomate</td>
+				<td>3€</td>
+				<td>6€</td>
+				<td>12€</td>
+			</tr>
+			<tr>
+				<td>Espinacas</td>
 				<td>3€</td>
 				<td>6€</td>
 				<td>12€</td>
@@ -378,24 +407,14 @@
 				<td>6€</td>
 				<td>12€</td>
 			</tr>
-			<tr>
-				<td>Espinacas</td>
-				<td>3€</td>
-				<td>6€</td>
-				<td>12€</td>
-			</tr>
-			<tr>
-				<td>Bacalao con Tomate</td>
-				<td>3€</td>
-				<td>6€</td>
-				<td>12€</td>
-			</tr>
 		</table>
-		<h3>Postres</h3>
+
+		<h2>Postres</h2>
 		<ol>
 			<li>Arroz con leche <b>2.50€</b></li>
 			<li>Natillas <b>2.50€</b></li>
-			<li>Helados <b>Precio Variable</b></li>
+			<li>Flan de Huevo <b>2.50€</b></li>
+			<li>Helados Nestle <b>Precio Variable</b></li>
 		</ol>
 
 		<p>Por último desde Burguillos.info os indicamos que el precio por el servicio de pan y picos por comensal es de 0.30€ y que tenéis la posibilidad de pedir un extra en salsas por 0.50€.</p>

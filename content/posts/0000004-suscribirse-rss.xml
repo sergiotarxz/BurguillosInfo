@@ -14,41 +14,41 @@
 
 			<p>En primer lugar vamos a instalar Feeder, un cliente de RSS de software libre para Android.</p>
 
-			<img src="/img/rss/1.jpg" alt="Captura de pantalla de la aplicación Feeder en el Play Store."/>
+			<img src="/img/rss/1.webp" alt="Captura de pantalla de la aplicación Feeder en el Play Store."/>
 
 			<p>Ahora visitarémos bajarémos abajo del todo de cualquier página de Burguillos.info y veremos un botón morado con un punto y dos curvas que nos indicará que nos suscribamos.</p>
 
-			<img src="/img/rss/2.jpg" alt="Captura de pantalla del botón de suscribirse."/>
+			<img src="/img/rss/2.webp" alt="Captura de pantalla del botón de suscribirse."/>
 			<p>Procederemos a dejar presionado sobre el botón hasta que nos aparezca este menú.</p>
 
-			<img src="/img/rss/3.jpg" alt="Menú en el que seleccionar copiar enlace"/>
+			<img src="/img/rss/3.webp" alt="Menú en el que seleccionar copiar enlace"/>
 			<p>Es muy importante que verifiquemos que la url termina en all.xml, si no nos habremos equivocado de botón, el otro idéntico es para suscribirse solo a una categoría, lo cual es útil si por ejemplo solo quieres enterarte de las noticias relacionadas con el autobús.</p>
 
 			<p>Una vez verificado, procederemos a pulsar sobre copiar enlace y abriremos Feeder, la aplicación que acabamos de descargar.</p>
 			
 			<p>Una vez abierta pulsaremos en la esquina superior derecha sobre los tres puntos y veremos esta pantalla:</p>
 
-			<img src="/img/rss/4.jpg" alt="Feeder con el menú abierto."/>
+			<img src="/img/rss/4.webp" alt="Feeder con el menú abierto."/>
 
 			<p>Pulsaremos sobre "Add Feed" y nos saldrá esto:</p>
 
-			<img src="/img/rss/5.jpg" alt="Feeder con un cuadro de dialogo para añadir feed abierto."/>
+			<img src="/img/rss/5.webp" alt="Feeder con un cuadro de dialogo para añadir feed abierto."/>
 
 			<p>Dejamos presionado hasta que nos aparezca la opción de pegar el texto que copiamos antes y lo pegamos.</p>
 
-			<img src="/img/rss/6.jpg" alt="Feeder con un cuadro de dialogo para añadir feed abierto con el siguiente contenido 'https://burguillos.info/all.rss'."/>
+			<img src="/img/rss/6.webp" alt="Feeder con un cuadro de dialogo para añadir feed abierto con el siguiente contenido 'https://burguillos.info/all.rss'."/>
 
 			<p>Hecho esto pulsamos sobre buscar y si lo hemos hecho todo bien veremos lo siguiente:</p>
 
-			<img src="/img/rss/7.jpg" alt="Feeder con un cuadro de dialogo para añadir feed abierto con el siguiente contenido 'https://burguillos.info/all.rss' y abajo un dialogo mostrando los datos de Feed de Burguillos.info."/>
+			<img src="/img/rss/7.webp" alt="Feeder con un cuadro de dialogo para añadir feed abierto con el siguiente contenido 'https://burguillos.info/all.rss' y abajo un dialogo mostrando los datos de Feed de Burguillos.info."/>
 			
 			<p>Pulsamos sobre el elemento que ha aparecido debajo del cuadro de busqueda y pasaremos a otra pantalla donde deberemos desplazarnos abajo del todo.</p>
 
-			<img src="/img/rss/8.jpg" alt="Un dialogo donde se muestran preferencias para el Feed"/>
+			<img src="/img/rss/8.webp" alt="Un dialogo donde se muestran preferencias para el Feed"/>
 
 			<p>Cuando pulsemos "Ok" habremos conseguido suscribirnos a Burguillos.info.</p>
 
-			<img src="/img/rss/9.jpg" alt="Las noticias de Burguillos.info ahora aparecen listadas en la aplicación."/>
+			<img src="/img/rss/9.webp" alt="Las noticias de Burguillos.info ahora aparecen listadas en la aplicación."/>
 
 			<p>RSS es más divertido cuando te suscribes a todos los sitios web que te interesen que provean RSS, de ese modo puedes ser el primero en enterarte de todo lo que esté pasando, y de forma totalmente anónima.</p>
 		</div>

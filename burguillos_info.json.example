@@ -1,7 +1,9 @@
 {
 	"secrets": ["secret_change_for_pwgen_generated_one_with_at_least 255 chars"],
-	"bcrypt_pass_stats": ["change_for_bcrypted_password"],
+	"bcrypt_pass_stats": "change_for_bcrypted_password",
 	"db": {
 		"database": "example"
-	}
+	},
+    "base_url": "https://burguillos.info",
+    "listen": "https:localhost:3555"
 }

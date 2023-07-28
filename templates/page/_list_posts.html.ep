@@ -1,0 +1,30 @@
+% my $posts = stash 'posts';
+<h2>Artículos</h2>
+<div class="articles">
+% unless (defined $posts && @$posts) {
+    <p>Parece que aun no hay artículos.</p>
+% }
+% for my $post (@$posts) {
+    <a href="/posts/<%=$post->{slug}%>">
+        <article><%
+    my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
+    $date_article->set_time_zone('Europe/Madrid');
+            %><div class="article-up-part">
+                <p class="date"><%= ''.$date_article %></p><%
+    if (defined $post->{image}) {
+        %><div class="image-container">
+                <img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/>
+          </div><%
+    }
+            %></div><div class="article-down-part"><div>
+                <h3><%=$post->{title}%></h3><%
+    my $xml = Mojo::DOM->new($post->{content});
+    my $text = $xml->all_text;
+    if (length($text) > 120) {
+        $text = substr($text, 0, 100).'...';
+    }
+                %><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p>
+            </div></div></article>
+    </a>
+%	}
+</div>

@@ -1,59 +1,48 @@
 <!DOCTYPE html>
+% my $categories = stash 'categories';
+% my $current_category_slug = stash 'current_category_slug';
+% my $description_og = stash 'description_og';
+% $description_og =~ s/\s+/ /g;
+% $description_og = substr $description_og, 0, 157;
+% $description_og =~ s/\s\S+$//;
+% $description_og.='...';
+% my $base_url = config 'base_url';
 <html lang="es">
   <head>
-	  <script src="/js/index.js"></script>
-	  <link rel="stylesheet" href="/css/styles.css"/>
+      <script src="/js/bundle.js"></script>
+% my $css_version = config 'css_version';
+      <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
 	  <title><%= title %></title>
-	  <meta name="description" content="Lee más sobre: <%= title %>"/>
+      <meta name="description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
 	  <meta property="og:title" content="<%= title %>"/>
-	  <meta property="og:site_name" content="Burguillos.info" />
+	  <meta property="og:site_name" content="burguillos.info" />
 % my $ogimage = stash 'ogimage';
 % my $user_agent = stash 'useragent';
-% if (defined $ogimage && $user_agent !~ /TelegramBot/) {
-	  <meta name="image" property="og:image" content="<%= $ogimage %>?v=3"/>
+    
+% if (defined $ogimage) {
+      <meta name="image" property="og:image" content="<%= $ogimage %>?v=3"/>
+      <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
-	  <meta name="image" property="og:image" content="https://burguillos.info/img/burguillos.png?v=4">
+      <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
+      <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
 % }
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
 	<div class="site-wrapper">
 	</div>
 	<div class="page-contents">
-		<nav class="desktop"><% for my $category_key (sort {
-			       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
-			   } keys %$categories) {
-				   my $category = $categories->{$category_key};
-				   my $selected = defined($current_slug) && $category->{slug} eq $current_slug;
-				%><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
-			   }
-			%></nav>
-		<nav class="mobile-shortcuts">
-			<a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
-			<div></div>
-			<a href="#mobile-foldable" class="menu-expand"><img class="open-menu-icon" src="/img/menu.png" alt="Expandir el menú."/></a>
-		</nav>
-		<nav class="mobile-foldable" id="mobile-foldable"><% 
-			   my $first = 1;
-		           for my $category_key (sort {
-			       $categories->{$a}{priority} <=> $categories->{$b}{priority} 
-			   } keys %$categories) {
-				   my $category = $categories->{$category_key};
-				%><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
-			   }
-		%></nav>
-
+%= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
+%= include 'page/_mobile_menu', categories => $categories
 		<%= content %></body>
 		<hr/>
 		<div class="footer description">
-			<p>©2022 Sergio Iglesias</p>
+			<p>©2022-2023 Sergio Iglesias</p>
 			<p>Enterate de todas las novedades de Burguillos.info:</p>
 			<a class="suscribe-category-rss" href="/all.rss">
 				 <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
 			</a>
-			<a class="suscribe-category-rss" href="https://social.burguillos.info/people/f2ed63704b62013bf35d58d090500000">
-				 <img src="/img/diaspora.png" alt="Icono de suscripción por Diaspora"/>
-			 </a>
 		</div>
 	</div>
 </html>

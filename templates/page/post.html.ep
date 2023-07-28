@@ -6,10 +6,13 @@
 % use BurguillosInfo::Posts;
 % use BurguillosInfo::Categories;
 % my $categories = BurguillosInfo::Categories->new->Retrieve;
-% layout 'default', current_slug => $current_category->{slug}, categories => $categories;
+% my $description_og = '<div>'.$post->{content}.'</div>';
+% $description_og = Mojo::DOM->new($description_og)->all_text;
+% my $base_url = config 'base_url';
+% layout 'default', current_category_slug => $current_category->{slug}, categories => $categories, description_og => $description_og, ogimage => "$base_url/posts/$post->{slug}-preview.png?v=4";
 % title $post->{title};
 <div class="description">
-	<h2><%= $post->{title} %></h2>
+	<h1><%= $post->{title} %></h1>
 % my $user_agent = stash 'useragent';
 % if ($user_agent !~ /LinkedInBot/) {
 	<%== $post->{content} %>

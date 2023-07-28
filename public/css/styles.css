@@ -1,0 +1,242 @@
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+  height: 100%; }
+  body p, body h1, body h2, body h3, body h4, body a {
+    font-family: 'arial'; }
+  body div.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    /* For at least Firefox */
+    min-height: 100%;
+    color: #2f4f4f;
+    background: url(../img/parque_patos.webp);
+    filter: blur(10px);
+    background-size: cover;
+    overflow: hidden; }
+  body div.page-contents {
+    position: absolute;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 2;
+    background: #FEFEFA;
+    color: #666362;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%; }
+    body div.page-contents div.child-categories-mobile a {
+      padding-left: 2.5rem; }
+    body div.page-contents img {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block; }
+    body div.page-contents table {
+      color: blueviolet;
+      background: #f2eb8c;
+      border: 3px solid blueviolet;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed; }
+      body div.page-contents table td, body div.page-contents table th {
+        font-size: 12px; }
+    body div.page-contents th, body div.page-contents td {
+      border: 3px solid blueviolet;
+      border-collapse: collapse;
+      padding-right: 10px;
+      margin: 0; }
+    body div.page-contents div.description {
+      margin-top: 60px;
+      word-wrap: break-word;
+      padding: 1%;
+      margin-left: 3%;
+      margin-right: 3%;
+      margin-bottom: 1%; }
+      body div.page-contents div.description input {
+        display: block; }
+      body div.page-contents div.description div.suscribirse-rss img {
+        max-height: 300px; }
+      body div.page-contents div.description div.articles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        body div.page-contents div.description div.articles div.image-container {
+          margin-left: 2.5%;
+          margin-top: 10px;
+          height: 95%;
+          width: 95%;
+          display: flex;
+          min-height: 130px;
+          justify-content: center;
+          align-items: center; }
+          body div.page-contents div.description div.articles div.image-container img {
+            max-height: 100%;
+            max-width: 100%;
+            min-width: 277px;
+            border: solid 1px black; }
+        body div.page-contents div.description div.articles a {
+          min-height: 90%;
+          width: 100%;
+          display: block;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          margin-bottom: 30px; }
+          body div.page-contents div.description div.articles a article {
+            word-wrap: break-word;
+            width: 90%;
+            height: 90%;
+            padding: 5%;
+            padding-top: 1%;
+            background: #f2eb8c;
+            color: blueviolet;
+            box-shadow: 8px 8px 1px 0px #8ddfd6;
+            border: 3px solid black; }
+            body div.page-contents div.description div.articles a article p, body div.page-contents div.description div.articles a article h4, body div.page-contents div.description div.articles a article h3, body div.page-contents div.description div.articles a article h2 {
+              margin: 0px; }
+            body div.page-contents div.description div.articles a article p {
+              font-size: 0.9rem; }
+            body div.page-contents div.description div.articles a article div.article-up-part {
+              height: 12em; }
+            body div.page-contents div.description div.articles a article div.article-down-part {
+              margin-top: 2em;
+              height: 9em;
+              display: flex;
+              align-items: end;
+              padding-bottom: 2em; }
+            body div.page-contents div.description div.articles a article:hover {
+              background: blueviolet;
+              color: #f2eb8c; }
+            body div.page-contents div.description div.articles a article p.date {
+              text-align: right; }
+            body div.page-contents div.description div.articles a article p.author {
+              text-align: right; }
+      body div.page-contents div.description a.suscribe-category-rss {
+        background: blueviolet;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block; }
+        body div.page-contents div.description a.suscribe-category-rss img {
+          width: 40px;
+          height: 40px; }
+    body div.page-contents nav > a.menu-expand > img {
+      width: 30px;
+      height: 30px;
+      padding-top: 15px; }
+    body div.page-contents nav > a > img.index-image-menu {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      padding-bottom: 10px; }
+    body div.page-contents nav.desktop {
+      display: none; }
+      body div.page-contents nav.desktop a {
+        vertical-align: middle;
+        background: blueviolet; }
+    body div.page-contents nav {
+      overflow: auto;
+      display: block;
+      font-size: 25px;
+      margin: 0px; }
+      body div.page-contents nav a.go-to-index img {
+        margin-top: 5%; }
+      body div.page-contents nav a {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 100%;
+        text-decoration: none;
+        color: #f2eb8c;
+        margin: 0; }
+        body div.page-contents nav a:hover {
+          background: #f2eb8c;
+          color: blueviolet; }
+        body div.page-contents nav a.selected {
+          background: #f2eb8c;
+          color: blueviolet; }
+      body div.page-contents nav a.menu-expand {
+        padding-bottom: 9px; }
+        body div.page-contents nav a.menu-expand .open-menu-icon-hover {
+          display: none; }
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon-hover {
+          display: block; }
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon {
+          display: none; }
+    body div.page-contents nav.mobile-shortcuts {
+      position: fixed;
+      display: flex;
+      width: 100%;
+      background: blueviolet;
+      height: 60px; }
+      body div.page-contents nav.mobile-shortcuts a {
+        height: 100%;
+        width: 16.66667%; }
+      body div.page-contents nav.mobile-shortcuts div {
+        width: 66.66667%; }
+    body div.page-contents nav.mobile-foldable {
+      display: none;
+      background: blueviolet;
+      color: #f2eb8c; }
+      body div.page-contents nav.mobile-foldable a {
+        display: block; }
+    body div.page-contents nav.mobile-foldable.show {
+      display: block; }
+    body div.page-contents h1 {
+      text-align: center; }
+    body div.page-contents div.footer p, body div.page-contents div.footer h1, body div.page-contents div.footer h2, body div.page-contents div.footer h3, body div.page-contents div.footer h4, body div.page-contents div.footer a {
+      font-size: initial; }
+    body div.page-contents div.footer a.suscribe-category-rss {
+      padding: 7px; }
+    body div.page-contents div.footer a.suscribe-category-rss, body div.page-contents div.footer a.suscribe-category-rss > img {
+      width: 20px;
+      height: 20px; }
+
+@media (min-width: 450px) {
+  body div.page-contents table th, body div.page-contents table td {
+    font-size: 20px; } }
+
+@media (min-width: 694px) {
+  body div.page-contents div.description div.articles a {
+    width: 45%;
+    margin-left: 5%; }
+    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+      margin-left: 0%; } }
+
+@media (min-width: 1100px) {
+  body div.page-contents {
+    top: 0%;
+    left: 5%;
+    height: 100%;
+    width: 90%; }
+    body div.page-contents nav.mobile-foldable, body div.page-contents nav.mobile-foldable.show {
+      display: none; }
+    body div.page-contents div.description {
+      margin-left: 10%;
+      margin-right: 10%; }
+    body div.page-contents nav.desktop {
+      display: block;
+      height: auto; }
+      body div.page-contents nav.desktop a {
+        display: table-cell; }
+        body div.page-contents nav.desktop a img.index-image-menu {
+          padding-top: 15px; }
+    body div.page-contents nav.mobile-shortcuts {
+      display: none; } }
+
+@media (min-width: 1333px) {
+  body div.page-contents div.description div.articles a {
+    width: 30%;
+    margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+      margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+      margin-left: 0%; } }
+

@@ -1,44 +1,34 @@
+% use Data::Dumper;
 % use DateTime::Format::ISO8601;
+% use Mojo::DOM;
 %
 % use Mojo::DOM;
 % use Mojo::Util;
 %
 % use BurguillosInfo::Posts;
 %
-% layout 'default', current_slug => $current_category->{slug};
+% my $description_og = '<div>'.$current_category->{description}.'</div>';
+% $description_og = Mojo::DOM->new($description_og)->all_text;
+% layout 'default', current_category_slug => $current_category->{slug}, description_og => $description_og;
 % title $current_category->{title};
 <div class="description">
-	<h2><%= $current_category->{title} %></h2>
+	<h1><%= $current_category->{title} %></h1>
 	<%== $current_category->{description} %>
-	<h3>Artículos</h3>
-	<div class="articles">
-% my ($cached_posts_by_category) = BurguillosInfo::Posts->new->Retrieve;
-% my $category_post = $cached_posts_by_category->{$current_category->{slug}};
-% if (defined $category_post) {
-% 	for my $post (@$category_post) {
-		<a href="/posts/<%=$post->{slug}%>">
-			<article><%
- 		my $date_article = DateTime::Format::ISO8601->parse_datetime($post->{date});
-		$date_article->set_time_zone('Europe/Madrid');
-				%><p class="date"><%= ''.$date_article %></p><%
- 		if (defined $post->{image}) {
-				%><img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/><%
-               }
-				%><h4><%=$post->{title}%></h4><%
-		my $xml = Mojo::DOM->new($post->{content});
-		my $text = $xml->all_text;
-		if (length($text) > 120) {
-			$text = substr($text, 0, 100).'...';
-		}
-				%><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p></article>
-		</a>
-%	}
-% } else {
-	<p>Parece que aun no hay artículos.</p>
+% my $children_categories = $current_category->{children};
+% my $attributes = $current_category->{attributes};
+% if (@$children_categories || %$attributes) {
+    <h2>Quizás te interese.</h2>
+%     for my $child_category (@$children_categories) {
+      <p><a href="/<%=$child_category->{slug}%>"><%==$child_category->{title}%></a></p>
+%     }
+%     for my $attribute_slug (keys %$attributes) {
+%         my $attribute = $attributes->{$attribute_slug};
+      <p><a href="<%="/$current_category->{slug}/atributo/$attribute->{identifier}"%>"><%==$attribute->{menu_text}%></a></p>
+%     }
 % }
-
-	</div>
-	<h3>Suscribete a esta categoría.</h3>
+% my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
+%= include 'page/_list_posts', posts => $category_posts; 
+	<h2>Suscribete a esta categoría.</h2>
 
 	<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
 		<img src="/img/rss.svg" alt="Icono de suscripción rss"/>

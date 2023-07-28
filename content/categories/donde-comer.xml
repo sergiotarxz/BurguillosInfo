@@ -1,0 +1,54 @@
+<category>
+	<title>Donde comer en Burguillos. - Cartas y Menús.</title>
+	<description>
+        <h2>Descubre los bares y restaurantes de Burguillos con sus cartas, menús y datos de contacto.</h2>
+		<p>Aquí puedes encontrar información acerca de los negocios de hostelería de Burguillos.</p>
+        <p>Disfruta tu comida.</p>
+		<p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+	</description>
+    <parent>comercios</parent>
+	<priority>0</priority>
+	<menu_text>Donde comer</menu_text>
+	<slug>donde-comer</slug>
+    <attributes>
+        <attribute>
+            <title>Pedir comida a domicilio en Burguillos.</title>
+            <identifier>reparto-a-domicilio-comida</identifier>
+            <priority>0</priority>
+            <menu_text>Listado de sitios de comida con reparto a domicilio.</menu_text>
+            <description>
+                <h2>Cartas y Menús de Pizzerías, Hamburgueserías, Kebab, Restaurantes, Bares, etc.</h2>
+
+                <p>Te filtramos todos los sitios según si puedes pedir a domicilio en Burguillos, todos los negocios listados incluyen carta, menú y teléfono de contacto. (O el medio de contacto pertinente para el negocio en caso de no ser el teléfono.)</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+        <attribute>
+            <title>Comer hamburguesas en Burguillos - Cartas y Menús.</title>
+            <identifier>hamburguesas</identifier>
+            <priority>0</priority>
+            <menu_text>Listado de sitios de comida que preparan hamburguesas.</menu_text>
+            <description>
+                <h2>Hamburgueserias y todo tipo de establecimientos que preparan hamburguesas.</h2>
+
+                <p>Te filtramos todos los sitios según si puedes pedirte la hamburguesa de la que tantas ganas tienes a continuación.</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+        <attribute>
+            <title>Pizzerías en Burguillos - Cartas y Menús.</title>
+            <identifier>pizzerias</identifier>
+            <priority>0</priority>
+            <menu_text>Listado de sitios de comida que preparan pizzas.</menu_text>
+            <description>
+                <h2>Pizzerías y todo tipo de establecimientos que preparan pizzas.</h2>
+
+                <p>Te filtramos todos los sitios según si puedes pedirte la pizza de la que tantas ganas tienes a continuación.</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+    </attributes>
+</category>

@@ -4,9 +4,10 @@
 	<title>Diaspora para las masas.</title>
 	<ogdesc>Diaspora para las masas.</ogdesc>
 	<category>index</category>
-	<img src="/img/diaspora-article-preview.png"/>
+	<img src="/img/diaspora-article-preview.webp"/>
 	<slug>social-burguillos-info</slug>
 	<content>
+                <h3 style="color: red; background: black;">Este servicio ha sido temporalmente descontinuado por falta de actualizaciones por parte de sus desarrolladores. Disculpen las molestias</h3>
 		<p>Hoy desde Burguillos.info os traemos por un lado un nuevo método de estar al tanto de las novedades de la web y por otro una forma nueva de comunicarte con los otros burguilleros y burguilleras.</p>
 
 		<p>La nueva web <a href="https://social.burguillos.info">social.burguillos.info</a> es eso y más, dicha web es una instancia de Diaspora, una red social de software libre que te permite interactuar con quien quieras de la red independientemente de en que instancia te encuentras mediante un algoritmo conocido como federación.</p>
@@ -17,24 +18,24 @@
 
 		<p>En primer lugar en la parte de abajo de la web podrás encontrar un nuevo icono a parte del ya conocido de suscripción por RSS, uno que es una suerte de asteristo con un circulo negro alrededor.</a>
 
-		<img alt="Indicaciones para encontrar el icono de suscripción por Diaspora" style="border: solid 1px black;" src="/img/diaspora-article-image-1.png"/>
+		<img alt="Indicaciones para encontrar el icono de suscripción por Diaspora" style="border: solid 1px black;" src="/img/diaspora-article-image-1.webp"/>
 
 		<p>Al pulsar sobre el llegarás a nuestro perfil en dicha red.</p>
-		<img alt="Perfil de Burguillos.info en Diaspora." style="border: solid 1px black;" src="/img/diaspora-article-image-2.png"/>
+		<img alt="Perfil de Burguillos.info en Diaspora." style="border: solid 1px black;" src="/img/diaspora-article-image-2.webp"/>
 
 		<p>No obstante aun no podremos seguir a la cuenta porque aun no nos hemos registrado. Como he dicho, podemos seguir a Burguillos.info desde cualquier instancia, puedes elegir una de <a href="https://diaspora.fediverse.observer/">diaspora.fediverse.observer</a> o usar la propia de Burguillos.info, en este caso voy a seguir el tutorial desde la instancia de Burguillos.info.</p>
 
-		<img alt="Perfil de Burguillos.info en Diaspora con la opción de registrarse marcada." style="border: solid 1px black;" src="/img/diaspora-article-image-3.png"/>
+		<img alt="Perfil de Burguillos.info en Diaspora con la opción de registrarse marcada." style="border: solid 1px black;" src="/img/diaspora-article-image-3.webp"/>
 
 		<p>Pulsamos sobre "Create account" para registrarnos y empezar a disfrutar Diaspora.</p>
 
-		<img alt="Datos de inscripción rellenos." style="border: solid 1px black;" src="/img/diaspora-article-image-4.png"/>
+		<img alt="Datos de inscripción rellenos." style="border: solid 1px black;" src="/img/diaspora-article-image-4.webp"/>
 
 		<p>Rellenamos la información con nuestro correo electrónico, nombre de usuario, contraseña repetida dos veces y resolvemos la comprobación de que somos humanos, para despues presionar de nuevo en "Create Account".</p>
 
 		<p>Si tienes dificultades en este paso o cualquier otro contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
 
-		<img alt="Menú pidiendonos más datos que queramos incluir." style="border: solid 1px black;" src="/img/diaspora-article-image-5.png"/>
+		<img alt="Menú pidiendonos más datos que queramos incluir." style="border: solid 1px black;" src="/img/diaspora-article-image-5.webp"/>
 
 		<p>Una vez hayamos completado la inscripción con exito aparecerá una nueva pantalla ofreciendonos a introducir más información para hacer la experiencia mejor como un avatar y hashtags para que otros usuarios sepan cuales son tus intereses.</p>
 
@@ -42,29 +43,29 @@
 
 		<p>Una vez hayas terminado de personalizar a tu gusto tu cuenta, pulsamos sobre "Awesome! Take me to diaspora* >>"</p>
 
-		<img alt="Vista principal de Diaspora*." style="border: solid 1px black;" src="/img/diaspora-article-image-6.png"/>
+		<img alt="Vista principal de Diaspora*." style="border: solid 1px black;" src="/img/diaspora-article-image-6.webp"/>
 
 		<p>Al llegar a esta imagen habremos terminado el proceso de registro en Diaspora*, ahora querremos seguir a Burguillos.info, para ello pulsamos en el icono de suscripción en la parte de abajo de este artículo.</p>
 
-		<img alt="Indicaciones para encontrar el icono de suscripción por Diaspora" style="border: solid 1px black;" src="/img/diaspora-article-image-1.png"/>
+		<img alt="Indicaciones para encontrar el icono de suscripción por Diaspora" style="border: solid 1px black;" src="/img/diaspora-article-image-1.webp"/>
 
 		<p>Seguimos el enlace.</p>
 
-		<img alt="El perfil de Burguillos.info con el nombre de usuario al estilo email seleccionado." style="border: solid 1px black;" src="/img/diaspora-article-image-7.png"/>
+		<img alt="El perfil de Burguillos.info con el nombre de usuario al estilo email seleccionado." style="border: solid 1px black;" src="/img/diaspora-article-image-7.webp"/>
 
 		<p>Seleccionamos el nombre de usuario, que será siempre parecido a una dirección de correo electrónico.</p>
 
-		<img alt="El nombre de usuario copiado en la barra de busqueda." style="border: solid 1px black;" src="/img/diaspora-article-image-8.png"/>
+		<img alt="El nombre de usuario copiado en la barra de busqueda." style="border: solid 1px black;" src="/img/diaspora-article-image-8.webp"/>
 
 		<p>Copiamos dicho nombre en la barra de busqueda y pulsamos intro.</p>
 
-		<img alt="La nueva pantalla tras pulsar sobre add contact y indicando que se pulse sobre Acquaintances." style="border: solid 1px black;" src="/img/diaspora-article-image-9.png"/>
+		<img alt="La nueva pantalla tras pulsar sobre add contact y indicando que se pulse sobre Acquaintances." style="border: solid 1px black;" src="/img/diaspora-article-image-9.webp"/>
 
 		<p>Pulsamos sobre "Add contact" y aparecerá un menú desplegable donde pulsaremos sobre Acquaintances para indicar que eres conocido de Burguillos.info, con usuarios con los que tengas mayor confianza puedes pulsar Family, Friend o Work, de ese modo puedes redactar tus posts para que lleguen solo a las personas que deseés.</p>
 
 		<p>Cuando lo hagas y pulses a "stream", verás que en tu timeline ya aparecen los posts de Burguillos.info.</p>
 
-		<img alt="Timeline lleno de posts de Burguillos.info" style="border: solid 1px black;" src="/img/diaspora-article-image-10.png"/>
+		<img alt="Timeline lleno de posts de Burguillos.info" style="border: solid 1px black;" src="/img/diaspora-article-image-10.webp"/>
 
 		<p>Tan solo me queda desearte una feliz estancia en Diaspora*.</p>
 		

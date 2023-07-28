@@ -1,0 +1,24 @@
+% my $categories = stash 'categories';
+<nav class="mobile-shortcuts">
+    <a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
+    <div></div>
+    <a href="#mobile-foldable" class="menu-expand">
+        <img class="open-menu-icon" src="/img/hamburger-menu-yellow.webp" alt="Expandir el menú."/>
+        <img class="open-menu-icon-hover" src="/img/hamburger-menu-purple.webp" alt="Expandir el menú."/>
+    </a>
+</nav>
+<nav class="mobile-foldable" id="mobile-foldable"><% 
+my $first = 1;
+for my $category_key (sort {
+        $categories->{$a}{priority} <=> $categories->{$b}{priority} 
+        } keys %$categories) {
+    my $category = $categories->{$category_key};
+    if (defined $category->{parent}) {
+        next;
+    }
+    %><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><div class="child-categories-mobile"><% 
+        for my $child_category ($category->{children}->@*) {
+            %><a href="<%="/$child_category->{slug}"%>">* <%==$child_category->{menu_text}%></a><%
+        }%></div><%
+}
+%></nav>

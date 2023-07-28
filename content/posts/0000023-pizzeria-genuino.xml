@@ -1,0 +1,460 @@
+<post>
+	<author>Burguillos.info</author>
+	<date>2023-05-04T22:32+00:00</date>
+	<title>Carta y Menú de la Pizzería Genuino en Burguillos.</title>
+	<ogdesc>Carta y Menú de la Pizzería Genuino en Burguillos.</ogdesc>
+    <img src="/img/genuino.webp"/>
+	<category>donde-comer</category>
+    <attributes>
+        <attribute>reparto-a-domicilio-comida</attribute>
+        <attribute>pizzerias</attribute>
+    </attributes>
+	<slug>pizzeria-genuino</slug>
+	<content>
+        <img alt="Front door of 'Pizzería Genuino'" style="border: solid 1px black;" src="/img/genuino.webp"/>
+
+        <h2>Pizzería italiana Genuino, envío a domicilio en Burguillos.</h2>
+
+        <p>La Pizzería Genuino es ampliamente reconocida por los habitantes de Burguillos por la calidad de sus pizzas, se puede tanto comer en el establecimiento como pedir a domicilio.</p>
+
+        <p>La ubicación de la pizzería es Calle Manuel Medina número 1, el número de teléfono para realizar pedidos es <a href="tel:+34672128822">672 128 822</a> y el horario es de 20:00-00:00 durante todos los días de la semana.</p>
+
+        <p>Procedemos a dejaros la carta con los enlaces a la página web oficial de cada producto para que tengais siempre disponible la última información:</p>
+
+        <h3>Las más vendidas. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/las-mas-vendidas">Enlace oficial</a></h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Mediana</th>
+                <th>Precio Grande</th>
+            </tr>
+            <tr>
+                <td>4 Formaggi</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/16-4-formaggi?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate, mozzarella, brie, gorgonzola y grana padano</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Cotto</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/10-cotto?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate  mozzarella y jamón de york</td>
+                <td>7.00€</td>
+                <td>15.00€</td>
+            </tr>
+            <tr>
+                <td>Carnivora</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/58-carnivora?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo, frankfurt, bacon y jamón de york</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Golosa</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/55-golosa?c=las-mas-vendidas">Enlace</a></td>
+                <td>Mozzarella, champiñones, bacon y nata</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>365</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/62-365?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate, doble de mozzarella, chorizo, jamón de york y orégano</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Cotto e funghi</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/13-cotto-e-funghi?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate, mozzarella, champiñones y jamón de york</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Piccantissima</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/52-piccantissima?c=las-mas-vendidas">Enlace</a></td>
+                <td>PREGUNTAR</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Carbonara italiana</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/56-carbonara-italiana?c=las-mas-vendidas">Enlace</a></td>
+                <td>Mozzarella, guanciale, pecorino romano, huevo y pimienta</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Chips</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/19-chips?c=las-mas-vendidas">Enlace</a></td>
+                <td>Tomate, mozzarella, frankfurt y patatas fritas</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+        </table>
+
+        <h3>Las más ligeras. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/las-mas-ligeras">Enlace oficial</a></h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Mediana</th>
+                <th>Precio Grande</th>
+            </tr>
+            <tr>
+                <td>Fresca fresca</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/35-fresca-fresca?c=las-mas-ligeras">Enlace</a></td>
+                <td>Tomate, tomate cherry, mozzarella fresca, aceitunas negras, rucula y grana padano</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Italia</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/20-italia?c=las-mas-ligeras">Enlace</a></td>
+                <td>Mozzarella, tomate cherry, jamón serrano, rúcula y grana padano</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Delicata</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/61-delicata?c=las-mas-ligeras">Enlace</a></td>
+                <td>Mozzarella, calabacín y grana padano</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Meravigliosa</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/51meravigliosa?c=las-mas-ligeras">Enlace</a></td>
+                <td>Tomate, mozzarella, calabacín, tomate cherry y brie</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Parmigiana</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/42-parmigiana?c=las-mas-ligeras">Enlace</a></td>
+                <td>Tomate, mozzarella, berenjena y grana padano</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Funghi</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/11-funghi?c=las-mas-ligeras">Enlace</a></td>
+                <td>Tomate, mozzarella y champiñones</td>
+                <td>7.00€</td>
+                <td>15.00€</td>
+            </tr>
+        </table>
+
+        <h3>A la italiana. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/a-la-italiana">Enlace oficial</a></h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Mediana</th>
+                <th>Precio Grande</th>
+            </tr>
+            <tr>
+                <td>Margherita</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/4-margherita?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate y mozzarella</td>
+                <td>6.50€</td>
+                <td>14.00€</td>
+            </tr>
+            <tr>
+                <td>Napoli</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/6-napoli?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate, mozzarella, anchoa, orégano</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Siciliana</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/7-siciliana?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate, anchoas, aceitunas negras, alcaparras y orégano</td>
+                <td>PREGUNTAR</td>
+                <td>PREGUNTAR</td>
+            </tr>
+            <tr>
+                <td>Romana</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/8-romana?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate, mozzarella, anchoas, alcaparras y orégano</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>4 Stagioni</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/15-4-stagioni?c=a-la-italiana">Enlace</a></td>
+                <!-- acieutnas in the link -->
+                <td>Tomate, mozzarella, champiñones, jamón de york, aceitunas negras y alcachofas</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Capricciosa</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/17-capricciosa?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate, mozzarella, champiñones, jamón de york, aceitunas negras y alcachofas</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Bufala</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/22-bufala?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate y mozzarella fresca</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Boscaiola</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/24-boscaiola?c=a-la-italiana">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo y champiñones</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+        </table>
+
+        <h3>A la Genuino. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/a-la-genuino">Enlace oficial</a></h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Mediana</th>
+                <th>Precio Grande</th>
+            </tr>
+            <tr>
+                <td>Nonna Ina</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/21-nonna-ina?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo y gorgonzola</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Gustosa</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/53-gustosa?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, calabacín, bacon y nata</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Contadina</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/54-contadina?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo, cebolla morada y pimiento rojo</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Quinta del Villa</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/57-quinta-del-villa?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo, brie, tomate cherry y grana padano</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Quinta del Manu</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/60-quinta-del-manu?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, criollo, chorizo, cebolla morada y grana padano</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+            <tr>
+                <td>Amatriciana</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/63-amatriciana?c=a-la-genuino">Enlace</a></td>
+                <td>Tomate, mozzarella, guanciale, cebolla morada, pecorino romano y pimienta</td>
+                <td>8.50€</td>
+                <td>18.00€</td>
+            </tr>
+        </table>
+
+        <h3>Del mar. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/del-mar">Enlace oficial</a></h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Mediana</th>
+                <th>Precio Grande</th>
+            </tr>
+            <tr>
+                <td>Tonno</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/26-tonno?c=del-mar">Enlace</a></td>
+                <td>Tomate, mozzarella y atún</td>
+                <td>7.50€</td>
+                <td>16.00€</td>
+            </tr>
+            <tr>
+                <td>Tonno e cipolla</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/27-tonno-e-cipolla?c=del-mar">Enlace</a></td>
+                <td>Tomate, mozzarella, atún y cebolla morada</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Tonno e carciofini</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/28-tonno-e-carciofini?c=del-mar">Enlace</a></td>
+                <td>Tomate, mozzarella, atún y alcachofas</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Tonno y mais</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/29-tonno-y-mais?c=del-mar">Enlace</a></td>
+                <td>Tomate, mozzarella, atún, aceitunas negras y maiz</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+            <tr>
+                <td>Nettuno</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/30-nettuno?c=del-mar">Enlace</a></td>
+                <td>Mozzarella, atún, tomate cherry y cebolla morada</td>
+                <td>8.00€</td>
+                <td>17.00€</td>
+            </tr>
+        </table>
+
+        <h3>Especialidades. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/especialidades">Enlace oficial</a></h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Ingredientes</th>
+                <th>Precio Simple</th>
+                <th>Precio Completo</th>
+            </tr>
+            <tr>
+                <td>Hot dog + bebida</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/46-hot-dog-bebida?c=especialidades">Enlace</a></td>
+                <td>PREGUNTAR</td>
+                <td>4.00€</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Calzone liscio</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/47-calzone-liscio?c=especialidades">Enlace</a></td>
+                <td>Tomate, mozzarella y jamón de york</td>
+                <td>NO DISPONIBLE</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Calzone farcito</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/48-calzone-farcito?c=especialidades">Enlace</a></td>
+                <td>Tomate, mozzarella, jamón de york y champiñones</td>
+                <td>NO DISPONIBLE</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Calzone 4 formaggi</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/49-calzone-4-formaggi?c=especialidades">Enlace</a></td>
+                <td>Tomate, mozzarella, brie, gorgonzola y grana padano</td>
+                <td>NO DISPONIBLE</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Calzone Nutella</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/50-calzone-nutella?c=especialidades">Enlace</a></td>
+                <td>Nutella</td>
+                <td>NO DISPONIBLE</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Pizzotto farcito</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/59-pizzotto-farcito?c=especialidades">Enlace</a></td>
+                <td>Mini calzone relleno al gusto</td>
+                <td>NO DISPONIBLE</td>
+                <td>4.00€</td>
+            </tr>
+        </table>
+
+        <h3>Bebidas y cervezas. <a href="https://www.mundogenuino.eu/nuestra-carta/.c/bebidas-y-cervezas">Enlace oficial</a></h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Enlace</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Agua (500ml)</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/agua-50cc?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.00€</td>
+            </tr>
+            <tr>
+                <td>Coca Cola</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/coca-cola?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Coca Cola Zero</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/coca-cola-zero?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Coca Cola Zero Zero</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/coca-cola-zero-zero?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Fanta de naranja</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/fanta-naranja?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Fanta de limón</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/fanta-de-limon?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Aquarius de limón</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/aquarius-limon?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.70€</td> <!--Preguntar -->
+            </tr>
+            <tr>
+                <td>Aquarius de naranja</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/aquarius-naranja?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Nestea</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/nestea?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Coca Cola 2l</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/coca-cola-2l?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Coca Cola Zero 2l</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/coca-cola-zero-2l?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Fanta naranja 2l</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/fanta-naranja-2l?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Cruzcampo 250ml</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/cruzcampo-25cc?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>1.50€</td>
+            </tr>
+            <tr>
+                <td>Cruzcampo 1l</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/cruzcampo-1-litro?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>2.50€</td>
+            </tr>
+            <tr>
+                <td>Tinto de verano</td>
+                <td><a href="https://www.mundogenuino.eu/nuestra-carta/tinto-de-verano?c=bebidas-y-cervezas">Enlace</a></td>
+                <td>2.00€</td>
+            </tr>
+        </table>
+
+		<p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
