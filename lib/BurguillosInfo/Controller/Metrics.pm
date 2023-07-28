@@ -20,12 +20,17 @@ my $tracking;
 my $iso8601      = DateTime::Format::ISO8601->new;
 sub request {
 	shift;
-	my $c = shift;
-	my $app = $c->app;
-	if (!defined $tracking) {
-		$tracking = BurguillosInfo::Tracking->new($app);
-	}
-	$tracking->register_request($c);	
+    eval {
+        my $c = shift;
+        my $app = $c->app;
+        if (!defined $tracking) {
+            $tracking = BurguillosInfo::Tracking->new($app);
+        }
+        $tracking->register_request($c);	
+    };
+    if ($@) {
+        say STDERR $@;
+    }
 }
 
 sub stats {
