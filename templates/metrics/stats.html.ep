@@ -3,9 +3,9 @@
 <div class="description">
 	<h2>Stats</h2>
 
-	<p>Unique visitors last 24 hours <%=$tracking_data->{unique_ips_last_24_hours}%></p>
-	<p>Unique visitors last week <%=$tracking_data->{unique_ips_last_week}%></p>
-	<p>Unique visitors last month <%=$tracking_data->{unique_ips_last_month}%></p>
+	<p>Non-Unique visitors last 24 hours <%=$tracking_data->{unique_ips_last_24_hours}%></p>
+	<p>Non-Unique visitors last week <%=$tracking_data->{unique_ips_last_week}%></p>
+	<p>Non-Unique visitors last month <%=$tracking_data->{unique_ips_last_month}%></p>
         <p><a href="<%=$base_url.'/stats?filter=remove-extensions'%>">Ver datos sin extensiones.</a></p>
         <p><a href="<%=$base_url.'/stats'%>">Ver todo.</a></p>
 	<table>
