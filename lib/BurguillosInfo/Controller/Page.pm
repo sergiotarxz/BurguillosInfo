@@ -36,6 +36,7 @@ sub rickroll($self) {
 }
 
 sub category_rss {
+    require BurguillosInfo;
     my $self             = shift;
     my $categories       = BurguillosInfo::Categories->new->Retrieve;
     my $category_name    = $self->param('category');
@@ -48,11 +49,12 @@ sub category_rss {
     }
     my $dom         = Mojo::DOM->new_tag( 'rss', version => '2.0', undef );
     my $channel_tag = Mojo::DOM->new_tag('channel');
+    my $base_url = BurguillosInfo->new->config->{base_url};
     if ( $category_name eq 'all' ) {
         my $title_tag       = Mojo::DOM->new_tag( 'title', 'Burguillos.info' );
         my $description_tag = Mojo::DOM->new_tag( 'description',
             'Todas las noticias de Burguillos.info.' );
-        my $link_tag = Mojo::DOM->new_tag( 'link', 'https://burguillos.info/' );
+        my $link_tag = Mojo::DOM->new_tag( 'link', $base_url );
         $channel_tag->child_nodes->first->append_content($title_tag);
         $channel_tag->child_nodes->first->append_content($description_tag);
         $channel_tag->child_nodes->first->append_content($link_tag);
@@ -72,7 +74,7 @@ sub category_rss {
             'Todas las noticias de la categoria de Burguillos.info '
               . $category->{title} );
         my $link_tag = Mojo::DOM->new_tag( 'link',
-            'https://burguillos.info/' . $category->{slug} );
+            $base_url . '/' . $category->{slug} );
         $channel_tag->child_nodes->first->append_content($title_tag);
         $channel_tag->child_nodes->first->append_content($description_tag);
         $channel_tag->child_nodes->first->append_content($link_tag);
@@ -92,11 +94,13 @@ sub category_rss {
 }
 
 sub _post_to_rss {
+    require BurguillosInfo;
     my $post      = shift;
     my $item_tag  = Mojo::DOM->new_tag('item');
     my $title_tag = Mojo::DOM->new_tag( 'title', $post->{title} );
+    my $base_url = BurguillosInfo->new->config->{base_url};
     my $link      = Mojo::DOM->new_tag( 'link',
-        'https://burguillos.info/posts/' . $post->{slug} );
+        $base_url = '/posts/' . $post->{slug} );
     my $description = Mojo::DOM->new_tag( 'description',
         Mojo::DOM->new( $post->{content} )->all_text );
     my $guid = Mojo::DOM->new_tag( 'guid', $post->{slug} );
