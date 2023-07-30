@@ -17,6 +17,18 @@ sub startup ($self) {
             }
         }
     );
+    $self->hook(
+        before_render => sub($c, $args) {
+            my $onion_base_url = $self->config->{onion_base_url};
+            my $base_url = $self->config->{base_url};
+            if (!defined $onion_base_url) {
+                return;
+            }
+            my $current_route = $c->url_for;
+            $current_route =~ s/^$base_url//;
+            $c->res->headers->header('Onion-Location' => $onion_base_url.$current_route);
+        }
+    );
     my $config = $self->plugin('JSONConfig');
     $self->config(
         hypnotoad => { proxy => 1, listen => [$self->config('listen') // 'http://localhost:3000'] } );
