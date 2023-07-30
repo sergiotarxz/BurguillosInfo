@@ -15,7 +15,7 @@ use BurguillosInfo::DB;
 my $app;
 
 const my $SELECT_GLOBAL => <<'EOF';
-SELECT COUNT(DISTINCT (remote_address, user_agent))
+SELECT COUNT(*)
 	FROM requests
 EOF
 
