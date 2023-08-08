@@ -50,12 +50,12 @@ sub _populate_locations ($dbh) {
     my $tracking = BurguillosInfo::Tracking->new( BurguillosInfo->new );
     my $page = 0;
     while (1) {
-        my $data = $dbh->selectall_arrayref( <<'EOF', { Slice => {} }, $page );
+        my $data = $dbh->selectall_arrayref( <<"EOF", { Slice => {} }, $page );
 SELECT uuid, remote_address
 FROM requests
 WHERE date > NOW() - interval '2 months'
 LIMIT 100
-OFSSET ?;
+OFSSET $page;
 EOF
         if (!@$data) {
             return;
