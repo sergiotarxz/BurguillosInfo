@@ -54,8 +54,8 @@ sub _populate_locations ($dbh) {
 SELECT uuid, remote_address
 FROM requests
 WHERE date > NOW() - interval '2 months'
-LIMIT 100
-OFSSET $page;
+OFSSET $page
+LIMIT 100;
 EOF
         if (!@$data) {
             return;
