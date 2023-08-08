@@ -43,18 +43,29 @@ sub MIGRATIONS {
     );
 }
 
-sub _populate_locations($dbh) {
+sub _populate_locations ($dbh) {
     require BurguillosInfo;
     require BurguillosInfo::Tracking;
-    my $tracking = BurguillosInfo::Tracking->new(BurguillosInfo->new);
-    my $data = $dbh->selectall_arrayref(<<'EOF', {Slice => {}});
+    my $tracking = BurguillosInfo::Tracking->new( BurguillosInfo->new );
+    my $page = 0;
+    while (1) {
+        my $data = $dbh->selectall_arrayref( <<'EOF', { Slice => {} }, $page );
 SELECT uuid, remote_address
 FROM requests
-WHERE date > NOW() - interval '2 months';
+WHERE date > NOW() - interval '2 months'
+LIMIT 100
+OFSSET ?;
 EOF
-    for my $request (@$data) {
-        my ($uuid, $remote_address) = $request->@{'uuid', 'remote_address'};
-        $tracking->update_country_and_subdivision($dbh, $uuid, $remote_address);
+        if (!@$data) {
+            return;
+        }
+        for my $request (@$data) {
+            my ( $uuid, $remote_address ) =
+              $request->@{ 'uuid', 'remote_address' };
+            $tracking->update_country_and_subdivision( $dbh, $uuid,
+                $remote_address );
+        }
+        $page += 100;
     }
 }
 1;
