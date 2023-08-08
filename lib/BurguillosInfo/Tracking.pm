@@ -54,8 +54,8 @@ sub _register_request_query ( $self, $remote_address, $user_agent,
     $params_json, $path, $referer )
 {
     my $dbh = BurguillosInfo::DB->connect($app);
-    my $country = $self->_get_country('185.244.231.157');
-    my $subdivision = $self->_get_subdivision('185.244.231.157');
+    my $country = $self->_get_country($remote_address);
+    my $subdivision = $self->_get_subdivision($remote_address);
 
     $dbh->do(
         <<'EOF', undef, $remote_address, $user_agent, $params_json, $path, $referer, $country, $subdivision );
