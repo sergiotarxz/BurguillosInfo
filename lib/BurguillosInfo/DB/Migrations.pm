@@ -38,9 +38,6 @@ sub MIGRATIONS {
         'CREATE INDEX request_country_index on requests (country);',
         'ALTER TABLE requests ADD COLUMN subdivision TEXT;',
         'CREATE INDEX request_subdivision_index on requests (subdivision);',
-        \&_populate_locations,
-        \&_populate_locations,
-        \&_populate_locations,
     );
 }
 
