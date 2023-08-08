@@ -4,6 +4,9 @@ use v5.34.1;
 
 use strict;
 use warnings;
+use utf8;
+
+use feature 'signatures';
 
 sub MIGRATIONS {
     return (
@@ -31,6 +34,26 @@ sub MIGRATIONS {
         'CREATE INDEX request_extra_index on requests (date, path);',
         'ALTER TABLE requests ADD column referer text;',
         'CREATE INDEX request_referer_index on requests (referer);',
+        'ALTER TABLE requests ADD COLUMN country TEXT;',
+        'CREATE INDEX request_country_index on requests (country);',
+        'ALTER TABLE requests ADD COLUMN subdivision TEXT;',
+        'CREATE INDEX request_subdivision_index on requests (subdivision);',
+        \&_populate_locations,
     );
+}
+
+sub _populate_locations($dbh) {
+    require BurguillosInfo;
+    require BurguillosInfo::Tracking;
+    my $tracking = BurguillosInfo::Tracking->new(BurguillosInfo->new);
+    my $data = $dbh->selectall_arrayref(<<'EOF', {Slice => {}});
+SELECT uuid, remote_address
+FROM requests
+WHERE date > NOW() - interval '2 months';
+EOF
+    for my $request (@$data) {
+        my ($uuid, $remote_address) = $request->@{'uuid', 'remote_address'};
+        $tracking->update_country_and_subdivision($dbh, $uuid, $remote_address);
+    }
 }
 1;

@@ -54,11 +54,61 @@ sub _register_request_query ( $self, $remote_address, $user_agent,
     $params_json, $path, $referer )
 {
     my $dbh = BurguillosInfo::DB->connect($app);
+    my $country = $self->_get_country('185.244.231.157');
+    my $subdivision = $self->_get_subdivision('185.244.231.157');
+
     $dbh->do(
-        <<'EOF', undef, $remote_address, $user_agent, $params_json, $path, $referer );
-INSERT INTO requests(remote_address, user_agent, params, path, referer)
-	VALUES (?, ?, ?, ?, ?);
+        <<'EOF', undef, $remote_address, $user_agent, $params_json, $path, $referer, $country, $subdivision );
+INSERT INTO requests(remote_address,
+        user_agent, params, path,
+        referer, country, subdivision)
+	VALUES (?, ?, ?, ?, ?, ?, ?);
 EOF
+}
+
+sub update_country_and_subdivision($self, $dbh, $uuid, $remote_address) {
+    my $country = $self->_get_country($remote_address);
+    my $subdivision = $self->_get_subdivision($remote_address);
+    $dbh->do(<<'EOF', undef, $country, $subdivision, $uuid);
+UPDATE requests
+SET country=?,
+    subdivision=?
+WHERE uuid=?;
+EOF
+}
+
+sub _get_country($self, $remote_address) {
+    my $geoip = $self->_geoip;
+    if (!defined $geoip) {
+        return;
+    }
+    my $data = $geoip->record_for_address($remote_address);
+    return $data->{country}{names}{es};
+}
+
+sub _get_subdivision($self, $remote_address) {
+    my $geoip = $self->_geoip;
+    if (!defined $geoip) {
+        return;
+    }
+    my $data = $geoip->record_for_address($remote_address);
+    return $data->{subdivisions}[0]{names}{es};
+}
+
+sub _geoip($self) {
+    require IP::Geolocation::MMDB;
+    my $path = $self->_geoip_path;
+    if (!defined $path) {
+        return;
+    }
+    return IP::Geolocation::MMDB->new(file => $path); 
+}
+
+sub _geoip_path($self) {
+    require BurguillosInfo;
+    my $app = BurguillosInfo->new;
+    my $config = $app->config->{geoip_database};
+    return $config;
 }
 
 sub register_request {

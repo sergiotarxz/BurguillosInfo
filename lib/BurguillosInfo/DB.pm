@@ -12,22 +12,28 @@ use BurguillosInfo::DB::Migrations;
 use Data::Dumper;
 
 my $dbh;
+
 sub connect {
-    if (defined $dbh) {
-    	return $dbh;
+    if ( defined $dbh ) {
+        return $dbh;
     }
     my $class    = shift;
     my $app      = shift;
     my $config   = $app->config;
     my $database = $config->{db}{database};
-    $dbh      = DBI->connect(
+    $dbh = DBI->connect(
         "dbi:Pg:dbname=$database",
-        , undef, undef, { RaiseError => 1, Callbacks => {
-		connected => sub {
-			shift->do('set timezone = UTC');
-			return;
-		}
-	}},
+        ,
+        undef, undef,
+        {
+            RaiseError => 1,
+            Callbacks  => {
+                connected => sub {
+                    shift->do('set timezone = UTC');
+                    return;
+                }
+            }
+        },
     );
     $class->_migrate($dbh);
     return $dbh;
@@ -46,33 +52,39 @@ sub _migrate {
         say STDERR "Migrations already applied.";
         return;
     }
-    $class->_apply_migrations($dbh, \@migrations);
+    $class->_apply_migrations( $dbh, \@migrations );
 }
 
 sub _apply_migrations {
-    my $class = shift;
-    my $dbh   = shift;
+    my $class      = shift;
+    my $dbh        = shift;
     my $migrations = shift;
     for (
-        my $i = $class->get_current_migration($dbh);
+        my $i = $class->get_current_migration($dbh) ;
         $i < @$migrations ;
         $i++
       )
     {
-	local $dbh->{RaiseError} = 1;
-	my $current_migration = $migrations->[$i];
-	my $migration_number = $i + 1;
-	$class->_apply_migration($dbh, $current_migration, $migration_number);
+        local $dbh->{RaiseError} = 1;
+        my $current_migration = $migrations->[$i];
+        my $migration_number  = $i + 1;
+        $class->_apply_migration( $dbh, $current_migration, $migration_number );
     }
 }
 
 sub _apply_migration {
-	my $class = shift;
-	my $dbh   = shift;
-	my $current_migration = shift;
-	my $migration_number = shift;
-	$dbh->do($current_migration);
-	$dbh->do(<<'EOF', undef, 'current_migration', $migration_number);
+    my $class             = shift;
+    my $dbh               = shift;
+    my $current_migration = shift;
+    my $migration_number  = shift;
+    {
+        if (ref $current_migration eq 'CODE') {
+            $current_migration->($dbh);
+            next;
+        }
+        $dbh->do($current_migration);
+    }
+    $dbh->do( <<'EOF', undef, 'current_migration', $migration_number );
 INSERT INTO options
 VALUES ($1, $2) 
 ON CONFLICT (name) DO 
