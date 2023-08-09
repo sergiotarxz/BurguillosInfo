@@ -38,6 +38,10 @@ sub MIGRATIONS {
         'CREATE INDEX request_country_index on requests (country);',
         'ALTER TABLE requests ADD COLUMN subdivision TEXT;',
         'CREATE INDEX request_subdivision_index on requests (subdivision);',
+        \&_populate_locations,
+        \&_populate_locations,
+        \&_populate_locations,
+        \&_populate_locations,
     );
 }
 
@@ -45,25 +49,32 @@ sub _populate_locations ($dbh) {
     require BurguillosInfo;
     require BurguillosInfo::Tracking;
     my $tracking = BurguillosInfo::Tracking->new( BurguillosInfo->new );
-    my $page = 0;
+    my $page     = 0;
     while (1) {
-        my $data = $dbh->selectall_arrayref( <<"EOF", { Slice => {} } );
-SELECT uuid, remote_address
-FROM requests
-WHERE date > NOW() - interval '2 months'
-OFFSET $page
-LIMIT 100;
-EOF
-        if (!@$data) {
-            return;
-        }
-        for my $request (@$data) {
-            my ( $uuid, $remote_address ) =
-              $request->@{ 'uuid', 'remote_address' };
-            $tracking->update_country_and_subdivision( $dbh, $uuid,
-                $remote_address );
-        }
+        last if !_update_request_page( $dbh, $tracking, $page );
         $page += 100;
     }
+}
+
+sub _update_request_page ( $dbh, $tracking, $page ) {
+    my $data = $dbh->selectall_arrayref( <<"EOF", { Slice => {} }, $page );
+SELECT uuid, remote_address
+FROM requests
+WHERE date > NOW() - interval '1 month'
+    AND country IS NULL
+    AND subdivision IS NULL
+ORDER BY date desc
+OFFSET $page
+LIMIT ?;
+EOF
+    if ( !@$data ) {
+        return;
+    }
+    for my $request (@$data) {
+        my ( $uuid, $remote_address ) = $request->@{ 'uuid', 'remote_address' };
+        $tracking->update_country_and_subdivision( $dbh, $uuid,
+            $remote_address );
+    }
+    return 1;
 }
 1;
