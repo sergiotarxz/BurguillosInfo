@@ -42,6 +42,7 @@ sub MIGRATIONS {
         \&_populate_locations,
         \&_populate_locations,
         \&_populate_locations,
+        \&_populate_locations,
     );
 }
 
