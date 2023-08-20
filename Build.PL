@@ -21,6 +21,10 @@ my $build = Module::Build->new(
         'XML::Twig'                    => 0,
         'JSON'                         => 0,
         'IP::Geolocation::MMDB'        => 0,
+        'Moo'                          => 0,
+        'Moo::Role'                    => 0,
+        'Module::Pluggable'            => 0,
+        'List::AllUtils'               => 0,
     },
 );
 $build->create_build_script;
