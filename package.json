@@ -15,7 +15,7 @@
       "eslint": "^8.40.0",
       "eslint-plugin-no-relative-import-paths": "^1.5.2",
       "typescript": "^5.0.4",
-      "webpack-cli": "^5.0.2"
+      "webpack-cli": "^5.1.4"
    },
    "dependencies": {
       "tablesort": "^5.3.0"

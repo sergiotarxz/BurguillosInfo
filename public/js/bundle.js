@@ -9,14 +9,14 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js-src/index.ts":
+/***/ "./js-src/index.js":
 /*!*************************!*\
-  !*** ./js-src/index.ts ***!
+  !*** ./js-src/index.js ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tablesort__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tablesort */ \"./node_modules/tablesort/src/tablesort.js\");\n/* harmony import */ var tablesort__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tablesort__WEBPACK_IMPORTED_MODULE_0__);\n\n\nwindow.Tablesort = __webpack_require__(/*! tablesort */ \"./node_modules/tablesort/src/tablesort.js\");\n__webpack_require__(/*! tablesort/src/sorts/tablesort.number */ \"./node_modules/tablesort/src/sorts/tablesort.number.js\");\n\nwindow.onload = () => {\n    const menu_expand = document.querySelector('a.menu-expand');\n    const mobile_foldable = document.querySelector('nav.mobile-foldable');\n    const tables = document.querySelectorAll('table')\n\n    if (menu_expand !== null && mobile_foldable !== null) {\n        menu_expand.addEventListener('click', () => {\n            mobile_foldable.classList.toggle('show');\n        });\n    }\n\n    for (const table of tables) {\n        const header = table.querySelector('tr');\n        if (header !== null) {\n            header.setAttribute('data-sort-method', 'none')\n            for (const th of header.querySelectorAll('th')) {\n                if (th.getAttribute('data-sort-method') == null) {\n                    th.setAttribute('data-sort-method', 'thead')\n                }\n            }\n        }\n        new (tablesort__WEBPACK_IMPORTED_MODULE_0___default())(table)\n    }\n};\n\n\n//# sourceURL=webpack://BurguillosInfo/./js-src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tablesort__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tablesort */ \"./node_modules/tablesort/src/tablesort.js\");\n/* harmony import */ var tablesort__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tablesort__WEBPACK_IMPORTED_MODULE_0__);\n\n\nwindow.Tablesort = __webpack_require__(/*! tablesort */ \"./node_modules/tablesort/src/tablesort.js\");\n__webpack_require__(/*! tablesort/src/sorts/tablesort.number */ \"./node_modules/tablesort/src/sorts/tablesort.number.js\");\n\nwindow.onload = () => {\n    const menu_expand = document.querySelector('a.menu-expand');\n    const mobile_foldable = document.querySelector('nav.mobile-foldable');\n    const tables = document.querySelectorAll('table')\n\n    loadAd()\n\n    if (menu_expand !== null && mobile_foldable !== null) {\n        menu_expand.addEventListener('click', () => {\n            mobile_foldable.classList.toggle('show');\n        });\n    }\n\n    for (const table of tables) {\n        const header = table.querySelector('tr');\n        if (header !== null) {\n            header.setAttribute('data-sort-method', 'none')\n            for (const th of header.querySelectorAll('th')) {\n                if (th.getAttribute('data-sort-method') == null) {\n                    th.setAttribute('data-sort-method', 'thead')\n                }\n            }\n        }\n        new (tablesort__WEBPACK_IMPORTED_MODULE_0___default())(table)\n    }\n};\n\nlet current_ad_number = null\n\nfunction loadAd() {\n    const params = new URLSearchParams();\n    if (current_ad_number !== null) {\n        params.append('n', \"\"+current_ad_number);\n    }\n    fetch('/next-ad.json?' + params).then((res) => {\n        return res.json()\n    }).then((res) => {\n        current_ad_number = res.current_ad_number\n        const ad = res.ad\n        const must_continue = res.continue\n        const carousel = document.querySelector('.carousel');\n        if (must_continue === 0) {\n            return;\n        }\n        carousel.innerHTML = \"\"\n        const a = document.createElement('a')\n        const image = document.createElement('img')\n        const text_container = document.createElement('div')\n        const text = document.createElement('h3')\n        const promoted = document.createElement('div')\n\n        promoted.classList.add('promoted-tag')\n        promoted.innerText = \"Promocionado\"\n        image.src = ad.img\n        text.innerText = ad.text\n        a.href = ad.href\n\n        a.append(image)\n        text_container.append(promoted)\n        text_container.append(text)\n        a.append(text_container)\n        carousel.append(a);\n\n        window.setTimeout(() => {\n            loadAd()\n        }, ad.seconds * 1000)\n    })\n}\n\n\n//# sourceURL=webpack://BurguillosInfo/./js-src/index.js?");
 
 /***/ }),
 
@@ -112,7 +112,7 @@ eval(";(function() {\n  function Tablesort(el, options) {\n    if (!(this instan
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./js-src/index.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./js-src/index.js");
 /******/ 	
 /******/ })()
 ;

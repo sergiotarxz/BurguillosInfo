@@ -21,10 +21,27 @@ body {
     filter: blur(10px);
     background-size: cover;
     overflow: hidden; }
-  body div.page-contents {
-    position: absolute;
+  body div.carousel {
     position: fixed;
-    overflow-y: scroll;
+    top: 80%;
+    height: 20%;
+    width: 100%;
+    background: white; }
+    body div.carousel a {
+      display: flex;
+      text-align: center;
+      justify-content: start;
+      align-items: center;
+      height: 100%;
+      text-decoration: none; }
+    body div.carousel p, body div.carousel h3 {
+      margin: 0; }
+    body div.carousel img {
+      height: 100%; }
+  body div.none {
+    display: none; }
+  body div.complete-container {
+    position: fixed;
     z-index: 2;
     background: #FEFEFA;
     color: #666362;
@@ -32,6 +49,11 @@ body {
     left: 0%;
     height: 100%;
     width: 100%; }
+  body div.page-contents {
+    position: fixed;
+    top: 60px;
+    height: calc(80% - 60px);
+    overflow-y: scroll; }
     body div.page-contents div.child-categories-mobile a {
       padding-left: 2.5rem; }
     body div.page-contents img {
@@ -175,12 +197,13 @@ body {
       display: flex;
       width: 100%;
       background: blueviolet;
-      height: 60px; }
+      height: 60px;
+      top: 0%; }
       body div.page-contents nav.mobile-shortcuts a {
         height: 100%;
-        width: 16.66667%; }
+        width: 16.6666666667%; }
       body div.page-contents nav.mobile-shortcuts div {
-        width: 66.66667%; }
+        width: 66.6666666667%; }
     body div.page-contents nav.mobile-foldable {
       display: none;
       background: blueviolet;
@@ -239,4 +262,3 @@ body {
       margin-left: 3%; }
     body div.page-contents div.description div.articles a:nth-child(3n+1) {
       margin-left: 0%; } }
-

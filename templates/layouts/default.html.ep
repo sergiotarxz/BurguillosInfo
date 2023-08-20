@@ -32,17 +32,20 @@
   <body>
 	<div class="site-wrapper">
 	</div>
-	<div class="page-contents">
+    <div class="complete-container">
+        <div class="page-contents">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
 %= include 'page/_mobile_menu', categories => $categories
-		<%= content %></body>
-		<hr/>
-		<div class="footer description">
-			<p>©2022-2023 Sergio Iglesias</p>
-			<p>Enterate de todas las novedades de Burguillos.info:</p>
-			<a class="suscribe-category-rss" href="/all.rss">
-				 <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-			</a>
-		</div>
-	</div>
+            <%= content %></body>
+            <hr/>
+            <div class="footer description">
+                <p>©2022-2023 Sergio Iglesias</p>
+                <p>Enterate de todas las novedades de Burguillos.info:</p>
+                <a class="suscribe-category-rss" href="/all.rss">
+                     <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
+                </a>
+            </div>
+        </div>
+%= include 'ads/_carousel'
+    </div>
 </html>

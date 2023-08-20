@@ -23,6 +23,6 @@
 	]
     },
     "include": [
-	"js-src/*.ts", "js-src/*/*.ts"
+        "js-src/*.ts", "js-src/*/*.ts"
     ]
 }

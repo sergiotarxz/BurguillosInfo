@@ -10,6 +10,7 @@ use feature 'signatures';
 use List::AllUtils qw/none/;
 
 use Moo;
+
 use Module::Pluggable
   search_path      => ['BurguillosInfo::Ads'],
   instantiate      => 'instance',
@@ -47,6 +48,7 @@ sub _order_two_ads ( $self, $a, $b ) {
 
 sub get_next ( $self, $current_ad_number = undef ) {
     my $array = $self->_array;
+    use Data::Dumper;
     if (  !scalar @$array
         || none { $_->is_active } @$array )
     {
@@ -60,7 +62,7 @@ sub get_next ( $self, $current_ad_number = undef ) {
         return $self->get_next( $self->_get_next_number($current_ad_number) );
     }
     return {
-        ad                => $ad,
+        ad                => $ad->serialize,
         continue          => 1,
         current_ad_number => $self->_get_next_number($current_ad_number),
     };

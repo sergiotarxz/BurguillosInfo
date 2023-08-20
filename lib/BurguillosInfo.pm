@@ -53,6 +53,7 @@ sub startup ($self) {
     $r->get('/:category')->to('Page#category');
     $r->get('/posts/<:slug>-preview.png')->to('Page#get_post_preview');
     $r->get('/posts/:slug')->to('Page#post');
+    $r->get('/next-ad.json')->to('Ads#next_ad');
     $r->get('/filtros')->to('Filter#list');
     $r->get('/filtros/:slug')->to('Filter#get');
     $r->get('/stats/login')->to('Metrics#login');
