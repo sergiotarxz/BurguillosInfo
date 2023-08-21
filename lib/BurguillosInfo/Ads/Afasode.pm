@@ -29,7 +29,7 @@ sub img {
 }
 
 sub href {
-    return 'https://example.com';
+    return '/posts/boletos-loteria-afasode-sevilla-2023';
 }
 
 sub text {
