@@ -26,7 +26,7 @@ sub weight {
 }
 
 sub seconds {
-    return 3;
+    return 5;
 }
 
 sub serialize ($self) {

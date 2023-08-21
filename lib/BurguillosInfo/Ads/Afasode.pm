@@ -16,6 +16,10 @@ sub id ($self) {
     return 'afasode-loteria';
 }
 
+sub weight {
+    return 15;
+}
+
 sub is_active ($self) {
     return 1;
 }
