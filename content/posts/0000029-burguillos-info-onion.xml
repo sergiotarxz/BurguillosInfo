@@ -4,37 +4,37 @@
 	<title>Burguillos.info disponible en la red Tor.</title>
 	<ogdesc>Burguillos.info disponible en la red Tor.</ogdesc>
 	<category>index</category>
-    <img src="/img/tor.webp"/>
+        <img src="/img/tor.webp"/>
 	<slug>burguillos-info-red-tor</slug>
 	<content>
-        <img style="border: 1px black solid;" src="/img/tor.webp" alt="The icon of the Tor Network"/>
+            <img style="border: 1px black solid;" src="/img/tor.webp" alt="The icon of the Tor Network"/>
 
-        <h2>Desplegado Hidden Service para Burguillos.info en Tor.</h2>
-        
-        <p>Los hidden service de la red Tor son una tecnología realmente prometedora que permiten desplegar páginas web
-        a internet sin necesidad de tener puertos abiertos en un router o un nombre de dominio comprado, esta red además
-        de abaratar costes para los desarrolladores provee una privacidad mucho mayor a los usuarios de dichas webs.</p>
+            <h2>Desplegado Hidden Service para Burguillos.info en Tor.</h2>
+            
+            <p>Los hidden service de la red Tor son una tecnología realmente prometedora que permiten desplegar páginas web
+            a internet sin necesidad de tener puertos abiertos en un router o un nombre de dominio comprado, esta red además
+            de abaratar costes para los desarrolladores provee una privacidad mucho mayor a los usuarios de dichas webs.</p>
 
-        <p>Es por ese motivo que desde Burguillos.info nos hemos animado a desplegar un Hidden Service que os permita
-        aprovechar todas las capacidades de la red Tor también al consultar información sobre nuestro pueblo.</p>
+            <p>Es por ese motivo que desde Burguillos.info nos hemos animado a desplegar un Hidden Service que os permita
+            aprovechar todas las capacidades de la red Tor también al consultar información sobre nuestro pueblo.</p>
 
-        <p>Si os descargáis Tor Browser siguiendo las instrucciones de <a href="https://www.torproject.org/download/">la página oficial del proyecto Tor</a> simplemente apuntando a <a href="https://burguillos.info">https://burguillos.info</a>
-        os preguntará el navegador si queréis acceder a la versión alternativa sobre Tor.</p>
+            <p>Si os descargáis Tor Browser siguiendo las instrucciones de <a href="https://www.torproject.org/download/">la página oficial del proyecto Tor</a> simplemente apuntando a <a href="https://burguillos.info">https://burguillos.info</a>
+            os preguntará el navegador si queréis acceder a la versión alternativa sobre Tor.</p>
 
-        <p>Si en vuestro camino por Tor no queréis pisar clear net en ningún momento la dirección de Tor es <a href="http://burguic3le5osczqiw3627lazs36e42otfq3xe4rgj4hnbubllzhhbyd.onion//">http://burguic3le5osczqiw3627lazs36e42otfq3xe4rgj4hnbubllzhhbyd.onion/</a>.</p>
+            <p>Si en vuestro camino por Tor no queréis pisar clear net en ningún momento la dirección de Tor es <a href="http://burguic3le5osczqiw3627lazs36e42otfq3xe4rgj4hnbubllzhhbyd.onion//">http://burguic3le5osczqiw3627lazs36e42otfq3xe4rgj4hnbubllzhhbyd.onion/</a>.</p>
 
-        <p>Los más espabilados del grupo estareis pensando. ¿No eran las urls http inseguras?</p>
+            <p>Los más espabilados del grupo estareis pensando. ¿No eran las urls http inseguras?</p>
 
-        <p>En el caso de los hidden service esto no se cumple ya que la propia red encripta el tráfico desde tú máquina
-        hasta el hidden service, sin embargo si usais Tor para acceder al internet normal si debéis preocuparos de que
-        la web se encuentre sobre https para que no puedan espiar vuestro tráfico.</p>
+            <p>En el caso de los hidden service esto no se cumple ya que la propia red encripta el tráfico desde tú máquina
+            hasta el hidden service, sin embargo si usais Tor para acceder al internet normal si debéis preocuparos de que
+            la web se encuentre sobre https para que no puedan espiar vuestro tráfico.</p>
 
-        <p>Cabe destacar que Google está intentando imponer en internet un estándar muy dañino de DRM web que impedirá
-        a la gente poder modificar y crear sus propios navegadores sin ser certificados por Google.</p>
+            <p>Cabe destacar que Google está intentando imponer en internet un estándar muy dañino de DRM web que impedirá
+            a la gente poder modificar y crear sus propios navegadores sin ser certificados por Google.</p>
 
-        <p>Os ruego a los ciudadanos de Burguillos que os resistais a este estándar y dejéis de usar Chrome.</p>
+            <p>Os ruego a los ciudadanos de Burguillos que os resistais a este estándar y dejéis de usar Chrome.</p>
 
-        <p>Un ejemplo de navegador alternativo a Chrome es por supuesto Tor Browser, pero Firefox también es una
+            <p>Un ejemplo de navegador alternativo a Chrome es por supuesto Tor Browser, pero Firefox también es una
         gran alternativa y recientemente ha superado de nuevo a Chrome en performance.</p>
 	</content>
 </post>
