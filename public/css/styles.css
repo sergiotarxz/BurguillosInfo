@@ -248,8 +248,8 @@ body {
   body div.page-contents {
     top: 0%;
     left: 5%;
-    height: 100%;
-    width: 90%; }
+    height: 80%;
+    width: 100%; }
     body div.page-contents nav.mobile-foldable, body div.page-contents nav.mobile-foldable.show {
       display: none; }
     body div.page-contents div.description {
@@ -263,7 +263,9 @@ body {
         body div.page-contents nav.desktop a img.index-image-menu {
           padding-top: 15px; }
     body div.page-contents nav.mobile-shortcuts {
-      display: none; } }
+      display: none; }
+  body div.page-contents.no-carousel {
+    height: 100%; } }
 
 @media (min-width: 1333px) {
   body div.page-contents div.description div.articles a {
