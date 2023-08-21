@@ -26,11 +26,9 @@ body {
     top: 80%;
     height: calc(20% - 6px);
     width: calc(100% - 6px);
-    background: #f2eb8c;
     border: solid 3px black; }
-    body div.carousel:hover {
-      background: blueviolet; }
     body div.carousel a {
+      background: #f2eb8c;
       color: blueviolet;
       display: flex;
       text-align: center;
@@ -39,6 +37,7 @@ body {
       height: 100%;
       text-decoration: none; }
       body div.carousel a:hover {
+        background: blueviolet;
         color: #f2eb8c; }
     body div.carousel div.promoted-tag, body div.carousel h3 {
       margin: 0;
@@ -58,10 +57,13 @@ body {
     left: 0%;
     height: 100%;
     width: 100%; }
+  body div.page-contents.no-carousel {
+    height: calc(100% - 60px); }
   body div.page-contents {
     position: fixed;
     top: 60px;
     height: calc(80% - 60px);
+    width: 100%;
     overflow-y: scroll; }
     body div.page-contents div.child-categories-mobile a {
       padding-left: 2.5rem; }

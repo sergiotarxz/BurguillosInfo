@@ -32,6 +32,22 @@ window.onload = () => {
 
 let current_ad_number = null
 
+function expand_page_contents() {
+    const page_contents = document.querySelector('div.page-contents'); 
+    if (page_contents === null) {
+        return;
+    }
+    page_contents.classList.add('no-carousel');
+}
+
+function no_more_ads() {
+    const carousel = document.querySelector('.carousel');
+    if (carousel !== null) {
+        carousel.remove();
+    }
+    expand_page_contents();
+}
+
 function loadAd() {
     const params = new URLSearchParams();
     if (current_ad_number !== null) {
@@ -44,7 +60,10 @@ function loadAd() {
         const ad = res.ad
         const must_continue = res.continue
         const carousel = document.querySelector('.carousel');
-        if (must_continue === 0) {
+        if (must_continue === 0
+                || carousel === null
+                || carousel.offsetWidth === 0) {
+            no_more_ads();
             return;
         }
         carousel.innerHTML = ""

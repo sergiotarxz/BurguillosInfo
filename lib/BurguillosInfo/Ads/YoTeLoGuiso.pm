@@ -16,12 +16,12 @@ sub id ($self) {
     return 'yo-te-lo-guiso';
 }
 
-sub order {
+sub weight {
     return 50;
 }
 
 sub max_alternative {
-    return 2;
+    return 3;
 }
 
 sub is_active ($self) {
@@ -29,6 +29,9 @@ sub is_active ($self) {
 }
 
 sub img ($self) {
+    if ( $self->alternative == 2 ) {
+        return '/img/anuncio-yo-te-lo-guiso-3.webp';
+    }
     if ( $self->alternative == 1 ) {
         return '/img/anuncio-yo-te-lo-guiso-2.webp';
     }
@@ -36,6 +39,9 @@ sub img ($self) {
 }
 
 sub text($self) {
+    if ( $self->alternative == 2 ) {
+        return '¡Comida distinta cada día! Ven a "Yo te lo guiso".';
+    }
     if ( $self->alternative == 1 ) {
         return
 'Una comida como esta no la ves todos los días, disponible en Burguillos, entra y descubrelo.';
@@ -44,6 +50,6 @@ sub text($self) {
 }
 
 sub href {
-    return 'https://example.com';
+    return '/posts/yo-te-lo-guiso?come-from-ad=1';
 }
 1;

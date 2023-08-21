@@ -21,8 +21,8 @@ sub regenerate_alternative($self) {
     $self->alternative(int(rand() * ($self->max_alternative+1)));
 }
 
-sub order {
-    return 999;
+sub weight {
+    return 25;
 }
 
 sub seconds {

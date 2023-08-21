@@ -33,17 +33,7 @@ use Module::Pluggable
         for my $ad (@array_ads) {
             $self->_check_ad_valid($ad);
         }
-        @array_ads = sort { $self->_order_two_ads( $a, $b ); } @array_ads;
     }
-}
-
-sub _order_two_ads ( $self, $a, $b ) {
-    my $by_order = $a->order <=> $b->order;
-    if ($by_order) {
-        return $by_order;
-    }
-    my $by_alpha = $a->id cmp $b->id;
-    return $by_alpha;
 }
 
 sub get_next ( $self, $current_ad_number = undef ) {
@@ -61,12 +51,35 @@ sub get_next ( $self, $current_ad_number = undef ) {
     if ( !$ad->is_active ) {
         return $self->get_next( $self->_get_next_number($current_ad_number) );
     }
+    my $ad = $self->get_rand_ad($array);
     $ad->regenerate_alternative;
     return {
         ad                => $ad->serialize,
         continue          => 1,
         current_ad_number => $self->_get_next_number($current_ad_number),
     };
+}
+
+sub get_rand_ad($self, $array) {
+    my $valid_ads = [ grep { $_->is_active } @$array ];
+    my $max_weight = $self->sum_weights($array);
+    my $rand = int(rand() * $max_weight);
+    my $sum_weight = 0;
+    for my $ad (@$array) {
+        $sum_weight += $ad->weight;
+        if ($rand < $sum_weight) {
+            return $ad;
+        }
+    }
+    die "This should not happen, there should be always a corresponding ad.";
+}
+
+sub sum_weights($self, $array) {
+    my $sum = 0;
+    for my $ad (@$array) {
+        $sum += $ad->weight;
+    }
+    return $sum;
 }
 
 sub _get_next_number ( $self, $current_ad_number = undef ) {

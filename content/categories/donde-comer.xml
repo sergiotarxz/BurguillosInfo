@@ -12,6 +12,19 @@
 	<slug>donde-comer</slug>
     <attributes>
         <attribute>
+            <title>Comida veganos en Burguillos.</title>
+            <identifier>comida-vegana</identifier>
+            <priority>1</priority>
+            <menu_text>Listado de sitios que tienen oferta de platos veganos.</menu_text>
+            <description>
+                <h2>Comida vegana en Burguillos</h2>
+
+                <p>Todos los negocios de restauración que tienen una oferta de platos veganos.</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+        <attribute>
             <title>Pedir comida a domicilio en Burguillos.</title>
             <identifier>reparto-a-domicilio-comida</identifier>
             <priority>0</priority>
