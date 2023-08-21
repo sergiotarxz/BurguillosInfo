@@ -61,6 +61,7 @@ sub get_next ( $self, $current_ad_number = undef ) {
     if ( !$ad->is_active ) {
         return $self->get_next( $self->_get_next_number($current_ad_number) );
     }
+    $ad->regenerate_alternative;
     return {
         ad                => $ad->serialize,
         continue          => 1,

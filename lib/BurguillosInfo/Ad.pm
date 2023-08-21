@@ -9,12 +9,24 @@ use feature 'signatures';
 
 use Moo::Role;
 
+has alternative => (
+    is => 'rw'
+);
+
+sub max_alternative {
+    return 0;
+}
+
+sub regenerate_alternative($self) {
+    $self->alternative(int(rand() * ($self->max_alternative+1)));
+}
+
 sub order {
     return 999;
 }
 
 sub seconds {
-    return 15;
+    return 3;
 }
 
 sub serialize ($self) {

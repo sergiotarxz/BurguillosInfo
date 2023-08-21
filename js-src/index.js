@@ -51,7 +51,7 @@ function loadAd() {
         const a = document.createElement('a')
         const image = document.createElement('img')
         const text_container = document.createElement('div')
-        const text = document.createElement('h3')
+        const text = document.createElement('h4')
         const promoted = document.createElement('p')
 
         promoted.classList.add('promoted-tag')
