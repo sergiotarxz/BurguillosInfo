@@ -47,10 +47,6 @@ sub get_next ( $self, $current_ad_number = undef ) {
     if ( !defined $current_ad_number ) {
         $current_ad_number = 0;
     }
-    my $ad = $array->[$current_ad_number];
-    if ( !$ad->is_active ) {
-        return $self->get_next( $self->_get_next_number($current_ad_number) );
-    }
     my $ad = $self->get_rand_ad($array);
     $ad->regenerate_alternative;
     return {
