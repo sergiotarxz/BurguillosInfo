@@ -24,8 +24,12 @@ sub is_active ($self) {
     return 1;
 }
 
+sub seconds {
+    return 8;
+}
+
 sub img {
-    return '/img/burguillos.webp';
+    return '/img/burguillos-new-logo.svg';
 }
 
 sub href {
