@@ -40,13 +40,13 @@ sub img ($self) {
 
 sub text($self) {
     if ( $self->alternative == 2 ) {
-        return '¡Comida distinta cada día! Ven a "Yo te lo guiso".';
+        return '¡Comida distinta cada día! Ven a YoTeLoGuiso.';
     }
     if ( $self->alternative == 1 ) {
         return
 'Una comida como esta no la ves todos los días, disponible en Burguillos, entra y descubrelo.';
     }
-    return 'Comida hecha como en tu casa, Yo Te Lo Guiso...';
+    return 'Comida hecha como en tu casa, YoTeLoGuiso...';
 }
 
 sub href {
