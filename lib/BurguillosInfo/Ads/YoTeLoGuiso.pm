@@ -24,25 +24,29 @@ sub max_alternative {
     return 3;
 }
 
+sub default_alternative($self) {
+    return int($self->alternative * ($self->max_alternative + 1));
+}
+
 sub is_active ($self) {
     return 1;
 }
 
 sub img ($self) {
-    if ( $self->alternative == 2 ) {
+    if ( $self->default_alternative == 2 ) {
         return '/img/anuncio-yo-te-lo-guiso-3.webp';
     }
-    if ( $self->alternative == 1 ) {
+    if ( $self->default_alternative == 1 ) {
         return '/img/anuncio-yo-te-lo-guiso-2.webp';
     }
     return '/img/anuncio-yo-te-lo-guiso-1.webp';
 }
 
 sub text($self) {
-    if ( $self->alternative == 2 ) {
+    if ( $self->default_alternative == 2 ) {
         return '¡Comida distinta cada día! Ven a YoTeLoGuiso.';
     }
-    if ( $self->alternative == 1 ) {
+    if ( $self->default_alternative == 1 ) {
         return
 'Una comida como esta no la ves todos los días, disponible en Burguillos, entra y descubrelo.';
     }

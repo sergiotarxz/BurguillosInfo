@@ -163,15 +163,17 @@ body {
         body div.page-contents div.description a.suscribe-category-rss img {
           width: 40px;
           height: 40px; }
+    body div.page-contents nav.mobile-shortcuts > a {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     body div.page-contents nav > a.menu-expand > img {
       width: 30px;
-      height: 30px;
-      padding-top: 15px; }
+      height: 30px; }
     body div.page-contents nav > a > img.index-image-menu {
       vertical-align: middle;
-      width: 50px;
-      height: 50px;
-      padding-bottom: 10px; }
+      width: 40px;
+      height: 40px; }
     body div.page-contents nav.desktop {
       display: none; }
       body div.page-contents nav.desktop a {
@@ -182,8 +184,6 @@ body {
       display: block;
       font-size: 25px;
       margin: 0px; }
-      body div.page-contents nav a.go-to-index img {
-        margin-top: 5%; }
       body div.page-contents nav a {
         padding-left: 10px;
         padding-right: 10px;
@@ -214,7 +214,11 @@ body {
       top: 0%; }
       body div.page-contents nav.mobile-shortcuts a {
         height: 100%;
-        width: 16.6666666667%; }
+        width: 16.6666666667%;
+        padding-left: 0;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0; }
       body div.page-contents nav.mobile-shortcuts div {
         width: 66.6666666667%; }
     body div.page-contents nav.mobile-foldable {
@@ -259,11 +263,14 @@ body {
       margin-right: 10%; }
     body div.page-contents nav.desktop {
       display: block;
-      height: auto; }
+      height: auto;
+      height: 60px; }
       body div.page-contents nav.desktop a {
-        display: table-cell; }
+        display: table-cell;
+        height: 60px; }
         body div.page-contents nav.desktop a img.index-image-menu {
-          padding-top: 15px; }
+          height: 40px;
+          width: 40px; }
     body div.page-contents nav.mobile-shortcuts {
       display: none; }
   body div.page-contents.no-carousel {

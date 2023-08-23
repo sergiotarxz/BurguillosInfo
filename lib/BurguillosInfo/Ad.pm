@@ -13,12 +13,8 @@ has alternative => (
     is => 'rw'
 );
 
-sub max_alternative {
-    return 0;
-}
-
 sub regenerate_alternative($self) {
-    $self->alternative(int(rand() * ($self->max_alternative+1)));
+    $self->alternative(rand());
 }
 
 sub weight {
