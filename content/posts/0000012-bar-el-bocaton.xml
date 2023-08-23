@@ -13,7 +13,9 @@
         <attribute>pizzerias</attribute>
     </attributes>
 	<content>
+
         <h2>Café - Bar - Pastelería - Pizzeria - Hamburguesería</h2>
+        <h3 style="background: black; color: red;">Cerrado portraspaso.</h3>
 		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.webp"/>
 		<p>Damos la bienvenida a un nuevo negocio al directorio de Burguillos.info, El Bocatón.</p>
 
