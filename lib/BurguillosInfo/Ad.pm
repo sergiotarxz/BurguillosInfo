@@ -8,20 +8,24 @@ use warnings;
 use feature 'signatures';
 
 use Moo::Role;
+use Scalar::Util qw/blessed/;
 
 has alternative => (
     is => 'rw'
 );
 
-sub regenerate_alternative($self) {
+sub clone($self) {
+    my $class = blessed $self;
+    $self = $class->new;
     $self->alternative(rand());
+    return $self;
 }
 
 sub weight {
     return 25;
 }
 
-sub seconds {
+sub seconds($self) {
     return 5;
 }
 

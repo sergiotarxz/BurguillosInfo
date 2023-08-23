@@ -47,8 +47,7 @@ sub get_next ( $self, $current_ad_number = undef ) {
     if ( !defined $current_ad_number ) {
         $current_ad_number = 0;
     }
-    my $ad = $self->get_rand_ad($array);
-    $ad->regenerate_alternative;
+    my $ad = $self->get_rand_ad($array)->clone;
     return {
         ad                => $ad->serialize,
         continue          => 1,
