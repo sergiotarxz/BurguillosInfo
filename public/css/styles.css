@@ -197,7 +197,6 @@ body {
         body div.page-contents nav a.selected {
           background: #FEFEFA;
           color: blueviolet;
-          border-left: 1px solid blueviolet;
           border-right: 1px solid blueviolet; }
       body div.page-contents nav a.menu-expand {
         padding-bottom: 9px; }
@@ -257,7 +256,8 @@ body {
     top: 0%;
     left: 5%;
     height: 80%;
-    width: 100%; }
+    width: 90%;
+    border: solid 1px black; }
     body div.page-contents nav.mobile-foldable, body div.page-contents nav.mobile-foldable.show {
       display: none; }
     body div.page-contents div.description {
