@@ -1,0 +1,259 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-08-24T21:37+00:00</date>
+    <title>Cervecería el Cañon - Cafetería la Tazza - Carta y Menú</title>
+    <ogdesc>Cervecería el Cañon - Cafetería la Tazza - Carta y Menú</ogdesc>
+    <!-- Add real image
+        <img src="/img/anuncio-yo-te-lo-guiso-1.webp"/> 
+    -->
+    <category>donde-comer</category>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+    </attributes>
+    <slug>cafeteria-la-tazza-cerveceria-el-canon</slug>
+    <content>
+        <!-- Add real image
+            <img witdh="50%" alt="Cartel 'Yo te lo guiso'" style="border: solid 1px black" src="/img/anuncio-yo-te-lo-guiso-1.webp"/>
+        -->
+
+        <p>La Cervecería el Cañon, también conocido como Cafetería la Tazza ya sabréis añadió un catalogo de comidas y tapas. ¡Y están riquísimas!</p>
+
+
+        <p>Os adjunto la carta para que la tengáis siempre disponible:</p>
+
+        <h3>Tapas frías.</h3>
+        <table>
+            <tr>
+                <th>Nombre del plato</th>
+                <th>Precio por tapa</th>
+                <th>Precio por plato</th>
+            </tr>
+            <tr>
+                <td>Ensaladilla</td>
+                <td>3.00€</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Aliños</td>
+                <td>3.00€</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Gambas blancas</td>
+                <td>6.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Mejillones</td>
+                <td>3.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Camarones</td>
+                <td>1.50€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Queso curado</td>
+                <td>3.00€</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Jamón ibérico</td>
+                <td>---</td>
+                <td>10.00€</td>
+            </tr>
+            <tr>
+                <td>Carne mechá</td>
+                <td>3.00€</td>
+                <td>5.50€</td>
+            </tr>
+        </table>
+
+        <h3>Montaditos.</h3>
+
+        <table>
+            <tr>
+                <th>Nombre del plato</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Gambas alioli</td>
+                <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Melva con pimientos morrón y mayonesa</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Carne mechá con mojo picon</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Jamón Ibérico</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Queso curado</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Pringá</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Pollo</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Mantecao</td>
+                <td>4.50€</td>
+            </tr>
+            <tr>
+                <td>Mini serranito de pollo</td>
+                <td>4.50€</td>
+            </tr>
+        </table>
+
+        <h3>Panes.</h3>
+
+        <table>
+            <tr>
+                <th>Nombre del plato</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Jamón ibérico con salmorejo</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Gambas al ajillo con alioli</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Gulas con gambas y alioli</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Ibérica</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Melva con pimientos y mayonesa</td>
+                <td>5.00€</td>
+            </tr>
+        </table>
+
+        <h3>De todo un poco.</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Variado de croquetas</td>
+                <td>3.00€</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Nuggets de pollo</td>
+                <td>---</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Perrito caliente</td>
+                <td>---</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Tortilla al whisky</td>
+                <td>---</td>
+                <td>3.00€</td>
+            </tr>
+            <tr>
+                <td>Rulo de queso</td>
+                <td>---</td>
+                <td>4.50€</td>
+            </tr>
+        </table>
+        
+        <h3>Carnes</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio tapa</th>
+                <th>Precio plato</th>
+            </tr>
+            <tr>
+                <td>Carrillada ibérica</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Solomillo al whisky</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>Churrasco de cerdo</td>
+                <td>---</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Filete de pollo</td>
+                <td>3.00€</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Hamburguesa de pollo con queso</td>
+                <td>---</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>
+                    Hamburguesa de buey completa.
+                    <br/>
+                    <a href="#buey">[1] Ingredientes extra.</a>
+                </td>
+                <td>---</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Presa ibérica</td>
+                <td>---</td>
+                <td>13.50€</td>
+            </tr>
+        </table>
+
+        <h3>Pescados</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Gambas al ajillo</td>
+                <td>5.50€</td>
+            </tr>
+            <tr>
+                <td>Atún sobre asadillo de pimientos</td>
+                <td>8.00€</td>
+            </tr>
+        </table>
+
+        <p id="buey">Los ingredientes extra de la hamburguesa de buey con precio adicional son:</p>
+
+        <ul>
+            <li>Huevo: 0.50€</li>
+            <li>Extra de salsa: 0.25€</li>
+        </ul>
+
+        <p>Pregunta por la carta de alergenos en caso de tener alguna intolerancia o alergia.</p>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
