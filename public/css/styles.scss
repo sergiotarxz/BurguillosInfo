@@ -257,6 +257,18 @@ body {
       height: 40px;
     }
 
+    nav > a > img.index-image-menu, div.burguillos-logo-container > img {
+      transition-property: transform;
+      transition-duration: 2s;
+      transition-delay: 2s;
+    }
+
+    nav > a.selected > img.index-image-menu,
+        nav > a:hover > img.index-image-menu,
+        div.burguillos-logo-container.active > img {
+            transform: rotate(-1.5rad);
+    }
+
     nav.desktop {
       display: none;
 

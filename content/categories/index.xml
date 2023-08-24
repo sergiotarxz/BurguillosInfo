@@ -1,6 +1,9 @@
 <category>
     <title>Información de Burguillos.</title>
 	<description>
+                <div class="burguillos-logo-container">
+                    <img alt="The logo of Burguillos.info" src="/img/burguillos-new-logo.svg"/>
+                </div>
 		<p>Burguillos.info no está afiliado con el Ayuntamiento de Burguillos.</p>
 
 		<p>Esta página está destinada a informar de los sucesos y negocios de nuestro pueblo, cualquiera puede redactar una noticia para que aparezca en este medio mientras pase un proceso de revisión por parte del staff de Burguillos.info.</p>

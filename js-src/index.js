@@ -9,6 +9,7 @@ window.onload = () => {
     const tables = document.querySelectorAll('table')
 
     loadAd()
+    addEasterEggAnimation()
 
     if (menu_expand !== null && mobile_foldable !== null) {
         menu_expand.addEventListener('click', () => {
@@ -29,6 +30,16 @@ window.onload = () => {
         new Tablesort(table)
     }
 };
+
+function addEasterEggAnimation() {
+    const logoContainer = document.querySelector('div.burguillos-logo-container')
+    if (logoContainer === null) {
+        return;
+    }
+    logoContainer.addEventListener('click', () => {
+        logoContainer.classList.toggle('active')
+    })
+}
 
 let current_ad_number = null
 
