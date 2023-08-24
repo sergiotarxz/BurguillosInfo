@@ -195,8 +195,10 @@ body {
           background: #f2eb8c;
           color: blueviolet; }
         body div.page-contents nav a.selected {
-          background: #f2eb8c;
-          color: blueviolet; }
+          background: #FEFEFA;
+          color: blueviolet;
+          border-left: 1px solid blueviolet;
+          border-right: 1px solid blueviolet; }
       body div.page-contents nav a.menu-expand {
         padding-bottom: 9px; }
         body div.page-contents nav a.menu-expand .open-menu-icon-hover {

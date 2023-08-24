@@ -12,17 +12,49 @@
     <content>
         <img witdh="50%" alt="Cartel 'Yo te lo guiso'" style="border: solid 1px black" src="/img/anuncio-yo-te-lo-guiso-1.webp"/>
 
-        <p>Con localización en Calle los Palmeros número 32, "Yo te lo guiso" ofrece una propuesta de catering de cambio diario única en Burguillos.</p>
+        <p>Con localización en Calle los Palmeros número 32,
+        "Yo te lo guiso" ofrece una propuesta de catering de
+        comida al peso única en Burguillos con sus especialidades 
+        siempre disponibles y algunas novedades todos los días.</p>
 
-        <p>Podeis hacer pedidos y reservas en este número de teléfono <a href="tel:+34604424439">604 424 439</a>.</p>
+        <p>Podeis hacer encargos para recoger en tienda en este número de teléfono 
+        <a href="tel:+34604424439">604 424 439</a>.</p>
         
-        <p>Los horarios del negocio son de 12:00 a 15:00 y de 20:30 a 23:00 de Miercoles a Domingo. El Domingo no está disponible el horario nocturno.</p>
+        <p>Los horarios del negocio son de 12:00 a 15:00 y de 20:30 a 23:00 de Miercoles a Sabado.
+        El Domingo abre de 12:00 a 15:00.</p>
 
-        <p>El negocio ofrece platos vegetarianos y veganos, siendo de los pocos restaurantes en Burguillos que ofrecen este tipo de servicio.</p>
+        <p>El negocio ofrece comidas vegetarianas y veganas además de su oferta habitual con carne
+        y pescado siendo de los pocos restaurantes en Burguillos que ofrecen este tipo de servicio.</p>
 
-        <p>Los Jueves son los días del pescado, hay otra oferta de comidas además de pescado; no obstante el porcentaje de platos de pescado es mucho más amplio esos días.</p>
+        <p>Si quieres comida vegana lo mejor es que llames al teléfono para encargarla
+        teniendo de ese modo asegurada su disponibilidad.</p>
 
-        <p>Habitualmente nos agrada compartir con vosotros la carta, pero ya que este negocio cambia su oferta de comidas de forma diaria esto no es posible.</p>
+        <p>Los Jueves son los días del pescado, la oferta de pescado es mucho mayor esos días.</p> 
+
+        <p>Especialidades siempre en tienda:</p>
+
+        <ul>
+            <li>Pollo asado.</li>
+            <li>Pollo relleno.</li>
+            <li>Verduras asadas.</li>
+            <li>Empanadas y empanadillas.</li>
+            <li>Croquetas.</li>
+            <li>Ensaladas.</li>
+        </ul>
+
+        <p>Hay una tabla de precios que puedes
+        aplicar para la mayoría de platos:</p>
+
+        <ul>
+            <li>Verduras: <b>1.30€/100g</b>.</li>
+            <li>Tortilla: <b>1.80€/100g</b>.</li>
+            <li>Carnes: <b>1.30€/100g</b>.</li>
+            <li>Ensaladilla: <b>1.50€</b>.</li>
+            <li>Empanadilla: <b>2€/unidad</b>.</li>
+            <li>Ensalada lista: <b>1.30€/100g</b>.</li>
+            <li>Paella: <b>1.80€/100g</b>.</li>
+            <li>Arroz caldoso: <b>1.80€/100g</b>.</li>
+        </ul>
 
         <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
     </content>

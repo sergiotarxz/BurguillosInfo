@@ -289,8 +289,10 @@ body {
         }
 
         &.selected {
-          background: $color_div;
+          background: $background-page;
           color: $background_div;
+          border-left: 1px solid $background_div;
+          border-right: 1px solid $background_div;
         }
       }
 
