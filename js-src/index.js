@@ -88,5 +88,9 @@ function loadAd() {
         window.setTimeout(() => {
             loadAd()
         }, ad.seconds * 1000)
-    })
+    }).catch(() => {
+        window.setTimeout(() => {
+            loadAd()
+        }, 1000)
+    });
 }
