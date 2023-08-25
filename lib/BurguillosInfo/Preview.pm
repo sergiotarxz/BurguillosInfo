@@ -38,7 +38,7 @@ sub _ToPng($self, $image) {
         my $new_image = $image =~ s/\.\w+$/.generated.png/r;
         say $new_image;
         if (!-e $new_image) {
-            system 'convert', "$image", "$new_image";
+            system 'convert', '-background', 'none', "$image", "$new_image";
         }
         $image = $new_image;
     }
