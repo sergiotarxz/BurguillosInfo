@@ -263,10 +263,29 @@ body {
       transition-delay: 2s;
     }
 
-    nav > a.selected > img.index-image-menu,
-        nav > a:hover > img.index-image-menu,
+
+    div.easter-egg {
+        display: flex;
+        justify-content: center;
+    }
+
+    div.burguillos-logo-container.active {
+        border: solid 1px black;
+        border-radius: 50%;
+        filter: invert(1);
+    }
+
+    div.burguillos-logo-container {
+        padding: 40px;
+        width: 120px;
+    }
+
+    nav > a:hover > img.index-image-menu,
         div.burguillos-logo-container.active > img {
-            transform: rotate(-1.5rad);
+            transform: rotate(-1.5707963267948966rad);
+    }
+
+    div.burguillos-logo-container.active img {
     }
 
     nav.desktop {

@@ -1,8 +1,10 @@
 <category>
     <title>Información de Burguillos.</title>
 	<description>
-                <div class="burguillos-logo-container">
-                    <img alt="The logo of Burguillos.info" src="/img/burguillos-new-logo.svg"/>
+                <div class="easter-egg">
+                    <div class="burguillos-logo-container">
+                        <img alt="The logo of Burguillos.info" src="/img/burguillos-new-logo.svg"/>
+                    </div>
                 </div>
 		<p>Burguillos.info no está afiliado con el Ayuntamiento de Burguillos.</p>
 
