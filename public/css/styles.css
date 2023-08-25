@@ -17,7 +17,7 @@ body {
     /* For at least Firefox */
     min-height: 100%;
     color: #2f4f4f;
-    background: url(/img/parque_patos.webp);
+    background: antiquewhite;
     filter: blur(10px);
     background-size: cover;
     overflow: hidden; }
