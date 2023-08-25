@@ -1,4 +1,4 @@
-$background: url(../img/parque_patos.webp);
+$background: url(/img/parque_patos.webp);
 $background-page: #FEFEFA;
 $color: #2f4f4f;
 $color-page: #666362;
@@ -78,7 +78,6 @@ body {
   div.complete-container {
     position: fixed;
     z-index: 2;
-    background: $background-page;
     color: $color-page;
     top: 0%;
     left: 0%;
