@@ -61,6 +61,7 @@ body {
   body div.page-contents.no-carousel {
     height: calc(100% - 60px); }
   body div.page-contents {
+    background: #FEFEFA;
     position: fixed;
     top: 60px;
     height: calc(80% - 60px);

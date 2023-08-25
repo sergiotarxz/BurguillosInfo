@@ -91,6 +91,7 @@ body {
   }
 
   div.page-contents {
+    background: $background-page;
     position: fixed;
     top: 60px;
     height: calc(80% - 60px);
