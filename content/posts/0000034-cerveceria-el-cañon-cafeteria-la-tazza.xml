@@ -3,18 +3,14 @@
     <date>2023-08-24T21:37+00:00</date>
     <title>Cervecería el Cañon - Cafetería la Tazza - Carta y Menú</title>
     <ogdesc>Cervecería el Cañon - Cafetería la Tazza - Carta y Menú</ogdesc>
-    <!-- Add real image
-        <img src="/img/anuncio-yo-te-lo-guiso-1.webp"/> 
-    -->
+    <img src="/img/tazza.webp"/>
     <category>donde-comer</category>
     <attributes>
         <attribute>hamburguesas</attribute>
     </attributes>
     <slug>cafeteria-la-tazza-cerveceria-el-canon</slug>
     <content>
-        <!-- Add real image
-            <img witdh="50%" alt="Cartel 'Yo te lo guiso'" style="border: solid 1px black" src="/img/anuncio-yo-te-lo-guiso-1.webp"/>
-        -->
+        <img witdh="50%" alt="Puerta de la Tazza" style="border: solid 1px black" src="/img/tazza.webp"/>
 
         <p>La Cervecería el Cañon, ubicado en Calle el Castaño número 29,
         también conocido como Cafetería la Tazza 
