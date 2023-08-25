@@ -12,12 +12,14 @@
 	<slug>donde-comer</slug>
     <attributes>
         <attribute>
-            <title>Comida veganos en Burguillos.</title>
+            <title>Comida vegana en Burguillos.</title>
             <identifier>comida-vegana</identifier>
             <priority>1</priority>
             <menu_text>Listado de sitios que tienen oferta de platos veganos.</menu_text>
             <description>
-                <h2>Comida vegana en Burguillos</h2>
+                <h2>Restaurantes y bares con comida vegana en Burguillos.</h2>
+
+                <h3>Donde comer comida vegana en Burguillos.</h3>
 
                 <p>Todos los negocios de restauración que tienen una oferta de platos veganos.</p>
 
