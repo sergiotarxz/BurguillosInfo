@@ -54,7 +54,7 @@ body {
         align-items: center;
         height: 100%;
         text-decoration: none;
-        &:hover {
+        &:hover,&:focus {
             background: $background_div;
             color: $color_div;
         }
@@ -171,14 +171,21 @@ body {
         }
 
         a {
-          min-height: 90%;
-          width: 100%;
-          display: block;
-          text-decoration: none;
-          text-overflow: ellipsis;
-          margin-bottom: 30px;
+           min-height: 90%;
+           width: 100%;
+           display: block;
+           text-decoration: none;
+           text-overflow: ellipsis;
+           margin-bottom: 30px;
 
-          article {
+           &:focus,&:hover {
+             //outline: red solid 3px;
+             article {
+               background: $background_div;
+               color: $color_div;
+             }
+           }
+           article {
             word-wrap: break-word;
             width: 90%;
             height: 90%;
@@ -314,7 +321,7 @@ body {
         color: $color_div;
         margin: 0;
 
-        &:hover {
+        &:hover,&:focus {
           background: $color_div;
           color: $background_div;
         }
@@ -333,7 +340,7 @@ body {
           display: none;
         }
 
-        &:hover {
+        &:hover,&:focus {
           .open-menu-icon-hover {
             display: block;
           }

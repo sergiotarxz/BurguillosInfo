@@ -36,7 +36,7 @@ body {
       align-items: center;
       height: 100%;
       text-decoration: none; }
-      body div.carousel a:hover {
+      body div.carousel a:hover, body div.carousel a:focus {
         background: blueviolet;
         color: #f2eb8c; }
     body div.carousel div.promoted-tag, body div.carousel h3 {
@@ -124,6 +124,9 @@ body {
           text-decoration: none;
           text-overflow: ellipsis;
           margin-bottom: 30px; }
+          body div.page-contents div.description div.articles a:focus article, body div.page-contents div.description div.articles a:hover article {
+            background: blueviolet;
+            color: #f2eb8c; }
           body div.page-contents div.description div.articles a article {
             word-wrap: break-word;
             width: 90%;
@@ -208,7 +211,7 @@ body {
         text-decoration: none;
         color: #f2eb8c;
         margin: 0; }
-        body div.page-contents nav a:hover {
+        body div.page-contents nav a:hover, body div.page-contents nav a:focus {
           background: #f2eb8c;
           color: blueviolet; }
         body div.page-contents nav a.selected {
@@ -219,9 +222,9 @@ body {
         padding-bottom: 9px; }
         body div.page-contents nav a.menu-expand .open-menu-icon-hover {
           display: none; }
-        body div.page-contents nav a.menu-expand:hover .open-menu-icon-hover {
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon-hover, body div.page-contents nav a.menu-expand:focus .open-menu-icon-hover {
           display: block; }
-        body div.page-contents nav a.menu-expand:hover .open-menu-icon {
+        body div.page-contents nav a.menu-expand:hover .open-menu-icon, body div.page-contents nav a.menu-expand:focus .open-menu-icon {
           display: none; }
     body div.page-contents nav.mobile-shortcuts {
       position: fixed;
