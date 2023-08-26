@@ -77,8 +77,8 @@ function loadAd() {
             no_more_ads();
             return;
         }
-        carousel.innerHTML = ""
-        const a = document.createElement('a')
+        const a = _retrieveLinkCarousel(carousel)
+        a.innerHTML = ""
         const image = document.createElement('img')
         const text_container = document.createElement('div')
         const text = document.createElement('h4')
@@ -95,7 +95,6 @@ function loadAd() {
         text_container.append(promoted)
         text_container.append(text)
         a.append(text_container)
-        carousel.append(a);
 
         window.setTimeout(() => {
             loadAd()
@@ -105,4 +104,15 @@ function loadAd() {
             loadAd()
         }, 1000)
     });
+}
+
+function _retrieveLinkCarousel(carousel) {
+    const maybeA = carousel.querySelector('a')
+    if (maybeA !== null) {
+        return maybeA
+    }
+    const a = document.createElement('a')
+    carousel.innerHTML = ""
+    carousel.append(a)
+    return a
 }
