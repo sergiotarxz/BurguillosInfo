@@ -87,6 +87,7 @@ function loadAd() {
         promoted.classList.add('promoted-tag')
         promoted.innerText = "Promocionado"
         image.src = ad.img
+        image.alt = ""
         text.innerText = ad.text
         a.href = ad.href
 
