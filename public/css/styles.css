@@ -60,6 +60,80 @@ body {
     width: 100%; }
   body div.page-contents.no-carousel {
     height: calc(100% - 60px); }
+  body nav {
+    overflow: auto;
+    display: block;
+    font-size: 25px;
+    margin: 0px; }
+    body nav a {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 100%;
+      text-decoration: none;
+      color: #f2eb8c;
+      margin: 0; }
+      body nav a:hover, body nav a:focus {
+        background: #f2eb8c;
+        color: blueviolet; }
+      body nav a.selected {
+        background: #FEFEFA;
+        color: blueviolet;
+        border-right: 1px solid blueviolet; }
+  body nav.desktop {
+    display: none; }
+    body nav.desktop a {
+      vertical-align: middle;
+      background: blueviolet; }
+  body nav.mobile-foldable {
+    display: none;
+    background: blueviolet;
+    color: #f2eb8c; }
+    body nav.mobile-foldable a {
+      display: block; }
+  body nav.mobile-foldable.show {
+    display: block; }
+  body nav.mobile-shortcuts > a {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  body a.menu-expand {
+    padding-bottom: 9px; }
+    body a.menu-expand .open-menu-icon-hover {
+      display: none; }
+    body a.menu-expand:hover .open-menu-icon-hover, body a.menu-expand:focus .open-menu-icon-hover {
+      display: block; }
+    body a.menu-expand:hover .open-menu-icon, body a.menu-expand:focus .open-menu-icon {
+      display: none; }
+  body nav > a.menu-expand > img {
+    width: 30px;
+    height: 30px; }
+  body nav > a > img.index-image-menu {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px; }
+  body nav > a > img.index-image-menu, body div.burguillos-logo-container > img {
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-delay: 2s; }
+  body nav > a:hover > img.index-image-menu,
+  body div.burguillos-logo-container.active > img {
+    transform: rotate(-1.5707963268rad); }
+  body nav.mobile-shortcuts {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background: blueviolet;
+    height: 60px;
+    top: 0%; }
+    body nav.mobile-shortcuts a {
+      height: 100%;
+      width: 16.6666666667%;
+      padding-left: 0;
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom: 0; }
+    body nav.mobile-shortcuts div {
+      width: 66.6666666667%; }
   body div.page-contents {
     background: #FEFEFA;
     position: fixed;
@@ -167,21 +241,6 @@ body {
         body div.page-contents div.description a.suscribe-category-rss img {
           width: 40px;
           height: 40px; }
-    body div.page-contents nav.mobile-shortcuts > a {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    body div.page-contents nav > a.menu-expand > img {
-      width: 30px;
-      height: 30px; }
-    body div.page-contents nav > a > img.index-image-menu {
-      vertical-align: middle;
-      width: 40px;
-      height: 40px; }
-    body div.page-contents nav > a > img.index-image-menu, body div.page-contents div.burguillos-logo-container > img {
-      transition-property: transform;
-      transition-duration: 2s;
-      transition-delay: 2s; }
     body div.page-contents div.easter-egg {
       display: flex;
       justify-content: center; }
@@ -192,65 +251,6 @@ body {
     body div.page-contents div.burguillos-logo-container {
       padding: 40px;
       width: 120px; }
-    body div.page-contents nav > a:hover > img.index-image-menu,
-    body div.page-contents div.burguillos-logo-container.active > img {
-      transform: rotate(-1.5707963268rad); }
-    body div.page-contents nav.desktop {
-      display: none; }
-      body div.page-contents nav.desktop a {
-        vertical-align: middle;
-        background: blueviolet; }
-    body div.page-contents nav {
-      overflow: auto;
-      display: block;
-      font-size: 25px;
-      margin: 0px; }
-      body div.page-contents nav a {
-        padding-left: 10px;
-        padding-right: 10px;
-        height: 100%;
-        text-decoration: none;
-        color: #f2eb8c;
-        margin: 0; }
-        body div.page-contents nav a:hover, body div.page-contents nav a:focus {
-          background: #f2eb8c;
-          color: blueviolet; }
-        body div.page-contents nav a.selected {
-          background: #FEFEFA;
-          color: blueviolet;
-          border-right: 1px solid blueviolet; }
-      body div.page-contents nav a.menu-expand {
-        padding-bottom: 9px; }
-        body div.page-contents nav a.menu-expand .open-menu-icon-hover {
-          display: none; }
-        body div.page-contents nav a.menu-expand:hover .open-menu-icon-hover, body div.page-contents nav a.menu-expand:focus .open-menu-icon-hover {
-          display: block; }
-        body div.page-contents nav a.menu-expand:hover .open-menu-icon, body div.page-contents nav a.menu-expand:focus .open-menu-icon {
-          display: none; }
-    body div.page-contents nav.mobile-shortcuts {
-      position: fixed;
-      display: flex;
-      width: 100%;
-      background: blueviolet;
-      height: 60px;
-      top: 0%; }
-      body div.page-contents nav.mobile-shortcuts a {
-        height: 100%;
-        width: 16.6666666667%;
-        padding-left: 0;
-        padding-top: 0;
-        padding-right: 0;
-        padding-bottom: 0; }
-      body div.page-contents nav.mobile-shortcuts div {
-        width: 66.6666666667%; }
-    body div.page-contents nav.mobile-foldable {
-      display: none;
-      background: blueviolet;
-      color: #f2eb8c; }
-      body div.page-contents nav.mobile-foldable a {
-        display: block; }
-    body div.page-contents nav.mobile-foldable.show {
-      display: block; }
     body div.page-contents h1 {
       text-align: center; }
     body div.page-contents div.footer p, body div.page-contents div.footer h1, body div.page-contents div.footer h2, body div.page-contents div.footer h3, body div.page-contents div.footer h4, body div.page-contents div.footer a {
@@ -273,6 +273,8 @@ body {
       margin-left: 0%; } }
 
 @media (min-width: 1100px) {
+  body nav.mobile-shortcuts {
+    display: none; }
   body div.page-contents {
     top: 0%;
     left: 5%;
@@ -294,8 +296,6 @@ body {
         body div.page-contents nav.desktop a img.index-image-menu {
           height: 40px;
           width: 40px; }
-    body div.page-contents nav.mobile-shortcuts {
-      display: none; }
   body div.page-contents.no-carousel {
     height: 100%; } }
 

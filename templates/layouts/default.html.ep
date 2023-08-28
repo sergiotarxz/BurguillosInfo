@@ -33,9 +33,9 @@
 	<div class="site-wrapper">
 	</div>
     <div class="complete-container">
+%= include 'page/_mobile_menu', categories => $categories
         <div class="page-contents">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
-%= include 'page/_mobile_menu', categories => $categories
             <%= content %></body>
             <hr/>
             <div class="footer description">
