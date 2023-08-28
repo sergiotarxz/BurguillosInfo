@@ -46,6 +46,7 @@ body {
     width: calc(100% - 6px);
     border: solid 3px black;
     a {
+        font-size: 13px;
         background: $color_div;
         color: $background_div;
         display: flex;

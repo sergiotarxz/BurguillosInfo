@@ -28,6 +28,7 @@ body {
     width: calc(100% - 6px);
     border: solid 3px black; }
     body div.carousel a {
+      font-size: 13px;
       background: #f2eb8c;
       color: blueviolet;
       display: flex;
