@@ -38,6 +38,9 @@
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
 %= include 'page/_mobile_foldable', categories => $categories
             <%= content %></body>
+            <div class="description android">
+                <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
+            </div>
             <hr/>
             <div class="footer description">
                 <p>©2022-2023 Sergio Iglesias</p>

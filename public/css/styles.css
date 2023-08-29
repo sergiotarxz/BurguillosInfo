@@ -10,6 +10,8 @@ body {
   height: 100%; }
   body p, body h1, body h2, body h3, body h4, body a {
     font-family: 'arial'; }
+  body *.android {
+    display: none; }
   body div.site-wrapper {
     display: table;
     width: 100%;
@@ -163,7 +165,6 @@ body {
       padding-right: 10px;
       margin: 0; }
     body div.page-contents div.description {
-      margin-top: 60px;
       word-wrap: break-word;
       padding: 1%;
       margin-left: 3%;

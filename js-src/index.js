@@ -29,7 +29,48 @@ window.onload = () => {
         }
         new Tablesort(table)
     }
+    if (window !== undefined && window.Android !== undefined) {
+        executeAndroidExclusiveCode(Android)
+    }
 };
+
+function absoluteToHost(imageUrl) {
+    if (imageUrl.match(/^\//)) {
+        imageUrl = window.location.protocol + "//" + window.location.host + imageUrl 
+    }
+    return imageUrl.replace(/\?.*$/, '');
+}
+
+function executeAndroidExclusiveCode(android) {
+    document.querySelectorAll('*.android').forEach((element) => {
+        element.classList.remove('android')
+    })
+    const pinToHomeUrl = document.querySelector('a.pin-to-home')
+    if (pinToHomeUrl === null) {
+        return;
+    }
+    pinToHomeUrl.addEventListener('click', () => {
+        const url = new URL(window.location.href)
+        const pathandQuery = url.pathname + url.search;
+        const label = pathandQuery.replace(/^.*\/.?/g, '').
+            replace(/(?:^|-)\w/g, function(character) {
+                return character.toUpperCase() 
+            });
+        const firstImg = document.querySelector('div.description img');
+        let iconUrl;
+        if (firstImg !== null) {
+            if (!firstImg.src.match(/\.svg(?:\?|$)/)) {
+                iconUrl = absoluteToHost(firstImg.src);
+            }
+        }
+        if (iconUrl === undefined) {
+            const imagePreview = document.querySelector('meta[name="image"]');
+            iconUrl = absoluteToHost(imagePreview.content);
+        }
+        console.error(iconUrl);
+        android.pinPage(pathandQuery, label, iconUrl)
+    })
+}
 
 function addEasterEggAnimation() {
     const logoContainer = document.querySelector('div.burguillos-logo-container')
