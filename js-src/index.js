@@ -52,11 +52,11 @@ function executeAndroidExclusiveCode(android) {
     pinToHomeUrl.addEventListener('click', () => {
         const url = new URL(window.location.href)
         const pathandQuery = url.pathname + url.search;
-        const label = pathandQuery.replace(/^.*\//g, '').
-            replace(/(?:^|-)\w/g, function(character) {
+        const label = (url.pathname.replace(/^.*\//g, '')
+            .replace(/(?:^|-)\w/g, function(character) {
                 return character.toUpperCase() 
-            }) + ' - Burguillos.info';
-        console.log(label)
+            })
+            .replace(/-/g, ' ')) + ' - Burguillos.info';
         const firstImg = document.querySelector('div.description img');
         let iconUrl;
         if (firstImg !== null) {
