@@ -52,10 +52,11 @@ function executeAndroidExclusiveCode(android) {
     pinToHomeUrl.addEventListener('click', () => {
         const url = new URL(window.location.href)
         const pathandQuery = url.pathname + url.search;
-        const label = pathandQuery.replace(/^.*\/.?/g, '').
+        const label = pathandQuery.replace(/^.*\//g, '').
             replace(/(?:^|-)\w/g, function(character) {
                 return character.toUpperCase() 
-            });
+            }) + ' - Burguillos.info';
+        console.log(label)
         const firstImg = document.querySelector('div.description img');
         let iconUrl;
         if (firstImg !== null) {
@@ -65,6 +66,8 @@ function executeAndroidExclusiveCode(android) {
         }
         if (iconUrl === undefined) {
             const imagePreview = document.querySelector('meta[name="image"]');
+            console.error(imagePreview.content);
+            console.error(absoluteToHost(imagePreview.content));
             iconUrl = absoluteToHost(imagePreview.content);
         }
         console.error(iconUrl);
