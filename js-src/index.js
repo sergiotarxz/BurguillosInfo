@@ -41,10 +41,20 @@ function absoluteToHost(imageUrl) {
     return imageUrl.replace(/\?.*$/, '');
 }
 
+function addListenerOpenInBrowserButton(android) {
+    const openInBrowserLink = document.querySelector('a.open-in-browser')
+    if (openInBrowserLink === null) {
+        return
+    }
+    openInBrowserLink.addEventListener('click', () => {
+        android.openInBrowser(window.location.href)
+    })
+}
 function executeAndroidExclusiveCode(android) {
     document.querySelectorAll('*.android').forEach((element) => {
         element.classList.remove('android')
     })
+    addListenerOpenInBrowserButton(android)
     const pinToHomeUrl = document.querySelector('a.pin-to-home')
     if (pinToHomeUrl === null) {
         return;
@@ -66,11 +76,8 @@ function executeAndroidExclusiveCode(android) {
         }
         if (iconUrl === undefined) {
             const imagePreview = document.querySelector('meta[name="image"]');
-            console.error(imagePreview.content);
-            console.error(absoluteToHost(imagePreview.content));
             iconUrl = absoluteToHost(imagePreview.content);
         }
-        console.error(iconUrl);
         android.pinPage(pathandQuery, label, iconUrl)
     })
 }

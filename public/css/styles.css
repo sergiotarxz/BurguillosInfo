@@ -242,6 +242,32 @@ body {
         body div.page-contents div.description a.suscribe-category-rss img {
           width: 40px;
           height: 40px; }
+    body div.page-contents div.open-browser-container {
+      display: flex;
+      justify-content: start;
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      background: #f2eb8c;
+      color: blueviolet; }
+      body div.page-contents div.open-browser-container a.open-in-browser {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px; }
+        body div.page-contents div.open-browser-container a.open-in-browser img {
+          display: block;
+          height: 2rem;
+          width: 2rem;
+          margin-right: 0px;
+          margin-left: 0px; }
+        body div.page-contents div.open-browser-container a.open-in-browser span {
+          display: block; }
+    body div.page-contents div.open-browser-container.android {
+      display: none; }
     body div.page-contents div.easter-egg {
       display: flex;
       justify-content: center; }
