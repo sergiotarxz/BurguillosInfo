@@ -248,6 +248,8 @@ body {
       width: 100%;
       margin-left: 0px;
       margin-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
       background: #f2eb8c;
       color: blueviolet; }
       body div.page-contents div.open-browser-container a.open-in-browser {
