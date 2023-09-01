@@ -38,7 +38,7 @@
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
 %= include 'page/_mobile_foldable', categories => $categories
             <div class="description android open-browser-container">
-                <a href="#" class="open-in-browser">
+                <a href="<%= $current_route %>" class="open-in-browser">
                     <img alt="" src="/img/firefox.svg"/>
                     <span>Abrir en el navegador.</span>
                 </a>
