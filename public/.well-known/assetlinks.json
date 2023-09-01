@@ -6,5 +6,14 @@
         "sha256_cert_fingerprints":
             ["E9:B3:78:7D:24:41:C1:6D:CE:EE:C1:9E:2D:E1:5A:45:64:D4:E8:46:19:86:E3:7F:A1:51:27:FC:3B:4E:F6:AE"]
     }
+},
+{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "info.burguillos.bi",
+        "sha256_cert_fingerprints":
+            ["6D:32:80:5C:E4:15:D1:9C:21:3F:0D:E9:06:FF:1C:F2:FE:DD:5E:39:04:46:A2:56:C3:FC:BD:E5:24:EB:FD:B4"]
+    }
 }]
 
