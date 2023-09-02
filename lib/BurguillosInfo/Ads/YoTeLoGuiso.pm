@@ -48,7 +48,7 @@ sub text($self) {
     }
     if ( $self->default_alternative == 1 ) {
         return
-'Una comida como esta no la ves todos los días, disponible en Burguillos, entra y descubrelo.';
+'Una comida como esta no la ves todos los días, disponible en Burguillos, entra y descubrelo. Y O T E L O G U I S O';
     }
     return 'Comida hecha como en tu casa, YoTeLoGuiso...';
 }
