@@ -30,8 +30,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-	<div class="site-wrapper">
-	</div>
+    <div class="site-wrapper">
+    </div>
+    <div class="search-overlay">
+        <div class="bounding-search-bar">
+%= include 'page/_search_bar'
+            <a class="exit-search">
+                <img alt="Exit search" src="/img/exit.svg"/>
+            </a>
+        </div>
+    </div>
     <div class="complete-container">
 %= include 'page/_mobile_menu', categories => $categories
         <div class="page-contents">

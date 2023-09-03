@@ -1,0 +1,8 @@
+<div tabindex="0" class="search">
+    <div class="search-icon">
+        <img alt="" src="/img/search.svg"/>
+    </div>
+    <div class="fake-text-box">
+        <input type="text"></input>
+    </div>
+</div>

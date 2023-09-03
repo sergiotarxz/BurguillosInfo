@@ -32,7 +32,38 @@ window.onload = () => {
     if (window !== undefined && window.Android !== undefined) {
         executeAndroidExclusiveCode(Android)
     }
+    addListenersSearch()
 };
+
+function addListenersSearch() {
+    const searchMobile = document.querySelector('nav.mobile-shortcuts div.search')
+    if (searchMobile !== null) {
+        searchMobile.addEventListener('click', onFakeSearchClick);
+    }
+    const exitSearch = document.querySelector('a.exit-search')
+    if (exitSearch !== null) {
+        exitSearch.addEventListener('click', () => {
+            const searchOverlay = document.querySelector('div.search-overlay');
+            if (searchOverlay !== null) {
+                searchOverlay.classList.toggle('active');
+            }
+        });
+    }
+}
+
+function onFakeSearchClick(e) {
+    e.preventDefault();
+    const searchOverlay = document.querySelector('div.search-overlay');
+    if (searchOverlay === null) {
+        return
+    }
+    searchOverlay.classList.toggle('active');
+    const search = searchOverlay.querySelector('div.search input');
+    if (search !== null) {
+        search.focus()
+    }
+    return false;
+}
 
 function absoluteToHost(imageUrl) {
     if (imageUrl.match(/^\//)) {
