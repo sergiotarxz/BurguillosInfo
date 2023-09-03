@@ -42,12 +42,14 @@ function addListenersSearch() {
     }
     const exitSearch = document.querySelector('a.exit-search')
     if (exitSearch !== null) {
-        exitSearch.addEventListener('click', () => {
-            const searchOverlay = document.querySelector('div.search-overlay');
-            if (searchOverlay !== null) {
-                searchOverlay.classList.toggle('active');
-            }
-        });
+        exitSearch.addEventListener('click', onExitSearch)
+    }
+}
+
+function onExitSearch() {
+    const searchOverlay = document.querySelector('div.search-overlay');
+    if (searchOverlay !== null) {
+        searchOverlay.classList.toggle('active');
     }
 }
 
