@@ -17,6 +17,7 @@ sub startup ($self) {
             }
         }
     );
+    push @{ $self->commands->namespaces }, 'BurguillosInfo::Command';
     $self->hook(
         before_render => sub($c, $args) {
             my $current_route = $c->url_for;
