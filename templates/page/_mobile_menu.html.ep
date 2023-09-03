@@ -1,7 +1,13 @@
 % my $categories = stash 'categories';
 <nav class="mobile-shortcuts">
     <a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
-    <div></div>
+    <div tabindex="0" class="search">
+        <div class="search-icon">
+            <img alt="" src="/img/search.svg"/>
+        </div>
+        <div class="fake-text-box">
+        </div>
+    </div>
     <a href="#mobile-foldable" class="menu-expand">
         <img class="open-menu-icon" src="/img/hamburger-menu-yellow.webp" alt="Expandir el menú."/>
         <img class="open-menu-icon-hover" src="/img/hamburger-menu-purple.webp" alt="Expandir el menú."/>

@@ -14,6 +14,28 @@ html {
 }
 
 body {
+  div.search {
+    background: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    &:focus,&:hover {
+        background: aliceblue;
+    }
+    div.search-icon {
+        height: calc(100% - 28px);
+        display: flex;
+        background: aliceblue;
+        align-items: center;
+        margin: 7px;
+        padding: 7px;
+        border-radius: 10px;
+        border: solid gray 1px;
+        aspect-ratio: 1/1;
+        img {
+            height: 80%;
+        }
+    }
+  }
   p, h1, h2, h3, h4, a {
     font-family: 'arial';
   }
@@ -201,6 +223,7 @@ body {
   nav.mobile-shortcuts {
     position: fixed;
     display: flex;
+    align-items: center;
     width: 100%;
     background: $background_div;
     height: 60px;
@@ -215,8 +238,10 @@ body {
       padding-bottom: 0;
     }
 
-    div {
-      width: 100% * 4 / 6;
+    div.search {
+      width: calc(100% * 4 / 6 - 20px);
+      height: 80%;
+      border-radius: 10px;
     }
   }
 
