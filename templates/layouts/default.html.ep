@@ -54,7 +54,7 @@
                 </a>
             </div>
 % if ($is_android) {
-            <div class="description open-browser-container">
+            <div class="description no-android-app open-browser-container">
                 <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
                     <img alt="" src="/img/play-store.svg"/>
                     <span>Prueba nuestra aplicación para Android. Más fácil, mejor.</span>

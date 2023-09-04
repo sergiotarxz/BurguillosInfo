@@ -172,6 +172,9 @@ function executeAndroidExclusiveCode(android) {
     document.querySelectorAll('*.android').forEach((element) => {
         element.classList.remove('android')
     })
+    document.querySelectorAll('*.no-android-app').forEach((element) => {
+        element.style.display = 'none';
+    })
     addListenerOpenInBrowserButton(android)
     const pinToHomeUrl = document.querySelector('a.pin-to-home')
     if (pinToHomeUrl === null) {
