@@ -39,6 +39,8 @@
                 <img alt="Exit search" src="/img/exit.svg"/>
             </a>
         </div>
+        <div class="search-results">
+        </div>
     </div>
     <div class="complete-container">
 %= include 'page/_mobile_menu', categories => $categories

@@ -22,8 +22,12 @@ body {
     background: white;
     z-index: 3;
     top: 0;
+    flex-direction: column;
     &.active {
         display: flex;
+    }
+    div.search-results {
+        margin: 7px;
     }
     div.bounding-search-bar {
         margin: 7px;

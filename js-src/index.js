@@ -44,6 +44,74 @@ function addListenersSearch() {
     if (exitSearch !== null) {
         exitSearch.addEventListener('click', onExitSearch)
     }
+    const search = document.querySelector('div.search-overlay div.search input');
+    if (search !== null) {
+        search.addEventListener('change', onSearchChange);
+    }
+}
+
+function onSearchChange() {
+    const search = document.querySelector('div.search-overlay div.search input');
+    const searchResults = document.querySelector('div.search-overlay div.search-results');
+    if (search === null || searchResults === null) {
+        return;
+    }
+    const query = search.value;
+    const url = new URL(window.location.protocol
+        + "//"
+        + window.location.hostname
+        + ":"
+        + window.location.port
+        + '/search.json');
+    url.searchParams.set('q', query);
+    fetch(url).then(async (res) => {
+        const json = await res.json()
+        if (!json.ok) {
+            noResults(searchResults);
+            return
+        }
+        console.log(json.searchObjects.length)
+        if (json.searchObjects.length < 1) {
+            noResults(searchResults);
+            return;
+        }
+        showResults(searchResults, json.searchObjects);
+    })
+}
+
+function showResults(searchResults, searchObjects) {
+    searchObjects.innerHTML = "";
+    for (let searchObject of searchObjects) {
+        const searchResultContainer = document.createElement('div')
+        searchResultContainer.classList.add('search-result')
+        const title = document.createElement('b')
+        const url = document.createElement('a')
+        const content = document.createElement('p')
+
+        title.innerText = searchObject.title
+        if (searchObject.url.match(/^\//)) {
+            searchObject.url = window.location.protocol 
+                + "//" + window.location.hostname 
+                + ":" + window.location.port 
+                + searchObject.url
+        }
+        url.href = searchObject.url
+        url.innerText = searchObject.url
+        content.innerText = searchObject.content
+
+        searchResultContainer.appendChild(title)
+        searchResultContainer.appendChild(document.createElement('br'))
+        searchResultContainer.appendChild(url)
+        searchResultContainer.appendChild(content)
+        searchResults.appendChild(searchResultContainer)
+    }
+}
+
+function noResults(searchResults) {
+    searchResults.innerHTML = ""
+    const p = document.createElement('p')
+    p.innerText = 'No se han encontrado resultados.'
+    searchResults.appendChild(p)
 }
 
 function onExitSearch() {

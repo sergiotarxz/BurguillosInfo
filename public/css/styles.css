@@ -15,9 +15,12 @@ body {
     width: 100%;
     background: white;
     z-index: 3;
-    top: 0; }
+    top: 0;
+    flex-direction: column; }
     body div.search-overlay.active {
       display: flex; }
+    body div.search-overlay div.search-results {
+      margin: 7px; }
     body div.search-overlay div.bounding-search-bar {
       margin: 7px;
       width: calc(100% - 20px);
