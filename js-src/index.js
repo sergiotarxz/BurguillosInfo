@@ -47,6 +47,7 @@ function addListenersSearch() {
                 const searchOverlay = document.querySelector('div.search-overlay');
                 const searchInput = searchOverlay.querySelector('div.search input');
                 searchInput.value = fakeSearchInput.value;
+                onSearchChange(e)
             }
             onFakeSearchClick(e)
         });
