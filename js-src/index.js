@@ -3,6 +3,8 @@ import Tablesort from 'tablesort';
 window.Tablesort = require('tablesort');
 require('tablesort/src/sorts/tablesort.number');
 
+let fakeSearchInput
+let searchMobile
 window.onload = () => {
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
@@ -31,14 +33,23 @@ window.onload = () => {
     }
     if (window !== undefined && window.Android !== undefined) {
         executeAndroidExclusiveCode(Android)
-    }
+    } 
+    searchMobile = document.querySelector('nav.mobile-shortcuts div.search')
+    fakeSearchInput = searchMobile.querySelector('input')
     addListenersSearch()
 };
 
 function addListenersSearch() {
-    const searchMobile = document.querySelector('nav.mobile-shortcuts div.search')
     if (searchMobile !== null) {
         searchMobile.addEventListener('click', onFakeSearchClick);
+        fakeSearchInput.addEventListener('change', (e) => {
+            if (fakeSearchInput.value !== "") {
+                const searchOverlay = document.querySelector('div.search-overlay');
+                const searchInput = searchOverlay.querySelector('div.search input');
+                searchInput.value = fakeSearchInput.value;
+            }
+            onFakeSearchClick(e)
+        });
     }
     const exitSearch = document.querySelector('a.exit-search')
     if (exitSearch !== null) {
@@ -57,6 +68,7 @@ function onSearchChange() {
         return;
     }
     const query = search.value;
+    fakeSearchInput.value = search.value
     const url = new URL(window.location.protocol
         + "//"
         + window.location.hostname
