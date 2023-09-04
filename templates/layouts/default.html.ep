@@ -53,6 +53,14 @@
                     <span>Abrir en el navegador.</span>
                 </a>
             </div>
+% if ($is_android) {
+            <div class="description open-browser-container">
+                <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
+                    <img alt="" src="/img/play-store.svg"/>
+                    <span>Prueba nuestra aplicación para Android. Más fácil, mejor.</span>
+                </a>
+            </div>
+% }
             <%= content %></body>
             <div class="description android">
                 <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>

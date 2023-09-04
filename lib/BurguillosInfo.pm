@@ -22,6 +22,8 @@ sub startup ($self) {
         before_render => sub($c, $args) {
             my $current_route = $c->url_for;
             $c->stash(current_route => $current_route);
+            my $is_android = $c->req->headers->user_agent =~ /android/i; 
+            $c->stash(is_android => $is_android);
             my $onion_base_url = $self->config->{onion_base_url};
             my $base_url = $self->config->{base_url};
             if (!defined $onion_base_url) {
