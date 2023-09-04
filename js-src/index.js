@@ -90,6 +90,7 @@ function onSearchChange() {
         }
         showResults(searchResults, json.searchObjects);
     })
+    search.focus()
 }
 
 function showResults(searchResults, searchObjects) {
