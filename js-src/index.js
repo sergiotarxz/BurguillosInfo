@@ -42,6 +42,9 @@ window.onload = () => {
 function addListenersSearch() {
     if (searchMobile !== null) {
         searchMobile.addEventListener('click', onFakeSearchClick);
+        fakeSearchInput.addEventListener('focus', (e) => {
+            onFakeSearchClick(e)
+        });
         fakeSearchInput.addEventListener('change', (e) => {
             if (fakeSearchInput.value !== "") {
                 const searchOverlay = document.querySelector('div.search-overlay');
