@@ -10,14 +10,20 @@ use Data::Dumper;
 use Mojo::Base 'Mojolicious::Controller', '-signatures';
 use Mojo::UserAgent;
 
+use BurguillosInfo::IndexUtils;
+
+my $index_utils = BurguillosInfo::IndexUtils->new;
+
 sub search ($self) {
     my $ua             = Mojo::UserAgent->new;
     my $query          = $self->param('q');
     my $config         = $self->config;
     my $search_backend = $config->{search_backend};
     my $search_index   = $config->{search_index};
+    $query =~ s/\btitle:/titleNormalized:/g;
+    $query =~ s/\bcontent:/contentNormalized:/g;
     my $tx             = $ua->get( $search_backend . '/search/' . $search_index,
-        {}, form => { q => $query } );
+        {}, form => { q => $index_utils->n($query) } );
     my $result = $tx->result;
     my $output = $result->json;
 

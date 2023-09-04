@@ -17,6 +17,9 @@ use Mojo::UserAgent;
 
 use BurguillosInfo::Posts;
 use BurguillosInfo::Categories;
+use BurguillosInfo::IndexUtils;
+
+my $index_utils = BurguillosInfo::IndexUtils->new;
 
 sub run ( $self, @args ) {
     require BurguillosInfo;
@@ -38,36 +41,47 @@ sub run ( $self, @args ) {
 sub _index_categories ( $self, $index, $categories ) {
     my @categories_keys = keys %$categories;
     for my $category_key (@categories_keys) {
-        my $category     = $categories->{$category_key};
+        my $category = $categories->{$category_key};
         my $slug     = $category->{slug};
         my $url      = "/$slug";
         my $content =
-          Mojo::DOM->new( '<html>' . $category->{description} =~ s/\s+/ /gr . '</html>' )->all_text;
-        my $title  = $category->{title};
+          Mojo::DOM->new(
+            '<html>' . $category->{description} =~ s/\s+/ /gr . '</html>' )
+          ->all_text;
+        my $title      = $category->{title};
         my $attributes = $category->{attributes};
-        $self->_index_attributes($index, $slug, $attributes);
+        $self->_index_attributes( $index, $slug, $attributes );
         push @$index,
           {
-            title    => $title,
-            content  => $content,
-            url      => $url,
+            title   => $title,
+            titleNormalized    => $index_utils->n($title),
+            content => $content,
+            contentNormalized  => $index_utils->n( $content =~ s/\s+/ /gr ),
+            url     => $url,
+            urlNormalized      => $index_utils->n($url),
           };
     }
 }
 
-sub _index_attributes($self, $index, $category_slug, $attributes) {
+sub _index_attributes ( $self, $index, $category_slug, $attributes ) {
     my @attributes_keys = keys %$attributes;
     for my $attribute_key (@attributes_keys) {
         my $attribute = $attributes->{$attribute_key};
-        my $slug = $attribute->{identifier};
-        my $url = "/$category_slug/atributo/$slug";
-        my $title  = $attribute->{title};
-        my $content  = Mojo::DOM->new( '<html>' . $attribute->{description} . '</html>' )->all_text;
-        push @$index, {
-            title    => $title,
-            content  => $content =~ s/\s+/ /gr,
-            url      => $url,
-        };
+        my $slug      = $attribute->{identifier};
+        my $url       = "/$category_slug/atributo/$slug";
+        my $title     = $attribute->{title};
+        my $content =
+          Mojo::DOM->new( '<html>' . $attribute->{description} . '</html>' )
+          ->all_text;
+        push @$index,
+          {
+            titleNormalized   => $index_utils->n($title),
+            title             => $title,
+            contentNormalized => $index_utils->n( $content =~ s/\s+/ /gr ),
+            content           => $content =~ s/\s+/ /gr,
+            urlNormalized     => $index_utils->n($url),
+            url               => $url,
+          };
     }
 }
 
@@ -84,11 +98,16 @@ sub _index_posts ( $self, $index, $posts ) {
         my $author = $post->{author};
         push @$index,
           {
-            title    => $title,
-            author   => $author,
-            content  => $content =~ s/\s+/ /gr,
-            url      => $url,
-            urlImage => $urlImage,
+            titleNormalized    => $index_utils->n($title),
+            title              => $title,
+            authorNormalized   => $index_utils->n($author),
+            author             => $author,
+            contentNormalized  => $index_utils->n( $content =~ s/\s+/ /gr ),
+            content            => $content =~ s/\s+/ /gr,
+            urlNormalized      => $index_utils->n($url),
+            url                => $url,
+            urlImageNormalized => $index_utils->n($urlImage),
+            urlImage           => $urlImage,
           };
     }
 }
