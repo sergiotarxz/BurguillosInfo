@@ -80,7 +80,7 @@ function onSearchChange() {
 }
 
 function showResults(searchResults, searchObjects) {
-    searchObjects.innerHTML = "";
+    searchResults.innerHTML = "";
     for (let searchObject of searchObjects) {
         const searchResultContainer = document.createElement('div')
         searchResultContainer.classList.add('search-result')

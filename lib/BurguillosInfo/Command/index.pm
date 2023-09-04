@@ -42,7 +42,7 @@ sub _index_categories ( $self, $index, $categories ) {
         my $slug     = $category->{slug};
         my $url      = "/$slug";
         my $content =
-          Mojo::DOM->new( '<html>' . $category->{description} . '</html>' )->all_text;
+          Mojo::DOM->new( '<html>' . $category->{description} =~ s/\s+/ /gr . '</html>' )->all_text;
         my $title  = $category->{title};
         my $attributes = $category->{attributes};
         $self->_index_attributes($index, $slug, $attributes);
@@ -65,7 +65,7 @@ sub _index_attributes($self, $index, $category_slug, $attributes) {
         my $content  = Mojo::DOM->new( '<html>' . $attribute->{description} . '</html>' )->all_text;
         push @$index, {
             title    => $title,
-            content  => $content,
+            content  => $content =~ s/\s+/ /gr,
             url      => $url,
         };
     }
@@ -86,7 +86,7 @@ sub _index_posts ( $self, $index, $posts ) {
           {
             title    => $title,
             author   => $author,
-            content  => $content,
+            content  => $content =~ s/\s+/ /gr,
             url      => $url,
             urlImage => $urlImage,
           };

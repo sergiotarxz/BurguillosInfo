@@ -15,6 +15,7 @@ html {
 
 body {
   div.search-overlay {
+    overflow-y: scroll;
     display: none;
     position: fixed;
     height: 100%;
