@@ -30,8 +30,9 @@ sub run ( $self, @args ) {
     my $index          = [];
     $self->_index_posts( $index, $posts );
     $self->_index_categories( $index, $categories );
-    $ua->put( $search_backend . '/index/' . $search_index,
+    my $response = $ua->put( $search_backend . '/index/' . $search_index,
         {} => json => $index );
+    say $response->result->body;
 }
 
 sub _index_categories ( $self, $index, $categories ) {

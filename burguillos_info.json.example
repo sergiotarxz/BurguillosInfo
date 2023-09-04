@@ -6,6 +6,7 @@
 	},
     "base_url": "https://burguillos.info",
     "search_backend": "http://localhost:3303",
+    "search_index": "burguillos_info",
     "geoip_database": "/usr/share/GeoLite2-City_20230804/GeoLite2-City.mmdb",
     "onion_base_url": "http://example.onion";
     "listen": "https:localhost:3555"
