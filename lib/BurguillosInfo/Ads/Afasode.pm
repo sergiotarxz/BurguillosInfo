@@ -21,7 +21,7 @@ sub weight {
 }
 
 sub is_active ($self) {
-    return 1;
+    return 0;
 }
 
 sub img {

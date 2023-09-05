@@ -29,7 +29,7 @@ sub default_alternative($self) {
 }
 
 sub is_active ($self) {
-    return 1;
+    return 0;
 }
 
 sub img ($self) {
