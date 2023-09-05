@@ -23,7 +23,6 @@ sub normalize($self, $text) {
 	ante|ario|ente|rgir|ento|errimo|ible|ico|ífico|il|ino|ísimo|ivo|izo|oso|ear|ecer
 	ificar|izar|es|as|os|e|o|a
     )\b//xg;
-    $decomposed =~ s/a\b/o/g;
     return $decomposed;
 }
 
