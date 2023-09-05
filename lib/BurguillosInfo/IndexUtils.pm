@@ -16,13 +16,14 @@ sub normalize($self, $text) {
     return undef if !defined $text;
     my $decomposed = NFKD( $text );
     $decomposed =~ s/\p{NonspacingMark}//g;
-    $decomposed =~ s/(?:
-	ada|ado|aje|cion|diccion|duccion|dura|ección|epcion|ido|ion|miento|
-        ncia|on|scripcion|sicion|sion|dad|tad|bilidad|edad|era|eria|ez|eza|ia|idad|ismo|
+    $decomposed =~ s/(?<=\w{4})(?:
+	ada|ado|aje|cion|diccion|duccion|dura|eccion|epcion|ido|miento|
+        ncia|scripcion|sicion|sion|dad|tad|bilidad|edad|era|eria|ez|eza|ia|idad|ismo|
         ncia|ante|ente|ura|dor|dero|ero|ista|ado|ario|ia|ero|eria|able|aceo|aco|al|aneo|
-	ante|ario|ente|rgir|ento|errimo|ible|ico|ífico|il|ino|ísimo|ivo|izo|oso|ear|ecer
+	ante|ario|ente|rgir|ento|errimo|ible|ico|ifico|il|ino|isimo|ivo|izo|oso|ecer|
 	ificar|izar|es|as|os|e|o|a
     )\b//xg;
+    say STDERR $decomposed;
     return $decomposed;
 }
 
