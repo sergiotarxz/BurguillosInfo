@@ -15,16 +15,16 @@
 	<content>
 
         <h2>Café - Bar - Pastelería - Pizzeria - Hamburguesería</h2>
-        <h3 style="background: black; color: red;">Cerrado por traspaso.</h3>
+        <h3 style="background: black; color: red;">Traspaso completado, se mantiene la marca del Bar.</h3>
 		<img alt="Exterior del Bar Bocatón." src="/img/bocaton-4.webp"/>
 		<p>Damos la bienvenida a un nuevo negocio al directorio de Burguillos.info, El Bocatón.</p>
 
 		<p>El Bocatón es un Café - Bar ubicado al lado del Parque del Barrio Lejos, (Calle Naranjo, 11) ideal para tomarte algo mientras tus hijos juegan en el parque.</p>
 
 		<p>En El Bocatón implementan los siguientes servicios: Pastelería, Pizzería y Hamburguesería.</p>
-		<p>Además también puedes pedir a domicilio por un 1.50€ extra llamando al siguiente número. <a href="tel:+34603043304">603043304</a></p>
+		<p>Además también puedes pedir a domicilio por un 1.50€ extra llamando al siguiente número. <a href="tel:+34633138586">633 138 586</a></p>
 		
-		<p>A continuación listamos la carta para que tengas todas las facilidades para darte un capricho no sin antes indicaros que el catalogo de pizzas solo está disponible Viernes, Sabados y Domingos; no obstante puedes pedir cualquier otra cosa entre semana.</p>
+		<p>A continuación listamos la carta:</p>
 
 		<h3>Ingredientes para añadir a tu pizza.</h3>
 
@@ -57,7 +57,7 @@
 		<img alt="Chapata Pizza" src="/img/chapata-pizza.webp"/>
 
 		<ol>
-			<li>Completa con dos ingredientes. <b>4€</b></li>
+			<li>Completa con dos ingredientes. <b>4.00€</b></li>
 			<li>Media con dos ingredientes. <b>2.50€</b></li>
 		</ol>
 
@@ -74,15 +74,14 @@
 		<ol>
 			<li>Papas chicas. <b>1.50€</b></li>
 			<li>Papas grandes. <b>2.50€</b></li>
-			<li>Papas gratinadas. <b>4€</b></li>
-			<li>Papas bravas. <b>3€</b></li>
+			<li>Papas gratinadas. <b>4.00€</b></li>
+			<li>Papas bravas. <b>3.00€</b></li>
 			<li>Churrasco de cerdo/pollo. <b>4.50€</b></li>
-			<li>Montadito de cerdo/pollo. <b>3€</b></li>
-			<li>Nuggets de pollo con papas. <b>3€</b></li>
+			<li>Montadito de cerdo/pollo. <b>3.00€</b></li>
+			<li>Nuggets de pollo con papas. <b>3.00€</b></li>
 			<li>Solomillo al whisky. <b>4.50€</b></li>
-			<li>Tocinito. <b>4€</b></li>
-			<li>Carne asada. <b>4€</b></li>
-			<li>Croquetas caseras. (5 unidades) <b>3€</b></li>
+			<li>Tocinito. <b>4.00€</b></li>
+			<li>Carne asada. <b>4.00€</b></li>
 			<li>Sandwich york o vegetal. <b>2.50€</b></li>
 			<li>Perrito caliente. <b>2.50€</b></li>
 		</ol>
@@ -97,8 +96,8 @@
 			<li>Doble carne, tomate, bacon, cebolla, lechuga y queso. <b>3.30€</b></li>
 			<li>Carne, queso, cochinito y pepinillos. <b>2.50€</b></li>
 			<li>Filete de pollo, lechuga, tomate, cebolla y queso. <b>2.60€</b></li>
-			<li>Buey, lechuga, tomate, cebolla y queso. <b>4€</b></li>
-			<li>Buey, lechuga, tomate, cebolla, huevo y queso. <b>5€</b></li>
+			<li>Buey, lechuga, tomate, cebolla y queso. <b>4.00€</b></li>
+			<li>Buey, lechuga, tomate, cebolla, huevo y queso. <b>5.00€</b></li>
 			<li>Crujiente de pollo, lechuga, tomate y cebolla. <b>3.80€</b></li>
 		</ol>
 		
@@ -110,20 +109,19 @@
 			<li>Bacon y queso. <b>2.80€</b></li>
 			<li>Frankfurt. <b>2.80€</b></li>
 			<li>Vegetal, mayonesa, lechuga, tomate, atún y huevo. <b>2.80€</b></li>
-			<li>Tortilla de patatas. <b>2.80€</b></li>
 			<li>Tortilla francesa, york y queso. <b>2.80€</b></li>
-			<li>Vegetal pollo. <b>4€</b></li>
+			<li>Vegetal pollo. <b>4.00€</b></li>
 			<li>Pollo, lechuga y tomate. <b>3.30€</b></li>
 			<li>Filete de lomo, lechuga y tomate. <b>3.30€</b></li>
-			<li>Serranito de lomo o pollo <i>incluye patatas</i>. <b>5€</b></li>
-			<li>Bocatón Burguer <i>incluye patatas</i>. <b>5€</b></li>
+			<li>Serranito de lomo o pollo <i>incluye patatas</i>. <b>5.00€</b></li>
+			<li>Bocatón Burguer <i>incluye patatas</i>. <b>5.00€</b></li>
 		</ol>
 
 		<h3>Ensaladas</h3>
 
 		<ol>
 			<li>Ensalada completa: Lechuga, tomate, maíz, cebolla y esparrago. <b>3.50€</b></li>
-			<li>Ensaladilla. <b>3€</b></li>
+			<li>Ensaladilla. <b>3.00€</b></li>
 		</ol>
 
 		<h3>Bebidas</h3>
@@ -132,7 +130,7 @@
 			<li>Refresco 2L. <b>2.50€</b></li>
 			<li>Refresco lata. <b>1.20€</b></li>
 			<li>Litrona. <b>2.50€</b></li>
-			<li>Botella de Agua de 1.5L. <b>1€</b></li>
+			<li>Botella de Agua de 1.5L. <b>1.00€</b></li>
 			<li>Botella de Agua pequeña. <b>0.50€</b></li>
 			<li>Bolsa de hielo. <b>1.20€</b></li>
 		</ol>
