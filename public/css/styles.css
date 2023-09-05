@@ -73,8 +73,7 @@ body {
       height: 100%;
       text-decoration: none;
       color: #f2eb8c;
-      margin: 0;
-      background: blueviolet; }
+      margin: 0; }
       body nav a:hover, body nav a:focus {
         background: #f2eb8c;
         color: blueviolet; }
@@ -85,7 +84,8 @@ body {
   body nav.desktop {
     display: none; }
     body nav.desktop a {
-      vertical-align: middle; }
+      vertical-align: middle;
+      background: blueviolet; }
   body nav.mobile-foldable {
     display: none;
     background: blueviolet;

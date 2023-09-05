@@ -114,7 +114,6 @@ body {
       color: $color_div;
       margin: 0;
 
-      background: $background_div;
       &:hover, &:focus {
         background: $color_div;
         color: $background_div;
@@ -133,6 +132,7 @@ body {
 
     a {
       vertical-align: middle;
+      background: $background_div;
     }
   }
 
