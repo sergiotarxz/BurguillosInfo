@@ -23,7 +23,6 @@ sub normalize($self, $text) {
 	ante|ario|ente|rgir|ento|errimo|ible|ico|ifico|il|ino|isimo|ivo|izo|oso|ecer|
 	ificar|izar|es|as|os|e|o|a
     )\b//xg;
-    say STDERR $decomposed;
     return $decomposed;
 }
 
