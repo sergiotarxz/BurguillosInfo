@@ -80,7 +80,6 @@ sub normalize ( $self, $text ) {
     $decomposed =~ s/os\b//g;
     $decomposed =~ s/ecer\b//g;
     $decomposed =~ s/ific\b//g;
-    say STDERR $decomposed;
     return $decomposed;
 }
 
