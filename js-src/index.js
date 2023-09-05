@@ -73,11 +73,14 @@ function onSearchChange() {
     }
     const query = search.value;
     fakeSearchInput.value = search.value
+    let port = window.location.port;
+    if (port !== '') {
+        port = ':' + port
+    }
     const url = new URL(window.location.protocol
         + "//"
         + window.location.hostname
-        + ":"
-        + window.location.port
+        + port
         + '/search.json');
     url.searchParams.set('q', query);
     fetch(url).then(async (res) => {
@@ -106,10 +109,14 @@ function showResults(searchResults, searchObjects) {
         const content = document.createElement('p')
 
         title.innerText = searchObject.title
+        let port = window.location.port;
+        if (port !== '') {
+            port = ':' + port
+        }
         if (searchObject.url.match(/^\//)) {
             searchObject.url = window.location.protocol 
                 + "//" + window.location.hostname 
-                + ":" + window.location.port 
+                + port
                 + searchObject.url
         }
         url.href = searchObject.url
