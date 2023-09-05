@@ -41,24 +41,21 @@ window.onload = () => {
 
 function addListenersSearch() {
     if (searchMobile !== null) {
-        searchMobile.addEventListener('click', onFakeSearchClick);
-        fakeSearchInput.addEventListener('focus', (e) => {
-            onFakeSearchClick(e)
-        });
+        const searchIcon = searchMobile.querySelector('div.search-icon')
+        searchIcon.addEventListener('click', onFakeSearchClick);
         fakeSearchInput.addEventListener('change', (e) => {
-            if (fakeSearchInput.value !== "") {
-                const searchOverlay = document.querySelector('div.search-overlay');
-                const searchInput = searchOverlay.querySelector('div.search input');
-                searchInput.value = fakeSearchInput.value;
-                onSearchChange(e)
-            }
+            const searchOverlay = document.querySelector('div.search-overlay');
+            const searchInput = searchOverlay.querySelector('div.search input');
+            searchInput.value = fakeSearchInput.value;
+            onSearchChange(e)
             onFakeSearchClick(e)
         });
     }
     const exitSearch = document.querySelector('a.exit-search')
-    if (exitSearch !== null) {
-        exitSearch.addEventListener('click', onExitSearch)
-    }
+    const searchOverlay = document.querySelector('div.search-overlay');
+    const searchInput = searchOverlay.querySelector('div.search input');
+    fakeSearchInput.value = searchInput.value;
+    exitSearch.addEventListener('click', onExitSearch)
     const search = document.querySelector('div.search-overlay div.search input');
     if (search !== null) {
         search.addEventListener('change', onSearchChange);
