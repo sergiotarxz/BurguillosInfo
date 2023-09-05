@@ -25,6 +25,7 @@ my $build = Module::Build->new(
         'Moo::Role'                    => 0,
         'Module::Pluggable'            => 0,
         'List::AllUtils'               => 0,
+        'Lingua::Stem::Snowball'       => 0,
     },
 );
 $build->create_build_script;
