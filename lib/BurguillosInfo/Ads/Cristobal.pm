@@ -17,7 +17,7 @@ sub id ($self) {
 }
 
 sub weight {
-    return 75;
+    return 50;
 }
 
 sub max_alternative {
