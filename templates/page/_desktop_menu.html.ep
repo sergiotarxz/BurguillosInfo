@@ -20,5 +20,5 @@ for my $category_key (@sorted_categories) {
     my $selected = defined($target_category_slug) && $category->{slug} eq $target_category_slug;
     %><a class="<%=$selected && "selected" %>" href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><% 
 }
-%></nav>
+%><a href="#" class="search-icon"><img alt="" src="/img/search.svg"/></a></nav>
 

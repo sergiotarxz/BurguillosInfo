@@ -81,6 +81,12 @@ function addListenersSearch() {
     if (search !== null) {
         search.addEventListener('change', onSearchChange);
     }
+    const searchIconDesktop = document.querySelector('nav.desktop a.search-icon');
+    if (searchIconDesktop !== null) {
+        searchIconDesktop.addEventListener('click', (e) => {
+            onFakeSearchClick(e)
+        })
+    }
 }
 
 function _port() {
