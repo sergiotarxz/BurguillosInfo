@@ -1,0 +1,15 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-09-07T16:11:00+00:00</date>
+    <title>Farmacia de Guardia en Burguillos.</title>
+    <ogdesc>Farmacia de Guardia en Burguillos.</ogdesc>
+    <img src="/img/farmacia.webp"/>
+    <category>index</category>
+    <slug>farmacia-guardia</slug>
+    <content>
+        <img alt="Imagen de cruz de Farmacia" src="/img/farmacia.webp"/>
+        <p>Este artículo se rellena automáticamente con los datos de la Farmacia de Guardia, tu navegador o móvil debe soportar Javascript para que funcione.</p>
+
+        <p>La farmacia de guardia esta semana y hasta la siguiente vez que sean las 9:30 un lunes es <b id="farmacia-name"></b> se encuentra ubicada en <b id="farmacia-address"></b>.</p>
+    </content>
+</post>

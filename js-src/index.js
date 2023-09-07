@@ -10,6 +10,7 @@ window.onload = () => {
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
     const tables = document.querySelectorAll('table')
 
+    fillFarmaciaGuardia();
     loadAd()
     addEasterEggAnimation()
 
@@ -39,6 +40,26 @@ window.onload = () => {
     addListenersSearch()
 };
 
+function fillFarmaciaGuardia() {
+    const farmaciaName = document.querySelector('#farmacia-name');
+    const farmaciaAddress = document.querySelector('#farmacia-address');
+    if (farmaciaName !== null || farmaciaAddress !== null) {
+        const port = _port()
+        const url = new URL(window.location.protocol
+        + "//"
+        + window.location.hostname
+        + port
+        + '/farmacia-guardia.json');
+        fetch(url).then(async (res) => {
+            const farmacia = await res.json()
+            if (farmaciaName !== null) {
+                farmaciaName.innerText = farmacia.name;
+                farmaciaAddress.innerText = farmacia.address;
+            }
+        })
+    }
+}
+
 function addListenersSearch() {
     if (searchMobile !== null) {
         const searchIcon = searchMobile.querySelector('div.search-icon')
@@ -62,6 +83,14 @@ function addListenersSearch() {
     }
 }
 
+function _port() {
+    let port = window.location.port;
+    if (port !== '') {
+        port = ':' + port
+    }
+    return port;
+}
+
 function onSearchChange() {
     const search = document.querySelector('div.search-overlay div.search input');
     const searchResults = document.querySelector('div.search-overlay div.search-results');
@@ -70,10 +99,7 @@ function onSearchChange() {
     }
     const query = search.value;
     fakeSearchInput.value = search.value
-    let port = window.location.port;
-    if (port !== '') {
-        port = ':' + port
-    }
+    const port = _port()
     const url = new URL(window.location.protocol
         + "//"
         + window.location.hostname

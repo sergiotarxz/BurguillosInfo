@@ -60,7 +60,7 @@ sub get_rand_ad($self, $array) {
     my $max_weight = $self->sum_weights($array);
     my $rand = int(rand() * $max_weight);
     my $sum_weight = 0;
-    for my $ad (@$array) {
+    for my $ad (@$valid_ads) {
         $sum_weight += $ad->weight;
         if ($rand < $sum_weight) {
             return $ad;

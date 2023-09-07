@@ -43,6 +43,12 @@ sub MIGRATIONS {
         \&_populate_locations,
         \&_populate_locations,
         \&_populate_locations,
+        'CREATE TABLE farmacia_guardia (
+            uuid UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+            date timestamp NOT NULL,
+            id_farmacia TEXT NOT NULL
+        );',
+        'CREATE INDEX farmacia_guardia_index on farmacia_guardia (date, id_farmacia, uuid);',
     );
 }
 

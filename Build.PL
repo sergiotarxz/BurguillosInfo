@@ -17,6 +17,7 @@ my $build = Module::Build->new(
         'DBD::Pg'                      => 0,
         'DateTime::Format::ISO8601.pm' => 0,
         'DateTime::Format::Mail.pm'    => 0,
+        'DateTime::Format::Pg'         => 0,
         'SVG'                          => 0,
         'XML::Twig'                    => 0,
         'JSON'                         => 0,

@@ -52,6 +52,7 @@ sub startup ($self) {
     #  $r->get('/:post')->to('Page#post');
     $r->get('/stats')->to('Metrics#stats');
     $r->get('/search.json')->to('Search#search');
+    $r->get('/farmacia-guardia.json')->to('FarmaciaGuardia#current');
     $r->get('/<:category>.rss')->to('Page#category_rss');
     $r->get('/:category_slug/atributo/<:attribute_slug>-preview.png')->to('Attribute#get_attribute_preview');
     $r->get('/:category_slug/atributo/:attribute_slug')->to('Attribute#get');
