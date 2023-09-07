@@ -21,7 +21,7 @@ sub name {
 }
 
 sub address {
-    return 'Avenida. Alcalde José Cuesta Godoy, Nº 21. (La calle aun es como Avenida Cruz de la Ermita si lo buscas en Google Maps.)';
+    return 'Avenida. Alcalde José Cuesta Godoy, Nº 21. (La calle aun es Avenida Cruz de la Ermita si lo buscas en Google Maps.)';
 }
 
 1;
