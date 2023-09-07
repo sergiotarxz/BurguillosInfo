@@ -256,7 +256,6 @@ body {
             background: white;
             max-height: 100%;
             max-width: 100%;
-            min-width: 277px;
             border: solid 1px black; }
         body div.page-contents div.description div.articles a {
           min-height: 90%;
@@ -360,6 +359,10 @@ body {
     font-size: 20px; } }
 
 @media (min-width: 694px) {
+  body div.carousel a {
+    font-size: 20px; }
+  body div.carousel h3 {
+    font-size: 25px; }
   body div.page-contents div.description div.articles a {
     width: 45%;
     margin-left: 5%; }
@@ -401,3 +404,7 @@ body {
       margin-left: 3%; }
     body div.page-contents div.description div.articles a:nth-child(3n+1) {
       margin-left: 0%; } }
+
+@media (max-width: 200px) {
+  body {
+    font-size: 20px; } }

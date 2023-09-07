@@ -374,7 +374,6 @@ body {
             background: white;
             max-height: 100%;
             max-width: 100%;
-            min-width: 277px;
             border: solid 1px black;
           }
         }
@@ -549,6 +548,14 @@ body {
 
 @media (min-width: 694px) {
   body {
+    div.carousel {
+        a {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 25px;
+        }
+    }
     div.page-contents {
       div.description {
         div.articles {
@@ -632,4 +639,10 @@ body {
       }
     }
   }
+}
+
+@media (max-width: 200px) {
+    body {
+        font-size: 20px;
+    }
 }
