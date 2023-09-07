@@ -25,6 +25,7 @@ sub normalize($self, $text) {
     my $stemmer = Lingua::Stem::Snowball->new( lang => 'es' );
     $stemmer->stem_in_place(\@words);
     $decomposed = join " ", @words;
+    $decomposed =~ s/\bpizzeri\b/pizz/g;
     return $decomposed;
 }
 
