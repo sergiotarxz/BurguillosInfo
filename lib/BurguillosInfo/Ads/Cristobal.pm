@@ -44,12 +44,12 @@ sub img ($self) {
 
 sub text($self) {
     if ( $self->default_alternative == 2 ) {
-        return 'Disfruta de comidas abundantes en Bar Cristóbal.';
+        return 'Disfruta de comidas abundantes en Bar Cristóbal. Contacta a 621 210 460.';
     }
     if ( $self->default_alternative == 1 ) {
-        return 'Bar Cristóbal, para chuparse los dedos.';
+        return 'Bar Cristóbal, para chuparse los dedos. Contacta a 621 210 460.';
     }
-    return '¿Te apetece una cervecita y buena comida? Ven a Bar Cristóbal.';
+    return '¿Te apetece una cervecita y buena comida? Ven a Bar Cristóbal. Contacta a 621 210 460.';
 }
 
 sub href {

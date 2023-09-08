@@ -148,6 +148,18 @@ body {
     display: none; }
     body nav.desktop a {
       vertical-align: middle; }
+    body nav.desktop a.search-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body nav.desktop a.search-icon img {
+        background: aliceblue;
+        border-radius: 10px;
+        padding: 10%;
+        width: 60%;
+        height: 60%; }
   body nav.mobile-foldable {
     display: none;
     background: blueviolet;

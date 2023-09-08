@@ -9,8 +9,8 @@
 % my $base_url = config 'base_url';
 <html lang="es">
   <head>
-      <script src="/js/bundle.js"></script>
 % my $css_version = config 'css_version';
+      <script src="/js/bundle.js?v=<%=$css_version%>"></script>
       <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
 	  <title><%= title %></title>
       <meta name="description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
