@@ -133,6 +133,11 @@ function showResults(searchResults, searchObjects) {
     for (let searchObject of searchObjects) {
         const searchResultContainer = document.createElement('div')
         searchResultContainer.classList.add('search-result')
+        const rowTitleUrlImageDiv = document.createElement('div');
+        rowTitleUrlImageDiv.classList.add('row-title-url-image');
+        const columnTitleUrl = document.createElement('div');
+        columnTitleUrl.classList.add('column-title-url');
+        const img = document.createElement('img')
         const title = document.createElement('b')
         const url = document.createElement('a')
         const content = document.createElement('p')
@@ -148,13 +153,33 @@ function showResults(searchResults, searchObjects) {
                 + port
                 + searchObject.url
         }
+        let urlImage = searchObject.urlImage;
+        if (urlImage !== null && urlImage.match(/^\//)) {
+            urlImage = window.location.protocol 
+                + "//" + window.location.hostname 
+                + port
+                + urlImage
+        }
+        if (urlImage !== null) {
+            img.alt = ""
+            img.src = urlImage
+        }
+
         url.href = searchObject.url
         url.innerText = searchObject.url
         content.innerText = searchObject.content
 
-        searchResultContainer.appendChild(title)
-        searchResultContainer.appendChild(document.createElement('br'))
-        searchResultContainer.appendChild(url)
+        if (urlImage !== null) {
+            rowTitleUrlImageDiv.appendChild(img)
+        }
+
+        columnTitleUrl.appendChild(title);
+        columnTitleUrl.appendChild(document.createElement('br'))
+        columnTitleUrl.appendChild(url)
+
+        rowTitleUrlImageDiv.appendChild(columnTitleUrl)
+
+        searchResultContainer.appendChild(rowTitleUrlImageDiv)
         searchResultContainer.appendChild(content)
         searchResults.appendChild(searchResultContainer)
     }
