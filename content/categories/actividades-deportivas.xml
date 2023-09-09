@@ -1,0 +1,25 @@
+<category>
+	<title>Donde hacer deporte en Burguillos.</title>
+	<description>
+        <h2>Actividades deportivas disponibles en Burguillos.</h2>
+		<p>Aquí puedes encontrar información acerca de las actividades deportivas disponibles en Burguillos, ejercitate para tener un cuerpo y mente más sanos.</p>
+		<p>¿Conoces alguna actividad deportiva que debiera estar aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y haznoslo saber.</p>
+	</description>
+        <parent>comercios</parent>
+	<priority>0</priority>
+	<menu_text>Donde hacer deporte en Burguillos</menu_text>
+	<slug>actividades-deportivas</slug>
+    <attributes>
+        <attribute>
+            <title>Danza en Burguillos.</title>
+            <identifier>danza</identifier>
+            <priority>1</priority>
+            <menu_text>Donde bailar en Burguillos.</menu_text>
+            <description>
+                <p>Baila, salta, ejercitaté.</p>
+                <p>Deslumbra en las redes sociales y los eventos con tus habilidades de danza.</p>
+                <p>¿A que esperas para echarte un baile?</p>
+            </description>
+        </attribute>
+    </attributes>
+</category>
