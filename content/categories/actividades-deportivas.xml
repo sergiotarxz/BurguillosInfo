@@ -21,5 +21,18 @@
                 <p>¿A que esperas para echarte un baile?</p>
             </description>
         </attribute>
+        <attribute>
+            <title>Artes marciales en Burguillos.</title>
+            <identifier>artes-marciales</identifier>
+            <priority>1</priority>
+            <menu_text>Donde prácticar artes marciales en Burguillos.</menu_text>
+            <description>
+                <p>Práctica artes marciales en Burguillos.</p>
+                
+                <p>Las artes marciales son un deporte con muchos beneficios, aumenta la flexibilidad, el equilibrio, la disciplina y además son un pasatiempo genial para dedicar tus tardes.</p>
+
+                <p>Unete a alguna y aprende una habilidad única.</p>
+            </description>
+        </attribute>
     </attributes>
 </category>
