@@ -679,3 +679,15 @@ body {
         font-size: 20px;
     }
 }
+
+@media (max-height: 400px) {
+    body {
+        div.carousel {
+            height: 120px;
+            top: calc(100% - 120px);
+        }
+    }
+    div.page-contents {
+        height: calc(100% - 60px - 120px);
+    }
+}
