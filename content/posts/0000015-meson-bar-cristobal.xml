@@ -9,6 +9,7 @@
     <attributes>
         <attribute>hamburguesas</attribute>
     </attributes>
+    <pinned>1</pinned>
 	<img src="/img/cristobal-preview.webp"/>
 	<content>
         <h2 style="background: black; color: red;">Menú actualizado con nuevos precios y productos 2023-09-06</h2>

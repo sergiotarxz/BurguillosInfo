@@ -9,6 +9,7 @@
         <attribute>comida-vegana</attribute>
     </attributes>
     <slug>yo-te-lo-guiso</slug>
+    <pinned>1</pinned>
     <content>
         <img witdh="50%" alt="Cartel 'Yo te lo guiso'" style="border: solid 1px black" src="/img/yo-to-lo-guiso.webp"/>
 

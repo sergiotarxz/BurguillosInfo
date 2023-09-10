@@ -20,10 +20,10 @@ use DateTime;
 
 use BurguillosInfo::Preview;
 
-const my $CURRENT_FILE    => __FILE__;
-const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
-const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
-const my $POSTS_DIR       => $ROOT_PROJECT->child('content/posts');
+const my $CURRENT_FILE => __FILE__;
+const my $ROOT_PROJECT => path($CURRENT_FILE)->parent->parent->parent;
+const my $PUBLIC_DIR   => $ROOT_PROJECT->child('public');
+const my $POSTS_DIR    => $ROOT_PROJECT->child('content/posts');
 
 my $cached_posts_by_category;
 my $cached_posts_by_slug;
@@ -41,9 +41,7 @@ sub _ReturnCacheFilter {
     for my $category ( keys %$cached_posts_by_category ) {
         for my $post ( @{ $cached_posts_by_category->{$category} } ) {
             my $date_post;
-            eval {
-                $date_post = $iso8601->parse_datetime( $post->{date} );
-            };
+            eval { $date_post = $iso8601->parse_datetime( $post->{date} ); };
             if ($@) {
                 print Data::Dumper::Dumper $post;
             }
@@ -59,7 +57,7 @@ sub _ReturnCacheFilter {
 }
 
 sub _GeneratePostFromFile ( $self, $post_file ) {
-    warn "Bad file $post_file, omiting...", return 
+    warn "Bad file $post_file, omiting...", return
       if !-f $post_file || $post_file !~ /\.xml$/;
     my $dom   = Mojo::DOM->new( $post_file->slurp_utf8 );
     my $title = $dom->at(':root > title')->text
@@ -76,10 +74,15 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
       or die "Missing slug at $post_file.";
     my $content = $dom->at(':root > content')->content
       or die "Missing content at $post_file.";
+    my $pinned_node   = $dom->at(':root > pinned');
     my $image_element = $dom->at(':root > img');
     my $image;
-    my $attributes = $self->_GetAttributes($post_file, $dom);
+    my $attributes = $self->_GetAttributes( $post_file, $dom );
 
+    my $pinned;
+    if ( defined $pinned_node ) {
+        $pinned = int($pinned_node);
+    }
     if ( defined $image_element ) {
         $image = $image_element->attr->{src};
     }
@@ -92,31 +95,36 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
     }
 
     return {
-        title    => $title,
-        author   => $author,
-        date     => $date,
-        ogdesc   => $ogdesc,
-        category => $category,
-        slug     => $slug,
-        content  => $content,
+        title      => $title,
+        author     => $author,
+        date       => $date,
+        ogdesc     => $ogdesc,
+        category   => $category,
+        slug       => $slug,
+        content    => $content,
+        attributes => $attributes,
         (
               ( defined $last_modification_date )
             ? ( last_modification_date => $last_modification_date )
             : ()
         ),
         ( ( defined $image ) ? ( image => $image ) : () ),
-        attributes => $attributes,
+        (
+              ( defined $pinned ) ? ( pinned => $pinned )
+            : ()
+        )
     };
 }
 
-sub _GetAttributes($self, $post_file, $dom) {
+sub _GetAttributes ( $self, $post_file, $dom ) {
     my $attributes_tag = $dom->at(':root > attributes');
     my %attributes;
-    if (defined $attributes_tag) {
-        my @attribute_list = $attributes_tag->find('attributes > attribute')->map('text')->each;
-        %attributes = map { 
+    if ( defined $attributes_tag ) {
+        my @attribute_list =
+          $attributes_tag->find('attributes > attribute')->map('text')->each;
+        %attributes = map {
             my $identifier = $_;
-            ($identifier => 1);
+            ( $identifier => 1 );
         } @attribute_list;
     }
     return \%attributes;
@@ -128,10 +136,10 @@ sub _GeneratePostCache ($self) {
     $cached_posts_by_slug     = {};
     for my $post_file ( sort { $b cmp $a } $POSTS_DIR->children ) {
         my $post = $self->_GeneratePostFromFile($post_file);
-        if (!defined $post) {
+        if ( !defined $post ) {
             next;
         }
-        my $category       = $post->{category};
+        my $category = $post->{category};
         $cached_posts_by_category->{$category} //= [];
         my $slug           = $post->{slug};
         my $category_posts = $cached_posts_by_category->{$category};
@@ -150,24 +158,41 @@ sub Retrieve {
 }
 
 my $cache_all_post_categories = {};
+
 sub RetrieveAllPostsForCategory ( $self, $category_name ) {
-    if (defined $cache_all_post_categories->{$category_name}) {
-        return $cache_all_post_categories->{$category_name};
-    }
     my $categories = BurguillosInfo::Categories->new->Retrieve;
     my $category   = $categories->{$category_name};
-    my $posts      = $self->RetrieveDirectPostsForCategory($category_name);
+    if ( defined $cache_all_post_categories->{$category_name} ) {
+        my $posts = $cache_all_post_categories->{$category_name};
+        return $self->shufflePostsIfRequired( $category, $posts );
+    }
+    my $posts = $self->RetrieveDirectPostsForCategory($category_name);
     for my $child_category ( $category->{children}->@* ) {
         my $child_category_name = $child_category->{slug};
         push @$posts,
-          @{$self->RetrieveDirectPostsForCategory($child_category_name)};
+          @{ $self->RetrieveDirectPostsForCategory($child_category_name) };
     }
-    @$posts = sort { 
-        DateTime::Format::ISO8601->parse_datetime($b->{date}) <=> 
-        DateTime::Format::ISO8601->parse_datetime($a->{date}) 
+    @$posts = sort {
+        DateTime::Format::ISO8601->parse_datetime( $b->{date} )
+          <=> DateTime::Format::ISO8601->parse_datetime( $a->{date} )
     } @$posts;
     $cache_all_post_categories->{$category_name} = $posts;
-    return $posts;
+    return $self->shufflePostsIfRequired( $category, $posts );
+}
+
+sub shufflePostsIfRequired ( $self, $category, $posts ) {
+    my $pinned_posts = [ grep { 
+        exists $_->{pinned}
+    } @$posts ];
+    $posts = [ grep { 
+        !exists $_->{pinned}
+    } @$posts ];
+    $pinned_posts = [ sort { $b <=> $a } @$pinned_posts ];
+    if ( exists $category->{random} && $category->{random} ) {
+        require List::AllUtils;
+        $posts = [ List::AllUtils::shuffle @$posts ];
+    }
+    return [@$pinned_posts, @$posts];
 }
 
 sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
@@ -183,14 +208,11 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
 }
 
 sub PreviewOg {
-    my $self    = shift;
-    my $post    = shift;
-    my $title   = $post->{title};
-    my $content = $post->{content};
+    my $self       = shift;
+    my $post       = shift;
+    my $title      = $post->{title};
+    my $content    = $post->{content};
     my $image_file = $post->{image};
-    return BurguillosInfo::Preview->Generate($title, $content, $image_file);
+    return BurguillosInfo::Preview->Generate( $title, $content, $image_file );
 }
-
-
-
 1;

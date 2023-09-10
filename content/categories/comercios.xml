@@ -1,10 +1,11 @@
 <category>
-	<title>Comercios de Burguillos.</title>
-	<description>
-		<p>Aquí puedes encontrar información acerca de los comercios de Burguillos.</p>
-		<p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
-	</description>
-	<priority>2</priority>
-	<menu_text>Comercios</menu_text>
-	<slug>comercios</slug>
+    <title>Comercios de Burguillos.</title>
+    <description>
+            <p>Aquí puedes encontrar información acerca de los comercios de Burguillos.</p>
+            <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
+    <priority>2</priority>
+    <menu_text>Comercios</menu_text>
+    <slug>comercios</slug>
+    <random>true</random>
 </category>

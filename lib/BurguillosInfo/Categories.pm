@@ -44,6 +44,20 @@ sub Retrieve($self) {
           or die "Missing priority at $category_file";
         my $attributes = $self->_GetAttributes($dom, $category_file);
         my $parent_tag = $dom->at(':root > parent');
+        my $random_tag = $dom->at(':root > random');
+        my $random;
+        if (defined $random_tag) {{
+            $random = $random_tag->text;
+            if ($random =~ /^true$/i || $random =~ /^yes$/ ) {
+                $random = 1;
+                next;
+            }
+            if (int($random) != 0) {
+                $random = 1;
+                next;
+            }
+            $random = 0;
+        }}
         my $parent;
         if (defined $parent_tag) {
             $parent = $parent_tag->content;
@@ -60,6 +74,11 @@ sub Retrieve($self) {
                 ()
             ),
             attributes => $attributes,
+            (
+                (defined $random) ?
+                (random => $random):
+                ()
+            )
         };
         $cached_categories->{$slug} = $category;
     }
@@ -106,7 +125,10 @@ sub _PopulateChildrenField($self, $categories) {
         }
         my $parent = $categories->{$parent_name};
         if (!defined $parent) {
-            die "Category $parent not exists and is the parent of $category_name.";
+            die "Category $parent_name not exists and it is the parent of $category_name.";
+        }
+        if (!exists $category->{random} && exists $parent->{random}) {
+            $category->{random} = $parent->{random};
         }
         $parent->{children} //= [];
         push $parent->{children}->@*, $category;
