@@ -56,19 +56,21 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     display: flex; }
-    body div.search a.search-icon, body div.search a.down, body div.search a.up {
-      height: calc(100% - 24px);
+    body div.search a.search-icon {
+      height: calc(100% - 28px);
       align-self: center;
-      margin: 3px;
+      margin: 7px;
       display: flex;
       background: aliceblue;
       align-items: center;
-      padding: 9px;
+      padding: 7px;
       border-radius: 10px;
       border: solid gray 1px;
-      aspect-ratio: 1/1; }
-      body div.search a.search-icon img, body div.search a.down img, body div.search a.up img {
-        height: 80%; }
+      aspect-ratio: 1 / 1;
+      width: auto; }
+      body div.search a.search-icon img {
+        height: 80%;
+        aspect-ratio: 1 / 1; }
     body div.search div.fake-text-box {
       width: calc(100% - 60px);
       display: flex;
@@ -204,6 +206,36 @@ body {
   body nav > a:hover > img.index-image-menu,
   body div.burguillos-logo-container.active > img {
     transform: rotate(-1.5707963268rad); }
+  body div.search-in-page {
+    display: none;
+    position: fixed;
+    top: 60px;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    background: blueviolet;
+    z-index: 3; }
+    body div.search-in-page a.up, body div.search-in-page a.down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 28px);
+      align-self: center;
+      margin: 7px;
+      display: flex;
+      background: aliceblue;
+      align-items: center;
+      padding: 7px;
+      border-radius: 10px;
+      border: solid gray 1px;
+      aspect-ratio: 1/1; }
+      body div.search-in-page a.up img, body div.search-in-page a.down img {
+        height: 80%; }
+    body div.search-in-page span {
+      color: whitesmoke;
+      font-size: 25px; }
+    body div.search-in-page.active {
+      display: flex; }
   body nav.mobile-shortcuts {
     position: fixed;
     display: flex;

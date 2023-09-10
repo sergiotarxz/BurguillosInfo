@@ -44,6 +44,14 @@
     </div>
     <div class="complete-container">
 %= include 'page/_mobile_menu', categories => $categories
+        <div class="search-in-page">
+            <a href="#" class="down">
+                <img alt="Next result" src="/img/down.svg"/>
+            </a>
+            <a href="#" class="up">
+                <img alt="Previous result" src="/img/up.svg"/>
+            </a>
+        </div>
         <div class="page-contents">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
 %= include 'page/_mobile_foldable', categories => $categories

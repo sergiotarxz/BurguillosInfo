@@ -75,19 +75,21 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
-    a.search-icon,a.down,a.up {
-        height: calc(100% - 24px);
+    a.search-icon {
+        height: calc(100% - 28px);
         align-self: center;
-        margin: 3px;
+        margin: 7px;
         display: flex;
         background: aliceblue;
         align-items: center;
-        padding: 9px;
+        padding: 7px;
         border-radius: 10px;
         border: solid gray 1px;
-        aspect-ratio: 1/1;
+        aspect-ratio: 1 / 1;
+        width: auto;
         img {
             height: 80%;
+            aspect-ratio: 1 / 1;
         }
     }
     div.fake-text-box {
@@ -301,7 +303,42 @@ body {
   div.burguillos-logo-container.active > img {
     transform: rotate(-1.5707963268rad);
   }
+  div.search-in-page {
+    display: none;
+    position: fixed;
+    top: 60px;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    background: $background_div;
+    z-index: 3;
+    a.up, a.down {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 28px);
+        align-self: center;
+        margin: 7px;
+        display: flex;
+        background: aliceblue;
+        align-items: center;
+        padding: 7px;
+        border-radius: 10px;
+        border: solid gray 1px;
+        aspect-ratio: 1/1;
+        img {
+            height: 80%;
+        }
 
+    }
+    span {
+        color: whitesmoke;
+        font-size: 25px;
+    }
+    &.active {
+        display: flex;
+    }
+  }
   nav.mobile-shortcuts {
     position: fixed;
     display: flex;

@@ -61,8 +61,8 @@ function fillFarmaciaGuardia() {
 }
 
 function addListenersSearch() {
+    const searchInPage = document.querySelector('div.search-in-page')
     if (searchMobile !== null) {
-        console.log('hola')
         const searchIcon = searchMobile.querySelector('a.search-icon')
         searchIcon.addEventListener('click', (e) => {
             const searchOverlay = document.querySelector('div.search-overlay');
@@ -74,6 +74,14 @@ function addListenersSearch() {
 
         })
         fakeSearchInput.addEventListener('keyup', (e) => {
+            if (searchInPage === null) {
+                return;
+            }
+            if (fakeSearchInput.value === "") {
+                searchInPage.classList.remove('active')    
+            } else {
+                searchInPage.classList.add('active')    
+            }
             if (e.keyCode !== 13) {
                 return false;
             }
@@ -85,9 +93,10 @@ function addListenersSearch() {
             return true;
         });
     }
-    const nextResult = searchMobile.querySelector('a.down');
-    const prevResult = searchMobile.querySelector('a.up');
+    const nextResult = searchInPage.querySelector('a.down');
+    const prevResult = searchInPage.querySelector('a.up');
     if (nextResult !== null && prevResult !== null) {
+        console.log('hola')
         nextResult.addEventListener('click', () => {
             searchInWebsite(fakeSearchInput.value, true);
         });
