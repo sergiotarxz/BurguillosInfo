@@ -1,14 +1,14 @@
 <div class="search">
-    <div tabindex="-1" class="search-icon">
+    <a href="#" class="search-icon">
         <img alt="Buscar" src="/img/search.svg"/>
-    </div>
+    </a>
     <div class="fake-text-box">
         <input type="text"></input>
     </div>
-    <div class="down">
+    <a href="#" class="down">
         <img alt="Siguiente resultado." src="/img/down.svg"/>
-    </div>
-    <div class="up">
+    </a>
+    <a href="#" class="up">
         <img alt="Anterior resultado" src="/img/up.svg"/>
-    </div>
+    </a>
 </div>

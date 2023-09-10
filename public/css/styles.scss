@@ -54,7 +54,7 @@ body {
             margin-left: 0px;
             margin-right: 0px;
         }
-        div.up,div.down {
+        a.up,a.down {
             display: none;
         }
         a.exit-search {
@@ -75,14 +75,14 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
-    div.search-icon,div.down,div.up {
-        align-self: center;
+    a.search-icon,a.down,a.up {
         height: calc(100% - 24px);
+        align-self: center;
         margin: 3px;
         display: flex;
         background: aliceblue;
         align-items: center;
-        padding: 10px;
+        padding: 9px;
         border-radius: 10px;
         border: solid gray 1px;
         aspect-ratio: 1/1;
