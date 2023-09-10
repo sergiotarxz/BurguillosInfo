@@ -57,20 +57,18 @@ body {
     margin-right: 10px;
     display: flex; }
     body div.search div.search-icon, body div.search div.down, body div.search div.up {
-      height: calc(100% - 28px);
+      align-self: center;
+      height: calc(100% - 24px);
+      margin: 3px;
       display: flex;
       background: aliceblue;
       align-items: center;
-      margin: 7px;
-      padding: 7px;
+      padding: 10px;
       border-radius: 10px;
       border: solid gray 1px;
       aspect-ratio: 1/1; }
       body div.search div.search-icon img, body div.search div.down img, body div.search div.up img {
         height: 80%; }
-    body div.search div.down, body div.search div.up {
-      margin: 0px;
-      align-self: center; }
     body div.search div.fake-text-box {
       width: calc(100% - 60px);
       display: flex;

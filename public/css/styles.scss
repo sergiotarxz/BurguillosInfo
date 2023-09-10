@@ -76,22 +76,19 @@ body {
     margin-right: 10px;
     display: flex;
     div.search-icon,div.down,div.up {
-        height: calc(100% - 28px);
+        align-self: center;
+        height: calc(100% - 24px);
+        margin: 3px;
         display: flex;
         background: aliceblue;
         align-items: center;
-        margin: 7px;
-        padding: 7px;
+        padding: 10px;
         border-radius: 10px;
         border: solid gray 1px;
         aspect-ratio: 1/1;
         img {
             height: 80%;
         }
-    }
-    div.down,div.up {
-        margin: 0px;
-        align-self: center;
     }
     div.fake-text-box {
         width: calc(100% - 60px);

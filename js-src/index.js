@@ -83,7 +83,6 @@ function addListenersSearch() {
             searchInWebsite(fakeSearchInput.value, true);
         });
         prevResult.addEventListener('click', () => {
-            console.log('hola')
             searchInWebsite(fakeSearchInput.value, false);
         });
     }
@@ -105,7 +104,12 @@ function addListenersSearch() {
 }
 
 function searchInWebsite(value, isToBottom) {
-    window.find(value, false, !isToBottom, true);
+    window.find(value, false, !isToBottom, true)
+    const selection = window.getSelection()
+    const anchorNode = selection.anchorNode.parentNode
+    if (anchorNode !== null) {
+        anchorNode.scrollIntoView()
+    }
 }
 
 function _port() {
