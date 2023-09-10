@@ -81,7 +81,7 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
 
     my $pinned;
     if ( defined $pinned_node ) {
-        $pinned = int($pinned_node);
+        $pinned = int($pinned_node->text);
     }
     if ( defined $image_element ) {
         $image = $image_element->attr->{src};
