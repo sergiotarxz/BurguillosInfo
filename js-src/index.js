@@ -126,8 +126,10 @@ function searchInWebsite(value, isToBottom) {
     const selection = window.getSelection()
     const anchorNode = selection.anchorNode.parentNode
     if (anchorNode !== null) {
-        anchorNode.scrollIntoView()
-        anchorNode.focus()
+        const left = anchorNode.offsetLeft
+        const topPosition = anchorNode.offsetTop
+        const pageContents = document.querySelector('div.page-contents'); 
+        pageContents.scroll(left, topPosition - 80)
     }
 }
 
@@ -319,11 +321,11 @@ function addEasterEggAnimation() {
 let current_ad_number = null
 
 function expand_page_contents() {
-    const page_contents = document.querySelector('div.page-contents'); 
-    if (page_contents === null) {
+    const pageContents = document.querySelector('div.page-contents'); 
+    if (pageContents === null) {
         return;
     }
-    page_contents.classList.add('no-carousel');
+    pageContents.classList.add('no-carousel');
 }
 
 function no_more_ads() {
