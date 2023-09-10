@@ -73,7 +73,7 @@ function addListenersSearch() {
             return true;
 
         })
-        fakeSearchInput.addEventListener('keydown', (e) => {
+        fakeSearchInput.addEventListener('keypress', (e) => {
             console.log(e.code)
             if (e.code !== 'Enter') {
                 return false;
