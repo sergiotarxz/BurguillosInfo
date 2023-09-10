@@ -96,7 +96,6 @@ function addListenersSearch() {
     const nextResult = searchInPage.querySelector('a.down');
     const prevResult = searchInPage.querySelector('a.up');
     if (nextResult !== null && prevResult !== null) {
-        console.log('hola')
         nextResult.addEventListener('click', () => {
             searchInWebsite(fakeSearchInput.value, true);
         });
@@ -126,11 +125,21 @@ function searchInWebsite(value, isToBottom) {
     const selection = window.getSelection()
     const anchorNode = selection.anchorNode.parentNode
     if (anchorNode !== null) {
-        const left = anchorNode.offsetLeft
-        const topPosition = anchorNode.offsetTop
         const pageContents = document.querySelector('div.page-contents'); 
-        pageContents.scroll(left, topPosition - 80)
+        const offsetTop = _getOffsetTopWithNParent(anchorNode, pageContents);
+        pageContents.scroll(0, offsetTop - 150)
     }
+}
+
+function _getOffsetTopWithNParent(element, nParent, _carry = 0) {
+    if (element === null) {
+        return null;
+    }
+    if (element === nParent) {
+        return _carry;
+    }
+    _carry +=  element.offsetTop
+    return _getOffsetTopWithNParent(element.offsetParent, nParent, _carry)
 }
 
 function _port() {
