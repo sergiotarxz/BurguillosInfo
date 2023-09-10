@@ -73,9 +73,8 @@ function addListenersSearch() {
             return true;
 
         })
-        fakeSearchInput.addEventListener('keypress', (e) => {
-            console.log(e.code)
-            if (e.code !== 'Enter') {
+        fakeSearchInput.addEventListener('keyup', (e) => {
+            if (e.keyCode !== 13) {
                 return false;
             }
             const searchOverlay = document.querySelector('div.search-overlay');
