@@ -389,6 +389,13 @@ body {
       border: 3px solid $background_div;
       border-collapse: collapse;
       width: 100%;
+      tr:hover {
+            background: $background_div;
+            color: $color_div;
+            th, td {
+              border: 3px solid $color_div;
+            }
+      }
 
       td, th {
         font-size: 12px;
