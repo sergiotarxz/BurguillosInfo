@@ -64,12 +64,27 @@ function addListenersSearch() {
     if (searchMobile !== null) {
         const searchIcon = searchMobile.querySelector('div.search-icon')
         searchIcon.addEventListener('click', onFakeSearchClick);
-        fakeSearchInput.addEventListener('change', (e) => {
+        fakeSearchInput.addEventListener('keydown', (e) => {
+            if (e.code !== 'Enter') {
+                return false;
+            }
             const searchOverlay = document.querySelector('div.search-overlay');
             const searchInput = searchOverlay.querySelector('div.search input');
             searchInput.value = fakeSearchInput.value;
             onSearchChange(e)
             onFakeSearchClick(e)
+            return true;
+        });
+    }
+    const nextResult = searchMobile.querySelector('div.down');
+    const prevResult = searchMobile.querySelector('div.up');
+    if (nextResult !== null && prevResult !== null) {
+        nextResult.addEventListener('click', () => {
+            searchInWebsite(fakeSearchInput.value, true);
+        });
+        prevResult.addEventListener('click', () => {
+            console.log('hola')
+            searchInWebsite(fakeSearchInput.value, false);
         });
     }
     const exitSearch = document.querySelector('a.exit-search')
@@ -87,6 +102,10 @@ function addListenersSearch() {
             onFakeSearchClick(e)
         })
     }
+}
+
+function searchInWebsite(value, isToBottom) {
+    window.find(value, false, !isToBottom, true);
 }
 
 function _port() {

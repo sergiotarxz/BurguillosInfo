@@ -40,6 +40,8 @@ body {
         height: 60px;
         margin-left: 0px;
         margin-right: 0px; }
+      body div.search-overlay div.bounding-search-bar div.up, body div.search-overlay div.bounding-search-bar div.down {
+        display: none; }
       body div.search-overlay div.bounding-search-bar a.exit-search {
         width: 60px;
         background: whitesmoke;
@@ -54,7 +56,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     display: flex; }
-    body div.search div.search-icon {
+    body div.search div.search-icon, body div.search div.down, body div.search div.up {
       height: calc(100% - 28px);
       display: flex;
       background: aliceblue;
@@ -64,8 +66,11 @@ body {
       border-radius: 10px;
       border: solid gray 1px;
       aspect-ratio: 1/1; }
-      body div.search div.search-icon img {
+      body div.search div.search-icon img, body div.search div.down img, body div.search div.up img {
         height: 80%; }
+    body div.search div.down, body div.search div.up {
+      margin: 0px;
+      align-self: center; }
     body div.search div.fake-text-box {
       width: calc(100% - 60px);
       display: flex;
