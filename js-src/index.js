@@ -123,7 +123,18 @@ function addListenersSearch() {
 function searchInWebsite(value, isToBottom) {
     window.find(value, false, !isToBottom, true)
     const selection = window.getSelection()
+    if (selection.anchorNode === null) {
+        const pageContents = document.querySelector('div.page-contents'); 
+        pageContents.focus()
+        searchInWebsite(value, isToBottom)
+    }
     const anchorNode = selection.anchorNode.parentNode
+    if (anchorNode.tagName !== null 
+        && anchorNode.tagName === "INPUT") {
+        const pageContents = document.querySelector('div.page-contents'); 
+        pageContents.focus()
+        searchInWebsite(value, isToBottom)
+    }
     if (anchorNode !== null) {
         const pageContents = document.querySelector('div.page-contents'); 
         const offsetTop = _getOffsetTopWithNParent(anchorNode, pageContents);
