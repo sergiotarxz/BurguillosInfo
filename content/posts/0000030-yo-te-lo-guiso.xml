@@ -1,66 +1,76 @@
 <post>
-    <author>Burguillos.info</author>
-    <date>2023-08-21T13:23+00:00</date>
-    <title>Descubre "YoTeLoGuiso" en Burguillos y sus datos de contacto.</title>
-    <ogdesc>Descubre "YoTeLoGuiso" en Burguillos y sus datos de contacto.</ogdesc>
-    <img src="/img/yo-to-lo-guiso.webp"/>
-    <category>donde-comer</category>
-    <attributes>
-        <attribute>comida-vegana</attribute>
-    </attributes>
-    <slug>yo-te-lo-guiso</slug>
-    <pinned>1</pinned>
-    <content>
-        <img witdh="50%" alt="Cartel 'Yo te lo guiso'" style="border: solid 1px black" src="/img/yo-to-lo-guiso.webp"/>
-
-        <p>Con localización en Calle los Palmeros número 32,
-        "Yo te lo guiso" ofrece una propuesta de catering de
-        comida al peso única en Burguillos con sus especialidades 
-        siempre disponibles y algunas novedades todos los días.</p>
-
-        <p>Podeis hacer encargos para recoger en tienda en este número de teléfono 
-        <a href="tel:+34604424439">604 424 439</a>.</p>
-
-        <p>Recuerda mirar las novedades en Instagram
-        <a href="https://www.instagram.com/yoteloguiso/">@yoteloguiso</a>.</p>
-        
-        <p>Los horarios del negocio son de 12:00 a 15:00 y de 20:30 a 23:00 de Miercoles a Sabado.
-        El Domingo abre de 12:00 a 15:00.</p>
-
-        <p>El negocio además de su oferta habitual de carne y pescado ofrece
-        comida <b>vegana</b> y <b>vegetariana</b> siendo de los pocos negocios
-        en Burguillos que ofrecen este tipo de servicio. Si quieres
-        disfrutar de este tipo de comida llamanos con antelación para
-        que te podamos explicar toda nuestra carta vegana y vegetariana.</p>
-
-        <p>Los Jueves son los días del pescado, la oferta de pescado es mucho mayor esos días.
-        El domingo es el día del arroz.</p> 
-
-        <p>Especialidades siempre en tienda:</p>
-
-        <ul>
-            <li>Pollo asado.</li>
-            <li>Pollo relleno.</li>
-            <li>Verduras asadas.</li>
-            <li>Empanadas y empanadillas.</li>
-            <li>Croquetas.</li>
-            <li>Ensaladas.</li>
-        </ul>
-
-        <p>Hay una tabla de precios que puedes
-        aplicar para la mayoría de platos:</p>
-
-        <ul>
-            <li>Verduras: <b>1.30€/100g</b>.</li>
-            <li>Tortilla: <b>1.80€/100g</b>.</li>
-            <li>Carnes: <b>1.30€/100g</b>.</li>
-            <li>Ensaladilla: <b>1.50€</b>.</li>
-            <li>Empanadilla: <b>2€/unidad</b>.</li>
-            <li>Ensalada lista: <b>1.30€/100g</b>.</li>
-            <li>Paella: <b>1.80€/100g</b>.</li>
-            <li>Arroz caldoso: <b>1.80€/100g</b>.</li>
-        </ul>
-
-        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
-    </content>
+  <author>Burguillos.info</author>
+  <date>2023-08-21T13:23+00:00</date>
+  <last_modification_date>2023-09-11T11:43+00:00</last_modification_date>
+  <title>Descubre "YoTeLoGuiso" en Burguillos y sus datos de
+  contacto.</title>
+  <ogdesc>Descubre "YoTeLoGuiso" en Burguillos y sus datos de
+  contacto.</ogdesc>
+  <img src="/img/yo-to-lo-guiso.webp" />
+  <category>donde-comer</category>
+  <attributes>
+    <attribute>comida-vegana</attribute>
+  </attributes>
+  <slug>yo-te-lo-guiso</slug>
+  <pinned>1</pinned>
+  <content>
+    <img witdh="50%" alt="Cartel 'Yo te lo guiso'"
+    style="border: solid 1px black"
+    src="/img/yo-to-lo-guiso.webp" />
+    <p>Con localización en Calle los Palmeros número 32, "Yo te lo
+    guiso" ofrece una propuesta de catering de comida al peso única
+    en Burguillos con sus especialidades siempre disponibles y
+    algunas novedades todos los días.</p>
+    <p>Podeis hacer encargos para recoger en tienda en este número
+    de teléfono 
+    <a href="tel:+34604424439">604 424 439</a>.</p>
+    <p>Recuerda mirar las novedades en Instagram 
+    <a href="https://www.instagram.com/yoteloguiso/">
+    @yoteloguiso</a>.</p>
+    <p>Los horarios del negocio son de 12:00 a 15:00 y de 20:30 a
+    23:00 de Miercoles a Sabado. El Domingo abre de 12:00 a
+    15:00.</p>
+    <p>El negocio además de su oferta habitual de carne y pescado
+    ofrece comida 
+    <b>vegana</b>y 
+    <b>vegetariana</b>siendo de los pocos negocios en Burguillos
+    que ofrecen este tipo de servicio. Si quieres disfrutar de este
+    tipo de comida llamanos con antelación para que te podamos
+    explicar toda nuestra carta vegana y vegetariana.</p>
+    <p>Los Jueves son los días del pescado, la oferta de pescado es
+    mucho mayor esos días. El domingo es el día del arroz.</p>
+    <p>Especialidades siempre en tienda:</p>
+    <ul>
+      <li>Pollo asado.</li>
+      <li>Pollo relleno.</li>
+      <li>Verduras asadas.</li>
+      <li>Empanadas y empanadillas.</li>
+      <li>Croquetas.</li>
+      <li>Ensaladas.</li>
+    </ul>
+    <p>Hay una tabla de precios que puedes aplicar para la mayoría
+    de platos:</p>
+    <ul>
+      <li>Verduras: 
+      <b>1.30€/100g</b>.</li>
+      <li>Tortilla: 
+      <b>1.80€/100g</b>.</li>
+      <li>Carnes: 
+      <b>1.30€/100g</b>.</li>
+      <li>Ensaladilla: 
+      <b>1.50€</b>.</li>
+      <li>Empanadilla: 
+      <b>2€/unidad</b>.</li>
+      <li>Ensalada lista: 
+      <b>1.30€/100g</b>.</li>
+      <li>Paella: 
+      <b>1.80€/100g</b>.</li>
+      <li>Arroz caldoso: 
+      <b>1.80€/100g</b>.</li>
+    </ul>
+    <p>¿Quieres ver tu negocio localizado en Burguillos en este
+    espacio? Contacta con 
+    <a href="mailto:contact@owlcode.tech">
+    contact@owlcode.tech</a>.</p>
+  </content>
 </post>
