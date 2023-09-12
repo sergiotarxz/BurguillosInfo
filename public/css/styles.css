@@ -433,6 +433,8 @@ body {
 @media (min-width: 1100px) {
   body nav.mobile-shortcuts {
     display: none; }
+  body div.search-in-page.active {
+    display: none; }
   body div.page-contents {
     top: 0%;
     left: 5%;
