@@ -655,6 +655,9 @@ body {
     nav.mobile-shortcuts {
       display: none;
     }
+    div.search-in-page.active {
+        display: none;
+    }
 
     div.page-contents {
       nav.mobile-foldable, nav.mobile-foldable.show {

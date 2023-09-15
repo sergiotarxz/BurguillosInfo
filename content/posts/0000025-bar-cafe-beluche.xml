@@ -2,8 +2,10 @@
     <author>Burguillos.info</author>
     <date>2023-05-06T15:33+00:00</date>
     <title>Carta y Menú del Café - Bar Beluche en Burguillos.</title>
+    <last_modification_date>2023-09-13T16:03+00:00</last_modification_date>
     <ogdesc>Carta y Menú del Café - Bar Beluche en Burguillos.</ogdesc>
     <img src="/img/beluche.webp"/>
+    <pinned>2</pinned>
     <category>donde-comer</category>
     <attributes>
         <attribute>hamburguesas</attribute>
@@ -11,6 +13,7 @@
     </attributes>
     <slug>cafe-bar-beluche</slug>
     <content>
+        <h2 style="background: black; color: red;">Menú actualizado con nuevos precios y productos 2023-09-13</h2>
         <img width="50%" alt="Front door of 'Café-Bar Beluche'" style="border: solid 1px black;" src="/img/beluche.webp"/>
 
         <h2>Información de contacto para preparación de pedidos y envío a domicilio.</h2>
@@ -37,6 +40,10 @@
                 <td>César</td>
                 <td>6.50€</td>
             </tr>
+            <tr>
+                <td>Trópical</td>
+                <td>6.50€</td>
+            </tr>
         </table>
         
 
@@ -55,6 +62,40 @@
                 <td>Bacalao dorado</td>
                 <td>7.50€</td>
             </tr>
+            <tr>
+                <td>Morcilla de arroz</td>
+                <td>7.50€</td>
+            </tr>
+        </table>
+
+        <h3>Tapas frías.</h3>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Tapa</th>
+                <th>Plato</th>
+            </tr>
+            <tr>
+                <td>Ensaladilla rusa</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Aliños del día (Aliño Melva/Salpicón de marisco)</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Cóctel de mariscos</td>
+                <td>---</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Ensaladilla de cangrejo</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
         </table>
 
         <h3>Para compartir</h3>
@@ -67,8 +108,8 @@
             </tr>
             <tr>
                 <td>Papas bravas</td>
-                <td>3.00€</td>
-                <td>5.50€</td>
+                <td>3.50€</td>
+                <td>6.00€</td>
             </tr>
             <tr>
                 <td>Papas de mi prima</td>
@@ -78,7 +119,7 @@
             <tr>
                 <td>Papas arrieras</td>
                 <td>3.80€</td>
-                <td>6.50€</td>
+                <td>7.00€</td>
             </tr>
             <tr>
                 <td>Bartolitos. (Langostinos con bacon)</td>
@@ -125,6 +166,11 @@
                 <td>---</td>
                 <td>11.00€</td>
             </tr>
+            <tr>
+                <td>Croquetas de secreto y miel</td>
+                <td>4.00€</td>
+                <td>8.00€</td>
+            </tr>
         </table>
 
         <h3>Rico rico</h3>
@@ -136,9 +182,39 @@
                 <th>Precio plato</th>
             </tr>
             <tr>
-                <td>Pastel de berenjenas</td>
+                <td>Pollo kentucky</td>
                 <td>---</td>
                 <td>3.50€</td>
+            </tr>
+            <tr>
+                <td>Pollo mostaza</td>
+                <td>4.50€</td>
+                <td>8.50€</td>
+            </tr>
+            <tr>
+                <td>Huevos rotos</td>
+                <td>---</td>
+                <td>5.00€</td>
+            </tr>
+            <tr>
+                <td>Pan bao</td>
+                <td>5.00€</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>Carrillada ibérica</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+        </table>
+
+        <h3>Arroces</h3>
+
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td>Tapa</td>
+                <td>Plato</td>
             </tr>
             <tr>
                 <td>Timbal de arroz con chipirones y alioli</td>
@@ -146,44 +222,14 @@
                 <td>7.50€</td>
             </tr>
             <tr>
-                <td>Gambas al ajillo</td>
-                <td>---</td>
-                <td>7.50€</td>
+                <td>Arroz negro</td>
+                <td>4.50€</td>
+                <td>8.50€</td>
             </tr>
             <tr>
-                <td>Flauta de jamón york y queso</td>
-                <td>3.00€</td>
-                <td>6.00€</td>
-            </tr>
-            <tr>
-                <td>Saquitos de gambas y salsa de mango</td>
-                <td>---</td>
-                <td>4.80€</td>
-            </tr>
-            <tr>
-                <td>Medallones de solomillo. (Roque, whisky, mojo)</td>
-                <td>3.50€</td>
-                <td>6.50€</td>
-            </tr>
-            <tr>
-                <td>Solomillo rulo de queso y miel de caña</td>
-                <td>4.00€</td>
-                <td>7.50€</td>
-            </tr>
-            <tr>
-                <td>Carrillada ibérica</td>
-                <td>3.50€</td>
-                <td>7.00€</td>
-            </tr>
-            <tr>
-                <td>Pollo bechamel</td>
-                <td>3.60€</td>
-                <td>6.50€</td>
-            </tr>
-            <tr>
-                <td>Pollo kentucky</td>
-                <td>---</td>
-                <td>3.50€</td>
+                <td>Bissotio cuatro quesos</td>
+                <td>4.50€</td>
+                <td>8.50€</td>
             </tr>
         </table>
 
@@ -196,9 +242,29 @@
                 <th>Precio plato</th>
             </tr>
             <tr>
+                <td>Gambas al ajillo</td>
+                <td>4.50€</td>
+                <td>8.00€</td>
+            </tr>
+            <tr>
+                <td>Flamenquín de melva</td>
+                <td>3.50€</td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
                 <td>Chipirones</td>
-                <td>3.90€</td>
+                <td>4.00€</td>
                 <td>7.50€</td>
+            </tr>
+            <tr>
+                <td>Choco</td>
+                <td>---</td>
+                <td>S/P</td>
+            </tr>
+            <tr>
+                <td>Lubina</td>
+                <td>---</td>
+                <td>S/P</td>
             </tr>
             <tr>
                 <td>Pez espada</td>
@@ -208,12 +274,22 @@
             <tr>
                 <td>Merluza confitada</td>
                 <td>---</td>
-                <td>7.50€</td>
+                <td>8.00€</td>
             </tr>
             <tr>
                 <td>Bacalao confitado</td>
                 <td>---</td>
                 <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Montadito de gambas con alioli</td>
+                <td>---</td>
+                <td>3.20€</td>
+            </tr>
+            <tr>
+                <td>Almejas con langostinos</td>
+                <td>4.50€</td>
+                <td>8.00€</td>
             </tr>
         </table>
 
@@ -226,9 +302,29 @@
                 <th>Precio plato</th>
             </tr>
             <tr>
+                <td>Solomillo de pavo</td>
+                <td>---</td>
+                <td>9.00€</td>
+            </tr>
+            <tr>
+                <td>Medallones de solomillo (Roque, whisky, mojo)</td>
+                <td>3.50€</td>
+                <td>6.50€</td>
+            </tr>
+            <tr>
+                <td>Solomillo rulo de queso y miel de caña</td>
+                <td>4.00€</td>
+                <td>7.50€</td>
+            </tr>
+            <tr>
                 <td>Solomillo ibérico</td>
                 <td>---</td>
-                <td>12.00€</td>
+                <td>12.50€</td>
+            </tr>
+            <tr>
+                <td>Abanico ibérico</td>
+                <td>---</td>
+                <td>12.50€</td>
             </tr>
             <tr>
                 <td>Presa ibérica</td>
@@ -236,24 +332,34 @@
                 <td>14.00€</td>
             </tr>
             <tr>
-                <td>Pluma ibérica</td>
-                <td>---</td>
-                <td>13.00€</td>
-            </tr>
-            <tr>
                 <td>Presa con mostaza</td>
                 <td>4.00€</td>
                 <td>8.00€</td>
             </tr>
             <tr>
-                <td>Solomillo de pavo</td>
-                <td>---</td>
+                <td>Presa con setas y roquefort</td>
+                <td>4.50€</td>
                 <td>9.00€</td>
             </tr>
             <tr>
-                <td>Medallones de solomillo</td>
-                <td>3.50€</td>
-                <td>6.50€</td>
+                <td>Chuletón de ternera</td>
+                <td>---</td>
+                <td>S/P</td>
+            </tr>
+            <tr>
+                <td>Entrecot de ternera</td>
+                <td>---</td>
+                <td>S/P</td>
+            </tr>
+            <tr>
+                <td>Chuletón de vaca vieja madurada</td>
+                <td>---</td>
+                <td>S/P</td>
+            </tr>
+            <tr>
+                <td>Entrecot de vaca vieja</td>
+                <td>---</td>
+                <td>S/P</td>
             </tr>
             <tr>
                 <td>Hamburguesa de buey</td>
@@ -261,24 +367,19 @@
                 <td>5.50€</td>
             </tr>
             <tr>
-                <td>Abanico ibérico</td>
-                <td>---</td>
-                <td>11.00€</td>
-            </tr>
-            <tr>
                 <td>Mini hamburguesa</td>
                 <td>---</td>
-                <td>2.50€</td>
+                <td>3.00€</td>
             </tr>
             <tr>
                 <td>Montadito de pollo o lomo</td>
                 <td>---</td>
-                <td>2.50€</td>
+                <td>3.00€</td>
             </tr>
             <tr>
-                <td>Mini de pollo o lomo</td>
+                <td>Montadito de solomillo y queso viejo</td>
                 <td>---</td>
-                <td>3.50€</td>
+                <td>3.80</td>
             </tr>
             <tr>
                 <td>Serranito</td>
@@ -286,9 +387,9 @@
                 <td>5.50€</td>
             </tr>
             <tr>
-                <td>Montadito de gambas con alioli</td>
+                <td>Mini de pollo o lomo</td>
                 <td>---</td>
-                <td>3.20€</td>
+                <td>4.00€</td>
             </tr>
         </table>
 
@@ -301,15 +402,15 @@
             </tr>
             <tr>
                 <td>Gofres con nata y chocolate</td>
-                <td>3.50€</td>
-            </tr>
-            <tr>
-                <td>Tortitas americanas</td>
                 <td>3.80€</td>
             </tr>
             <tr>
-                <td>Tartas (Porción)</td>
-                <td>3.50€</td>
+                <td>Tortitas americanas</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <td>Tarta (Porción)</td>
+                <td>3.80€</td>
             </tr>
             <tr>
                 <td>Coulant con helado de vainilla</td>

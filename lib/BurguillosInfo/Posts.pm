@@ -81,7 +81,7 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
 
     my $pinned;
     if ( defined $pinned_node ) {
-        $pinned = int($pinned_node->text);
+        $pinned = int( $pinned_node->text );
     }
     if ( defined $image_element ) {
         $image = $image_element->attr->{src};
@@ -181,18 +181,15 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
 }
 
 sub shufflePostsIfRequired ( $self, $category, $posts ) {
-    my $pinned_posts = [ grep { 
-        exists $_->{pinned}
-    } @$posts ];
-    $posts = [ grep { 
-        !exists $_->{pinned}
-    } @$posts ];
+    my $pinned_posts = [ sort { $b->{pinned} <=> $b->{pinned} }
+        grep { exists $_->{pinned} } @$posts ];
+    $posts        = [ grep { !exists $_->{pinned} } @$posts ];
     $pinned_posts = [ sort { $b <=> $a } @$pinned_posts ];
     if ( exists $category->{random} && $category->{random} ) {
         require List::AllUtils;
         $posts = [ List::AllUtils::shuffle @$posts ];
     }
-    return [@$pinned_posts, @$posts];
+    return [ @$pinned_posts, @$posts ];
 }
 
 sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
