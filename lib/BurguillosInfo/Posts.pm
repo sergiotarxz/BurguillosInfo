@@ -77,6 +77,7 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
     my $pinned_node   = $dom->at(':root > pinned');
     my $image_element = $dom->at(':root > img');
     my $image;
+    my $image_bottom_preview;
     my $attributes = $self->_GetAttributes( $post_file, $dom );
 
     my $pinned;
@@ -84,7 +85,8 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
         $pinned = int( $pinned_node->text );
     }
     if ( defined $image_element ) {
-        $image = $image_element->attr->{src};
+        $image                = $image_element->attr->{src};
+        $image_bottom_preview = $image_element->attr->{'bottom-preview'};
     }
 
     my $last_modification_date_element =
@@ -95,14 +97,15 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
     }
 
     return {
-        title      => $title,
-        author     => $author,
-        date       => $date,
-        ogdesc     => $ogdesc,
-        category   => $category,
-        slug       => $slug,
-        content    => $content,
-        attributes => $attributes,
+        title                => $title,
+        author               => $author,
+        date                 => $date,
+        ogdesc               => $ogdesc,
+        category             => $category,
+        slug                 => $slug,
+        content              => $content,
+        attributes           => $attributes,
+        image_bottom_preview => $image_bottom_preview,
         (
               ( defined $last_modification_date )
             ? ( last_modification_date => $last_modification_date )
@@ -181,8 +184,10 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
 }
 
 sub shufflePostsIfRequired ( $self, $category, $posts ) {
-    my $pinned_posts = [ sort { $b->{pinned} <=> $b->{pinned} }
-        grep { exists $_->{pinned} } @$posts ];
+    my $pinned_posts = [
+        sort { $b->{pinned} <=> $b->{pinned} }
+        grep { exists $_->{pinned} } @$posts
+    ];
     $posts        = [ grep { !exists $_->{pinned} } @$posts ];
     $pinned_posts = [ sort { $b <=> $a } @$pinned_posts ];
     if ( exists $category->{random} && $category->{random} ) {
@@ -205,11 +210,13 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
 }
 
 sub PreviewOg {
-    my $self       = shift;
-    my $post       = shift;
-    my $title      = $post->{title};
-    my $content    = $post->{content};
-    my $image_file = $post->{image};
-    return BurguillosInfo::Preview->Generate( $title, $content, $image_file );
+    my $self                 = shift;
+    my $post                 = shift;
+    my $title                = $post->{title};
+    my $content              = $post->{content};
+    my $image_file           = $post->{image};
+    my $image_bottom_preview = $post->{image_bottom_preview};
+    return BurguillosInfo::Preview->Generate( $title, $content, $image_file,
+        $image_bottom_preview );
 }
 1;

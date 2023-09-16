@@ -3,7 +3,7 @@
     <date>2023-05-05T22:21+00:00</date>
     <title>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</title>
     <ogdesc>Carta y Menú del Bar - Restaurante Durán - Centro de día en Burguillos.</ogdesc>
-    <img src="/img/duran.webp"/>
+    <img src="/img/duran.webp" bottom-preview="600"/>
     <category>donde-comer</category>
     <attributes>
         <attribute>hamburguesas</attribute>

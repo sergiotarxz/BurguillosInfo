@@ -23,13 +23,13 @@ const my $SVG_HEIGHT      => 627;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1200;
 const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 400;
 
-sub Generate($self, $title, $content, $image_file) {
+sub Generate($self, $title, $content, $image_file, $image_bottom_preview) {
     my $dom     = Mojo::DOM->new($content);
     $content = $dom->all_text;
 
 
     my $svg =
-      $self->_GenerateSVGPreview( $title, $self->_DivideTextContentInLines($content), $image_file );
+      $self->_GenerateSVGPreview( $title, $self->_DivideTextContentInLines($content), $image_file, $image_bottom_preview );
     return $self->_SVGToPNG($svg);
 }
 
@@ -80,7 +80,7 @@ sub _GenerateSVGPreviewHeaderBar($self, $svg, $group) {
     )->cdata('Burguillos.info');
 }
 
-sub _GenerateSVGPreview($self, $title, $content, $image_file) {
+sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_preview) {
     my @content = @$content;
     my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
 
@@ -97,7 +97,7 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file) {
     my $new_y;
 
     if ( defined $image_file ) {
-        $new_y = $self->_AttachImageSVG( $svg, $group, $image_file );
+        $new_y = $self->_AttachImageSVG( $svg, $group, $image_file, $image_bottom_preview );
     }
 
     $new_y //= 100;
@@ -155,7 +155,7 @@ sub _DivideTextContentInLines($self, $content) {
     return \@new_content;
 }
 
-sub _AttachImageSVG($self, $svg, $group, $image_file) {
+sub _AttachImageSVG($self, $svg, $group, $image_file, $image_bottom_preview) {
     $image_file = $PUBLIC_DIR->child( './' . $image_file );
     $image_file = path($self->_ToPng($image_file));
     my ( $stdout, $stderr, $error ) = capture {
@@ -187,7 +187,10 @@ sub _AttachImageSVG($self, $svg, $group, $image_file) {
     $clip_path->rect(x => 0, y => 50, width => 1200, height => $height);
 
     my $x        = 0;
-    my $y_image        = 50 - $height_complete_image + $height;
+    my $y_image  = 50 - $height_complete_image + $height;
+    if (defined $image_bottom_preview && $height_complete_image > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT) {
+	$y_image += $height_complete_image - $image_bottom_preview;
+    }
     my $y = 50;
     my ($output) = capture {
         system qw/file --mime-type/, $image_file;
