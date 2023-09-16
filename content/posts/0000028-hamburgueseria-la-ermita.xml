@@ -4,7 +4,7 @@
     <last_modification_date>2023-09-02T21:48+00:00</last_modification_date>
     <title>Carta y Menú de la Hamburguesería la Ermita</title>
     <ogdesc>Carta y Menú de la Hamburguesería la Ermita</ogdesc>
-    <img src="/img/hamburgueseria-la-ermita.webp"/>
+    <img src="/img/hamburgueseria-la-ermita.webp" bottom-preview="500"/>
     <category>donde-comer</category>
     <attributes>
         <attribute>hamburguesas</attribute>
