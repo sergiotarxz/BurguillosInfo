@@ -116,6 +116,7 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_prev
             style => { 'font-size' => 32 }
         )->cdata($line);
         $n++;
+	last if $n > 2;
     }
     return $svg->xmlify;
 }
