@@ -20,8 +20,8 @@ const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
 const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos-new-logo.svg');
 const my $SVG_WIDTH       => 1200;
 const my $SVG_HEIGHT      => 627;
-const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1000;
-const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 200;
+const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1200;
+const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 400;
 
 sub Generate($self, $title, $content, $image_file) {
     my $dom     = Mojo::DOM->new($content);
@@ -97,7 +97,7 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file) {
     my $new_y;
 
     if ( defined $image_file ) {
-        $new_y = $self->_AttachImageSVG( $group, $image_file );
+        $new_y = $self->_AttachImageSVG( $svg, $group, $image_file );
     }
 
     $new_y //= 100;
@@ -120,6 +120,7 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file) {
 }
 
 sub _SVGToPNG($self, $svg) {
+    path('a.svg')->spew_utf8($svg);
     my ( $stdout, $stderr ) = capture {
         open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
         binmode $fh, 'utf8';
@@ -153,7 +154,8 @@ sub _DivideTextContentInLines($self, $content) {
     }
     return \@new_content;
 }
-sub _AttachImageSVG($self, $svg, $image_file) {
+
+sub _AttachImageSVG($self, $svg, $group, $image_file) {
     $image_file = $PUBLIC_DIR->child( './' . $image_file );
     $image_file = path($self->_ToPng($image_file));
     my ( $stdout, $stderr, $error ) = capture {
@@ -164,6 +166,10 @@ sub _AttachImageSVG($self, $svg, $image_file) {
         return;
     }
     my ( $width, $height ) = $stdout =~ /^"(\d+)x(\d+)"$/;
+    $height = int($height * 1200 / $width);
+    $width = 1200;
+    my $height_complete_image = (1200 / $width) * $height;
+
     if ( $height > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT ) {
         $width /= $height / $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
         $width  = int($width);
@@ -176,18 +182,31 @@ sub _AttachImageSVG($self, $svg, $image_file) {
         $width  = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
     }
 
-    my $x        = int( ( $SVG_WIDTH / 2 ) - ( $width / 2 ) );
-    my $y        = 90;
+    my $defs = $svg->defs();
+    my $clip_path = $defs->clipPath(id => 'cut-top');
+    $clip_path->rect(x => 0, y => 50, width => 1200, height => $height);
+
+    my $x        = 0;
+    my $y_image        = 50 - $height_complete_image + $height;
+    my $y = 50;
     my ($output) = capture {
         system qw/file --mime-type/, $image_file;
     };
     my ($format) = $output =~ /(\S+)$/;
-    $svg->image(
-        x      => $x,
-        y      => $y,
-        width  => $width,
-        height => $height,
-        -href  => "data:$format;base64," . encode_base64( $image_file->slurp )
+    $group->image(
+        x      => 0,
+        y      => $y_image,
+        width  => $SVG_WIDTH,
+        height => $height_complete_image,
+        -href  => "data:$format;base64," . encode_base64( $image_file->slurp ),
+	'clip-path' => 'url(#cut-top)',
+    );
+    $group->rect(
+        x      => 0,
+        y      => $y+$height,
+        width  => $SVG_WIDTH,
+        height => $SVG_HEIGHT,
+        style => { fill => 'azure' },
     );
     return $y + $height + 50;
 }
