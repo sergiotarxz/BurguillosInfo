@@ -104,15 +104,16 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_prev
     $group->text(
         x     => 10,
         y     => $new_y,
-        style => { 'font-size' => 50 }
+        style => { 'font-size' => 42 }
     )->cdata($title);
 
     my $n = 0;
     for my $line (@content) {
+	next if $line =~ /^\s*$/;
         $group->text(
             x     => 10,
             y     => $new_y + 40 + ( 30 * $n ),
-            style => { 'font-size' => 38 }
+            style => { 'font-size' => 32 }
         )->cdata($line);
         $n++;
     }
