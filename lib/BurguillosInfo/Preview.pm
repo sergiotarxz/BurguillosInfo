@@ -13,6 +13,7 @@ use Path::Tiny;
 use Const::Fast;
 use Capture::Tiny qw/capture/;
 use MIME::Base64;
+use Digest::SHA qw/sha512_hex/;
 
 const my $CURRENT_FILE    => __FILE__;
 const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
@@ -29,15 +30,20 @@ sub Generate (
     $image_bottom_preview = undef
   )
 {
-    my $dom = Mojo::DOM->new($content);
-    $content = $dom->all_text;
+    my $sha512 = sha512_hex($title.$content.$image_file.$image_bottom_preview);
+    my $cached_image = path("public/img/preview.$sha512.generated.png");
+    if (!-f $cached_image) {
+        my $dom = Mojo::DOM->new($content);
+        $content = $dom->all_text;
 
-    my $svg = $self->_GenerateSVGPreview(
-        $self->_DivideTextContentInLines($title, 62)->[0],
-        $self->_DivideTextContentInLines($content),
-        $image_file, $image_bottom_preview
-    );
-    return $self->_SVGToPNG($svg);
+        my $svg = $self->_GenerateSVGPreview(
+            $self->_DivideTextContentInLines($title, 62)->[0],
+            $self->_DivideTextContentInLines($content),
+            $image_file, $image_bottom_preview
+        );
+        $cached_image->spew_raw($self->_SVGToPNG($svg));
+    }
+    return $cached_image->slurp_raw;
 }
 
 sub _ToPng ( $self, $image ) {
