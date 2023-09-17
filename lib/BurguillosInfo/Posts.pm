@@ -183,12 +183,20 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
     return $self->shufflePostsIfRequired( $category, $posts );
 }
 
+sub comparePinned ( $self, $a, $b ) {
+    my $cmp = $b->{pinned} <=> $a->{pinned};
+      if ( $cmp != 0 ) {
+        return $cmp;
+    }
+    return int( rand(3) ) - 1;
+}
+
 sub shufflePostsIfRequired ( $self, $category, $posts ) {
     my $pinned_posts = [
-        sort { $b->{pinned} <=> $a->{pinned} }
+        sort { $self->comparePinned( $a, $b ) }
         grep { defined $_->{pinned} } @$posts
     ];
-    $posts        = [ grep { !exists $_->{pinned} } @$posts ];
+    $posts = [ grep { !exists $_->{pinned} } @$posts ];
     if ( exists $category->{random} && $category->{random} ) {
         require List::AllUtils;
         $posts = [ List::AllUtils::shuffle @$posts ];
@@ -205,7 +213,7 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
     }
     my $posts = $post_by_category->{$category_name};
     $posts //= [];
-    return $self->shufflePostsIfRequired($category, [@$posts]);
+    return $self->shufflePostsIfRequired( $category, [@$posts] );
 }
 
 sub PreviewOg {
