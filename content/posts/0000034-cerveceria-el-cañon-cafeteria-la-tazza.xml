@@ -12,13 +12,7 @@
     <content>
         <img witdh="50%" alt="Puerta de la Tazza" style="border: solid 1px black" src="/img/tazza.webp"/>
 
-        <p>La Cervecería el Cañon, ubicado en Calle el Castaño número 29,
-        también conocido como Cafetería la Tazza 
-        además de su oferta habitual de desayunos como ya sabréis
-        añadió un catalogo de comidas y tapas. ¡Y están riquísimas!</p>
-        
-        <p>Actualmente tiene un horario de verano donde algunas tardes
-        permanece cerrado, informaremos cuando tengamos todos los datos.</p>
+        <p>La Cervecería el Cañon, ubicado en Calle el Castaño número 29, también conocido como Cafetería la Tazza además de su oferta habitual de desayunos como ya sabréis añadió un catalogo de comidas y tapas. ¡Y están riquísimas!</p> <p>Actualmente tiene un horario de verano donde algunas tardes permanece cerrado, informaremos cuando tengamos todos los datos.</p>
 
         <p>Os adjunto la carta para que la tengáis siempre disponible:</p>
 
@@ -179,7 +173,7 @@
                 <td>4.50€</td>
             </tr>
         </table>
-        
+
         <h3>Carnes</h3>
 
         <table>

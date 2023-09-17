@@ -134,9 +134,10 @@ sub _SVGToPNG($self, $svg) {
 }
 
 sub _DivideTextContentInLines($self, $content) {
+    $content =~ s/(\s)\s+/$1/g;
     my @content_divided_in_lines = split /\n/, $content;
     my @new_content;
-    my $n_chars_per_line = 70;
+    my $n_chars_per_line = 79;
 
     for my $line (@content_divided_in_lines) {
         if ( length($line) <= $n_chars_per_line ) {
