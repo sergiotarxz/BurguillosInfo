@@ -14,6 +14,7 @@ use Const::Fast;
 use Capture::Tiny qw/capture/;
 use MIME::Base64;
 use Digest::SHA qw/sha512_hex/;
+use Encode;
 
 const my $CURRENT_FILE    => __FILE__;
 const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
@@ -30,7 +31,7 @@ sub Generate (
     $image_bottom_preview = undef
   )
 {
-    my $sha512 = sha512_hex($title.$content.$image_file.$image_bottom_preview);
+    my $sha512 = sha512_hex(Encode::encode('utf8', $title.$content.($image_file//'').($image_bottom_preview//'')));
     my $cached_image = path("public/img/preview.$sha512.generated.png");
     if (!-f $cached_image) {
         my $dom = Mojo::DOM->new($content);
@@ -44,6 +45,18 @@ sub Generate (
         $cached_image->spew_raw($self->_SVGToPNG($svg));
     }
     return $cached_image->slurp_raw;
+}
+
+sub WhatsappAlternativeGenerate($self, $title, $content, $image_file = undef, $image_bottom_preview = undef) {
+    my $complete_png = $self->Generate($title, $content, $image_file, $image_bottom_preview);
+    my ( $stdout, $stderr ) = capture {
+        open my $fh, '|-', 'convert', '/dev/stdin', '-resize', "@{[$SVG_WIDTH/2]}x@{[$SVG_HEIGHT/2]}",  'png:fd:1';
+        binmode $fh, ':raw';
+        print $fh $complete_png;
+        close $fh;
+    };
+    say STDERR $stderr;
+    return $stdout;
 }
 
 sub _ToPng ( $self, $image ) {
@@ -137,10 +150,9 @@ sub _GenerateSVGPreview ( $self, $title, $content, $image_file,
 }
 
 sub _SVGToPNG ( $self, $svg ) {
-    path('a.svg')->spew_utf8($svg);
     my ( $stdout, $stderr ) = capture {
         open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
-        binmode $fh, 'utf8';
+        binmode $fh, ':utf8';
         print $fh $svg;
         close $fh;
     };

@@ -173,11 +173,15 @@ sub _AvoidGrandChildCategories ( $self, $categories ) {
     }
 }
 
-sub PreviewOg ( $self, $category ) {
+sub PreviewOg ( $self, $category, $isWhatsApp = 0 ) {
     my $title                = $category->{title};
     my $description          = $category->{description};
     my $image                = $category->{image};
     my $image_bottom_preview = $category->{image_bottom_preview};
+    if ($isWhatsApp) {
+        return BurguillosInfo::Preview->WhatsappAlternativeGenerate( $title, $description, $image,
+            $image_bottom_preview );
+    }
     return BurguillosInfo::Preview->Generate( $title, $description, $image,
         $image_bottom_preview );
 }

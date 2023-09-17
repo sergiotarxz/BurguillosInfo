@@ -167,9 +167,10 @@ sub get_category_preview {
         return;
     }
     my $category = $categories->{$category_slug};
+    my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
     $self->render(
         format => 'png',
-        data   => $category_model->PreviewOg($category)
+        data   => $category_model->PreviewOg($category, $is_whatsapp)
     );
 }
 
@@ -182,10 +183,12 @@ sub get_post_preview {
         $self->render( template => '404', status => 404 );
         return;
     }
+    my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
+    say $self->req->headers->user_agent;
     my $post = $posts_slug->{$slug};
     $self->render(
         format => 'png',
-        data   => $post_model->PreviewOg($post)
+        data   => $post_model->PreviewOg($post, $is_whatsapp)
     );
 }
 1;

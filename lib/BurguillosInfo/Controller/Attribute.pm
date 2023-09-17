@@ -25,12 +25,23 @@ sub get_attribute_preview ($self) {
         return $self->reply->not_found;
     }
 
-    $self->render(
-        format => 'png',
-        data   => BurguillosInfo::Preview->Generate(
+    my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
+    my $data;
+    if ($is_whatsapp) {
+        $data = BurguillosInfo::Preview->WhatsappAlternativeGenerate(
             $attribute->{title}, $attribute->{description},
             $attribute->{image}, $attribute->{image_bottom_preview}
-        ),
+        )
+    } else {
+        $data = BurguillosInfo::Preview->Generate(
+            $attribute->{title}, $attribute->{description},
+            $attribute->{image}, $attribute->{image_bottom_preview}
+        )
+    }
+
+    $self->render(
+        format => 'png',
+        data   => $data,
     );
 }
 

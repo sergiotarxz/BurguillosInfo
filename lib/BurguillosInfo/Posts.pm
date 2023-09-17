@@ -220,13 +220,15 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
     return $self->shufflePostsIfRequired( $category, [@$posts] );
 }
 
-sub PreviewOg {
-    my $self                 = shift;
-    my $post                 = shift;
+sub PreviewOg($self, $post, $isWhatsApp) {
     my $title                = $post->{title};
     my $content              = $post->{content};
     my $image_file           = $post->{image};
     my $image_bottom_preview = $post->{image_bottom_preview};
+    if ($isWhatsApp) {
+        return BurguillosInfo::Preview->WhatsappAlternativeGenerate( $title, $content, $image_file,
+            $image_bottom_preview );
+    }
     return BurguillosInfo::Preview->Generate( $title, $content, $image_file,
         $image_bottom_preview );
 }
