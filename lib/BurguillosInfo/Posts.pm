@@ -72,8 +72,12 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
       or die "Missing category at $post_file.";
     my $slug = $dom->at(':root > slug')->text
       or die "Missing slug at $post_file.";
-    my $content = $dom->at(':root > content')->content
+    my $content_tag = $dom->at(':root > content')
       or die "Missing content at $post_file.";
+    for my $tag ($content_tag->children->each) {
+        $tag->content($tag->content =~ s/\n//gr);
+    }
+    my $content = $content_tag->content;
     my $pinned_node   = $dom->at(':root > pinned');
     my $image_element = $dom->at(':root > img');
     my $image;
