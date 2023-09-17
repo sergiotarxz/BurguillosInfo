@@ -186,10 +186,9 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
 sub shufflePostsIfRequired ( $self, $category, $posts ) {
     my $pinned_posts = [
         sort { $b->{pinned} <=> $b->{pinned} }
-        grep { exists $_->{pinned} } @$posts
+        grep { defined $_->{pinned} } @$posts
     ];
     $posts        = [ grep { !exists $_->{pinned} } @$posts ];
-    $pinned_posts = [ sort { $b <=> $a } @$pinned_posts ];
     if ( exists $category->{random} && $category->{random} ) {
         require List::AllUtils;
         $posts = [ List::AllUtils::shuffle @$posts ];
@@ -206,7 +205,7 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
     }
     my $posts = $post_by_category->{$category_name};
     $posts //= [];
-    return [@$posts];
+    return $self->shufflePostsIfRequired($category, [@$posts]);
 }
 
 sub PreviewOg {
