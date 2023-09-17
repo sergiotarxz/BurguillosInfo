@@ -1,21 +1,23 @@
 <category>
-	<title>Donde comer en Burguillos. - Cartas y Menús.</title>
-	<description>
+    <title>Donde comer en Burguillos. - Cartas y Menús.</title>
+    <description>
         <h2>Descubre los bares y restaurantes de Burguillos con sus cartas, menús y datos de contacto.</h2>
-		<p>Aquí puedes encontrar información acerca de los negocios de hostelería de Burguillos.</p>
+        <p>Aquí puedes encontrar información acerca de los negocios de hostelería de Burguillos.</p>
         <p>Disfruta tu comida.</p>
-		<p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
-	</description>
+        <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
     <parent>comercios</parent>
-	<priority>0</priority>
-	<menu_text>Donde comer</menu_text>
-	<slug>donde-comer</slug>
+    <priority>0</priority>
+    <menu_text>Donde comer</menu_text>
+    <slug>donde-comer</slug>
+    <img src="/img/donde-comer.webp"/>
     <attributes>
         <attribute>
             <title>Comida vegana en Burguillos.</title>
             <identifier>comida-vegana</identifier>
             <priority>1</priority>
             <menu_text>Listado de sitios que tienen oferta de platos veganos.</menu_text>
+            <img src="/img/vegano.webp" bottom-preview="400"/>
             <description>
                 <h2>Restaurantes y bares con comida vegana en Burguillos.</h2>
 
@@ -31,6 +33,7 @@
             <identifier>reparto-a-domicilio-comida</identifier>
             <priority>0</priority>
             <menu_text>Listado de sitios de comida con reparto a domicilio.</menu_text>
+            <img src="/img/comida-domicilio.webp" bottom-preview="400"/>
             <description>
                 <h2>Cartas y Menús de Pizzerías, Hamburgueserías, Kebab, Restaurantes, Bares, etc.</h2>
 
@@ -43,6 +46,7 @@
             <title>Comer hamburguesas en Burguillos - Cartas y Menús.</title>
             <identifier>hamburguesas</identifier>
             <priority>0</priority>
+            <img src="/img/hamburguesa.webp" bottom-preview="600"/>
             <menu_text>Listado de sitios de comida que preparan hamburguesas.</menu_text>
             <description>
                 <h2>Hamburgueserias y todo tipo de establecimientos que preparan hamburguesas.</h2>

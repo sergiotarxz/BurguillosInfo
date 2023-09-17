@@ -23,7 +23,7 @@ sub new {
     return bless {}, shift;
 }
 
-sub Retrieve($self) {
+sub Retrieve ($self) {
     if ( defined $cached_categories ) {
         return $cached_categories;
     }
@@ -31,35 +31,45 @@ sub Retrieve($self) {
     for my $category_file ( $CATEGORIES_DIR->children ) {
         warn "Bad file $category_file, omiting...", next
           if !-f $category_file || $category_file !~ /\.xml$/;
-        my $dom   = Mojo::DOM->new( $category_file->slurp_utf8 );
-        defined(my $title = $dom->at(':root > title')->text)
+        my $dom = Mojo::DOM->new( $category_file->slurp_utf8 );
+        defined( my $title = $dom->at(':root > title')->text )
           or die "Missing title at $category_file.";
-        defined(my $description = $dom->at(':root > description')->content)
+        defined( my $description = $dom->at(':root > description')->content )
           or die "Missing description at $category_file";
-        defined(my $slug = $dom->at(':root > slug')->text)
+        defined( my $slug = $dom->at(':root > slug')->text )
           or die "Missing slug at $category_file";
-        defined (my $menu_text = $dom->at(':root > menu_text')->content)
+        defined( my $menu_text = $dom->at(':root > menu_text')->content )
           or die "Missing menu_text at $category_file";
-        defined (my $priority = $dom->at(':root > priority')->text)
+        defined( my $priority = $dom->at(':root > priority')->text )
           or die "Missing priority at $category_file";
-        my $attributes = $self->_GetAttributes($dom, $category_file);
-        my $parent_tag = $dom->at(':root > parent');
-        my $random_tag = $dom->at(':root > random');
+        my $attributes    = $self->_GetAttributes( $dom, $category_file );
+        my $parent_tag    = $dom->at(':root > parent');
+        my $random_tag    = $dom->at(':root > random');
+        my $image_element = $dom->at(':root > img');
+        my $image;
+        my $image_bottom_preview;
         my $random;
-        if (defined $random_tag) {{
-            $random = $random_tag->text;
-            if ($random =~ /^true$/i || $random =~ /^yes$/ ) {
-                $random = 1;
-                next;
+
+        if ( defined $random_tag ) {
+            {
+                $random = $random_tag->text;
+                if ( $random =~ /^true$/i || $random =~ /^yes$/ ) {
+                    $random = 1;
+                    next;
+                }
+                if ( int($random) != 0 ) {
+                    $random = 1;
+                    next;
+                }
+                $random = 0;
             }
-            if (int($random) != 0) {
-                $random = 1;
-                next;
-            }
-            $random = 0;
-        }}
+        }
+        if ( defined $image_element ) {
+            $image                = $image_element->attr->{src};
+            $image_bottom_preview = $image_element->attr->{'bottom-preview'};
+        }
         my $parent;
-        if (defined $parent_tag) {
+        if ( defined $parent_tag ) {
             $parent = $parent_tag->content;
         }
         my $category = {
@@ -69,16 +79,16 @@ sub Retrieve($self) {
             description => $description,
             priority    => $priority,
             (
-                (defined $parent) ?
-                (parent => $parent) :
-                ()
+                  ( defined $parent ) ? ( parent => $parent )
+                : ()
             ),
             attributes => $attributes,
             (
-                (defined $random) ?
-                (random => $random):
-                ()
-            )
+                  ( defined $random ) ? ( random => $random )
+                : ()
+            ),
+            image_bottom_preview => $image_bottom_preview,
+            image                => $image,
         };
         $cached_categories->{$slug} = $category;
     }
@@ -87,47 +97,64 @@ sub Retrieve($self) {
     return $cached_categories;
 }
 
-sub _GetAttributes($self, $dom, $category_file) {
+sub _GetAttributes ( $self, $dom, $category_file ) {
     my $attributes_tag = $dom->at(':root > attributes');
     my %attributes;
-    if (defined $attributes_tag) {
-        my @attribute_tag_list = $attributes_tag->find('attributes > attribute')->each;
+    if ( defined $attributes_tag ) {
+        my @attribute_tag_list =
+          $attributes_tag->find('attributes > attribute')->each;
         for my $attribute_tag (@attribute_tag_list) {
-            defined (my $menu_text = $attribute_tag->at('attribute > menu_text')->content)
+            defined( my $menu_text =
+                  $attribute_tag->at('attribute > menu_text')->content )
               or die "Missing attribute menu_text at $category_file";
-            defined (my $description = $attribute_tag->at('attribute > description')->content)
+            defined( my $description =
+                  $attribute_tag->at('attribute > description')->content )
               or die "Missing attribute description at $category_file";
-            defined (my $title = $attribute_tag->at('attribute > title')->text)
+            defined( my $title = $attribute_tag->at('attribute > title')->text )
               or die "Missing attribute title at $category_file";
-            defined (my $identifier = $attribute_tag->at('attribute > identifier')->text)
+            defined( my $identifier =
+                  $attribute_tag->at('attribute > identifier')->text )
               or die "Missing attribute identifier at $category_file";
-            defined (my $priority = $attribute_tag->at('attribute > priority')->text)
+            defined( my $priority =
+                  $attribute_tag->at('attribute > priority')->text )
               or die "Missing attribute priority at $category_file";
+            my $image_element = $attribute_tag->at('attribute > img');
+            my $image;
+            my $image_bottom_preview;
+
+            if ( defined $image_element ) {
+                $image = $image_element->attr->{src};
+                $image_bottom_preview =
+                  $image_element->attr->{'bottom-preview'};
+            }
             $attributes{$identifier} = {
-              title => $title,
-              identifier => $identifier,
-              priority => $priority,
-              menu_text => $menu_text,
-              description => $description,
+                title                => $title,
+                identifier           => $identifier,
+                priority             => $priority,
+                menu_text            => $menu_text,
+                description          => $description,
+                image                => $image,
+                image_bottom_preview => $image_bottom_preview,
             };
         }
     }
     return \%attributes;
 }
 
-sub _PopulateChildrenField($self, $categories) {
-    for my $category_name (keys %$categories) {
+sub _PopulateChildrenField ( $self, $categories ) {
+    for my $category_name ( keys %$categories ) {
         my $category = $categories->{$category_name};
         $category->{children} //= [];
         my $parent_name = $category->{parent};
-        if (!defined $parent_name) {
+        if ( !defined $parent_name ) {
             next;
         }
         my $parent = $categories->{$parent_name};
-        if (!defined $parent) {
-            die "Category $parent_name not exists and it is the parent of $category_name.";
+        if ( !defined $parent ) {
+            die
+"Category $parent_name not exists and it is the parent of $category_name.";
         }
-        if (!exists $category->{random} && exists $parent->{random}) {
+        if ( !exists $category->{random} && exists $parent->{random} ) {
             $category->{random} = $parent->{random};
         }
         $parent->{children} //= [];
@@ -135,19 +162,23 @@ sub _PopulateChildrenField($self, $categories) {
     }
 }
 
-sub _AvoidGrandChildCategories($self, $categories) {
-    for my $category_slug (keys %$categories) {
+sub _AvoidGrandChildCategories ( $self, $categories ) {
+    for my $category_slug ( keys %$categories ) {
         my $category = $categories->{$category_slug};
-        my $parent = $category->{parent};
-        if (defined $parent && defined $categories->{$parent}{parent}) {
-            die "$category_slug category is grandchild of $categories->{$parent}{parent}) category and this is not allowed.";
+        my $parent   = $category->{parent};
+        if ( defined $parent && defined $categories->{$parent}{parent} ) {
+            die
+"$category_slug category is grandchild of $categories->{$parent}{parent}) category and this is not allowed.";
         }
     }
 }
 
-sub PreviewOg($self, $category) {
-    my $title = $category->{title};
-    my $description = $category->{description};
-    return BurguillosInfo::Preview->Generate($title, $description, undef);
+sub PreviewOg ( $self, $category ) {
+    my $title                = $category->{title};
+    my $description          = $category->{description};
+    my $image                = $category->{image};
+    my $image_bottom_preview = $category->{image_bottom_preview};
+    return BurguillosInfo::Preview->Generate( $title, $description, $image,
+        $image_bottom_preview );
 }
 1;

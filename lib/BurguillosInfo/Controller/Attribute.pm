@@ -28,7 +28,8 @@ sub get_attribute_preview ($self) {
     $self->render(
         format => 'png',
         data   => BurguillosInfo::Preview->Generate(
-            $attribute->{title}, $attribute->{description}, undef
+            $attribute->{title}, $attribute->{description},
+            $attribute->{image}, $attribute->{image_bottom_preview}
         ),
     );
 }

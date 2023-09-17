@@ -50,16 +50,22 @@ sub _index_categories ( $self, $index, $categories ) {
           ->all_text;
         my $title      = $category->{title};
         my $attributes = $category->{attributes};
+        my $image      = $category->{image};
         $self->_index_attributes( $index, $slug, $attributes );
-        push @$index,
-          {
-            title   => $title,
-            titleNormalized    => $index_utils->n($title),
-            content => $content,
-            contentNormalized  => $index_utils->n( $content =~ s/\s+/ /gr ),
-            url     => $url,
-            urlNormalized      => $index_utils->n($url),
-          };
+        push @$index, {
+            title             => $title,
+            titleNormalized   => $index_utils->n($title),
+            content           => $content,
+            contentNormalized => $index_utils->n( $content =~ s/\s+/ /gr ),
+            url               => $url,
+            urlNormalized     => $index_utils->n($url),
+            (
+                  ( defined $image )
+                ? ( urlImage => $image )
+                : ()
+            )
+
+        };
     }
 }
 
@@ -70,6 +76,7 @@ sub _index_attributes ( $self, $index, $category_slug, $attributes ) {
         my $slug      = $attribute->{identifier};
         my $url       = "/$category_slug/atributo/$slug";
         my $title     = $attribute->{title};
+        my $image     = $attribute->{image};
         my $content =
           Mojo::DOM->new( '<html>' . $attribute->{description} . '</html>' )
           ->all_text;
@@ -81,6 +88,11 @@ sub _index_attributes ( $self, $index, $category_slug, $attributes ) {
             content           => $content =~ s/\s+/ /gr,
             urlNormalized     => $index_utils->n($url),
             url               => $url,
+            (
+                  ( defined $image )
+                ? ( urlImage => $image )
+                : ()
+            )
           };
     }
 }

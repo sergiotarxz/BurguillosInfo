@@ -5,6 +5,7 @@
             <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
     </description>
     <priority>2</priority>
+    <img src="/img/comercio.webp" bottom-preview="600"/>
     <menu_text>Comercios</menu_text>
     <slug>comercios</slug>
     <random>true</random>

@@ -23,7 +23,7 @@ const my $SVG_HEIGHT      => 627;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1200;
 const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 400;
 
-sub Generate($self, $title, $content, $image_file, $image_bottom_preview) {
+sub Generate($self, $title, $content, $image_file = undef, $image_bottom_preview = undef) {
     my $dom     = Mojo::DOM->new($content);
     $content = $dom->all_text;
 
