@@ -23,21 +23,28 @@ const my $SVG_HEIGHT      => 627;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1200;
 const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 400;
 
-sub Generate($self, $title, $content, $image_file = undef, $image_bottom_preview = undef) {
-    my $dom     = Mojo::DOM->new($content);
+sub Generate (
+    $self, $title, $content,
+    $image_file = undef,
+    $image_bottom_preview = undef
+  )
+{
+    my $dom = Mojo::DOM->new($content);
     $content = $dom->all_text;
 
-
-    my $svg =
-      $self->_GenerateSVGPreview( $title, $self->_DivideTextContentInLines($content), $image_file, $image_bottom_preview );
+    my $svg = $self->_GenerateSVGPreview(
+        $self->_DivideTextContentInLines($title, 62)->[0],
+        $self->_DivideTextContentInLines($content),
+        $image_file, $image_bottom_preview
+    );
     return $self->_SVGToPNG($svg);
 }
 
-sub _ToPng($self, $image) {
-    if ($image =~ /\.\w+$/) {
+sub _ToPng ( $self, $image ) {
+    if ( $image =~ /\.\w+$/ ) {
         my $new_image = $image =~ s/\.\w+$/.generated.png/r;
         say $new_image;
-        if (!-e $new_image) {
+        if ( !-e $new_image ) {
             system 'convert', '-background', 'none', "$image", "$new_image";
         }
         $image = $new_image;
@@ -45,7 +52,7 @@ sub _ToPng($self, $image) {
     return path($image);
 }
 
-sub _GenerateSVGPreviewHeaderBar($self, $svg, $group) {
+sub _GenerateSVGPreviewHeaderBar ( $self, $svg, $group ) {
     $group->rect(
         x      => 0,
         y      => 0,
@@ -61,10 +68,9 @@ sub _GenerateSVGPreviewHeaderBar($self, $svg, $group) {
         style  => { fill => '#F8F8FF' }
     );
 
-
-    my $burguillos_logo_png = path($self->_ToPng($BURGUILLOS_LOGO));
+    my $burguillos_logo_png = path( $self->_ToPng($BURGUILLOS_LOGO) );
     say $burguillos_logo_png;
-    say ''.$burguillos_logo_png;
+    say '' . $burguillos_logo_png;
     $group->image(
         x      => 10,
         y      => 5,
@@ -80,7 +86,9 @@ sub _GenerateSVGPreviewHeaderBar($self, $svg, $group) {
     )->cdata('Burguillos.info');
 }
 
-sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_preview) {
+sub _GenerateSVGPreview ( $self, $title, $content, $image_file,
+    $image_bottom_preview )
+{
     my @content = @$content;
     my $svg     = SVG->new( width => $SVG_WIDTH, height => $SVG_HEIGHT );
 
@@ -92,12 +100,13 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_prev
         }
     );
 
-    $self->_GenerateSVGPreviewHeaderBar($svg, $group);
+    $self->_GenerateSVGPreviewHeaderBar( $svg, $group );
 
     my $new_y;
 
     if ( defined $image_file ) {
-        $new_y = $self->_AttachImageSVG( $svg, $group, $image_file, $image_bottom_preview );
+        $new_y = $self->_AttachImageSVG( $svg, $group, $image_file,
+            $image_bottom_preview );
     }
 
     $new_y //= 100;
@@ -109,19 +118,19 @@ sub _GenerateSVGPreview($self, $title, $content, $image_file, $image_bottom_prev
 
     my $n = 0;
     for my $line (@content) {
-	next if $line =~ /^\s*$/;
+        next if $line =~ /^\s*$/;
         $group->text(
             x     => 10,
             y     => $new_y + 40 + ( 30 * $n ),
             style => { 'font-size' => 32 }
         )->cdata($line);
         $n++;
-	last if $n > 2;
+        last if $n > 2;
     }
     return $svg->xmlify;
 }
 
-sub _SVGToPNG($self, $svg) {
+sub _SVGToPNG ( $self, $svg ) {
     path('a.svg')->spew_utf8($svg);
     my ( $stdout, $stderr ) = capture {
         open my $fh, '|-', qw{convert /dev/stdin png:fd:1};
@@ -133,11 +142,10 @@ sub _SVGToPNG($self, $svg) {
     return $stdout;
 }
 
-sub _DivideTextContentInLines($self, $content) {
+sub _DivideTextContentInLines ( $self, $content, $n_chars_per_line = 79 ) {
     $content =~ s/(\s)\s+/$1/g;
     my @content_divided_in_lines = split /\n/, $content;
     my @new_content;
-    my $n_chars_per_line = 79;
 
     for my $line (@content_divided_in_lines) {
         if ( length($line) <= $n_chars_per_line ) {
@@ -158,9 +166,10 @@ sub _DivideTextContentInLines($self, $content) {
     return \@new_content;
 }
 
-sub _AttachImageSVG($self, $svg, $group, $image_file, $image_bottom_preview) {
+sub _AttachImageSVG ( $self, $svg, $group, $image_file, $image_bottom_preview )
+{
     $image_file = $PUBLIC_DIR->child( './' . $image_file );
-    $image_file = path($self->_ToPng($image_file));
+    $image_file = path( $self->_ToPng($image_file) );
     my ( $stdout, $stderr, $error ) = capture {
         system qw/identify -format "%wx%h"/, $image_file;
     };
@@ -169,9 +178,9 @@ sub _AttachImageSVG($self, $svg, $group, $image_file, $image_bottom_preview) {
         return;
     }
     my ( $width, $height ) = $stdout =~ /^"(\d+)x(\d+)"$/;
-    $height = int($height * 1200 / $width);
-    $width = 1200;
-    my $height_complete_image = (1200 / $width) * $height;
+    $height = int( $height * 1200 / $width );
+    $width  = 1200;
+    my $height_complete_image = ( 1200 / $width ) * $height;
 
     if ( $height > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT ) {
         $width /= $height / $SVG_EMBEDDED_IMAGE_MAX_HEIGHT;
@@ -185,14 +194,16 @@ sub _AttachImageSVG($self, $svg, $group, $image_file, $image_bottom_preview) {
         $width  = $SVG_EMBEDDED_IMAGE_MAX_WIDTH;
     }
 
-    my $defs = $svg->defs();
-    my $clip_path = $defs->clipPath(id => 'cut-top');
-    $clip_path->rect(x => 0, y => 50, width => 1200, height => $height);
+    my $defs      = $svg->defs();
+    my $clip_path = $defs->clipPath( id => 'cut-top' );
+    $clip_path->rect( x => 0, y => 50, width => 1200, height => $height );
 
-    my $x        = 0;
-    my $y_image  = 50 - $height_complete_image + $height;
-    if (defined $image_bottom_preview && $height_complete_image > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT) {
-	$y_image += $height_complete_image - $image_bottom_preview;
+    my $x       = 0;
+    my $y_image = 50 - $height_complete_image + $height;
+    if ( defined $image_bottom_preview
+        && $height_complete_image > $SVG_EMBEDDED_IMAGE_MAX_HEIGHT )
+    {
+        $y_image += $height_complete_image - $image_bottom_preview;
     }
     my $y = 50;
     my ($output) = capture {
@@ -205,14 +216,14 @@ sub _AttachImageSVG($self, $svg, $group, $image_file, $image_bottom_preview) {
         width  => $SVG_WIDTH,
         height => $height_complete_image,
         -href  => "data:$format;base64," . encode_base64( $image_file->slurp ),
-	'clip-path' => 'url(#cut-top)',
+        'clip-path' => 'url(#cut-top)',
     );
     $group->rect(
         x      => 0,
-        y      => $y+$height,
+        y      => $y + $height,
         width  => $SVG_WIDTH,
         height => $SVG_HEIGHT,
-        style => { fill => 'azure' },
+        style  => { fill => 'azure' },
     );
     return $y + $height + 50;
 }
