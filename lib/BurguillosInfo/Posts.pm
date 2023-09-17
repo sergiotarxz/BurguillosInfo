@@ -185,7 +185,7 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
 
 sub shufflePostsIfRequired ( $self, $category, $posts ) {
     my $pinned_posts = [
-        sort { $b->{pinned} <=> $b->{pinned} }
+        sort { $b->{pinned} <=> $a->{pinned} }
         grep { defined $_->{pinned} } @$posts
     ];
     $posts        = [ grep { !exists $_->{pinned} } @$posts ];
