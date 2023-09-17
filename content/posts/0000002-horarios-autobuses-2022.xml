@@ -6,7 +6,7 @@
 	<ogdesc>Los horarios de autobuses de Burguillos.</ogdesc>
 	<category>autobuses</category>
 	<slug>horarios-autobuses</slug>
-        <img src="/img/autobus.webp"/>
+        <img src="/img/autobus.webp" bottom-preview="500"/>
 	<content>
         <h2>Horarios Autobuses Castiblanco - Burguillos - Sevilla - Almaden de la Plata - Alcalá del Río - Rinconada - San Ignacio del Viar.</h2>
 		<h3>Destino Sevilla.</h3>

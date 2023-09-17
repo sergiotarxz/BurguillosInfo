@@ -3,6 +3,7 @@
 	<description>
 		<p>Aquí puedes encontrar toda la información sobre los autobuses de Burguillos.</p>
 	</description>
+        <img src="/img/autobus.webp" bottom-preview="500"/>
 	<priority>1</priority>
 	<menu_text>Autobuses</menu_text>
 	<slug>autobuses</slug>
