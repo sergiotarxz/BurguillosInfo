@@ -20,7 +20,9 @@
 % my $user_agent = stash 'useragent';
     
 % if (defined $ogimage) {
-<meta name="image" property="og:image" content="<%=$base_url%><%= $ogimage %>?v=3"/>
+      <meta name="image" property="og:image" content="<%=$base_url%><%= $ogimage %>?v=3"/>
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
       <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
       <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
