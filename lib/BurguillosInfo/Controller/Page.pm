@@ -168,6 +168,7 @@ sub get_category_preview {
     }
     my $category = $categories->{$category_slug};
     my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
+    $is_whatsapp ||= $self->req->headers->user_agent =~ /facebook/i;
     $self->render(
         format => 'png',
         data   => $category_model->PreviewOg($category, $is_whatsapp)
@@ -184,6 +185,7 @@ sub get_post_preview {
         return;
     }
     my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
+    $is_whatsapp ||= $self->req->headers->user_agent =~ /facebook/i;
     say $self->req->headers->user_agent;
     my $post = $posts_slug->{$slug};
     $self->render(

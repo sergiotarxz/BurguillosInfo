@@ -26,6 +26,7 @@ sub get_attribute_preview ($self) {
     }
 
     my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
+    $is_whatsapp ||= $self->req->headers->user_agent =~ /facebook/i;
     my $data;
     if ($is_whatsapp) {
         $data = BurguillosInfo::Preview->WhatsappAlternativeGenerate(
