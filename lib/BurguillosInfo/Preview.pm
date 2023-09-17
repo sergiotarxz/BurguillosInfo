@@ -19,7 +19,7 @@ const my $ROOT_PROJECT    => path($CURRENT_FILE)->parent->parent->parent;
 const my $PUBLIC_DIR      => $ROOT_PROJECT->child('public');
 const my $BURGUILLOS_LOGO => $PUBLIC_DIR->child('img/burguillos-new-logo.svg');
 const my $SVG_WIDTH       => 1200;
-const my $SVG_HEIGHT      => 627;
+const my $SVG_HEIGHT      => 630;
 const my $SVG_EMBEDDED_IMAGE_MAX_WIDTH  => 1200;
 const my $SVG_EMBEDDED_IMAGE_MAX_HEIGHT => 400;
 
