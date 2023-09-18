@@ -11,6 +11,7 @@ use Mojo::Base 'Mojolicious::Controller', '-signatures';
 use Mojo::UserAgent;
 
 use BurguillosInfo::IndexUtils;
+use BurguillosInfo::Posts;
 
 my $index_utils = BurguillosInfo::IndexUtils->new;
 
@@ -36,9 +37,23 @@ sub search ($self) {
         return $self->render( status => 400, json => { ok => 0 } );
     }
     my $searchObjects = $output->{searchObjects};
+    $searchObjects = [grep { $self->filterSearch($_) } @$searchObjects];
     return $self->render(
         status => 200,
         json   => { ok => 1, searchObjects => $searchObjects }
     );
+}
+
+sub filterSearch($self, $searchObject) {
+    my $url = $searchObject->{url};
+    my ($posts_by_categories, $posts) = BurguillosInfo::Posts->Retrieve;
+    my $slug;
+    if ($url =~ m{^/posts/([^/]+?)(?:\?.*)?$}) {
+        $slug = $1;
+        if (!defined $posts->{$slug}) {
+            return 0;
+        }
+    }
+    return 1
 }
 1;

@@ -28,7 +28,7 @@ sub run ( $self, @args ) {
     my $search_backend = $config->{search_backend};
     my $search_index   = $config->{search_index};
     my $ua             = Mojo::UserAgent->new;
-    my $posts          = BurguillosInfo::Posts->new->Retrieve;
+    my $posts          = BurguillosInfo::Posts->new->Retrieve(0);
     my $categories     = BurguillosInfo::Categories->new->Retrieve;
     my $index          = [];
     $self->_index_posts( $index, $posts );

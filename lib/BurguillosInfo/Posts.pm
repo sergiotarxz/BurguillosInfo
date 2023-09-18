@@ -32,21 +32,22 @@ sub new {
     return bless {}, shift;
 }
 
-sub _ReturnCacheFilter {
-    my $self = shift;
+sub _ReturnCacheFilter($self, $filters = 1) {
     my %posts_by_category_filtered;
     my %posts_by_slug_filtered;
     my $iso8601      = DateTime::Format::ISO8601->new;
     my $current_date = DateTime->now;
     for my $category ( keys %$cached_posts_by_category ) {
         for my $post ( @{ $cached_posts_by_category->{$category} } ) {
-            my $date_post;
-            eval { $date_post = $iso8601->parse_datetime( $post->{date} ); };
-            if ($@) {
-                print Data::Dumper::Dumper $post;
-            }
-            if ( $date_post > $current_date ) {
-                next;
+            if ($filters) {
+                my $date_post;
+                eval { $date_post = $iso8601->parse_datetime( $post->{date} ); };
+                if ($@) {
+                    print $@ . ': ' . Data::Dumper::Dumper $post;
+                }
+                if ( $date_post > $current_date ) {
+                    next;
+                }
             }
             $posts_by_slug_filtered{ $post->{slug} } = $post;
             $posts_by_category_filtered{ $post->{category} } //= [];
@@ -155,13 +156,12 @@ sub _GeneratePostCache ($self) {
     }
 }
 
-sub Retrieve {
-    my $self = shift;
+sub Retrieve($self, $filters = 1) {
     if ( defined $cached_posts_by_category && defined $cached_posts_by_slug ) {
-        return $self->_ReturnCacheFilter;
+        return $self->_ReturnCacheFilter($filters);
     }
     $self->_GeneratePostCache();
-    return $self->_ReturnCacheFilter;
+    return $self->_ReturnCacheFilter($filters);
 }
 
 my $cache_all_post_categories = {};
