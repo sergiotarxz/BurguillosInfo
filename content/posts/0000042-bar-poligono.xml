@@ -1,0 +1,92 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-09-21T05:00+00:00</date>
+    <title>Carta y menú de Bar el Polígono.</title>
+    <ogdesc>Carta y menú de Bar el Polígono.</ogdesc>
+    <img src="/img/bar-poligono.webp" bottom-preview="600"/>
+    <category>donde-comer</category>
+    <attributes>
+        <attribute>hamburguesas</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
+    </attributes>
+    <slug>bar-poligono</slug>
+    <content>
+        <img witdh="50%" alt="Puerta de la Bar el Poligono" style="border: solid 1px black" src="/img/bar-poligono.webp"/>
+
+        <p>El bar el polígono es un negocio de nueva apertura localizado en Calle Tomás Alba Edison número 8 donde antes se encontraba el Bar el Chori II.</p>
+        
+        <p>Los horarios de mañana es lunes a viernes de 05:30 a 18:00 y en fines de semana de 07:00 a 16:00, el horario nocturo y de envios a domicilio es
+        de jueves a domingo de 20:00 a 00:00</p>
+
+        <p>El teléfono de contacto <a href="tel:+34651611938">651 611 938</a>.</p>
+
+        <p>La carta actualizada con fecha 21 de Septiembre de 2023 luce bastante prometedora y procedemos a compartirla por vosotros.</p>
+
+        <h2>Hamburguesas</h2>
+
+        <ul>
+            <li>Simple (Carne y queso) Precio: <b>1.50€</b></li>
+            <li>Gustosa (Carne, queso, lechuga, tomate y cebolla) Precio: <b>2.80€</b></li>
+            <li>Diferente (Doble carne, queso, huevo, cebolla y bacon) Precio: <b>3.80€</b></li>
+            <li>Buey (Carne, queso, bacon, lechuga, tomate y cebolla) Precio: <b>5.00€</b></li>
+            <li>Crujiente (Pollo, queso, lechuga, tomate y cebolla) Precio: <b>3.80€</b></li>
+            <li>Pollo (Pollo, lechuga,  cebolla, tomate y queso) Precio: <b>2.50€</b></li>
+        </ul>
+
+        <h2>Chucasos</h2>
+
+        <ul>
+            <li>Cochino Precio: <b>3.00€</b></li>
+            <li>Lomo adobado Precio: <b>3.00€</b></li>
+            <li>Bacon/queso Precio: <b>3.00€</b></li>
+            <li>Vegetal y pollo Precio: <b>4.00€</b></li>
+            <li>Tortilla york y queso Precio: <b>3.50€</b></li>
+            <li>Pollo Precio: <b>3.50€</b></li>
+            <li>Hamburguesa Precio: <b>3.50€</b></li>
+            <li>Serranito de pollo o lomo Precio: <b>5.00€</b></li>
+        </ul>
+
+        <h2>Ensaladas</h2>
+        
+        <ul>
+            <li>Normal Precio: <b>3.50€</b></li>
+            <li>Ensaladilla Precio: <b>3.00€</b></li>
+            <li>Papas alioli Precio: <b>3.00€</b></li>
+            <li>Salpicón de Mariscos Precio: <b>3.50€</b></li>
+        </ul>
+
+        <h2>Tapas</h2>
+
+        <ul>
+            <li>Plato de papas Precio: <b>2.50€</b></li>
+            <li>Papas bravas Precio <b>3.00€</b></li>
+            <li>Papas gratinadas Precio <b>4.00€</b></li>
+            <li>Carne con tomate Precio <b>3.50€</b></li>
+            <li>Carne asada Precio <b>4.00€</b></li>
+            <li>Tocinito frito Precio <b>4.00€</b></li>
+            <li>Solomillo al whisky Precio <b>4.50€</b></li>
+            <li>Churrasco de cerdo Precio <b>4.50€</b></li>
+            <li>Churrasco de pollo Precio <b>4.50€</b></li>
+        </ul>
+
+        <h2>Pescados</h2>
+
+        <ul>
+            <li>Chipirón plancha Tapa: <b>3.50€</b> Ración: <b>7.50€</b></li>
+            <li>Calamares fritos Tapa: <b>3.50€</b> Ración: <b>7.50€</b></li>
+            <li>Boquerones fritos Tapa: <b>3.00€</b> Ración: <b>6.00€</b></li>
+            <li>Frito variado Tapa: <b>4.50€</b> Ración: <b>10.00€</b></li>
+        </ul>
+
+        <h2>Montaditos</h2>
+
+        <ul>
+            <li>Pollo Precio: <b>3.00€</b></li>
+            <li>Lomo Precio: <b>3.00€</b></li>
+            <li>Gambas alioli Precio: <b>3.00€</b></li>
+            <li>Caballa pimiento morrón Precio: <b>3.00€</b></li>
+        </ul>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
