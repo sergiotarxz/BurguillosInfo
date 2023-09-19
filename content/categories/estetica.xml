@@ -1,0 +1,29 @@
+<category>
+    <title>Negocios de estética en Burguillos.</title>
+    <description>
+        <h2>Descubre todos los negocios que te ayudan a estar más guapo o guapa.</h2>
+
+        <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
+    <parent>comercios</parent>
+    <priority>0</priority>
+    <menu_text>Estética</menu_text>
+    <slug>estetica</slug>
+    <img src="/img/estetica.webp" bottom-preview="630"/>
+    <attributes>
+        <attribute>
+            <title>Belleza de manos.</title>
+            <identifier>belleza-manos</identifier>
+            <priority>1</priority>
+            <menu_text>Belleza de manos.</menu_text>
+            <img src="/img/unas.webp"/>
+            <description>
+                <h2>¿Andas buscando donde hacerte las uñas en Burguillos?</h2>
+
+                <p>No busques más, aquí puedes encontrar una lista de los lugares más destacados.</p>
+
+                <p>¿Conoces algún negocio que debería estar listado aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a> y lo añadiremos a este registro.</p>
+            </description>
+        </attribute>
+    </attributes>
+</category>
