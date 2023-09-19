@@ -25,7 +25,7 @@
 % if (defined $ogimage) {
 % my $url_for = url_for || '';
       <meta itemprop="image" property="og:image" content="<%= $ogimage %>"/>
-      <meta name="image" property="og:image" content="<%= $ogimage %>"/>
+      <meta name="image" content="<%= $ogimage %>"/>
       <meta property="og:url" content="<%=$base_url%><%= url_for %>"/>
       <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
