@@ -21,18 +21,21 @@ sub index {
     my $current_category = $categories->{'index'};
 
     # Render template "example/welcome.html.ep" with message
+    my $base_url = $self->config('base_url');
+    $self->stash( ogimage =>
+          ( $base_url . '/' . $current_category->{slug} . '-preview.png' ) );
     $self->render(
         categories       => $categories,
-        current_category => $current_category
+        current_category => $current_category,
     );
 }
 
-sub rickroll($self) {
-    if ($self->req->headers->user_agent =~ /bot/i) {
-        return $self->render(text => '');
+sub rickroll ($self) {
+    if ( $self->req->headers->user_agent =~ /bot/i ) {
+        return $self->render( text => '' );
     }
     $self->res->headers->location('http://ibaillanos.tv');
-    $self->render(text => '', status => 302);
+    $self->render( text => '', status => 302 );
 }
 
 sub category_rss {
@@ -49,7 +52,7 @@ sub category_rss {
     }
     my $dom         = Mojo::DOM->new_tag( 'rss', version => '2.0', undef );
     my $channel_tag = Mojo::DOM->new_tag('channel');
-    my $base_url = BurguillosInfo->new->config->{base_url};
+    my $base_url    = BurguillosInfo->new->config->{base_url};
     if ( $category_name eq 'all' ) {
         my $title_tag       = Mojo::DOM->new_tag( 'title', 'Burguillos.info' );
         my $description_tag = Mojo::DOM->new_tag( 'description',
@@ -73,8 +76,8 @@ sub category_rss {
         my $description_tag = Mojo::DOM->new_tag( 'description',
             'Todas las noticias de la categoria de Burguillos.info '
               . $category->{title} );
-        my $link_tag = Mojo::DOM->new_tag( 'link',
-            $base_url . '/' . $category->{slug} );
+        my $link_tag =
+          Mojo::DOM->new_tag( 'link', $base_url . '/' . $category->{slug} );
         $channel_tag->child_nodes->first->append_content($title_tag);
         $channel_tag->child_nodes->first->append_content($description_tag);
         $channel_tag->child_nodes->first->append_content($link_tag);
@@ -98,9 +101,9 @@ sub _post_to_rss {
     my $post      = shift;
     my $item_tag  = Mojo::DOM->new_tag('item');
     my $title_tag = Mojo::DOM->new_tag( 'title', $post->{title} );
-    my $base_url = BurguillosInfo->new->config->{base_url};
-    my $link      = Mojo::DOM->new_tag( 'link',
-        $base_url = '/posts/' . $post->{slug} );
+    my $base_url  = BurguillosInfo->new->config->{base_url};
+    my $link =
+      Mojo::DOM->new_tag( 'link', $base_url = '/posts/' . $post->{slug} );
     my $description = Mojo::DOM->new_tag( 'description',
         Mojo::DOM->new( $post->{content} )->all_text );
     my $guid = Mojo::DOM->new_tag( 'guid', $post->{slug} );
@@ -149,10 +152,11 @@ sub category {
         $self->render( template => '404', status => 404 );
         return;
     }
+    $self->stash( ogimage =>
+          ( $base_url . '/' . $current_category->{slug} . '-preview.png' ) );
     $self->render(
-        template   => 'page/index',
-        categories => $categories,
-        ogimage => $base_url . '/' . $current_category->{slug} . '-preview.png',
+        template         => 'page/index',
+        categories       => $categories,
         current_category => $current_category
     );
 }
@@ -166,11 +170,11 @@ sub get_category_preview {
         $self->render( template => '404', status => 404 );
         return;
     }
-    my $category = $categories->{$category_slug};
+    my $category    = $categories->{$category_slug};
     my $is_whatsapp = $self->req->headers->user_agent =~ /whatsapp/i;
     $self->render(
         format => 'png',
-        data   => $category_model->PreviewOg($category, $is_whatsapp)
+        data   => $category_model->PreviewOg( $category, $is_whatsapp )
     );
 }
 
@@ -188,7 +192,7 @@ sub get_post_preview {
     my $post = $posts_slug->{$slug};
     $self->render(
         format => 'png',
-        data   => $post_model->PreviewOg($post, $is_whatsapp)
+        data   => $post_model->PreviewOg( $post, $is_whatsapp )
     );
 }
 1;

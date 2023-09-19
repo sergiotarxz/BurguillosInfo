@@ -9,7 +9,7 @@
 %
 % my $description_og = '<div>'.$current_category->{description}.'</div>';
 % $description_og = Mojo::DOM->new($description_og)->all_text;
-% layout 'default', current_category_slug => $current_category->{slug}, description_og => $description_og, , ogimage => "/$current_category->{slug}-preview.png?v=4";
+% layout 'default', current_category_slug => $current_category->{slug}, description_og => $description_og;
 % title $current_category->{title};
 <div class="description">
 	<h1><%= $current_category->{title} %></h1>
