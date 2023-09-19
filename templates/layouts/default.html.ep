@@ -39,6 +39,8 @@
   </head>
   <body>
 % if (defined $ogimage) {
+    <!-- You must be wondering what the fuck is this always hidden image, we are tricking facebook into thinking this is the first image in the website
+    because ogimages broke in their side.-->
     <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
 % }
     <div class="site-wrapper">
