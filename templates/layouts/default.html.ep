@@ -26,7 +26,7 @@
 % my $url_for = url_for || '';
       <meta itemprop="image" property="og:image" content="<%= $ogimage %>"/>
       <meta name="image" content="<%= $ogimage %>"/>
-      <meta property="og:url" content="<%=$base_url%><%= url_for %>"/>
+      <meta property="og:url" content="<%=$base_url%><%= url_for %>?v=500"/>
       <meta name="twitter:image" content="<%=$ogimage%>" />
 % } else {
       <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
