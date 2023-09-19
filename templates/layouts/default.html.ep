@@ -15,6 +15,7 @@
       <title><%= title %></title>
       <meta charset="UTF-8"/>
       <meta name="description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
+      <meta property="og:description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
       <meta property="og:title" content="<%= title %>"/>
       <meta property="og:site_name" content="Burguillos Info" />
       <meta property="og:type" content="website" />
