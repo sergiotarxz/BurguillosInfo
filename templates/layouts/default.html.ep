@@ -33,6 +33,7 @@
       <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
       <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
 % }
+      <meta property="og:image:alt" content="Portada de <%= title %>"/>
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
