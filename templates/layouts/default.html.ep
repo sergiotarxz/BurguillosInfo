@@ -38,6 +38,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+% if (defined $ogimage) {
+    <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
+% }
     <div class="site-wrapper">
     </div>
     <div class="search-overlay">
