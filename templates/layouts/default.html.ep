@@ -23,12 +23,12 @@
 % say STDERR $ogimage;
 % my $user_agent = stash 'useragent';
     
+<meta property="og:url" content="<%=$base_url%><%= url_for %>?v=123"/>
 % if (defined $ogimage) {
 % my $url_for = url_for || '';
       <meta itemprop="image" property="og:image" content="<%= $ogimage %>"/>
-      <meta name="image" content="<%= $ogimage %>"/>
-      <meta property="og:url" content="<%=$base_url%><%= url_for %>?v=500"/>
-      <meta name="twitter:image" content="<%=$ogimage%>" />
+      <meta name="image" content="<%= $ogimage %>?v=1"/>
+      <meta name="twitter:image" content="<%=$ogimage%>?v=1" />
 % } else {
       <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
       <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
