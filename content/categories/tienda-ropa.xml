@@ -1,0 +1,17 @@
+<category>
+    <title>Tiendas de ropa y accesorios en Burguillos.</title>
+    <description>
+        <p>Descubre las mejores prendas de vestir disponibles en Burguillos.</p>
+
+        <p>Compra productos locales de Burguillos.</p>
+
+        <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
+    <parent>comercios</parent>
+    <priority>0</priority>
+    <menu_text>Tiendas de ropa y accesorios</menu_text>
+    <slug>tiendas-ropa</slug>
+    <img src="/img/tienda-ropa.webp" bottom-preview="630"/>
+    <attributes>
+    </attributes>
+</category>
