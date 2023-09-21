@@ -50,7 +50,7 @@ sub href {
 
 sub text($self) {
     if ($self->default_alternative == 1) {
-        return '¡Anunciate en Burguillos.info! Precios a partir de 18.15€, pulsa aquí y escribenos.';
+        return '¡Anunciate en Burguillos.info! Precios a partir de 18.00€, pulsa aquí y escribenos.';
     }
     return
 'Pulsando este anuncio puedes enviarnos un correo para anunciarte en este sitio. ¡Si me ves funciona!';

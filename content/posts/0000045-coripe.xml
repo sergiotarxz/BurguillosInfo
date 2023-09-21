@@ -1,0 +1,95 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-09-21T10:33+00:00</date>
+    <title>Carta y menú de Bar Coripe.</title>
+    <ogdesc>Carta y menú de Bar Coripe.</ogdesc>
+    <img src="/img/bar-coripe.webp" bottom-preview="630"/>
+    <category>donde-comer</category>
+    <attributes>
+    </attributes>
+    <slug>bar-coripe</slug>
+    <content>
+        <img witdh="50%" alt="Puerta de la Bar Coripe" style="border: solid 1px black" src="/img/bar-coripe.webp"/>
+
+        <p>Localizado en Calle Sevilla número 4, dentro de la Ermita, el Bar Coripe es un lugar
+        perfecto para tomar un refrigerio y comer algo.</p>
+
+        <p>Procedemos a listaros la carta:</p>
+
+        <table>
+            <tr>
+                <th>Plato</th>
+                <th>Tapa</th>
+                <th>Ración</th>
+            </tr>
+            <tr>
+                <td>Carne Asá</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Tocinito</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Lagrimitas</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Alitas</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Croquetas</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>Bartolito</td>
+                <td>3.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Boquerón</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>M.P. Empanado</td>
+                <td>3.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Bravas</td>
+                <td>2.00€</td>
+                <td>4.00€</td>
+            </tr>
+            <tr>
+                <!-- Esto que eh? -->
+                <td>H. Pollo</td>
+                <td>3.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Filete de pollo empanado</td>
+                <td>3.00€</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Calamares</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+            <tr>
+                <td>S.P. Empanado</td>
+                <td>4.50€</td>
+                <td>---</td>
+            </tr>
+        </table>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
