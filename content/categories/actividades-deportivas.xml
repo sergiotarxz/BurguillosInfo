@@ -7,7 +7,7 @@
 	</description>
         <parent>comercios</parent>
 	<priority>0</priority>
-	<menu_text>Donde hacer deporte en Burguillos</menu_text>
+	<menu_text>Deporte</menu_text>
 	<slug>actividades-deportivas</slug>
     <attributes>
         <attribute>
