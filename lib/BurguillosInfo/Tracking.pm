@@ -139,15 +139,15 @@ sub get_global_data {
 SELECT 
     (
             $SELECT_GLOBAL
-            where date > NOW() - interval '1 day'
+            where path !~ '\\.\\w*\$' and date > NOW() - interval '1 day'
     ) as unique_ips_last_24_hours,
     (
             $SELECT_GLOBAL
-            where date > NOW() - interval '1 week'
+            where path !~ '\\.\\w*\$' and date > NOW() - interval '1 week'
     ) as unique_ips_last_week,
     (
             $SELECT_GLOBAL
-            where date > NOW() - interval '1 month'
+            where path !~ '\\.\\w*\$' and date > NOW() - interval '1 month'
     ) as unique_ips_last_month;
 EOF
     return $data;
