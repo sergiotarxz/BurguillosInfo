@@ -1,0 +1,30 @@
+<post>
+    <author>Burguillos.info</author>
+    <date>2023-09-25T19:56+00:00</date>
+    <title>Restaurante Casa Luis Burguillos</title>
+    <ogdesc>Restaurante Casa Luis Burguillos</ogdesc>
+    <img src="/img/casa-luis.webp"/>
+    <category>donde-comer</category>
+    <attributes>
+    </attributes>
+    <slug>restaurante-casa-luis</slug>
+    <content>
+        <img witdh="50%" alt="Puerta del restaurante Casa Luis" style="border: solid 1px black" src="/img/casa-luis.webp"/>
+
+        <p>¿Buscas un buen lugar para comer en Burguillos? No busques más Restaurante Casa Luis en Burguillos ofrece unas comidas completamente excepcionales.</p>
+
+        <p>La carta cambia con demasiada frecuencia para mantenerla en esta página; no obstante os
+        dejamos la lista de sugerencias para que se os haga la boca agua.</p>
+
+        <ul>
+            <li>Gambón plancha.</li>
+            <li>Albondigas de carrilla.</li>
+            <li>Perdiz en salsa.</li>
+            <li>Montadito de berenjena.</li>
+            <li>Queso rulo.</li>
+            <li>Redondo de solomillo.</li>
+        </ul>
+
+        <p>¿Quieres ver tu negocio localizado en Burguillos en este espacio? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a>.</p>
+    </content>
+</post>
