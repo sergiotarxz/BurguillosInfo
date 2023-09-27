@@ -173,13 +173,27 @@ body {
         width: 60%;
         height: 60%; }
   body nav.mobile-foldable {
-    display: none;
+    position: fixed;
     background: blueviolet;
-    color: #f2eb8c; }
+    color: #f2eb8c;
+    left: -100%;
+    width: 100%;
+    top: 60px;
+    height: calc(100% - 60px);
+    display: block;
+    z-index: 500;
+    transition: left 0.5s ease-in; }
     body nav.mobile-foldable a {
-      display: block; }
+      display: block;
+      font-size: 1.7em;
+      width: 100%;
+      height: auto;
+      padding-left: auto;
+      padding-right: auto; }
+    body nav.mobile-foldable div.child-categories-mobile {
+      padding-left: 10%; }
   body nav.mobile-foldable.show {
-    display: block; }
+    left: 0; }
   body nav.mobile-shortcuts > a {
     display: flex;
     align-items: center;
@@ -431,6 +445,8 @@ body {
     max-width: 694px; } }
 
 @media (min-width: 1100px) {
+  body nav.mobile-foldable, body nav.mobile-foldable.show {
+    display: none; }
   body nav.mobile-shortcuts {
     display: none; }
   body div.search-in-page.active {
@@ -441,8 +457,6 @@ body {
     height: 80%;
     width: 90%;
     border: solid 1px black; }
-    body div.page-contents nav.mobile-foldable, body div.page-contents nav.mobile-foldable.show {
-      display: none; }
     body div.page-contents div.description.open-browser-container {
       margin-left: 0;
       margin-right: 0; }
