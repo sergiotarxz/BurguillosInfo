@@ -264,12 +264,12 @@ body {
     position: fixed;
     background: $background_div;
     color: $color_div;
-    left: -100%;
+    left: 100%;
     width: 100%;
     top: 60px;
     height: calc(100% - 60px);
-    display: block;
     z-index: 500;
+
 
     transition: left 0.5s ease-in;
 
@@ -289,6 +289,7 @@ body {
   }
 
   nav.mobile-foldable.show {
+    display: block;
     left: 0;
     
   }

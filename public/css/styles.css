@@ -176,11 +176,10 @@ body {
     position: fixed;
     background: blueviolet;
     color: #f2eb8c;
-    left: -100%;
+    left: 100%;
     width: 100%;
     top: 60px;
     height: calc(100% - 60px);
-    display: block;
     z-index: 500;
     transition: left 0.5s ease-in; }
     body nav.mobile-foldable a {
@@ -193,6 +192,7 @@ body {
     body nav.mobile-foldable div.child-categories-mobile {
       padding-left: 10%; }
   body nav.mobile-foldable.show {
+    display: block;
     left: 0; }
   body nav.mobile-shortcuts > a {
     display: flex;
