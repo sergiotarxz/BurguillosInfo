@@ -8,15 +8,17 @@ let searchMobile
 window.onload = () => {
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
+    const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');
     const tables = document.querySelectorAll('table')
 
     fillFarmaciaGuardia();
     loadAd()
     addEasterEggAnimation()
 
-    if (menu_expand !== null && mobile_foldable !== null) {
+    if (menu_expand !== null && mobile_foldable !== null && transparentFullscreenHide !== null) {
         menu_expand.addEventListener('click', () => {
             mobile_foldable.classList.toggle('show');
+            transparentFullscreenHide.classList.toggle('show');
         });
     }
 

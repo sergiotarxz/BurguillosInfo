@@ -260,12 +260,27 @@ body {
     }
   }
 
+  div.transparent-fullscreen-hide {
+    position: fixed;
+    background: black;
+    left: 0;
+    width: 100%;
+    opacity: 40%;
+    top: 60px;
+    height: calc(100% - 60px);
+    z-index: 250;
+    display: none;
+    &.show {
+        display: block;
+    }
+  }
+
   nav.mobile-foldable {
     position: fixed;
     background: $background_div;
     color: $color_div;
     left: 100%;
-    width: 100%;
+    width: 80%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
@@ -277,20 +292,23 @@ body {
       //background: $color_div;
       //color: $background_div;
       display: block;
-      font-size: 1.7em;
+      font-size: 1.3em;
       width: 100%;
       height: auto;
       padding-left: auto;
       padding-right: auto;
     }
     div.child-categories-mobile {
-        padding-left: 10%;
+        padding-left: 40px;
+        a {
+            font-size: 1em;
+        }
     }
   }
 
   nav.mobile-foldable.show {
     display: block;
-    left: 0;
+    left: 20%;
     
   }
 

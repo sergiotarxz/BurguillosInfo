@@ -172,28 +172,42 @@ body {
         padding: 10%;
         width: 60%;
         height: 60%; }
+  body div.transparent-fullscreen-hide {
+    position: fixed;
+    background: black;
+    left: 0;
+    width: 100%;
+    opacity: 40%;
+    top: 60px;
+    height: calc(100% - 60px);
+    z-index: 250;
+    display: none; }
+    body div.transparent-fullscreen-hide.show {
+      display: block; }
   body nav.mobile-foldable {
     position: fixed;
     background: blueviolet;
     color: #f2eb8c;
     left: 100%;
-    width: 100%;
+    width: 80%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
     transition: left 0.5s ease-in; }
     body nav.mobile-foldable a {
       display: block;
-      font-size: 1.7em;
+      font-size: 1.3em;
       width: 100%;
       height: auto;
       padding-left: auto;
       padding-right: auto; }
     body nav.mobile-foldable div.child-categories-mobile {
-      padding-left: 10%; }
+      padding-left: 40px; }
+      body nav.mobile-foldable div.child-categories-mobile a {
+        font-size: 1em; }
   body nav.mobile-foldable.show {
     display: block;
-    left: 0; }
+    left: 20%; }
   body nav.mobile-shortcuts > a {
     display: flex;
     align-items: center;
