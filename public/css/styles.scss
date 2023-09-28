@@ -8,8 +8,8 @@ $background-secondary: #635283;
 $color-secondary: #8eea6d;
 $accent-secondary: #fde68f;
 $primary-secondary: #590e11;
-$background_sidebar: #E2D1F9;
-$color_sidebar: #317773;
+$background_sidebar: #F5F5DC;
+$color_sidebar: #dcdcf5;
 
 html {
   height: 100%;
@@ -303,7 +303,7 @@ body {
     height: calc(100% - 60px);
     z-index: 500;
     transition: left 0.5s ease-in;
-    background: $background_div;
+    background: $background_sidebar;
 
     & > a:first-child {
       margin-top: 30px;
@@ -318,12 +318,13 @@ body {
       padding-left: auto;
       padding-right: auto;
       color: black;
-      background: $color_div;
+      border: 1px solid black;
+      background: $color_sidebar;
       margin-top: 10px;
       padding: 10px;
       margin-left: 10px;
       border-radius: 20px;
-      width: calc(100% - 20px - 20px);
+      width: calc(100% - 20px - 20px - 2px);
     }
 
     div.child-categories-mobile {
@@ -343,6 +344,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    &.active {
+        background: $background_sidebar;
+        color: $color_sidebar;
+    }
   }
 
   a.menu-expand {
@@ -352,7 +357,7 @@ body {
       display: none;
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus, &.active {
       .open-menu-icon-hover {
         display: block;
       }

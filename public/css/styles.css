@@ -207,7 +207,7 @@ body {
     height: calc(100% - 60px);
     z-index: 500;
     transition: left 0.5s ease-in;
-    background: blueviolet; }
+    background: #F5F5DC; }
     body nav.mobile-foldable > a:first-child {
       margin-top: 30px; }
     body nav.mobile-foldable a {
@@ -217,12 +217,13 @@ body {
       padding-left: auto;
       padding-right: auto;
       color: black;
-      background: #f2eb8c;
+      border: 1px solid black;
+      background: #dcdcf5;
       margin-top: 10px;
       padding: 10px;
       margin-left: 10px;
       border-radius: 20px;
-      width: calc(100% - 20px - 20px); }
+      width: calc(100% - 20px - 20px - 2px); }
     body nav.mobile-foldable div.child-categories-mobile a {
       width: calc(100% - 50px - 20px);
       margin-left: 40px;
@@ -233,13 +234,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; }
+    body nav.mobile-shortcuts > a.active {
+      background: #F5F5DC;
+      color: #dcdcf5; }
   body a.menu-expand {
     padding-bottom: 9px; }
     body a.menu-expand .open-menu-icon-hover {
       display: none; }
-    body a.menu-expand:hover .open-menu-icon-hover, body a.menu-expand:focus .open-menu-icon-hover {
+    body a.menu-expand:hover .open-menu-icon-hover, body a.menu-expand:focus .open-menu-icon-hover, body a.menu-expand.active .open-menu-icon-hover {
       display: block; }
-    body a.menu-expand:hover .open-menu-icon, body a.menu-expand:focus .open-menu-icon {
+    body a.menu-expand:hover .open-menu-icon, body a.menu-expand:focus .open-menu-icon, body a.menu-expand.active .open-menu-icon {
       display: none; }
   body nav > a.menu-expand > img {
     width: 30px;

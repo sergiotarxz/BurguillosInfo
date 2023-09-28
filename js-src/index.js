@@ -19,8 +19,10 @@ window.onload = () => {
         transparentFullscreenHide.addEventListener('click', () => {
             mobile_foldable.classList.remove('show');
             transparentFullscreenHide.classList.remove('show');
+            menu_expand.classList.remove('active');
         });
         menu_expand.addEventListener('click', () => {
+            menu_expand.classList.toggle('active');
             mobile_foldable.classList.toggle('show');
             transparentFullscreenHide.classList.toggle('show');
         });
