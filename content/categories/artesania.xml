@@ -9,7 +9,7 @@
     </description>
     <parent>comercios</parent>
     <priority>0</priority>
-    <menu_text>Artesanía/Productos Artesanales</menu_text>
+    <menu_text>Artesanía</menu_text>
     <slug>artesania</slug>
     <img src="/img/artesania.webp" bottom-preview="630"/>
     <attributes>
