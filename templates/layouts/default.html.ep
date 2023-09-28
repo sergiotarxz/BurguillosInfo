@@ -57,6 +57,7 @@
     </div>
     <div class="complete-container">
 %= include 'page/_mobile_menu', categories => $categories
+%= include 'page/_mobile_foldable', categories => $categories
         <div class="search-in-page">
             <a href="#" class="down">
                 <img alt="Next result" src="/img/down.svg"/>
@@ -67,7 +68,6 @@
         </div>
         <div class="page-contents">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
-%= include 'page/_mobile_foldable', categories => $categories
             <div class="description android open-browser-container">
                 <a href="<%= $current_route %>" class="open-in-browser">
                     <img alt="" src="/img/firefox.svg"/>

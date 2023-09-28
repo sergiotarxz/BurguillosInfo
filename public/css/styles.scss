@@ -24,88 +24,104 @@ body {
     z-index: 3;
     top: 0;
     flex-direction: column;
+
     &.active {
-        display: flex;
+      display: flex;
     }
+
     div.search-results {
-        margin: 7px;
-        img {
-            width: 75px;
+      margin: 7px;
+
+      img {
+        width: 75px;
+      }
+
+      div.search-result {
+        div.row-title-url-image {
+          display: flex;
+          flex-direction: row;
+
+          img {
+            margin: 10px;
+          }
         }
-        div.search-result {
-            div.row-title-url-image {
-                display: flex;
-                flex-direction: row;
-                img {
-                    margin: 10px;
-                }
-            }
-        }
+      }
     }
+
     div.bounding-search-bar {
-        margin: 7px;
-        width: calc(100% - 20px);
-        border-radius: 10px;
+      margin: 7px;
+      width: calc(100% - 20px);
+      border-radius: 10px;
+      height: 60px;
+      display: flex;
+
+      div.search {
+        width: calc(100% - 60px);
+        height: 60px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      a.up, a.down {
+        display: none;
+      }
+
+      a.exit-search {
+        width: 60px;
+        background: whitesmoke;
         height: 60px;
         display: flex;
-        div.search {
-            width: calc(100% - 60px);
-            height: 60px;
-            margin-left: 0px;
-            margin-right: 0px;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 60%;
         }
-        a.up,a.down {
-            display: none;
-        }
-        a.exit-search {
-            width: 60px;
-            background: whitesmoke;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                width: 60%;
-            }
-        }
+      }
     }
   }
+
   div.search {
     background: whitesmoke;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
+
     a.search-icon {
-        height: calc(100% - 28px);
-        align-self: center;
-        margin: 7px;
-        display: flex;
-        background: aliceblue;
-        align-items: center;
-        padding: 7px;
-        border-radius: 10px;
-        border: solid gray 1px;
+      height: calc(100% - 28px);
+      align-self: center;
+      margin: 7px;
+      display: flex;
+      background: aliceblue;
+      align-items: center;
+      padding: 7px;
+      border-radius: 10px;
+      border: solid gray 1px;
+      aspect-ratio: 1 / 1;
+      width: auto;
+
+      img {
+        height: 80%;
         aspect-ratio: 1 / 1;
-        width: auto;
-        img {
-            height: 80%;
-            aspect-ratio: 1 / 1;
-        }
+      }
     }
+
     div.fake-text-box {
-        width: calc(100% - 60px);
-        display: flex;
-        align-items: center;
-        input[type="text"] {
-            font-size: 30px;
-            width: 100%;
-            height: 70%;
-            background: none;
-            border: none;
-            outline: none;
-        }
+      width: calc(100% - 60px);
+      display: flex;
+      align-items: center;
+
+      input[type="text"] {
+        font-size: 30px;
+        width: 100%;
+        height: 70%;
+        background: none;
+        border: none;
+        outline: none;
+      }
     }
   }
+
   p, h1, h2, h3, h4, a {
     font-family: 'arial';
   }
@@ -205,8 +221,8 @@ body {
       text-decoration: none;
       color: $color_div;
       margin: 0;
-
       background: $background_div;
+
       &:hover, &:focus {
         background: $color_div;
         color: $background_div;
@@ -226,36 +242,56 @@ body {
     a {
       vertical-align: middle;
     }
+
     a.search-icon {
-    	width: 60px;
-	height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-	img {
-            background: aliceblue;
-            border-radius: 10px;
-            padding: 10%;
-            width: 60%;
-            height: 60%;
-	}
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        background: aliceblue;
+        border-radius: 10px;
+        padding: 10%;
+        width: 60%;
+        height: 60%;
+      }
     }
   }
 
   nav.mobile-foldable {
-    display: none;
+    position: fixed;
     background: $background_div;
     color: $color_div;
+    left: 100%;
+    width: 100%;
+    top: 60px;
+    height: calc(100% - 60px);
+    z-index: 500;
+
+
+    transition: left 0.5s ease-in;
 
     a {
       //background: $color_div;
       //color: $background_div;
       display: block;
+      font-size: 1.7em;
+      width: 100%;
+      height: auto;
+      padding-left: auto;
+      padding-right: auto;
+    }
+    div.child-categories-mobile {
+        padding-left: 10%;
     }
   }
 
   nav.mobile-foldable.show {
     display: block;
+    left: 0;
+    
   }
 
   nav.mobile-shortcuts > a {
@@ -303,6 +339,7 @@ body {
   div.burguillos-logo-container.active > img {
     transform: rotate(-1.5707963268rad);
   }
+
   div.search-in-page {
     display: none;
     position: fixed;
@@ -312,33 +349,37 @@ body {
     align-items: center;
     background: $background_div;
     z-index: 3;
-    a.up, a.down {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: calc(100% - 28px);
-        align-self: center;
-        margin: 7px;
-        display: flex;
-        background: aliceblue;
-        align-items: center;
-        padding: 7px;
-        border-radius: 10px;
-        border: solid gray 1px;
-        aspect-ratio: 1/1;
-        img {
-            height: 80%;
-        }
 
+    a.up, a.down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 28px);
+      align-self: center;
+      margin: 7px;
+      display: flex;
+      background: aliceblue;
+      align-items: center;
+      padding: 7px;
+      border-radius: 10px;
+      border: solid gray 1px;
+      aspect-ratio: 1/1;
+
+      img {
+        height: 80%;
+      }
     }
+
     span {
-        color: whitesmoke;
-        font-size: 25px;
+      color: whitesmoke;
+      font-size: 25px;
     }
+
     &.active {
-        display: flex;
+      display: flex;
     }
   }
+
   nav.mobile-shortcuts {
     position: fixed;
     display: flex;
@@ -389,12 +430,14 @@ body {
       border: 3px solid $background_div;
       border-collapse: collapse;
       width: 100%;
+
       tr:hover {
-            background: $background_div;
-            color: $color_div;
-            th, td {
-              border: 3px solid $color_div;
-            }
+        background: $background_div;
+        color: $color_div;
+
+        th, td {
+          border: 3px solid $color_div;
+        }
       }
 
       td, th {
@@ -623,13 +666,15 @@ body {
 @media (min-width: 694px) {
   body {
     div.carousel {
-        a {
-            font-size: 20px;
-        }
-        h3 {
-            font-size: 25px;
-        }
+      a {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 25px;
+      }
     }
+
     div.page-contents {
       div.description {
         div.articles {
@@ -643,6 +688,7 @@ body {
           }
         }
       }
+
       img {
         max-width: 694px;
       }
@@ -652,22 +698,24 @@ body {
 
 @media (min-width: 1100px) {
   body {
+    nav.mobile-foldable, nav.mobile-foldable.show {
+      display: none;
+    }
+
     nav.mobile-shortcuts {
       display: none;
     }
+
     div.search-in-page.active {
-        display: none;
+      display: none;
     }
 
     div.page-contents {
-      nav.mobile-foldable, nav.mobile-foldable.show {
-        display: none;
-      }
-
       div.description.open-browser-container {
         margin-left: 0;
         margin-right: 0;
       }
+
       div.description {
         margin-left: 10%;
         margin-right: 10%;
@@ -726,19 +774,20 @@ body {
 }
 
 @media (max-width: 200px) {
-    body {
-        font-size: 20px;
-    }
+  body {
+    font-size: 20px;
+  }
 }
 
 @media (max-height: 400px) {
-    body {
-        div.carousel {
-            height: 120px;
-            top: calc(100% - 120px);
-        }
-        div.page-contents {
-            height: calc(100% - 60px - 120px);
-        }
+  body {
+    div.carousel {
+      height: 120px;
+      top: calc(100% - 120px);
     }
+
+    div.page-contents {
+      height: calc(100% - 60px - 120px);
+    }
+  }
 }
