@@ -8,12 +8,29 @@ $background-secondary: #635283;
 $color-secondary: #8eea6d;
 $accent-secondary: #fde68f;
 $primary-secondary: #590e11;
+$background_sidebar: #E2D1F9;
+$color_sidebar: #317773;
 
 html {
   height: 100%;
 }
 
 body {
+  span.round-center {
+    background: black;
+    color: white;
+    line-height: 100%;
+    aspect-ratio: 1 / 1;
+    display: inline-flex;
+    border-radius: 0.3em;
+    height: 0.7em;
+    font-size: 0.7em;
+    padding: 0.15em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
   div.search-overlay {
     overflow-y: scroll;
     display: none;
@@ -270,46 +287,54 @@ body {
     height: calc(100% - 60px);
     z-index: 250;
     display: none;
+
     &.show {
-        display: block;
+      display: block;
     }
   }
 
   nav.mobile-foldable {
     position: fixed;
-    background: $background_div;
-    color: $color_div;
     left: 100%;
-    width: 80%;
+    width: 60%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
-
-
     transition: left 0.5s ease-in;
+    background: $background_div;
+
+    & > a:first-child {
+      margin-top: 30px;
+    }
 
     a {
       //background: $color_div;
       //color: $background_div;
       display: block;
       font-size: 1.1em;
-      width: 100%;
       height: auto;
       padding-left: auto;
       padding-right: auto;
+      color: black;
+      background: $color_div;
+      margin-top: 10px;
+      padding: 10px;
+      margin-left: 10px;
+      border-radius: 20px;
+      width: calc(100% - 20px - 20px);
     }
+
     div.child-categories-mobile {
-        padding-left: 40px;
-        a {
-            font-size: 1em;
-        }
+      a {
+        width: calc(100% - 50px - 20px);
+        margin-left: 40px;
+        font-size: 1em;
+      }
     }
   }
 
   nav.mobile-foldable.show {
-    display: block;
-    left: 20%;
-    
+    left: 40%;
   }
 
   nav.mobile-shortcuts > a {

@@ -8,6 +8,19 @@ body {
   min-height: 100%;
   width: 100%;
   height: 100%; }
+  body span.round-center {
+    background: black;
+    color: white;
+    line-height: 100%;
+    aspect-ratio: 1 / 1;
+    display: inline-flex;
+    border-radius: 0.3em;
+    height: 0.7em;
+    font-size: 0.7em;
+    padding: 0.15em;
+    text-align: center;
+    justify-content: center;
+    align-items: center; }
   body div.search-overlay {
     overflow-y: scroll;
     display: none;
@@ -186,28 +199,34 @@ body {
       display: block; }
   body nav.mobile-foldable {
     position: fixed;
-    background: blueviolet;
-    color: #f2eb8c;
     left: 100%;
-    width: 80%;
+    width: 60%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
-    transition: left 0.5s ease-in; }
+    transition: left 0.5s ease-in;
+    background: blueviolet; }
+    body nav.mobile-foldable > a:first-child {
+      margin-top: 30px; }
     body nav.mobile-foldable a {
       display: block;
       font-size: 1.1em;
-      width: 100%;
       height: auto;
       padding-left: auto;
-      padding-right: auto; }
-    body nav.mobile-foldable div.child-categories-mobile {
-      padding-left: 40px; }
-      body nav.mobile-foldable div.child-categories-mobile a {
-        font-size: 1em; }
+      padding-right: auto;
+      color: black;
+      background: #f2eb8c;
+      margin-top: 10px;
+      padding: 10px;
+      margin-left: 10px;
+      border-radius: 20px;
+      width: calc(100% - 20px - 20px); }
+    body nav.mobile-foldable div.child-categories-mobile a {
+      width: calc(100% - 50px - 20px);
+      margin-left: 40px;
+      font-size: 1em; }
   body nav.mobile-foldable.show {
-    display: block;
-    left: 20%; }
+    left: 40%; }
   body nav.mobile-shortcuts > a {
     display: flex;
     align-items: center;

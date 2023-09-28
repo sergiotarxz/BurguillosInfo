@@ -9,7 +9,7 @@ for my $category_key (sort {
     if (defined $category->{parent} || $category->{slug} eq 'index') {
         next;
     }
-    %><a href="<%= '/'.$category->{slug} %>"><%==$category->{menu_text}%></a><div class="child-categories-mobile"><% 
+    %><a href="<%= '/'.$category->{slug} %>"><span class="round-center">v</span> <%==$category->{menu_text}%></a><div class="child-categories-mobile"><% 
         for my $child_category ($category->{children}->@*) {
             %><a href="<%="/$child_category->{slug}"%>"><%==$child_category->{menu_text}%></a><%
         }%></div><%
