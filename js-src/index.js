@@ -16,6 +16,10 @@ window.onload = () => {
     addEasterEggAnimation()
 
     if (menu_expand !== null && mobile_foldable !== null && transparentFullscreenHide !== null) {
+        transparentFullscreenHide.addEventListener('click', () => {
+            mobile_foldable.classList.remove('show');
+            transparentFullscreenHide.classList.remove('show');
+        });
         menu_expand.addEventListener('click', () => {
             mobile_foldable.classList.toggle('show');
             transparentFullscreenHide.classList.toggle('show');
