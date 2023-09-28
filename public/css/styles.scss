@@ -8,7 +8,7 @@ $background-secondary: #635283;
 $color-secondary: #8eea6d;
 $accent-secondary: #fde68f;
 $primary-secondary: #590e11;
-$background_sidebar: #F5F5DC;
+$background_sidebar: white; //#F5F5DC;
 $color_sidebar: #dcdcf5;
 
 html {
@@ -17,8 +17,8 @@ html {
 
 body {
   span.round-center {
-    background: black;
-    color: white;
+    background: $background_div;
+    color: $background_sidebar;
     line-height: 100%;
     aspect-ratio: 1 / 1;
     display: inline-flex;
@@ -317,9 +317,9 @@ body {
       height: auto;
       padding-left: auto;
       padding-right: auto;
-      color: black;
-      border: 1px solid black;
-      background: $color_sidebar;
+      color: $background_div;
+//      border: 1px solid black;
+      background: $background_sidebar;
       margin-top: 10px;
       padding: 10px;
       margin-left: 10px;
@@ -328,9 +328,10 @@ body {
     }
 
     div.child-categories-mobile {
+      margin-left: 80px;
+      width: calc(100% - 90px - 20px);
       a {
-        width: calc(100% - 50px - 20px);
-        margin-left: 40px;
+        display: list-item;
         font-size: 1em;
       }
     }
