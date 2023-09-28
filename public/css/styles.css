@@ -200,13 +200,14 @@ body {
     body div.transparent-fullscreen-hide.show {
       display: block; }
   body nav.mobile-foldable {
+    visibility: hidden;
     position: fixed;
     left: 100%;
     width: 70%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
-    transition: left 0.5s ease-in;
+    transition: left 0.5s ease-in, visibility 0.5s ease-in;
     background: white; }
     body nav.mobile-foldable > a:first-child {
       margin-top: 30px; }
@@ -230,7 +231,8 @@ body {
         display: list-item;
         font-size: 1em; }
   body nav.mobile-foldable.show {
-    left: 30%; }
+    left: 30%;
+    visibility: visible; }
   body nav.mobile-shortcuts > a {
     display: flex;
     align-items: center;
@@ -238,6 +240,8 @@ body {
     body nav.mobile-shortcuts > a.active {
       background: white;
       color: #dcdcf5; }
+      body nav.mobile-shortcuts > a.active:focus {
+        background: #f2eb8c; }
   body a.menu-expand {
     padding-bottom: 9px; }
     body a.menu-expand .open-menu-icon-hover {

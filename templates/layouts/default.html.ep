@@ -58,43 +58,45 @@
     <div class="complete-container">
 %= include 'page/_mobile_menu', categories => $categories
 %= include 'page/_mobile_foldable', categories => $categories
-        <div class="search-in-page">
-            <a href="#" class="down">
-                <img alt="Next result" src="/img/down.svg"/>
-            </a>
-            <a href="#" class="up">
-                <img alt="Previous result" src="/img/up.svg"/>
-            </a>
-        </div>
-        <div class="page-contents">
+        <div class="contents-without-menu">
+            <div class="search-in-page">
+                <a href="#" class="down">
+                    <img alt="Next result" src="/img/down.svg"/>
+                </a>
+                <a href="#" class="up">
+                    <img alt="Previous result" src="/img/up.svg"/>
+                </a>
+            </div>
+            <div class="page-contents">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
-            <div class="description android open-browser-container">
-                <a href="<%= $current_route %>" class="open-in-browser">
-                    <img alt="" src="/img/firefox.svg"/>
-                    <span>Abrir en el navegador.</span>
-                </a>
-            </div>
+                <div class="description android open-browser-container">
+                    <a href="<%= $current_route %>" class="open-in-browser">
+                        <img alt="" src="/img/firefox.svg"/>
+                        <span>Abrir en el navegador.</span>
+                    </a>
+                </div>
 % if ($is_android) {
-            <div class="description no-android-app open-browser-container">
-                <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
-                    <img alt="" src="/img/play-store.svg"/>
-                    <span>Prueba nuestra aplicación para Android. Más fácil, mejor.</span>
-                </a>
-            </div>
+                <div class="description no-android-app open-browser-container">
+                    <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
+                        <img alt="" src="/img/play-store.svg"/>
+                        <span>Prueba nuestra aplicación para Android. Más fácil, mejor.</span>
+                    </a>
+                </div>
 % }
-            <%= content %></body>
-            <div class="description android">
-                <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
+                <%= content %></body>
+                <div class="description android">
+                    <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
+                </div>
+                <hr/>
+                <div class="footer description">
+                    <p>©2022-2023 Sergio Iglesias</p>
+                    <p>Enterate de todas las novedades de Burguillos.info:</p>
+                    <a class="suscribe-category-rss" href="/all.rss">
+                         <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
+                    </a>
+                </div>
             </div>
-            <hr/>
-            <div class="footer description">
-                <p>©2022-2023 Sergio Iglesias</p>
-                <p>Enterate de todas las novedades de Burguillos.info:</p>
-                <a class="suscribe-category-rss" href="/all.rss">
-                     <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-                </a>
-            </div>
-        </div>
 %= include 'ads/_carousel'
+        </div>
     </div>
 </html>

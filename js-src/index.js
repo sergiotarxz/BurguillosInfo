@@ -5,26 +5,41 @@ require('tablesort/src/sorts/tablesort.number');
 
 let fakeSearchInput
 let searchMobile
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", function () {
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
     const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');
+    const contentsWithoutMenu = document.querySelector('div.contents-without-menu')
     const tables = document.querySelectorAll('table')
 
     fillFarmaciaGuardia();
     loadAd()
     addEasterEggAnimation()
 
-    if (menu_expand !== null && mobile_foldable !== null && transparentFullscreenHide !== null) {
+    if (menu_expand !== null && mobile_foldable !== null && transparentFullscreenHide !== null && contentsWithoutMenu !== null) {
+        mobile_foldable.toggleAttribute('aria-hidden')
+        if (mobile_foldable.getAttribute('aria-hidden') !== null) {
+            mobile_foldable.setAttribute('aria-hidden', true);
+        }
         transparentFullscreenHide.addEventListener('click', () => {
             mobile_foldable.classList.remove('show');
             transparentFullscreenHide.classList.remove('show');
             menu_expand.classList.remove('active');
+            contentsWithoutMenu.removeAttribute('aria-hidden')
+            mobile_foldable.setAttribute('aria-hidden', true)
         });
         menu_expand.addEventListener('click', () => {
             menu_expand.classList.toggle('active');
             mobile_foldable.classList.toggle('show');
             transparentFullscreenHide.classList.toggle('show');
+            contentsWithoutMenu.toggleAttribute('aria-hidden')
+            if (contentsWithoutMenu.getAttribute('aria-hidden') !== null) {
+                contentsWithoutMenu.setAttribute('aria-hidden', true);
+            }
+            mobile_foldable.toggleAttribute('aria-hidden')
+            if (mobile_foldable.getAttribute('aria-hidden') !== null) {
+                mobile_foldable.setAttribute('aria-hidden', true);
+            }
         });
     }
 
@@ -46,7 +61,7 @@ window.onload = () => {
     searchMobile = document.querySelector('nav.mobile-shortcuts div.search')
     fakeSearchInput = searchMobile.querySelector('input')
     addListenersSearch()
-};
+}, false);
 
 function fillFarmaciaGuardia() {
     const farmaciaName = document.querySelector('#farmacia-name');

@@ -2,7 +2,7 @@
 <nav class="mobile-shortcuts">
     <a class="go-to-index" href="<%='/'.$categories->{index}{slug}%>"><%== $categories->{index}{menu_text} %></a>
 %= include 'page/_search_bar'
-    <a class="menu-expand">
+    <a class="menu-expand" href="#">
         <img class="open-menu-icon" src="/img/hamburger-menu-yellow.webp" alt="Expandir el menú."/>
         <img class="open-menu-icon-hover" src="/img/hamburger-menu-purple.webp" alt="Expandir el menú."/>
     </a>

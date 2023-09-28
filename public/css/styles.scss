@@ -296,13 +296,14 @@ body {
   }
 
   nav.mobile-foldable {
+    visibility: hidden;
     position: fixed;
     left: 100%;
     width: 70%;
     top: 60px;
     height: calc(100% - 60px);
     z-index: 500;
-    transition: left 0.5s ease-in;
+    transition: left 0.5s ease-in, visibility 0.5s ease-in;
     background: $background_sidebar;
 
     & > a:first-child {
@@ -339,6 +340,7 @@ body {
 
   nav.mobile-foldable.show {
     left: 30%;
+    visibility: visible;
   }
 
   nav.mobile-shortcuts > a {
@@ -348,6 +350,9 @@ body {
     &.active {
         background: $background_sidebar;
         color: $color_sidebar;
+        &:focus {
+            background: $color_div;
+        }
     }
   }
 
