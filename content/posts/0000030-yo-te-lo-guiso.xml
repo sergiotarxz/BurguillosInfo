@@ -8,6 +8,7 @@
         contacto.</ogdesc>
     <img src="/img/yo-to-lo-guiso.webp" />
     <category>donde-comer</category>
+    <category>index</category>
     <attributes>
         <attribute>hamburguesas</attribute>
         <attribute>comida-vegana</attribute>
