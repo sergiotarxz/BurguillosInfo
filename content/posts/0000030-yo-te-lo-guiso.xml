@@ -11,6 +11,7 @@
     <attributes>
         <attribute>hamburguesas</attribute>
         <attribute>comida-vegana</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
     </attributes>
     <slug>yo-te-lo-guiso</slug>
     <pinned>1</pinned>
@@ -22,8 +23,13 @@
         guiso" ofrece una propuesta de catering de comida al peso única
         en Burguillos con sus especialidades siempre disponibles y
             algunas novedades todos los días.</p>
-        <p>Podeis hacer encargos para recoger en tienda en este número
-            de teléfono <a href="tel:+34604424439">604 424 439</a>.</p>
+        <p>Podeis hacer encargos para recoger en tienda o envio a domicilio a
+        Burguillos en este número de teléfono 
+        <a href="tel:+34604424439">604 424 439</a>.</p>
+
+        <p>El envio a domicilio tan solo cuesta 1.50€ extra comparado
+        a comprar en el local.</p>
+
         <p>Recuerda mirar las novedades en Instagram 
         <a href="https://www.instagram.com/yoteloguiso/">
                 @yoteloguiso</a>.</p>
