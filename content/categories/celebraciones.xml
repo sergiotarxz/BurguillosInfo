@@ -1,0 +1,15 @@
+<category>
+    <title>Lugares donde celebrar ocasiones.</title>
+    <description>
+        <p>Ya sean bodas, bautizos, cumpleaños, fiestas infantiles o comuniones, encuentra en Burguillos el lugar perfecto para recordar para siempre con cariño los momentos especiales de la vida.</p>
+
+        <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
+    <parent>comercios</parent>
+    <priority>0</priority>
+    <menu_text>Celebraciones</menu_text>
+    <slug>celebraciones</slug>
+    <img src="/img/celebraciones.webp"/>
+    <attributes>
+    </attributes>
+</category>

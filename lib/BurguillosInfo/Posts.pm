@@ -32,7 +32,7 @@ sub new {
     return bless {}, shift;
 }
 
-sub _ReturnCacheFilter($self, $filters = 1) {
+sub _ReturnCacheFilter ( $self, $filters = 1 ) {
     my %posts_by_category_filtered;
     my %posts_by_slug_filtered;
     my $iso8601      = DateTime::Format::ISO8601->new;
@@ -50,8 +50,8 @@ sub _ReturnCacheFilter($self, $filters = 1) {
                 }
             }
             $posts_by_slug_filtered{ $post->{slug} } = $post;
-            $posts_by_category_filtered{ $post->{category} } //= [];
-            push @{ $posts_by_category_filtered{ $post->{category} } }, $post;
+            $posts_by_category_filtered{ $category } //= [];
+            push @{ $posts_by_category_filtered{ $category } }, $post;
         }
     }
     return ( \%posts_by_category_filtered, \%posts_by_slug_filtered );
@@ -69,16 +69,19 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
       or die "Missing date at $post_file.";
     my $ogdesc = $dom->at(':root > ogdesc')->text
       or die "Missing ogdesc at $post_file";
-    my $category = $dom->at(':root > category')->text
-      or die "Missing category at $post_file.";
-    my $slug = $dom->at(':root > slug')->text
+    my @categories = $dom->find(':root > category')->map('text')->each;
+    my $slug       = $dom->at(':root > slug')->text
       or die "Missing slug at $post_file.";
     my $content_tag = $dom->at(':root > content')
       or die "Missing content at $post_file.";
-    for my $tag ($content_tag->children->each) {
-        $tag->content($tag->content =~ s/\n//gr);
+
+    for my $tag ( $content_tag->children->each ) {
+        $tag->content( $tag->content =~ s/\n//gr );
     }
-    my $content = $content_tag->content;
+    if ( !scalar @categories ) {
+        die 'Missing category';
+    }
+    my $content       = $content_tag->content;
     my $pinned_node   = $dom->at(':root > pinned');
     my $image_element = $dom->at(':root > img');
     my $image;
@@ -106,7 +109,8 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
         author               => $author,
         date                 => $date,
         ogdesc               => $ogdesc,
-        category             => $category,
+        categories           => [@categories],
+        category             => $categories[0],
         slug                 => $slug,
         content              => $content,
         attributes           => $attributes,
@@ -147,16 +151,18 @@ sub _GeneratePostCache ($self) {
         if ( !defined $post ) {
             next;
         }
-        my $category = $post->{category};
-        $cached_posts_by_category->{$category} //= [];
-        my $slug           = $post->{slug};
-        my $category_posts = $cached_posts_by_category->{$category};
-        $cached_posts_by_slug->{$slug} = $post;
-        push @$category_posts, $post;
+        my $categories = $post->{categories};
+        for my $category ($post->{categories}->@*) {
+            $cached_posts_by_category->{$category} //= [];
+            my $slug           = $post->{slug};
+            my $category_posts = $cached_posts_by_category->{$category};
+            $cached_posts_by_slug->{$slug} = $post;
+            push @$category_posts, $post;
+        }
     }
 }
 
-sub Retrieve($self, $filters = 1) {
+sub Retrieve ( $self, $filters = 1 ) {
     if ( defined $cached_posts_by_category && defined $cached_posts_by_slug ) {
         return $self->_ReturnCacheFilter($filters);
     }
@@ -189,7 +195,7 @@ sub RetrieveAllPostsForCategory ( $self, $category_name ) {
 
 sub comparePinned ( $self, $a, $b ) {
     my $cmp = $b->{pinned} <=> $a->{pinned};
-      if ( $cmp != 0 ) {
+    if ( $cmp != 0 ) {
         return $cmp;
     }
     return int( rand(3) ) - 1;
@@ -220,14 +226,14 @@ sub RetrieveDirectPostsForCategory ( $self, $category_name ) {
     return $self->shufflePostsIfRequired( $category, [@$posts] );
 }
 
-sub PreviewOg($self, $post, $isWhatsApp) {
+sub PreviewOg ( $self, $post, $isWhatsApp ) {
     my $title                = $post->{title};
     my $content              = $post->{content};
     my $image_file           = $post->{image};
     my $image_bottom_preview = $post->{image_bottom_preview};
     if ($isWhatsApp) {
-        return BurguillosInfo::Preview->WhatsappAlternativeGenerate( $title, $content, $image_file,
-            $image_bottom_preview );
+        return BurguillosInfo::Preview->WhatsappAlternativeGenerate( $title,
+            $content, $image_file, $image_bottom_preview );
     }
     return BurguillosInfo::Preview->Generate( $title, $content, $image_file,
         $image_bottom_preview );
