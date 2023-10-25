@@ -1,0 +1,13 @@
+<category>
+    <title>Tiendas de alimentación en Burguillos</title>
+    <img src="/img/alimentacion.webp"/>
+    <description>
+        <p>Este es un listado de las tiendas de alimentación en Burguillos con la información relevante para disfrutar de tu estancia en Burguillos.</p>
+
+        <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+    </description>
+    <parent>comercios</parent>
+    <priority>0</priority>
+    <menu_text>Tiendas de alimentación</menu_text>
+    <slug>tiendas-alimentacion</slug>
+</category>
