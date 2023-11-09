@@ -59,8 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
         executeAndroidExclusiveCode(Android)
     } 
     searchMobile = document.querySelector('nav.mobile-shortcuts div.search')
-    fakeSearchInput = searchMobile.querySelector('input')
-    addListenersSearch()
+    if (searchMobile !== null) {
+        fakeSearchInput = searchMobile.querySelector('input')
+        addListenersSearch()
+    }
 }, false);
 
 function fillFarmaciaGuardia() {
