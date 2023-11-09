@@ -8,7 +8,7 @@ $background-secondary: #635283;
 $color-secondary: #8eea6d;
 $accent-secondary: #fde68f;
 $primary-secondary: #590e11;
-$background_sidebar: white; //#F5F5DC;
+$background_sidebar: $background-page; //#F5F5DC;
 $color_sidebar: #dcdcf5;
 
 html {
@@ -532,6 +532,14 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        a {
+            &:nth-child(2n+1) {
+              margin-left: 0%;
+            }
+
+            width: 45%;
+            margin-left: 5%;
+        }
 
         div.image-container {
           margin-left: 2.5%;
@@ -553,7 +561,6 @@ body {
 
         a {
           min-height: 90%;
-          width: 100%;
           display: block;
           text-decoration: none;
           text-overflow: ellipsis;
@@ -594,7 +601,6 @@ body {
 
             padding: 5%;
             padding-top: 1%;
-            background: $color_div;
             color: $background_div;
             box-shadow: 8px 8px 1px 0px #8ddfd6;
             border: 3px solid black;

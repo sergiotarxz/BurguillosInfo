@@ -11,17 +11,21 @@
     $date_article->set_time_zone('Europe/Madrid');
             %><div class="article-up-part">
                 <p class="date"><%= ''.$date_article %></p><%
+    my $title = $post->{title};
+    if (length($title) > 50) {
+        $title = substr($title, 0, 47).'...'; 
+    }
     if (defined $post->{image}) {
         %><div class="image-container">
-                <img alt="Portada de <%=$post->{title}%>" src="<%=$post->{image}%>"/>
+                <img alt="Portada de <%=$title%>" src="<%=$post->{image}%>"/>
           </div><%
     }
             %></div><div class="article-down-part"><div>
-                <h3><%=$post->{title}%></h3><%
+                <h3><%=$title%></h3><%
     my $xml = Mojo::DOM->new($post->{content});
     my $text = $xml->all_text;
-    if (length($text) > 120) {
-        $text = substr($text, 0, 100).'...';
+    if (length($text) > 50) {
+        $text = substr($text, 0, 47).'...';
     }
                 %><p><%=$text%></p><p class="author">Escrito por <%=$post->{author}%></p>
             </div></div></article>
