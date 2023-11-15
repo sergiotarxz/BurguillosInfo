@@ -359,7 +359,8 @@ body {
       body div.page-contents div.description div.articles {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+        font-size: 0.7rem; }
         body div.page-contents div.description div.articles a {
           width: 45%;
           margin-left: 5%; }
@@ -399,8 +400,6 @@ body {
             border: 3px solid black; }
             body div.page-contents div.description div.articles a article p, body div.page-contents div.description div.articles a article h4, body div.page-contents div.description div.articles a article h3, body div.page-contents div.description div.articles a article h2 {
               margin: 0px; }
-            body div.page-contents div.description div.articles a article p {
-              font-size: 0.9rem; }
             body div.page-contents div.description div.articles a article div.article-up-part {
               height: 12em; }
             body div.page-contents div.description div.articles a article div.article-down-part {
