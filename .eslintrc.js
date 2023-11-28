@@ -10,7 +10,10 @@ module.exports = {
         sourceType: 'module',
         project: 'tsconfig.json'
     },
-    plugins: [ ],
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+    root: true,
     rules: {
         indent: ['error', 4, { SwitchCase: 1 }],
     },
