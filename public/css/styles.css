@@ -117,9 +117,15 @@ body {
     position: fixed;
     top: 80%;
     height: calc(20% - 6px);
-    width: calc(100% - 6px);
-    border: solid 3px black; }
+    width: calc(100% - 6px); }
     body div.carousel a {
+      position: fixed;
+      top: 80%;
+      border: solid 3px black;
+      width: calc(100%-6px);
+      height: calc(20% - 6px);
+      left: calc(100% + 3px);
+      transition: left 1s ease-in;
       font-size: 13px;
       background: #f2eb8c;
       color: blueviolet;
@@ -127,8 +133,11 @@ body {
       text-align: center;
       justify-content: space-between;
       align-items: center;
-      height: 100%;
       text-decoration: none; }
+      body div.carousel a.show {
+        left: calc(0% + 3px); }
+      body div.carousel a.remove {
+        left: calc(-100% - 3px); }
       body div.carousel a:hover, body div.carousel a:focus {
         background: blueviolet;
         color: #f2eb8c; }

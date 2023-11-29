@@ -8,6 +8,7 @@ export default class CarouselAd {
     private currentAdNumber: number | null = null 
     private ad: Ad | null = null
     private timeoutNumber: number | null = null
+    private firstAd = true
     private getCarousel(): HTMLElement {
         const carousel = document.querySelector('.carousel');
         if (carousel === null || !(carousel instanceof HTMLElement)) {
@@ -39,7 +40,9 @@ export default class CarouselAd {
                     this.loadOneAd()
                 } else {
                     const a = this.retrieveLinkCarousel()
-                    window.location.href = a.href
+                    if (a !== null) {
+                        window.location.href = a.href
+                    }
                 }
             })
 
@@ -69,24 +72,12 @@ export default class CarouselAd {
         pageContents.classList.add('no-carousel');
     }
 
-    private retrieveLinkCarousel(): HTMLAnchorElement {
+    private retrieveLinkCarousel(): HTMLAnchorElement | null{
         const carousel = this.getCarousel()
-        const maybeA = carousel.querySelector('a')
-        if (maybeA !== null) {
-            return maybeA
+        const a = carousel.querySelector('a')
+        if (a === null) {
+            return null 
         }
-        const a = document.createElement('a')
-        a.addEventListener('click', (event: MouseEvent) => {
-            event.preventDefault()
-        })
-        a.addEventListener('pointerdown', (event: MouseEvent) => {
-            event.preventDefault()
-        })
-        a.addEventListener('pointerup', (event: MouseEvent) => {
-            event.preventDefault()
-        })
-        carousel.innerHTML = ""
-        carousel.append(a)
         return a
     }
 
@@ -111,8 +102,18 @@ export default class CarouselAd {
                 this.noMoreAds();
                 return;
             }
-            const a = this.retrieveLinkCarousel()
-            a.innerHTML = ""
+            const aPrev = this.retrieveLinkCarousel()
+            const a = document.createElement('a')
+            a.addEventListener('click', (event: MouseEvent) => {
+                event.preventDefault()
+            })
+            a.addEventListener('pointerdown', (event: MouseEvent) => {
+                event.preventDefault()
+            })
+            a.addEventListener('pointerup', (event: MouseEvent) => {
+                event.preventDefault()
+            })
+
             const image = document.createElement('img')
             const text_container = document.createElement('div')
             const text = document.createElement('h4')
@@ -129,10 +130,26 @@ export default class CarouselAd {
             text_container.append(promoted)
             text_container.append(text)
             a.append(text_container)
+            if (this.firstAd) {
+                carousel.innerHTML = ''
+                this.firstAd = false
+            }
+            carousel.append(a)
+            window.setTimeout(() => {
+                a.classList.add('show')
+                if (aPrev !== null) {
+                    aPrev.classList.remove('show')
+                    aPrev.classList.add('remove')
+                    window.setTimeout(() => {
+                        aPrev.remove()
+                    }, 1000)
+                }
+            }, 10)
             this.timeoutNumber = window.setTimeout(() => {
                 this.loadOneAd()
             }, this.ad.seconds * 1000)
         } catch (e) {
+            console.error(e)
             this.timeoutNumber = window.setTimeout(() => {
                 this.loadOneAd()
             }, 1000)
