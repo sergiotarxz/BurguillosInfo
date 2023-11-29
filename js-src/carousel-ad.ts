@@ -154,7 +154,7 @@ export default class CarouselAd {
                         this.isLockedSwipe = false
                     }, 1000)
                 }
-            }, 10)
+            }, 200)
             this.timeoutNumber = window.setTimeout(() => {
                 this.loadOneAd()
             }, this.ad.seconds * 1000)
