@@ -146,14 +146,16 @@ export default class CarouselAd {
                 if (aPrev !== null) {
                     aPrev.classList.remove('show')
                     aPrev.classList.add('remove')
-                    window.setTimeout(() => {
-                        aPrev.remove()
-                        for (const a of allAnchors) {
-                            a.remove()
-                        }
-                        this.isLockedSwipe = false
-                    }, 1000)
                 }
+                window.setTimeout(() => {
+                    if (aPrev !== null) {
+                        aPrev.remove()
+                    }
+                    for (const a of allAnchors) {
+                        a.remove()
+                    }
+                    this.isLockedSwipe = false
+                }, 1000)
             }, 200)
             this.timeoutNumber = window.setTimeout(() => {
                 this.loadOneAd()
