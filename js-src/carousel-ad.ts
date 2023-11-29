@@ -9,6 +9,7 @@ export default class CarouselAd {
     private ad: Ad | null = null
     private timeoutNumber: number | null = null
     private firstAd = true
+    private isLockedSwipe: boolean = false
     private getCarousel(): HTMLElement {
         const carousel = document.querySelector('.carousel');
         if (carousel === null || !(carousel instanceof HTMLElement)) {
@@ -34,6 +35,9 @@ export default class CarouselAd {
                 end = event.pageX
                 console.log(end)
                 if (start - end > 100) {
+                    if (this.isLockedSwipe) {
+                        return
+                    }
                     if (this.timeoutNumber !== null) {
                         window.clearTimeout(this.timeoutNumber)
                     }
@@ -136,6 +140,7 @@ export default class CarouselAd {
                 this.firstAd = false
             }
             carousel.append(a)
+            this.isLockedSwipe = true
             window.setTimeout(() => {
                 a.classList.add('show')
                 if (aPrev !== null) {
@@ -146,6 +151,7 @@ export default class CarouselAd {
                         for (const a of allAnchors) {
                             a.remove()
                         }
+                        this.isLockedSwipe = false
                     }, 1000)
                 }
             }, 10)
