@@ -103,6 +103,7 @@ export default class CarouselAd {
                 return;
             }
             const aPrev = this.retrieveLinkCarousel()
+            const allAnchors = carousel.querySelectorAll('a')
             const a = document.createElement('a')
             a.addEventListener('click', (event: MouseEvent) => {
                 event.preventDefault()
@@ -142,6 +143,9 @@ export default class CarouselAd {
                     aPrev.classList.add('remove')
                     window.setTimeout(() => {
                         aPrev.remove()
+                        for (const a of allAnchors) {
+                            a.remove()
+                        }
                     }, 1000)
                 }
             }, 10)
