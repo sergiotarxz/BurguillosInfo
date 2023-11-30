@@ -9,6 +9,7 @@
     <attributes>
         <attribute>hamburguesas</attribute>
         <attribute>pizzerias</attribute>
+        <attribute>reparto-a-domicilio-comida</attribute>
     </attributes>
     <slug>hamburgueseria-la-ermita</slug>
     <content>
