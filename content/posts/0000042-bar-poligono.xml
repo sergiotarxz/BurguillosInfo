@@ -1,6 +1,6 @@
 <post>
     <author>Burguillos.info</author>
-    <date>2023-09-21T05:00+00:00</date>
+    <date>2023-09-21T09:11+00:00</date>
     <title>Carta y menú de Bar el Polígono.</title>
     <ogdesc>Carta y menú de Bar el Polígono.</ogdesc>
     <img src="/img/bar-poligono.webp" bottom-preview="600"/>
@@ -11,6 +11,7 @@
     </attributes>
     <slug>bar-poligono</slug>
     <content>
+        <h2 style="background: black; color: red;">Cerrado permanentemente.</h2>
         <img witdh="50%" alt="Puerta de la Bar el Poligono" style="border: solid 1px black" src="/img/bar-poligono.webp"/>
 
         <p>El bar el polígono es un negocio de nueva apertura localizado en Calle Tomás Alba Edison número 8 donde antes se encontraba el Bar el Chori II.</p>
