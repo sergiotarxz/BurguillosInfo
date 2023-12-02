@@ -27,400 +27,109 @@
     <a href="tel:+34621210460">621 210 460</a>.</p>
     <p>A continuación procedemos a dejar la carta para que podáis
     realizar el pedido que deseeis:</p>
-    <h2>Entrantes</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Ensaladilla</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Aliño de Pimientos</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Aliño de Pulpo</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Aliño de Huevas</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Huevas con Mayonesa</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Ensalada Mixta</td>
-        <td>-</td>
-        <td>-</td>
-        <td>4.00€</td>
-      </tr>
-      <tr>
-        <td>Ensalada Normal</td>
-        <td>-</td>
-        <td>-</td>
-        <td>3.00€</td>
-      </tr>
-    </table>
-    <h2>Aperitivos</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Papas Bravas</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Papas Alioli Calientes</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Papas Alioli Frías</td>
-        <td>2.50€</td>
-        <td>5.00€</td>
-        <td>10.00€</td>
-      </tr>
-      <tr>
-        <td>Croquetas de Jamón</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Croquetas de Cola de Toro</td>
-        <td>3.50€</td>
-        <td>7.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Nugget de Pollo</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Cachopo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>8.00€</td>
-      </tr>
-    </table>
-    <h2>En Temporada</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Cabrillas</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Caracoles</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-    </table>
-    <h2>Ibéricos</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Secreto</td>
-        <td>--</td>
-        <td>--</td>
-        <td>S-P</td>
-      </tr>
-      <tr>
-        <td>Lagrimitas</td>
-        <td>3.50€</td>
-        <td>7.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Lagarto</td>
-        <td>3.50€</td>
-        <td>7.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Tocinito</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-    </table>
-    <h2>Carnes</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Carne Asá</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Solomillo al Whisky</td>
-        <td>3.50€</td>
-        <td>8.00€</td>
-        <td>16.00€</td>
-      </tr>
-      <tr>
-        <td>Solomillo a la Pimienta</td>
-        <td>3.50€</td>
-        <td>8.00€</td>
-        <td>16.00€</td>
-      </tr>
-      <tr>
-        <td>Solomillo al Roquefort</td>
-        <td>3.50€</td>
-        <td>8.00€</td>
-        <td>16.00€</td>
-      </tr>
-      <tr>
-        <td>Churrasco de Pollo/Cerdo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>5.50€</td>
-      </tr>
-      <tr>
-        <td>Mini Serranito de Pollo/Cerdo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>3.00€</td>
-      </tr>
-      <tr>
-        <td>Serranito de Pollo/Cerdo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>5.00€</td>
-      </tr>
-      <tr>
-        <td>Pechuga de Pollo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>5.50€</td>
-      </tr>
-      <tr>
-        <td>Pinchito de Pollo/Cerdo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>3.00€</td>
-      </tr>
-      <tr>
-        <td>Brocheta de Solomillo</td>
-        <td>--</td>
-        <td>--</td>
-        <td>7.00€</td>
-      </tr>
-      <tr>
-        <td>Hamburguesa Simple</td>
-        <td>--</td>
-        <td>--</td>
-        <td>2.50€</td>
-      </tr>
-      <tr>
-        <td>Hamburguesa Completa</td>
-        <td>--</td>
-        <td>--</td>
-        <td>3.00€</td>
-      </tr>
-      <tr>
-        <td>Hamburguesa de Buey</td>
-        <td>--</td>
-        <td>--</td>
-        <td>5.00€</td>
-      </tr>
-    </table>
-    <h2>Montaditos</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Precio</th>
-      </tr>
-      <tr>
-        <td>Montadito de Pollo/Cerdo</td>
-        <td>2.50€</td>
-      </tr>
-      <tr>
-        <td>Mantecadito de Pollo/Cerdo</td>
-        <td>3.00€</td>
-      </tr>
-      <tr>
-        <td>Montadito de Gambas</td>
-        <td>3.00€</td>
-      </tr>
-    </table>
-    <h2>Cazuelitas</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Carne con tomate</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Carrillada Ibérica</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Atún Encebollado</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Bacalao con Tomate</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Espinacas</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-    </table>
-    <h2>Pescados</h2>
-    <table>
-      <tr>
-        <th></th>
-        <th>Tapa</th>
-        <th>1/2 Ración</th>
-        <th>Ración</th>
-      </tr>
-      <tr>
-        <td>Chipirón a la Plancha/Frito</td>
-        <td>3.50€</td>
-        <td>8.00€</td>
-        <td>16.00€</td>
-      </tr>
-      <tr>
-        <td>Calamares Fritos</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Choco Frito</td>
-        <td>3.50€</td>
-        <td>7.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Boquerones</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Acedias</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Puntillitas</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Adobo</td>
-        <td>3.00€</td>
-        <td>6.00€</td>
-        <td>12.00€</td>
-      </tr>
-      <tr>
-        <td>Brocheta de Gambas</td>
-        <td>3.00€</td>
-        <!-- Precio raro preguntar. -->
-        <td>8.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Pescado Variado</td>
-        <td>--</td>
-        <td>7.00€</td>
-        <td>14.00€</td>
-      </tr>
-      <tr>
-        <td>Pez Espada</td>
-        <td>--</td>
-        <td>--</td>
-        <td>8.00€</td>
-      </tr>
-      <tr>
-        <td>Merluza.</td>
-        <td>--</td>
-        <td>--</td>
-        <td>6.00€</td>
-      </tr>
-      <tr>
-        <td>Dorada.</td>
-        <td>--</td>
-        <td>--</td>
-        <td>6.00€</td>
-      </tr>
-    </table>
-    <h2>Postres</h2>
-    <ol>
-      <li>Arroz con leche 
-      <b>2.50€</b></li>
-      <li>Natillas 
-      <b>2.50€</b></li>
-      <li>Flan de Huevo 
-      <b>2.50€</b></li>
-      <li>Helados Nestle 
-      <b>3.00€</b></li>
-    </ol>
+    <details>
+	<summary><h2>Entrantes</h2></summary>
+	<ul>
+	    <li>Ensaladilla -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Aliño de Pimientos -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Aliño de Pulpo -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Aliño de Huevas -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Huevas con Mayonesa -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Ensalada Mixta -- Ración: <b>4.00€</b></li>
+	    <li>Ensalada Normal -- Ración: <b>3.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Aperitivos</h2></summary>
+	<ul>
+	    <li>Papas Bravas -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Papas Alioli Calientes -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Papas Alioli Frías -- Tapa: <b>2.50€</b> 1/2 Ración: <b>5.00€</b> Ración: <b>10.00€</b></li>
+	    <li>Croquetas de Jamón -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Croquetas de Cola de Toro -- Tapa: <b>3.50€</b> 1/2 Ración: <b>7.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Nugget de Pollo -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Cachopo -- Ración: <b>8.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>En Temporada</h2></summary>
+	<ul>
+	    <li>Cabrillas -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Caracoles -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Ibéricos</h2></summary>
+	<ul>
+	    <li>Secreto -- Ración: <b>S-P</b></li>
+	    <li>Lagrimitas -- Tapa: <b>3.50€</b> 1/2 Ración: <b>7.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Lagarto -- Tapa: <b>3.50€</b> 1/2 Ración: <b>7.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Tocinito -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Carnes</h2></summary>
+	<ul>
+	    <li>Carne Asá -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Solomillo al Whisky -- Tapa: <b>3.50€</b> 1/2 Ración: <b>8.00€</b> Ración: <b>16.00€</b></li>
+	    <li>Solomillo a la Pimienta -- Tapa: <b>3.50€</b> 1/2 Ración: <b>8.00€</b> Ración: <b>16.00€</b></li>
+	    <li>Solomillo al Roquefort -- Tapa: <b>3.50€</b> 1/2 Ración: <b>8.00€</b> Ración: <b>16.00€</b></li>
+	    <li>Churrasco de Pollo/Cerdo -- Ración: <b>5.50€</b></li>
+	    <li>Mini Serranito de Pollo/Cerdo -- Ración: <b>3.00€</b></li>
+	    <li>Serranito de Pollo/Cerdo -- Ración: <b>5.00€</b></li>
+	    <li>Pechuga de Pollo -- Ración: <b>5.50€</b></li>
+	    <li>Pinchito de Pollo/Cerdo -- Ración: <b>3.00€</b></li>
+	    <li>Brocheta de Solomillo -- Ración: <b>7.00€</b></li>
+	    <li>Hamburguesa Simple -- Ración: <b>2.50€</b></li>
+	    <li>Hamburguesa Completa -- Ración: <b>3.00€</b></li>
+	    <li>Hamburguesa de Buey -- Ración: <b>5.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Montaditos</h2></summary>
+	<ul>
+	    <li>Montadito de Pollo/Cerdo -- Precio: <b>2.50€</b></li>
+	    <li>Mantecadito de Pollo/Cerdo -- Precio: <b>3.00€</b></li>
+	    <li>Montadito de Gambas -- Precio: <b>3.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Cazuelitas</h2></summary>
+	<ul>
+	    <li>Carne con tomate -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Carrillada Ibérica -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Atún Encebollado -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Bacalao con Tomate -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Espinacas -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	</ul>
+    </details>
+    <details>
+	<summary><h2>Pescados</h2></summary>
+	<ul>
+	    <li>Chipirón a la Plancha/Frito -- Tapa: <b>3.50€</b> 1/2 Ración: <b>8.00€</b> Ración: <b>16.00€</b></li>
+	    <li>Calamares Fritos -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Choco Frito -- Tapa: <b>3.50€</b> 1/2 Ración: <b>7.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Boquerones -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Acedias -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Puntillitas -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Adobo -- Tapa: <b>3.00€</b> 1/2 Ración: <b>6.00€</b> Ración: <b>12.00€</b></li>
+	    <li>Brocheta de Gambas -- Tapa: <b>3.00€</b> 1/2 Ración: <b>8.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Pescado Variado -- 1/2 Ración: <b>7.00€</b> Ración: <b>14.00€</b></li>
+	    <li>Pez Espada -- Ración: <b>8.00€</b></li>
+	    <li>Merluza -- Ración: <b>6.00€</b></li>
+	    <li>Dorada -- Ración: <b>6.00€</b></li>
+	</ul>
+    </details>
+
+    <details>
+        <summary><h2>Postres</h2></summary>
+	<ol>
+	  <li>Arroz con leche <b>2.50€</b></li>
+	  <li>Natillas <b>2.50€</b></li>
+	  <li>Flan de Huevo <b>2.50€</b></li>
+	  <li>Helados Nestle <b>3.00€</b></li>
+	</ol>
+    </details>
     <p>Por último desde Burguillos.info os indicamos que el precio
     por el servicio de pan y picos por comensal es de 0.50€ y que
     tenéis la posibilidad de pedir un extra en salsas por
