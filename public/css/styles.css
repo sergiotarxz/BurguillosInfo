@@ -143,9 +143,10 @@ body {
       body div.carousel a:hover, body div.carousel a:focus {
         background: blueviolet;
         color: #f2eb8c; }
-    body div.carousel div.promoted-tag, body div.carousel h3 {
-      margin: 0;
-      margin-right: 5px; }
+      body div.carousel a p {
+        margin-bottom: 1px; }
+      body div.carousel a h4 {
+        margin: 0; }
     body div.carousel img {
       margin: 10px;
       height: calc(100% - 20px);

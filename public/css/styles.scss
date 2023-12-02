@@ -210,11 +210,12 @@ body {
         background: $background_div;
         color: $color_div;
       }
-    }
-
-    div.promoted-tag, h3 {
-      margin: 0;
-      margin-right: 5px;
+      p {
+	margin-bottom: 1px;
+      }
+      h4 {
+	margin: 0;
+      }
     }
 
     img {
