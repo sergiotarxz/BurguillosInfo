@@ -1,0 +1,14 @@
+<category>
+    <title>Dentistas en Burguillos.</title>
+    <description>
+            <p>Te traemos una lista de dentistas en Burguillos para que puedas cuidar de la salud y estética de tu boca con los mejores profesionales.</p>
+            <p>¿Quieres que tu comercio aparezca aquí? Contacta con <a href="mailto:contact@owlcode.tech">contact@owlcode.tech</a></p>
+
+            <p><a rel="noreferrer nofollow" href="https://www.freepik.es/vector-gratis/mujer-dentista-examinando-dientes-paciente-sobre-fondo-blanco_24553482.htm">Imagen de preview cortesía de Brgfx</a>.</p>
+    </description>
+    <priority>2</priority>
+    <img src="/img/dentista.webp" bottom-preview="530"/>
+    <menu_text>Dentistas</menu_text>
+    <slug>dentistas</slug>
+    <parent>comercios</parent>
+</category>
