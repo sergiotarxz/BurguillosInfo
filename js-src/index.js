@@ -126,6 +126,9 @@ function addListenersSearch() {
 	    openAllDetails()
 	}
     });
+    window.addEventListener("blur", (e) => {
+	openAllDetails()
+    })
     if (nextResult !== null && prevResult !== null) {
         nextResult.addEventListener('click', () => {
             searchInWebsite(fakeSearchInput.value, true);
