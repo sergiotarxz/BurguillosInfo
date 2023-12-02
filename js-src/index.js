@@ -121,6 +121,11 @@ function addListenersSearch() {
     }
     const nextResult = searchInPage.querySelector('a.down');
     const prevResult = searchInPage.querySelector('a.up');
+    window.addEventListener("keydown", (e) => {
+	if (e.key.toLowerCase() === "f" && e.ctrlKey) {
+	    openAllDetails()
+	}
+    });
     if (nextResult !== null && prevResult !== null) {
         nextResult.addEventListener('click', () => {
             searchInWebsite(fakeSearchInput.value, true);
@@ -149,6 +154,7 @@ function addListenersSearch() {
 function searchInWebsite(value, isToBottom) {
     window.find(value, false, !isToBottom, true)
     const selection = window.getSelection()
+    openAllDetails()
     if (selection.anchorNode === null) {
         const pageContents = document.querySelector('div.page-contents'); 
         pageContents.focus()
@@ -165,6 +171,12 @@ function searchInWebsite(value, isToBottom) {
         const pageContents = document.querySelector('div.page-contents'); 
         const offsetTop = _getOffsetTopWithNParent(anchorNode, pageContents);
         pageContents.scroll(0, offsetTop - 150)
+    }
+}
+
+function openAllDetails() {
+    for (const detail of document.querySelectorAll('details')) {
+        detail.open = true
     }
 }
 

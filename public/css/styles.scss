@@ -17,6 +17,11 @@ html {
 }
 
 body {
+  summary {
+    h2, h3, h4, h5 {
+        display: inline;
+    }
+  }
   span.round-center {
     background: $background_div;
     color: $background_sidebar;

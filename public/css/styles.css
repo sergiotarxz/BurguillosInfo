@@ -9,6 +9,8 @@ body {
   min-height: 100%;
   width: 100%;
   height: 100%; }
+  body summary h2, body summary h3, body summary h4, body summary h5 {
+    display: inline; }
   body span.round-center {
     background: blueviolet;
     color: #FEFEFA;
