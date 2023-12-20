@@ -11,6 +11,10 @@ body {
   height: 100%; }
   body summary h2, body summary h3, body summary h4, body summary h5 {
     display: inline; }
+  body div.page-contents div.footer p.attribution {
+    font-size: 0.8em; }
+    body div.page-contents div.footer p.attribution a {
+      font-size: 0.8em; }
   body span.round-center {
     background: blueviolet;
     color: #FEFEFA;

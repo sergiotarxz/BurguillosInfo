@@ -94,6 +94,8 @@
                     <a class="suscribe-category-rss" href="/all.rss">
                          <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
                     </a>
+                    <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/portrait-happy-european-woman-has-broad-smile-closes-eyes-feels-excitement-being-high-spirit_10583645.htm">Imagen Sonrisa Anuncio Burguillos Dental por Wayhomestudio</a>.</p>
+                    <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/dentists-treat-patients-teeth_6170497.htm">Imagen Tratamiento Dental Burguillos Dental por Jcomp</a>.</p>
                 </div>
             </div>
 %= include 'ads/_carousel'

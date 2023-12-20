@@ -10,6 +10,7 @@ $accent-secondary: #fde68f;
 $primary-secondary: #590e11;
 $background_sidebar: $background-page; //#F5F5DC;
 $color_sidebar: #dcdcf5;
+$attribution_font_size: 0.8em;
 
 html {
   height: 100%;
@@ -20,6 +21,12 @@ body {
   summary {
     h2, h3, h4, h5 {
         display: inline;
+    }
+  }
+  div.page-contents div.footer p.attribution {
+    font-size: $attribution_font_size;
+    a {
+        font-size: $attribution_font_size;
     }
   }
   span.round-center {
