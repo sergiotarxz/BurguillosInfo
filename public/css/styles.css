@@ -79,9 +79,10 @@ body {
     margin-right: 10px;
     display: flex; }
     body div.search a.search-icon {
-      height: calc(100% - 28px);
+      height: calc(100% - 40px);
       align-self: center;
-      margin: 7px;
+      margin: 20px;
+      margin-left: 7px;
       display: flex;
       background: aliceblue;
       align-items: center;
@@ -210,7 +211,7 @@ body {
     left: 0;
     width: 100%;
     opacity: 40%;
-    top: 60px;
+    top: 80px;
     height: calc(100% - 60px);
     z-index: 250;
     display: none; }
@@ -220,8 +221,8 @@ body {
     visibility: hidden;
     position: fixed;
     left: 100%;
-    width: 70%;
-    top: 60px;
+    width: Min(70%, 600px);
+    top: 80px;
     height: calc(100% - 60px);
     z-index: 500;
     transition: left 0.5s ease-in, visibility 0.5s ease-in;
@@ -268,12 +269,12 @@ body {
     body a.menu-expand:hover .open-menu-icon, body a.menu-expand:focus .open-menu-icon, body a.menu-expand.active .open-menu-icon {
       display: none; }
   body nav > a.menu-expand > img {
-    width: 30px;
-    height: 30px; }
-  body nav > a > img.index-image-menu {
-    vertical-align: middle;
     width: 40px;
     height: 40px; }
+  body nav > a > img.index-image-menu {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px; }
   body nav > a > img.index-image-menu, body div.burguillos-logo-container > img {
     transition-property: transform;
     transition-duration: 2s;
@@ -317,24 +318,38 @@ body {
     align-items: center;
     width: 100%;
     background: blueviolet;
-    height: 60px;
+    height: 80px;
+    justify-content: start;
+    flex-direction: row;
     top: 0%; }
     body nav.mobile-shortcuts a {
       height: 100%;
-      width: 16.6666666667%;
+      width: 80px;
       padding-left: 0;
       padding-top: 0;
       padding-right: 0;
       padding-bottom: 0; }
+    body nav.mobile-shortcuts a.go-to-index {
+      position: absolute;
+      left: 0;
+      top: 0; }
     body nav.mobile-shortcuts div.search {
-      width: calc(100% * 4 / 6 - 20px);
+      position: absolute;
+      left: 80px;
+      top: 10%;
+      width: Min(calc(100% - 90px * 2), 500px);
       height: 80%;
       border-radius: 10px; }
+    body nav.mobile-shortcuts a.menu-expand {
+      position: absolute;
+      left: Min(calc(100% - 80px), 600px);
+      top: 0;
+      align-self: end; }
   body div.page-contents {
     background: #FEFEFA;
     position: fixed;
-    top: 60px;
-    height: calc(80% - 60px);
+    top: 80px;
+    height: calc(80% - 80px);
     width: 100%;
     overflow-y: scroll; }
     body div.page-contents div.child-categories-mobile a {
@@ -507,37 +522,11 @@ body {
   body div.page-contents img {
     max-width: 694px; } }
 
-@media (min-width: 1100px) {
-  body nav.mobile-foldable, body nav.mobile-foldable.show {
-    display: none; }
-  body nav.mobile-shortcuts {
-    display: none; }
-  body div.search-in-page.active {
-    display: none; }
-  body div.page-contents {
-    top: 0%;
-    left: 5%;
-    height: 80%;
-    width: 90%;
-    border: solid 1px black; }
-    body div.page-contents div.description.open-browser-container {
-      margin-left: 0;
-      margin-right: 0; }
-    body div.page-contents div.description {
-      margin-left: 10%;
-      margin-right: 10%; }
-    body div.page-contents nav.desktop {
-      display: block;
-      height: auto;
-      height: 60px; }
-      body div.page-contents nav.desktop a {
-        display: table-cell;
-        height: 60px; }
-        body div.page-contents nav.desktop a img.index-image-menu {
-          height: 40px;
-          width: 40px; }
-  body div.page-contents.no-carousel {
-    height: 100%; } }
+@media (min-width: 700px) {
+  body nav.mobile-foldable {
+    left: -100%; }
+  body nav.mobile-foldable.show {
+    left: 0; } }
 
 @media (min-width: 1333px) {
   body div.page-contents div.description div.articles a {
@@ -546,6 +535,24 @@ body {
     body div.page-contents div.description div.articles a:nth-child(2n+1) {
       margin-left: 3%; }
     body div.page-contents div.description div.articles a:nth-child(3n+1) {
+      margin-left: 0%; } }
+
+@media (min-width: 848px) {
+  body div.page-contents div.description div.articles a {
+    width: 30%;
+    margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+      margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+      margin-left: 0%; } }
+
+@media (min-width: 1333px) {
+  body div.page-contents div.description div.articles a {
+    width: 22%;
+    margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+      margin-left: 3%; }
+    body div.page-contents div.description div.articles a:nth-child(4n+1) {
       margin-left: 0%; } }
 
 @media (max-width: 200px) {

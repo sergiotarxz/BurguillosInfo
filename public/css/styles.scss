@@ -120,9 +120,10 @@ body {
     display: flex;
 
     a.search-icon {
-      height: calc(100% - 28px);
+      height: calc(100% - 40px);
       align-self: center;
-      margin: 7px;
+      margin: 20px;
+      margin-left: 7px;
       display: flex;
       background: aliceblue;
       align-items: center;
@@ -311,7 +312,7 @@ body {
     left: 0;
     width: 100%;
     opacity: 40%;
-    top: 60px;
+    top: 80px;
     height: calc(100% - 60px);
     z-index: 250;
     display: none;
@@ -325,8 +326,8 @@ body {
     visibility: hidden;
     position: fixed;
     left: 100%;
-    width: 70%;
-    top: 60px;
+    width: Min(70%, 600px);
+    top: 80px;
     height: calc(100% - 60px);
     z-index: 500;
     transition: left 0.5s ease-in, visibility 0.5s ease-in;
@@ -401,14 +402,14 @@ body {
   }
 
   nav > a.menu-expand > img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   nav > a > img.index-image-menu {
     vertical-align: middle;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
 
   nav > a > img.index-image-menu, div.burguillos-logo-container > img {
@@ -468,30 +469,48 @@ body {
     align-items: center;
     width: 100%;
     background: $background_div;
-    height: 60px;
+    height: 80px;
+    justify-content: start;
+    flex-direction: row;
     top: 0%;
 
     a {
       height: 100%;
-      width: (100% / 6);
+      width: 80px;
       padding-left: 0;
       padding-top: 0;
       padding-right: 0;
       padding-bottom: 0;
     }
 
+    a.go-to-index {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
     div.search {
-      width: calc(100% * 4 / 6 - 20px);
+      position: absolute;
+      left: 80px;
+      top: 10%;
+      width: Min(calc(100% - 90px * 2), 500px);
       height: 80%;
       border-radius: 10px;
+    }
+
+    a.menu-expand {
+        position: absolute;
+        left: Min(calc(100% - 80px), 600px);
+        top: 0;
+        align-self: end;
     }
   }
 
   div.page-contents {
     background: $background-page;
     position: fixed;
-    top: 60px;
-    height: calc(80% - 60px);
+    top: 80px;
+    height: calc(80% - 80px);
     width: 100%;
     overflow-y: scroll;
 
@@ -781,57 +800,14 @@ body {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 700px) {
   body {
-    nav.mobile-foldable, nav.mobile-foldable.show {
-      display: none;
-    }
-
-    nav.mobile-shortcuts {
-      display: none;
-    }
-
-    div.search-in-page.active {
-      display: none;
-    }
-
-    div.page-contents {
-      div.description.open-browser-container {
-        margin-left: 0;
-        margin-right: 0;
+      nav.mobile-foldable {
+        left: -100%;
       }
-
-      div.description {
-        margin-left: 10%;
-        margin-right: 10%;
+      nav.mobile-foldable.show {
+        left: 0;
       }
-
-      nav.desktop {
-        display: block;
-        height: auto;
-        height: 60px;
-
-        a {
-          display: table-cell;
-          height: 60px;
-
-          img.index-image-menu {
-            height: 40px;
-            width: 40px;
-          }
-        }
-      }
-
-      top: 0%;
-      left: 5%;
-      height: 80%;
-      width: 90%;
-      border: solid 1px black;
-    }
-
-    div.page-contents.no-carousel {
-      height: 100%;
-    }
   }
 }
 
@@ -858,6 +834,51 @@ body {
   }
 }
 
+@media (min-width: 848px) {
+  body {
+    div.page-contents {
+      div.description {
+        div.articles {
+          a {
+            &:nth-child(2n+1) {
+              margin-left: 3%;
+            }
+
+            &:nth-child(3n+1) {
+              margin-left: 0%;
+            }
+
+            width: 30%;
+            margin-left: 3%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1333px) {
+  body {
+    div.page-contents {
+      div.description {
+        div.articles {
+          a {
+            &:nth-child(3n+1) {
+              margin-left: 3%;
+            }
+
+            &:nth-child(4n+1) {
+              margin-left: 0%;
+            }
+
+            width: 22%;
+            margin-left: 3%;
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 200px) {
   body {
     font-size: 20px;
