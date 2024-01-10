@@ -328,7 +328,7 @@ body {
     left: 100%;
     width: Min(70%, 600px);
     top: 80px;
-    height: calc(100% - 60px);
+    height: calc(100% - 80px);
     z-index: 500;
     transition: left 0.5s ease-in, visibility 0.5s ease-in;
     background: $background_sidebar;
