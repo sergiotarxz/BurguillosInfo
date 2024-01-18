@@ -13,6 +13,8 @@
     </attributes>
     <slug>hamburgueseria-la-ermita</slug>
     <content>
+
+        <h2 style="background: black; color: red;">Menú actualizado con nuevos precios y productos 2024-01-18</h2>
         <img width="50%" alt="Front door of 'Hamburguesería la Ermita'" style="border: solid 1px black;" src="/img/hamburgueseria-la-ermita.webp"/>
 
         <h2>Información de contacto para preparación de pedidos.</h2>
@@ -35,15 +37,15 @@
                 <li>Crujientes de pollo <b>3€ tapa</b>.</li>
                 <li>Lagrimitas <b>3€ tapa</b>.</li>
                 <li>Croquetas de jamón / queso azul y cebolla caramelizada / pizza <b>3€ tapa</b>.</li>
-                <li>Patatas alioli <b>2.50€ tapa 4€ plato</b>.</li>
-                <li>Ensaladilla <b>2.50€ tapa 4€ plato</b>.</li>
+                <li>Patatas alioli <b>3€ tapa 5.50€ plato</b>.</li>
+                <li>Ensaladilla <b>3€ tapa 5.50€ plato</b>.</li>
             </ul>
         </details>
 
         <details>
             <summary><h3>Pizzas.</h3></summary>
 
-            <p>Todas las pizzas vienen con 2 ingredientes incluidos en el precio, por 0.60€ puedes añadir un ingrediente extra por 0.60€ o una salsa extra por 0.30€.</p>
+            <p>Todas las pizzas vienen con 2 ingredientes incluidos en el precio, por 0.60€ puedes añadir un ingrediente extra por 0.70€ o una salsa extra por 0.50€.</p>
 
             <p>Tienes la posibilidad de pedir una pizza mediana nutella por 5.50€ desde Burguillos.info suponemos que no se permiten
             otros ingredientes para evitar aberraciones gastronómicas.</p>
@@ -51,8 +53,8 @@
             <h4>Tamaño de pizza.</h4>
 
             <ul>
-                <li>Mediana <b>5.50€</b>.</li>
-                <li>Grande <b>9.00€</b>.</li>
+                <li>Mediana <b>5.90€</b>.</li>
+                <li>Grande <b>9.50€</b>.</li>
             </ul>
 
             <h4>Ingredientes disponibles.</h4>
@@ -91,17 +93,17 @@
 
             <ul>
                 <li>Refresco <b>1.50€</b></li>
-                <li>Cerveza de barril <b>1.30€</b></li>
+                <li>Cerveza de barril <b>1.40€</b></li>
                 <li>Tercio <b>1.50€</b></li>
                 <li>Tinto <b>1.50€</b></li>
                 <li>Radler <b>1.50€</b></li>
-                <li>Cerveza sin alcohol botellín <b>1.20€</b></li>
+                <li>Cerveza sin alcohol botellín <b>1.30€</b></li>
                 <li>Litro <b>3.00€</b></li>
-                <li>Agua pequeña <b>0.80€</b></li>
-                <li>Agua grande <b>1.20€</b></li>
-                <li>Zumo <b>1.00€</b></li>
+                <li>Agua pequeña <b>1.00€</b></li>
+                <li>Agua grande <b>1.50€</b></li>
+                <li>Zumo <b>1.20€</b></li>
                 <li>Café e infusión <b>1.20€</b></li>
-                <li>Combinado <b>4.50€</b></li>
+                <li>Combinado <b>5.00€</b></li>
             </ul>
         </details>
 
@@ -109,12 +111,11 @@
             <summary><h3>Helados.</h3></summary>
 
             <ul>
-                <li>Sandy <b>2.20€</b></li>
-                <li>Mini Sandy <b>1.50€</b></li>
-                <li>Mix Sandy <b>3.20€</b></li>
-                <li>Mini Mix Sandy <b>2.50€</b></li>
-                <li>Batido pequeño <b>2.50€</b></li>
-                <li>Batido grande <b>3.20€</b></li>
+                <li>Sandy <b>2.30€</b></li>
+                <li>Mix Sandy <b>3.30€</b></li>
+                <li>Mini Mix Sandy <b>2.60€</b></li>
+                <li>Batido pequeño <b>2.60€</b></li>
+                <li>Batido grande <b>3.30€</b></li>
             </ul>
         </details>
 
@@ -122,14 +123,14 @@
             <summary><h3>Bocadillos.</h3></summary>
 
             <ul>
-                <li>Tortilla <b>3.00€</b></li>
-                <li>Cochinito <b>3.00€</b></li>
-                <li>Lomo adobado <b>3.00€</b></li>
-                <li>Bacon y queso <b>3.00€</b></li>
-                <li>Atún y pimiento <b>3.00€</b></li>
-                <li>Carne mechada y chimichurri <b>3.50€</b></li>
-                <li>Filete de lomo, mayonesa y lechuga <b>3.50€</b></li>
-                <li>Serranito de pollo o cerdo <b>4.50€</b></li>
+                <li>Tortilla <b>3.50€</b></li>
+                <li>Cochinito <b>3.20€</b></li>
+                <li>Lomo adobado <b>3.20€</b></li>
+                <li>Bacon y queso <b>3.20€</b></li>
+                <li>Atún y pimiento <b>3.20€</b></li>
+                <li>Carne mechada y chimichurri <b>3.70€</b></li>
+                <li>Filete de lomo, mayonesa y lechuga <b>3.90€</b></li>
+                <li>Serranito de pollo o cerdo <b>4.90€</b></li>
             </ul>
         </details>
 
@@ -137,11 +138,11 @@
             <summary><h3>Montaditos.</h3></summary>
 
             <ul>
-                <li>Gambas alioli <b>2.50€</b></li>
-                <li>Melva con pimiento <b>2.50€</b></li>
-                <li>Carne mechada con chimichurri <b>2.50€</b></li>
-                <li>Solomillo (Whisky, roquefort o pimienta) <b>2.50€</b></li>
-                <li>Pollo o lomo <b>2.50€</b></li>
+                <li>Gambas alioli <b>3.00€</b></li>
+                <li>Melva con pimiento <b>3.00€</b></li>
+                <li>Carne mechada con chimichurri <b>3.00€</b></li>
+                <li>Solomillo (Whisky, roquefort o pimienta) <b>3.00€</b></li>
+                <li>Pollo o lomo <b>3.00€</b></li>
             </ul>
         </details>
 
@@ -149,8 +150,8 @@
             <summary><h3>Perritos.</h3></summary>
 
             <ul>
-                <li>Simple (Salchicha + salsa) <b>2.00€</b></li>
-                <li>Completo (Salchicha, cebolla frita, zanahoria, patatas paja y salsa) <b>2.50€</b></li>
+                <li>Simple (Salchicha + salsa) <b>2.20€</b></li>
+                <li>Completo (Salchicha, cebolla frita, zanahoria, patatas paja y salsa) <b>2.70€</b></li>
             </ul>
         </details>
 
@@ -158,8 +159,8 @@
             <summary><h3>Carnes.</h3></summary>
             
             <ul>
-                <li>Pechuga y patatas <b>5.00€ plato</b>.</li>
-                <li>Solomillo (Whisky, roquefort o pimienta) <b>3.00€ tapa 5.00€ plato</b>.</li>
+                <li>Pechuga y patatas <b>5.90€ plato</b>.</li>
+                <li>Solomillo (Whisky, roquefort o pimienta) <b>3.00€ tapa 5.90€ plato</b>.</li>
             </ul>
         </details>
 
@@ -182,7 +183,6 @@
                 <li>Pequeñas <b>1.00€</b></li>
                 <li>Grandes <b>1.50€</b></li>
                 <li>Gajo <b>grande 1.50€</b></li>
-                <li>Cris Criss - Cross <b>grande 2.00€</b></li>
             </ul>
         </details>
 
@@ -192,25 +192,25 @@
             <p>Puedes solicitar un extra en salsa por 0.50€.</p>
 
             <ul>
-                <li>Solo carne <b>1.50€</b>.</li>
-                <li>Solo queso <b>2.00€</b>.</li>
-                <li>BBQ (Carne, salsa barbacoa, queso y pepinillo) <b>2.50€</b>.</li>
-                <li>Texas (Carne, salsa barbacoa, queso y aros de cebolla) <b>2.50€</b>.</li>
-                <li>Cheedar simple (Carne, salsa cheedar, tomate, cebolla frita) <b>2.50€</b>.</li>
-                <li>Salad (Carne, mayonesa, lechuga y tomate) <b>2.50€</b>.</li>
-                <li>Porky (Carne cerdo, bacon, salsa bacon, queso, tomate, cebolla frita) + patatas <b>6.50€</b>.</li>
-                <li>Roquefort (Carne mixta, salsa roquefort, lechuga, tomate, queso granapadano, bacon y cebolla frita) + patatas <b>6.50€</b>.</li>
-                <li>Campera (Pollo campero, mayonesa, lechuga, tomate, queso y bacon) + patatas <b>6.50€</b>.</li>
-                <li>Miel y mostaza (Carne mixta, rúcula, tomate, cebolla caramelizada, queso gouda, bacon, salsa miel y mostaza) + patatas <b>6.50€</b>.</li>
-                <li>Boletus (Carne mixta, queso gouda, bacon, champiñones y salsa boletus) + patatas <b>6.50€</b>.</li>
-                <li>La Ermita (Carne retinto, salsa barbacoa especial, tomate, cebolla frita, rulo de cabra y bacon) + patatas <b>7.50€</b>.</li>
-                <li>Cabrales (Carne mixta, salsa cabrales, gouda, bacon, lechuga, tomate y queso) + patatas <b>6.50€</b>.</li>
-                <li>Cheedar (Carne mixta o pollo empanado, salsa cheedar, cebolla frita, tomate, queso y bacon) + patatas <b>6.50€</b>.</li>
-                <li>Completa (Carne mixta, mayonesa, lechuga, cebolla frita, tomate, pepinillo y cebolla) + patatas <b>6.50€</b>.</li>
-                <li>Huevo (Carne mixta, mayonesa, lechuga, cebolla frita, tomate, queso, huevo y bacon) + patatas <b>6.50€</b>.</li>
-                <li>Steak (Carne mixta, mayonesa, lechuga, tomate, queso, bacon y salsa bbq) + patatas <b>6.50€</b>.</li>
-                <li>Cheese bacon (Carne mixta, queso, bacon, pepinillo, ketchup, mostaza y cebolla) + patatas <b>6.50€</b>.</li>
-                <li>Romana (Carne mixta, salsa bbq, lechuga, tomate, queso y aros de cebolla) + patatas <b>6.50€</b>.</li>
+                <li>Solo carne <b>1.80€</b>.</li>
+                <li>Solo queso <b>2.30€</b>.</li>
+                <li>BBQ (Carne, salsa barbacoa, queso y pepinillo) <b>2.90€</b>.</li>
+                <li>Texas (Carne, salsa barbacoa, queso y aros de cebolla) <b>2.90€</b>.</li>
+                <li>Cheedar simple (Carne, salsa cheedar, tomate, cebolla frita) <b>2.90€</b>.</li>
+                <li>Salad (Carne, mayonesa, lechuga y tomate) <b>2.90€</b>.</li>
+                <li>Porky (Carne cerdo, bacon, salsa bacon, queso, tomate, cebolla frita) + patatas <b>6.90€</b>.</li>
+                <li>Roquefort (Carne mixta, salsa roquefort, lechuga, tomate, queso granapadano, bacon y cebolla frita) + patatas <b>6.90€</b>.</li>
+                <li>Campera (Pollo campero, mayonesa, lechuga, tomate, queso y bacon) + patatas <b>6.90€</b>.</li>
+                <li>Miel y mostaza (Carne mixta, rúcula, tomate, cebolla caramelizada, queso gouda, bacon, salsa miel y mostaza) + patatas <b>6.90€</b>.</li>
+                <li>Boletus (Carne mixta, queso gouda, bacon, champiñones y salsa boletus) + patatas <b>6.90€</b>.</li>
+                <li>La Ermita (Carne retinto, salsa barbacoa especial, tomate, cebolla frita, rulo de cabra y bacon) + patatas <b>7.90€</b>.</li>
+                <li>Cabrales (Carne mixta, salsa cabrales, gouda, bacon, lechuga, tomate y queso) + patatas <b>6.90€</b>.</li>
+                <li>Cheedar (Carne mixta o pollo empanado, salsa cheedar, cebolla frita, tomate, queso y bacon) + patatas <b>6.90€</b>.</li>
+                <li>Completa (Carne mixta, mayonesa, lechuga, cebolla frita, tomate, pepinillo y cebolla) + patatas <b>6.90€</b>.</li>
+                <li>Huevo (Carne mixta, mayonesa, lechuga, cebolla frita, tomate, queso, huevo y bacon) + patatas <b>6.90€</b>.</li>
+                <li>Steak (Carne mixta, mayonesa, lechuga, tomate, queso, bacon y salsa bbq) + patatas <b>6.90€</b>.</li>
+                <li>Cheese bacon (Carne mixta, queso, bacon, pepinillo, ketchup, mostaza y cebolla) + patatas <b>6.90€</b>.</li>
+                <li>Romana (Carne mixta, salsa bbq, lechuga, tomate, queso y aros de cebolla) + patatas <b>6.90€</b>.</li>
             </ul>
         </details>
 
