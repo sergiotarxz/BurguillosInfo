@@ -47,17 +47,20 @@ sub get_next ( $self, $current_ad_number = undef ) {
     if ( !defined $current_ad_number ) {
         $current_ad_number = 0;
     }
-    my $ad = $self->get_rand_ad($array)->clone;
+    my $ad;
+    while (!defined $ad || $ad->id eq $current_ad_number) {
+        $ad = $self->get_rand_ad($array)->clone;
+    }
     return {
         ad                => $ad->serialize,
         continue          => 1,
-        current_ad_number => $self->_get_next_number($current_ad_number),
+        current_ad_number => $ad->id,
     };
 }
 
 sub get_rand_ad($self, $array) {
     my $valid_ads = [ grep { $_->is_active } @$array ];
-    my $max_weight = $self->sum_weights($array);
+    my $max_weight = $self->sum_weights($valid_ads);
     my $rand = int(rand() * $max_weight);
     my $sum_weight = 0;
     for my $ad (@$valid_ads) {

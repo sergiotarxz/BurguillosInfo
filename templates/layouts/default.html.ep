@@ -89,6 +89,9 @@
                 </div>
                 <hr/>
                 <div class="footer description">
+                    <div style="width: 100%; height: 400px">
+                        <converse-root></converse-root>
+                    </div>
                     <p>©2022-2023 Sergio Iglesias</p>
                     <p>Enterate de todas las novedades de Burguillos.info:</p>
                     <a class="suscribe-category-rss" href="/all.rss">
@@ -101,4 +104,20 @@
 %= include 'ads/_carousel'
         </div>
     </div>
+    <script src="/js/converse.min.js"></script>
+    <link rel="stylesheet" href="/css/converse.min.css"/>
+    <script>
+        converse.initialize({
+                bosh_service_url: 'https://anon.burguillos.info:5281/http-bind',
+                debug: true,
+                discover_connection_methods: false,
+                show_controlbox_by_default: true,
+                authentication: 'anonymous',
+                auto_join_rooms: ['pueblo@burguillos.info'],
+                jid: 'anon.burguillos.info',
+                singleton: true,
+                view_mode: 'embedded',
+                auto_login: true,
+        });
+    </script>
 </html>
