@@ -88,17 +88,19 @@
                     <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
                 </div>
                 <hr/>
-                <div class="footer description">
+                <div class="footer">
                     <div style="width: 100%; height: 400px">
                         <converse-root></converse-root>
                     </div>
-                    <p>©2022-2023 Sergio Iglesias</p>
-                    <p>Enterate de todas las novedades de Burguillos.info:</p>
-                    <a class="suscribe-category-rss" href="/all.rss">
-                         <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-                    </a>
-                    <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/portrait-happy-european-woman-has-broad-smile-closes-eyes-feels-excitement-being-high-spirit_10583645.htm">Imagen Sonrisa Anuncio Burguillos Dental por Wayhomestudio</a>.</p>
-                    <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/dentists-treat-patients-teeth_6170497.htm">Imagen Tratamiento Dental Burguillos Dental por Jcomp</a>.</p>
+                    <div class="description">
+                        <p>©2022-2023 Sergio Iglesias</p>
+                        <p>Enterate de todas las novedades de Burguillos.info:</p>
+                        <a class="suscribe-category-rss" href="/all.rss">
+                             <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
+                        </a>
+                        <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/portrait-happy-european-woman-has-broad-smile-closes-eyes-feels-excitement-being-high-spirit_10583645.htm">Imagen Sonrisa Anuncio Burguillos Dental por Wayhomestudio</a>.</p>
+                        <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/dentists-treat-patients-teeth_6170497.htm">Imagen Tratamiento Dental Burguillos Dental por Jcomp</a>.</p>
+                    </div>
                 </div>
             </div>
 %= include 'ads/_carousel'
