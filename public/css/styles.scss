@@ -23,6 +23,14 @@ body {
         display: inline;
     }
   }
+  converse-muc-sidebar {
+      display: none !important;
+  }
+  div.converse-container {
+     width: 100%;
+     height: 400px;
+     margin-left: 0px;
+  }
   div.page-contents div.footer p.attribution {
     font-size: $attribution_font_size;
     a {
@@ -766,6 +774,19 @@ body {
       }
     }
   }
+}
+@media (min-width: 768px) {
+    body {
+        converse-muc-sidebar {
+            display: flex !important;
+            &.hidden {
+                display: none !important;
+            }
+        }
+        div.converse-container {
+         margin-left: 15px;
+        }
+    }
 }
 
 @media (min-width: 694px) {

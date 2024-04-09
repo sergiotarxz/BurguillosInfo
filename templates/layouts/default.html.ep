@@ -89,7 +89,7 @@
                 </div>
                 <hr/>
                 <div class="footer">
-                    <div style="width: 100%; height: 400px">
+                    <div class="converse-container">
                         <converse-root></converse-root>
                     </div>
                     <div class="description">
@@ -106,8 +106,8 @@
 %= include 'ads/_carousel'
         </div>
     </div>
-    <script src="/js/converse.min.js"></script>
-    <link rel="stylesheet" href="/css/converse.min.css"/>
+    <script src="/dist/converse.min.js"></script>
+    <link rel="stylesheet" href="/dist/converse.min.css"/>
     <script>
         converse.initialize({
                 bosh_service_url: 'https://anon.burguillos.info:5281/http-bind',
@@ -120,6 +120,7 @@
                 singleton: true,
                 view_mode: 'embedded',
                 auto_login: true,
+                show_desktop_notifications: false,
         });
     </script>
 </html>
