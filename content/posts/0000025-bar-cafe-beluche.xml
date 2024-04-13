@@ -31,7 +31,7 @@
             <ul>
                 <li>Mixta -- Precio: <b>6.00€</b></li>
                 <li>César -- Precio: <b>6.50€</b></li>
-                <li>Trópical -- Precio: <b>6.50€</b></li>
+                <li>Trópical -- Precio: <b>N/A</b></li>
             </ul>
         </details>
         <details>
@@ -72,11 +72,11 @@
         <details>
             <summary><h3>Rico rico</h3></summary>
             <ul>
-                <li>Pollo kentucky -- Precio plato: <b>3.50€</b></li>
+                <li>Pollo kentucky -- Precio tapa: <b>3.50€</b> Precio plato: <b>7.00€</b></li>
                 <li>Pollo mostaza -- Precio tapa: <b>4.50€</b> Precio plato: <b>8.50€</b></li>
                 <li>Huevos rotos -- Precio plato: <b>5.00€</b></li>
                 <li>Pan bao -- Precio tapa: <b>5.00€</b> Precio plato: <b>10.00€</b></li>
-                <li>Carrillada ibérica -- Precio tapa: <b>3.50€</b> Precio plato: <b>7.00€</b></li>
+                <li>Carrillada ibérica -- Precio tapa: <b>3.50€ (Preguntar, en menú real 8.50€)</b> Precio plato: <b>7.00€</b></li>
             </ul>
         </details>
         <details>
@@ -84,13 +84,14 @@
             <ul>
                 <li>Timbal de arroz con chipirones y alioli -- Tapa: <b>4.00€</b> Plato: <b>7.50€</b></li>
                 <li>Arroz negro -- Tapa: <b>4.50€</b> Plato: <b>8.50€</b></li>
-                <li>Bissotio cuatro quesos -- Tapa: <b>4.50€</b> Plato: <b>8.50€</b></li>
+                <li>Rissotto cuatro quesos -- Tapa: <b>4.50€</b> Plato: <b>8.50€</b></li>
             </ul>
         </details>
         <details>
             <summary><h3>Pescados</h3></summary>
             <ul>
                 <li>Gambas al ajillo -- Precio tapa: <b>4.50€</b> Precio plato: <b>8.00€</b></li>
+                <li>Gambas a la plancha -- Precio tapa: <b>5.00€</b> Precio plato: <b>10.00€</b></li>
                 <li>Flamenquín de melva -- Precio tapa: <b>3.50€</b> Precio plato: <b>7.00€</b></li>
                 <li>Chipirones -- Precio tapa: <b>4.00€</b> Precio plato: <b>7.50€</b></li>
                 <li>Choco -- Precio plato: <b>S/P</b></li>
@@ -122,7 +123,7 @@
                 <li>Montadito de pollo o lomo -- Precio plato: <b>3.00€</b></li>
                 <li>Montadito de solomillo y queso viejo -- Precio plato: <b>3.80€</b></li>
                 <li>Serranito -- Precio plato: <b>5.50€</b></li>
-                <li>Mini de pollo o lomo -- Precio plato: <b>4.00€</b></li>
+                <li>Mini serranito de pollo o lomo -- Precio plato: <b>4.00€</b></li>
             </ul>
         </details>
         <details>
