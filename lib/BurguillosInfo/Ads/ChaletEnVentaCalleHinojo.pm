@@ -6,6 +6,8 @@ use strict;
 use warnings;
 use utf8;
 
+use DateTime;
+
 use feature 'signatures';
 
 use Moo;
@@ -33,6 +35,9 @@ sub default_alternative($self) {
 }
 
 sub is_active ($self) {
+    if (DateTime->new(year => 2024, month => 6, day => 11) < DateTime->now()) {
+        return 0;
+    }
     return 1;
 }
 
