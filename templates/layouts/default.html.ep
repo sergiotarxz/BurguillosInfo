@@ -106,7 +106,7 @@
 %= include 'ads/_carousel'
         </div>
     </div>
-    <script src="/dist/converse.min.js"></script>
+    <script src="/dist/converse.js"></script>
     <link rel="stylesheet" href="/dist/converse.min.css"/>
     <script>
         converse.initialize({
