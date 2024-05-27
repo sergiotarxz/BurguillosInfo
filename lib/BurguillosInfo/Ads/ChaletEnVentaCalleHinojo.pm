@@ -35,7 +35,7 @@ sub default_alternative($self) {
 }
 
 sub is_active ($self) {
-    if (DateTime->new(year => 2024, month => 6, day => 11) < DateTime->now()) {
+    if (DateTime->new(year => 2024, month => 8, day => 11) < DateTime->now()) {
         return 0;
     }
     return 1;
@@ -46,7 +46,7 @@ sub img ($self) {
 }
 
 sub text($self) {
-    return 'Chalet pareado en venta en calle Hinojo por 160 000€';
+    return '(VENDIDA) Chalet pareado en venta en calle Hinojo por 160 000€';
 }
 
 sub href {
