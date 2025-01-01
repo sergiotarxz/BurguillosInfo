@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tables = document.querySelectorAll('table')
 
     fillFarmaciaGuardia();
-    new CarouselAd().run()
+//    new CarouselAd().run()
     addEasterEggAnimation()
 
     if (menu_expand !== null && mobile_foldable !== null && transparentFullscreenHide !== null && contentsWithoutMenu !== null) {

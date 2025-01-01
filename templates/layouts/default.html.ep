@@ -9,6 +9,7 @@
 % my $base_url = config 'base_url';
 <html lang="es">
   <head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178723521508611" crossorigin="anonymous"></script>
 % my $css_version = config 'css_version';
       <script src="/js/bundle.js?v=<%=$css_version%>"></script>
       <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
@@ -67,7 +68,7 @@
                     <img alt="Previous result" src="/img/up.svg"/>
                 </a>
             </div>
-            <div class="page-contents">
+            <div class="page-contents no-carousel">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
                 <div class="description android open-browser-container">
                     <a href="<%= $current_route %>" class="open-in-browser">
@@ -103,24 +104,6 @@
                     </div>
                 </div>
             </div>
-%= include 'ads/_carousel'
         </div>
     </div>
-    <script src="/dist/converse.js"></script>
-    <link rel="stylesheet" href="/dist/converse.min.css"/>
-    <script>
-        converse.initialize({
-                bosh_service_url: 'https://anon.burguillos.info:5281/http-bind',
-                debug: true,
-                discover_connection_methods: false,
-                show_controlbox_by_default: true,
-                authentication: 'anonymous',
-                auto_join_rooms: ['pueblo@burguillos.info'],
-                jid: 'anon.burguillos.info',
-                singleton: true,
-                view_mode: 'embedded',
-                auto_login: true,
-                show_desktop_notifications: false,
-        });
-    </script>
 </html>
