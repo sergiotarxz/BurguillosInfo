@@ -9,6 +9,15 @@
 % my $base_url = config 'base_url';
 <html lang="es">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBSKCCF31B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SBSKCCF31B');
+    </script>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178723521508611" crossorigin="anonymous"></script>
 % my $css_version = config 'css_version';
       <script src="/js/bundle.js?v=<%=$css_version%>"></script>
