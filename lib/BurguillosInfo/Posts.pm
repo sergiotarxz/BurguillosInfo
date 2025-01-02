@@ -81,6 +81,31 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
     if ( !scalar @categories ) {
         die 'Missing category';
     }
+    my $i = 0;
+    for my $p ($content_tag->find('content > p')->each) {
+        if ($i % 2 == 0) {
+            $i++;
+            next;
+        }
+        $i++;
+        my $next_object = $p->next;
+        my $script = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178723521508611"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8178723521508611"
+     data-ad-slot="2737408238"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>';
+        if (defined $next_object) {
+            $next_object->prepend($script);
+        } else {
+            $p->parent->append($script);
+        }
+    }
     my $content       = $content_tag->content;
     my $pinned_node   = $dom->at(':root > pinned');
     my $image_element = $dom->at(':root > img');
