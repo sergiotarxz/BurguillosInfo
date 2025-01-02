@@ -321,8 +321,7 @@ body {
     left: 0;
     width: 100%;
     opacity: 40%;
-    top: 80px;
-    height: calc(100% - 60px);
+    height: calc(100% - 80px);
     z-index: 250;
     display: none;
 
@@ -336,7 +335,6 @@ body {
     position: fixed;
     left: 100%;
     width: Min(70%, 600px);
-    top: 80px;
     height: calc(100% - 80px);
     z-index: 500;
     transition: left 0.5s ease-in, visibility 0.5s ease-in;
@@ -481,7 +479,7 @@ body {
     height: 80px;
     justify-content: start;
     flex-direction: row;
-    top: 0%;
+    top: calc(100% - 80px);
 
     a {
       height: 100%;
@@ -518,7 +516,6 @@ body {
   div.page-contents {
     background: $background-page;
     position: fixed;
-    top: 80px;
     height: calc(80% - 80px);
     width: 100%;
     overflow-y: scroll;
