@@ -44,6 +44,9 @@ sub startup ($self) {
 
     # Normal route to controller
     $r->get('/')->to('Page#index');
+    $r->get('/index', sub ($c) {
+        $c->redirect_to('/');
+    });
     $r->get('/privacy.txt')->to('Privacy#index');
     $r->get('/sitemap.xml')->to('Sitemap#sitemap');
     $r->get('/robots.txt')->to('Robots#robots');
