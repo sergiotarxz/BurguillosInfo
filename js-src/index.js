@@ -94,6 +94,11 @@ function addListenersSearch() {
         searchIcon.addEventListener('click', (e) => {
             const searchOverlay = document.querySelector('div.search-overlay');
             const searchInput = searchOverlay.querySelector('div.search input');
+             window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'fakesearch_term',
+              'term': fakeSearchInput.value,
+             });
             searchInput.value = fakeSearchInput.value;
             onSearchChange(e)
             onFakeSearchClick(e)
@@ -114,6 +119,11 @@ function addListenersSearch() {
             }
             const searchOverlay = document.querySelector('div.search-overlay');
             const searchInput = searchOverlay.querySelector('div.search input');
+             window.dataLayer = window.dataLayer || [];
+             window.dataLayer.push({
+              'event': 'fakesearch_term_keyup',
+              'term': fakeSearchInput.value,
+             });
             searchInput.value = fakeSearchInput.value;
             onSearchChange(e)
             onFakeSearchClick(e)
@@ -210,6 +220,11 @@ function onSearchChange() {
         return;
     }
     const query = search.value;
+     window.dataLayer = window.dataLayer || [];
+     window.dataLayer.push({
+      'event': 'realsearch_term_keyup',
+      'term': fakeSearchInput.value,
+     });
     fakeSearchInput.value = search.value
     const port = _port()
     const url = new URL(window.location.protocol
