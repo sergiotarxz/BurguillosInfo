@@ -89,6 +89,8 @@ body {
     }
 
     div.bounding-search-bar {
+      position: fixed;
+      top: calc(100% - 74px);
       margin: 7px;
       width: calc(100% - 20px);
       border-radius: 10px;

@@ -58,6 +58,8 @@ body {
         body div.search-overlay div.search-results div.search-result div.row-title-url-image img {
           margin: 10px; }
     body div.search-overlay div.bounding-search-bar {
+      position: fixed;
+      top: calc(100% - 74px);
       margin: 7px;
       width: calc(100% - 20px);
       border-radius: 10px;
