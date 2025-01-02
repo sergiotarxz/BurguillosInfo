@@ -223,7 +223,7 @@ function onSearchChange() {
      window.dataLayer = window.dataLayer || [];
      window.dataLayer.push({
       'event': 'realsearch_term_keyup',
-      'term': fakeSearchInput.value,
+      'term': search.value,
      });
     fakeSearchInput.value = search.value
     const port = _port()
