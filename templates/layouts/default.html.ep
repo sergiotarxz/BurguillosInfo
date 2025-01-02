@@ -56,13 +56,13 @@
     </div>
     <div class="search-overlay">
         <div class="bounding-search-bar">
-%= include 'page/_search_bar'
             <a href="#" class="exit-search">
                 <img alt="Exit search" src="/img/exit.svg"/>
             </a>
         </div>
         <div class="search-results">
         </div>
+        %= include 'page/_search_bar'
     </div>
     <div class="complete-container">
 %= include 'page/_mobile_foldable', categories => $categories

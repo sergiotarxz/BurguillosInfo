@@ -290,7 +290,7 @@ body {
   body div.search-in-page {
     display: none;
     position: fixed;
-    top: 80px;
+    top: calc(100% - 80px - 60px);
     height: 60px;
     width: 100%;
     align-items: center;
