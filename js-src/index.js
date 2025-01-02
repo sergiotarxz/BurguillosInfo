@@ -2,6 +2,7 @@
 import Tablesort from 'tablesort';
 import CarouselAd from '@burguillosinfo/carousel-ad'
 window.Tablesort = require('tablesort');
+
 require('tablesort/src/sorts/tablesort.number');
 
 let fakeSearchInput
