@@ -100,11 +100,11 @@ sub _GeneratePostFromFile ( $self, $post_file ) {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
-        if (defined $next_object) {
-            $next_object->prepend($script);
-        } else {
-            $p->parent->append($script);
-        }
+#        if (defined $next_object) {
+#            $next_object->prepend($script);
+#        } else {
+#            $p->parent->append($script);
+#        }
     }
     my $content       = $content_tag->content;
     my $pinned_node   = $dom->at(':root > pinned');

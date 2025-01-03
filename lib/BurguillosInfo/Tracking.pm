@@ -116,7 +116,7 @@ sub register_request {
     my $c    = shift;
     my $path = $c->req->url->path;
     # Avoiding overloading the /stats endpoint.
-    return if $path =~ /\.json$/;
+    return if $path =~ /next-ad\.json$/;
     my $dbh  = BurguillosInfo::DB->connect($app);
     $self->_add_path($path);
     $self->_update_null_last_seen_paths_if_any();
