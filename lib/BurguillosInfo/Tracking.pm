@@ -116,13 +116,13 @@ sub register_request {
     my $c    = shift;
     my $path = $c->req->url->path;
     # Avoiding overloading the /stats endpoint.
-    return if $path =~ /next-ad\.json$/;
+    my $referer        = $c->req->headers->referer // '';
+    return if $path =~ /next-ad\.json$/ || $referer =~ m{\.onion\/};
     my $dbh  = BurguillosInfo::DB->connect($app);
     $self->_add_path($path);
     $self->_update_null_last_seen_paths_if_any();
     my $remote_address = $c->tx->remote_address;
     my $user_agent     = $c->req->headers->user_agent;
-    my $referer        = $c->req->headers->referer // '';
     my $params_json    = encode_json( $c->req->params->to_hash );
     $self->_register_request_query( $remote_address, $user_agent, $params_json,
         $path, $referer );
