@@ -18,6 +18,7 @@ sub normalize($self, $text) {
     return undef if !defined $text;
     my $decomposed = NFKD($text);
     $decomposed =~ s/\p{NonspacingMark}//g;
+    $decomposed =~ s/\bEl\b//gi;
     my @words;
     while ($decomposed =~ /\b(\w+)\b/g) {
         push @words, $1;
@@ -26,8 +27,8 @@ sub normalize($self, $text) {
     $stemmer->stem_in_place(\@words);
     $decomposed = join " ", @words;
     $decomposed =~ s/\bpizzeri\b/pizz/gi;
-    $decomposed =~ s/\bEl\b//gi;
-    $decomposed =~ s/\bcristoba\b/cristobal/gi;
+    $decomposed =~ s/\bcristob\b/cristobal/gi;
+    warn $decomposed;
     return $decomposed;
 }
 
