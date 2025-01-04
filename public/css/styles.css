@@ -177,7 +177,7 @@ body {
     height: 100%;
     width: 100%; }
   body div.page-contents.no-carousel {
-    height: calc(100% - 60px); }
+    height: calc(100% - 80px); }
   body nav {
     overflow: auto;
     display: block;

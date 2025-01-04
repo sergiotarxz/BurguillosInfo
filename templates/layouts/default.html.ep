@@ -7,6 +7,10 @@
 % $description_og =~ s/\s\S+$//;
 % $description_og.='...';
 % my $base_url = config 'base_url';
+% use Time::Piece;
+
+% my $t = Time::Piece->new();
+% my $year = $t->year;
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
@@ -77,6 +81,9 @@
             </a>
         </div>
     </div>
+    <div class="tutorial-overlay-step-1">
+        
+    </div>
     <div class="complete-container">
 %= include 'page/_mobile_foldable', categories => $categories
         <div class="contents-without-menu">
@@ -111,7 +118,7 @@
                 <hr/>
                 <div class="footer">
                     <div class="description">
-                        <p>©2022-2023 Sergio Iglesias</p>
+                        <p>©2022-<%=$year%> Sergio Iglesias</p>
                         <p>Enterate de todas las novedades de Burguillos.info:</p>
                         <a class="suscribe-category-rss" href="/all.rss">
                              <img src="/img/rss.svg" alt="Icono de suscripción rss"/>

@@ -65,8 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
         fakeSearchInput = searchMobile.querySelector('input')
         addListenersSearch()
     }
+
+    const cookies = document.cookie.split(";").map((cookie) => {
+        let [key, value] = cookie.split("=");
+        return {
+            key: key,
+            value: value,
+        }
+    }).reduce((acc, cookie) => {
+        acc[cookie.key] = cookie.value;
+        return acc;
+    }, {});
+    if (!cookies['search-tutorial-seen']) {
+        startSearchTutorial();
+    }
 }, false);
 
+function startSearchTutorial() {
+    console.log('Showing how to use search');
+}
+
+function markSearchTutorialAsSeen() {
+    console.log('Tutorial ended');
+    document.cookie = 'search-tutorial-seen=1; SameSite=Lax;'
+}
 function fillFarmaciaGuardia() {
     const farmaciaName = document.querySelector('#farmacia-name');
     const farmaciaAddress = document.querySelector('#farmacia-address');

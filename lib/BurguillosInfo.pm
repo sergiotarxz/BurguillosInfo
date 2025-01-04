@@ -24,6 +24,7 @@ sub startup ($self) {
             $c->stash(current_route => $current_route);
             my $is_android = $c->req->headers->user_agent =~ /android/i; 
             $c->stash(is_android => $is_android);
+            $c->stash(has_seen_search_explanation => $c->cookie('has-seen-search-explanation'));
             my $onion_base_url = $self->config->{onion_base_url};
             my $base_url = $self->config->{base_url};
             if (!defined $onion_base_url) {
