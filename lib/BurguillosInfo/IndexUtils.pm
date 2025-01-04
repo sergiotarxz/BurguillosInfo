@@ -28,7 +28,6 @@ sub normalize($self, $text) {
     $decomposed = join " ", @words;
     $decomposed =~ s/\bpizzeri\b/pizz/gi;
     $decomposed =~ s/\bcristob\b/cristobal/gi;
-    warn $decomposed;
     return $decomposed;
 }
 
