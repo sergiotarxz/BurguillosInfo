@@ -25,16 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');
     const contentsWithoutMenu = document.querySelector('div.contents-without-menu')
     const tables = document.querySelectorAll('table')
-    for (let searchTooltip of document.querySelectorAll('div.tooltip-search-promo')) {
+    const searchTooltips = document.querySelectorAll('div.tooltip-search-promo');
+    for (const searchTooltip of searchTooltips) {
         const cookie_name = 'seen-tooltip-this-week';
         if (cookies[cookie_name]) {
             searchTooltip.classList.add('hidden');
         }
-        console.log(cookies);
         searchTooltip.addEventListener('click', () => {
             let time = 86400 * 7;
             document.cookie = `${cookie_name}=1; max-age=${time}; path=/;`;
-            searchTooltip.classList.add('hidden');
+            for (const searchTooltip of searchTooltips) {
+                searchTooltip.classList.add('hidden');
+            }
         });
     }
     fillFarmaciaGuardia();
