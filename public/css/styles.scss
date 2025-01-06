@@ -149,7 +149,7 @@ body {
    &.default {
       div.search-results {
         height: calc(100% - 80px - 2rem);
-        overflow-x: scroll;
+        overflow-y: scroll;
       }
    }
     div.search-results {

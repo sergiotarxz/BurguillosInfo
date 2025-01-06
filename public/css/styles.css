@@ -113,7 +113,7 @@ body {
     flex-direction: column; }
     body div.search-overlay.default div.search-results {
       height: calc(100% - 80px - 2rem);
-      overflow-x: scroll; }
+      overflow-y: scroll; }
     body div.search-overlay div.search-results {
       height: calc(100% - 80px);
       margin: 7px; }
