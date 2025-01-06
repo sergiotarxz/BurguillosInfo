@@ -148,7 +148,7 @@ body {
 
    &.default {
       div.search-results {
-        height: calc(100% - 80px - 2rem);
+        height: calc(100% - 80px);
         overflow-y: scroll;
       }
    }
@@ -809,7 +809,7 @@ div.burguillos-logo-container.active img {}
 div.search-overlay {
   div.search {
     width: calc(100% - 60px);
-    height: 60px;
+    height: 80px;
     margin-left: 0px;
     margin-right: 0px;
   }
