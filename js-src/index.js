@@ -305,6 +305,7 @@ function onSearchChange() {
             return;
         }
         showResults(searchResults, json.searchObjects);
+        searchResults.scrollTo(0, 0);
     })
     search.focus()
 }
