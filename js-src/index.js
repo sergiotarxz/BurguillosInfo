@@ -19,7 +19,35 @@ const cookies = document.cookie.split("; ").map((cookie) => {
     return acc;
 }, {});
 
+function startSuggestions() {
+    const searchInputs = document.querySelectorAll('div.fake-text-box input');
+    const port = _port()
+    const url = new URL(window.location.protocol + "//" + window.location.hostname + port + '/search/suggestions.json');
+    fetch(url).then(async (res) => {
+        let suggestions = await res.json();
+        let selectedSuggestion;
+        let currentLength = 0;
+        let waitCounter;
+        window.setInterval(() => {
+            if (--waitCounter > 0) {
+                return;
+            }
+            if (!selectedSuggestion || currentLength > selectedSuggestion.length) {
+                selectedSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)]; 
+                currentLength = 0;
+                waitCounter = 5;
+                return;
+            }
+            currentLength++;
+            for (const input of searchInputs) {
+                input.setAttribute('placeholder', selectedSuggestion.substring(0, currentLength));
+            }
+        }, 100);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    startSuggestions();
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
     const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');

@@ -69,6 +69,14 @@ sub startup ($self) {
     $r->get('/filtros/:slug')->to('Filter#get');
     $r->get('/stats/login')->to('Metrics#login');
     $r->post('/stats/login')->to('Metrics#submit_login');
+    $r->get('/search/suggestions.json', sub ($c) {
+        return $c->render(json=> [
+            'Juguetes de Moda',
+            'Sonny Angel',
+            'Bar Beluche',
+            'Bar Cristóbal',
+        ]);
+    });
 }
 
 1;
