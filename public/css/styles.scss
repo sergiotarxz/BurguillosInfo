@@ -145,15 +145,9 @@ body {
     flex-direction: column;
 
 
-
-   &.default {
-      div.search-results {
-        height: calc(100% - 80px);
-        overflow-y: scroll;
-      }
-   }
     div.search-results {
       height: calc(100% - 80px);
+      overflow-y: scroll;
       margin: 7px;
 
       img {

@@ -111,11 +111,9 @@ body {
     z-index: 3;
     top: 0;
     flex-direction: column; }
-    body div.search-overlay.default div.search-results {
-      height: calc(100% - 80px);
-      overflow-y: scroll; }
     body div.search-overlay div.search-results {
       height: calc(100% - 80px);
+      overflow-y: scroll;
       margin: 7px; }
       body div.search-overlay div.search-results img {
         width: 75px; }
