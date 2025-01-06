@@ -2,6 +2,37 @@ html {
   height: 100%;
   touch-action: none; }
 
+div.tooltip-search-promo::after {
+  content: " ";
+  position: absolute;
+  top: calc(100% - 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -9px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: #390384 transparent transparent transparent; }
+
+div.tooltip-search-promo.hidden {
+  display: none; }
+  div.tooltip-search-promo.hidden::after {
+    display: none; }
+
+div.tooltip-search-promo {
+  background-color: #390384;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  bottom: 115%;
+  transform: translateX(-50%); }
+
 div.open-browser-container {
   display: flex;
   justify-content: start;
@@ -36,7 +67,10 @@ body {
   min-height: 100%;
   width: 100%;
   height: 100%; }
-  body summary h2, body summary h3, body summary h4, body summary h5 {
+  body summary h2,
+  body summary h3,
+  body summary h4,
+  body summary h5 {
     display: inline; }
   body converse-muc-sidebar {
     display: none !important; }
@@ -50,7 +84,7 @@ body {
       font-size: 0.8em; }
   body span.round-center {
     background: blueviolet;
-    color: #FEFEFA;
+    color: #fefefa;
     line-height: 100%;
     aspect-ratio: 1 / 1;
     display: inline-flex;
@@ -137,7 +171,8 @@ body {
       border-radius: 10px;
       height: 60px;
       display: flex; }
-      body div.search-overlay div.bounding-search-bar a.up, body div.search-overlay div.bounding-search-bar a.down {
+      body div.search-overlay div.bounding-search-bar a.up,
+      body div.search-overlay div.bounding-search-bar a.down {
         display: none; }
       body div.search-overlay div.bounding-search-bar a.exit-search {
         width: 60px;
@@ -154,17 +189,19 @@ body {
     margin-right: 10px;
     display: flex; }
     body div.search a.search-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       height: 30px;
       align-self: center;
-      margin: 20px;
-      margin-left: 7px;
-      margin-right: 7px;
       display: flex;
       background: aliceblue;
       align-items: center;
+      margin-top: 4px;
+      margin-left: 7px;
       padding: 7px;
       border-radius: 10px;
-      border: solid gray 1px;
+      border: solid gray 3px;
       aspect-ratio: 1 / 1;
       width: auto; }
       body div.search a.search-icon img {
@@ -178,11 +215,18 @@ body {
         font-size: 30px;
         width: 100%;
         height: 70%;
+        margin-bottom: 10px;
+        margin-left: 70px;
         background: none;
         border: none;
         outline: none; }
-  body p, body h1, body h2, body h3, body h4, body a {
-    font-family: 'arial'; }
+  body p,
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body a {
+    font-family: "arial"; }
   body *.android {
     display: none; }
   body div.site-wrapper {
@@ -246,7 +290,7 @@ body {
   body div.page-contents.no-carousel {
     height: calc(100% - 80px); }
   body nav {
-    overflow: auto;
+    overflow: visible;
     display: block;
     font-size: 25px;
     margin: 0px; }
@@ -262,7 +306,7 @@ body {
         background: #f2eb8c;
         color: blueviolet; }
       body nav a.selected {
-        background: #FEFEFA;
+        background: #fefefa;
         color: blueviolet;
         border-right: 1px solid blueviolet; }
   body nav.desktop {
@@ -300,7 +344,7 @@ body {
     height: calc(100% - 80px);
     z-index: 500;
     transition: left 0.5s ease-in, visibility 0.5s ease-in;
-    background: #FEFEFA; }
+    background: #fefefa; }
     body nav.mobile-foldable > a:first-child {
       margin-top: 30px; }
     body nav.mobile-foldable a {
@@ -310,7 +354,7 @@ body {
       padding-left: auto;
       padding-right: auto;
       color: blueviolet;
-      background: #FEFEFA;
+      background: #fefefa;
       margin-top: 10px;
       padding: 10px;
       margin-left: 10px;
@@ -330,7 +374,7 @@ body {
     align-items: center;
     justify-content: center; }
     body nav.mobile-shortcuts > a.active {
-      background: #FEFEFA;
+      background: #fefefa;
       color: #dcdcf5; }
       body nav.mobile-shortcuts > a.active:focus {
         background: #f2eb8c; }
@@ -349,7 +393,8 @@ body {
     vertical-align: middle;
     width: 60px;
     height: 60px; }
-  body nav > a > img.index-image-menu, body div.burguillos-logo-container > img {
+  body nav > a > img.index-image-menu,
+  body div.burguillos-logo-container > img {
     transition-property: transform;
     transition-duration: 2s;
     transition-delay: 2s; }
@@ -365,7 +410,8 @@ body {
     align-items: center;
     background: blueviolet;
     z-index: 3; }
-    body div.search-in-page a.up, body div.search-in-page a.down {
+    body div.search-in-page a.up,
+    body div.search-in-page a.down {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -379,7 +425,8 @@ body {
       border-radius: 10px;
       border: solid gray 1px;
       aspect-ratio: 1/1; }
-      body div.search-in-page a.up img, body div.search-in-page a.down img {
+      body div.search-in-page a.up img,
+      body div.search-in-page a.down img {
         height: 80%; }
     body div.search-in-page span {
       color: whitesmoke;
@@ -415,7 +462,7 @@ body {
       height: 80%;
       border-radius: 10px; }
   body div.page-contents {
-    background: #FEFEFA;
+    background: #fefefa;
     position: fixed;
     height: calc(80% - 80px);
     width: 100%;
@@ -437,11 +484,14 @@ body {
       body div.page-contents table tr:hover {
         background: blueviolet;
         color: #f2eb8c; }
-        body div.page-contents table tr:hover th, body div.page-contents table tr:hover td {
+        body div.page-contents table tr:hover th,
+        body div.page-contents table tr:hover td {
           border: 3px solid #f2eb8c; }
-      body div.page-contents table td, body div.page-contents table th {
+      body div.page-contents table td,
+      body div.page-contents table th {
         font-size: 12px; }
-    body div.page-contents th, body div.page-contents td {
+    body div.page-contents th,
+    body div.page-contents td {
       border: 3px solid blueviolet;
       border-collapse: collapse;
       padding-right: 10px;
@@ -464,7 +514,7 @@ body {
         body div.page-contents div.description div.articles a {
           width: 45%;
           margin-left: 5%; }
-          body div.page-contents div.description div.articles a:nth-child(2n+1) {
+          body div.page-contents div.description div.articles a:nth-child(2n + 1) {
             margin-left: 0%; }
         body div.page-contents div.description div.articles div.image-container {
           margin-left: 2.5%;
@@ -498,7 +548,10 @@ body {
             color: blueviolet;
             box-shadow: 8px 8px 1px 0px #8ddfd6;
             border: 3px solid black; }
-            body div.page-contents div.description div.articles a article p, body div.page-contents div.description div.articles a article h4, body div.page-contents div.description div.articles a article h3, body div.page-contents div.description div.articles a article h2 {
+            body div.page-contents div.description div.articles a article p,
+            body div.page-contents div.description div.articles a article h4,
+            body div.page-contents div.description div.articles a article h3,
+            body div.page-contents div.description div.articles a article h2 {
               margin: 0px; }
             body div.page-contents div.description div.articles a article div.article-up-part {
               height: 12em; }
@@ -529,11 +582,17 @@ body {
       display: none; }
     body div.page-contents h1 {
       text-align: center; }
-    body div.page-contents div.footer p, body div.page-contents div.footer h1, body div.page-contents div.footer h2, body div.page-contents div.footer h3, body div.page-contents div.footer h4, body div.page-contents div.footer a {
+    body div.page-contents div.footer p,
+    body div.page-contents div.footer h1,
+    body div.page-contents div.footer h2,
+    body div.page-contents div.footer h3,
+    body div.page-contents div.footer h4,
+    body div.page-contents div.footer a {
       font-size: initial; }
     body div.page-contents div.footer a.suscribe-category-rss {
       padding: 7px; }
-    body div.page-contents div.footer a.suscribe-category-rss, body div.page-contents div.footer a.suscribe-category-rss > img {
+    body div.page-contents div.footer a.suscribe-category-rss,
+    body div.page-contents div.footer a.suscribe-category-rss > img {
       width: 20px;
       height: 20px; }
 
@@ -564,7 +623,8 @@ div.search-overlay.default {
     width: 100%; }
 
 @media (min-width: 450px) {
-  body div.page-contents table th, body div.page-contents table td {
+  body div.page-contents table th,
+  body div.page-contents table td {
     font-size: 20px; } }
 
 @media (min-width: 768px) {
@@ -583,7 +643,7 @@ div.search-overlay.default {
   body div.page-contents div.description div.articles a {
     width: 45%;
     margin-left: 5%; }
-    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+    body div.page-contents div.description div.articles a:nth-child(2n + 1) {
       margin-left: 0%; }
   body div.page-contents img {
     max-width: 694px; } }
@@ -598,27 +658,27 @@ div.search-overlay.default {
   body div.page-contents div.description div.articles a {
     width: 30%;
     margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+    body div.page-contents div.description div.articles a:nth-child(2n + 1) {
       margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+    body div.page-contents div.description div.articles a:nth-child(3n + 1) {
       margin-left: 0%; } }
 
 @media (min-width: 848px) {
   body div.page-contents div.description div.articles a {
     width: 30%;
     margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(2n+1) {
+    body div.page-contents div.description div.articles a:nth-child(2n + 1) {
       margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+    body div.page-contents div.description div.articles a:nth-child(3n + 1) {
       margin-left: 0%; } }
 
 @media (min-width: 1333px) {
   body div.page-contents div.description div.articles a {
     width: 22%;
     margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(3n+1) {
+    body div.page-contents div.description div.articles a:nth-child(3n + 1) {
       margin-left: 3%; }
-    body div.page-contents div.description div.articles a:nth-child(4n+1) {
+    body div.page-contents div.description div.articles a:nth-child(4n + 1) {
       margin-left: 0%; } }
 
 @media (max-width: 200px) {

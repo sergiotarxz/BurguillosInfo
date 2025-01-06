@@ -7,13 +7,36 @@ require('tablesort/src/sorts/tablesort.number');
 
 let fakeSearchInput
 let searchMobile
+
+const cookies = document.cookie.split("; ").map((cookie) => {
+    let [key, value] = cookie.split("=");
+    return {
+        key: key,
+        value: value,
+    }
+}).reduce((acc, cookie) => {
+    acc[cookie.key] = cookie.value;
+    return acc;
+}, {});
+
 document.addEventListener("DOMContentLoaded", function () {
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
     const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');
     const contentsWithoutMenu = document.querySelector('div.contents-without-menu')
     const tables = document.querySelectorAll('table')
-
+    for (let searchTooltip of document.querySelectorAll('div.tooltip-search-promo')) {
+        const cookie_name = 'seen-tooltip-this-week';
+        if (cookies[cookie_name]) {
+            searchTooltip.classList.add('hidden');
+        }
+        console.log(cookies);
+        searchTooltip.addEventListener('click', () => {
+            let time = 86400 * 7;
+            document.cookie = `${cookie_name}=1; max-age=${time}; path=/;`;
+            searchTooltip.classList.add('hidden');
+        });
+    }
     fillFarmaciaGuardia();
 //    new CarouselAd().run()
     addEasterEggAnimation()
@@ -67,16 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     addListenersSearchOverlay();
 
-    const cookies = document.cookie.split(";").map((cookie) => {
-        let [key, value] = cookie.split("=");
-        return {
-            key: key,
-            value: value,
-        }
-    }).reduce((acc, cookie) => {
-        acc[cookie.key] = cookie.value;
-        return acc;
-    }, {});
     if (!cookies['search-tutorial-seen']) {
         startSearchTutorial();
     }

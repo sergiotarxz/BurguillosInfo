@@ -1,5 +1,5 @@
 $background: antiquewhite;
-$background-page: #FEFEFA;
+$background-page: #fefefa;
 $color: #2f4f4f;
 $color-page: #666362;
 $background_div: blueviolet;
@@ -11,63 +11,103 @@ $primary-secondary: #590e11;
 $background_sidebar: $background-page; //#F5F5DC;
 $color_sidebar: #dcdcf5;
 $attribution_font_size: 0.8em;
+$tooltip-search-background: #390384;
 
 html {
   height: 100%;
   touch-action: none;
 }
-    div.open-browser-container {
-      display: flex;
-      justify-content: start;
-      width: 100%;
-      margin-left: 0px;
+
+div.tooltip-search-promo::after {
+  content: " ";
+  position: absolute;
+  top: calc(100% - 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -9px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: $tooltip-search-background transparent transparent transparent;
+}
+
+div.tooltip-search-promo.hidden {
+  display: none;
+  &::after {
+    display: none;
+  }
+}
+
+div.tooltip-search-promo {
+  background-color: $tooltip-search-background;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  bottom: 115%;
+  transform: translateX(-50%);
+}
+
+div.open-browser-container {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: $color_div;
+  color: $background_div;
+
+  a.open-in-browser {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    img {
+      display: block;
+      height: 2rem;
+      width: 2rem;
       margin-right: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
-      background: $color_div;
-      color: $background_div;
-
-      a.open-in-browser {
-        text-decoration: none;
-        display: flex;
-        justify-content: space-between;
-        width: calc(100% - 20px);
-        align-items: center;
-        margin-left: 10px;
-        margin-right: 10px;
-
-        img {
-          display: block;
-          height: 2rem;
-          width: 2rem;
-          margin-right: 0px;
-          margin-left: 0px;
-        }
-
-        span {
-          display: block;
-        }
-      }
+      margin-left: 0px;
     }
+
+    span {
+      display: block;
+    }
+  }
+}
 
 body {
   summary {
-    h2, h3, h4, h5 {
-        display: inline;
+    h2,
+    h3,
+    h4,
+    h5 {
+      display: inline;
     }
   }
   converse-muc-sidebar {
-      display: none !important;
+    display: none !important;
   }
   div.converse-container {
-     width: 100%;
-     height: 400px;
-     margin-left: 0px;
+    width: 100%;
+    height: 400px;
+    margin-left: 0px;
   }
   div.page-contents div.footer p.attribution {
     font-size: $attribution_font_size;
     a {
-        font-size: $attribution_font_size;
+      font-size: $attribution_font_size;
     }
   }
   span.round-center {
@@ -144,7 +184,6 @@ body {
     top: 0;
     flex-direction: column;
 
-
     div.search-results {
       height: calc(100% - 80px);
       overflow-y: scroll;
@@ -183,8 +222,8 @@ body {
       height: 60px;
       display: flex;
 
-
-      a.up, a.down {
+      a.up,
+      a.down {
         display: none;
       }
 
@@ -210,17 +249,19 @@ body {
     display: flex;
 
     a.search-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       height: 30px;
       align-self: center;
-      margin: 20px;
-      margin-left: 7px;
-      margin-right: 7px;
       display: flex;
       background: aliceblue;
       align-items: center;
+      margin-top: 4px;
+      margin-left: 7px;
       padding: 7px;
       border-radius: 10px;
-      border: solid gray 1px;
+      border: solid gray 3px;
       aspect-ratio: 1 / 1;
       width: auto;
 
@@ -239,6 +280,8 @@ body {
         font-size: 30px;
         width: 100%;
         height: 70%;
+        margin-bottom: 10px;
+        margin-left: 70px;
         background: none;
         border: none;
         outline: none;
@@ -246,8 +289,13 @@ body {
     }
   }
 
-  p, h1, h2, h3, h4, a {
-    font-family: 'arial';
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  a {
+    font-family: "arial";
   }
 
   *.android {
@@ -290,11 +338,11 @@ body {
       left: 100%;
       transition: left 1s ease-in;
 
-      &.show { 
-          left: 0%;
+      &.show {
+        left: 0%;
       }
       &.remove {
-          left: -100%;
+        left: -100%;
       }
       font-size: 13px;
       background: $color_div;
@@ -305,15 +353,16 @@ body {
       align-items: center;
       text-decoration: none;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $background_div;
         color: $color_div;
       }
       p {
-	margin-bottom: 1px;
+        margin-bottom: 1px;
       }
       h4 {
-	margin: 0;
+        margin: 0;
       }
     }
 
@@ -344,12 +393,13 @@ body {
   }
 
   nav {
-    overflow: auto;
+    overflow: visible;
     display: block;
     font-size: 25px;
     margin: 0px;
 
-    a.go-to-index img {}
+    a.go-to-index img {
+    }
 
     a {
       padding-left: 10px;
@@ -360,7 +410,8 @@ body {
       margin: 0;
       background: $background_div;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $color_div;
         color: $background_div;
       }
@@ -419,7 +470,9 @@ body {
     width: Min(70%, 600px);
     height: calc(100% - 80px);
     z-index: 500;
-    transition: left 0.5s ease-in, visibility 0.5s ease-in;
+    transition:
+      left 0.5s ease-in,
+      visibility 0.5s ease-in;
     background: $background_sidebar;
 
     & > a:first-child {
@@ -435,7 +488,7 @@ body {
       padding-left: auto;
       padding-right: auto;
       color: $background_div;
-//      border: 1px solid black;
+      //      border: 1px solid black;
       background: $background_sidebar;
       margin-top: 10px;
       padding: 10px;
@@ -464,11 +517,11 @@ body {
     align-items: center;
     justify-content: center;
     &.active {
-        background: $background_sidebar;
-        color: $color_sidebar;
-        &:focus {
-            background: $color_div;
-        }
+      background: $background_sidebar;
+      color: $color_sidebar;
+      &:focus {
+        background: $color_div;
+      }
     }
   }
 
@@ -479,7 +532,9 @@ body {
       display: none;
     }
 
-    &:hover, &:focus, &.active {
+    &:hover,
+    &:focus,
+    &.active {
       .open-menu-icon-hover {
         display: block;
       }
@@ -501,7 +556,8 @@ body {
     height: 60px;
   }
 
-  nav > a > img.index-image-menu, div.burguillos-logo-container > img {
+  nav > a > img.index-image-menu,
+  div.burguillos-logo-container > img {
     transition-property: transform;
     transition-duration: 2s;
     transition-delay: 2s;
@@ -522,7 +578,8 @@ body {
     background: $background_div;
     z-index: 3;
 
-    a.up, a.down {
+    a.up,
+    a.down {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -573,9 +630,9 @@ body {
     }
 
     a.go-to-index {
-        position: absolute;
-        left: 0;
-        top: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     div.search {
@@ -617,19 +674,22 @@ body {
         background: $background_div;
         color: $color_div;
 
-        th, td {
+        th,
+        td {
           border: 3px solid $color_div;
         }
       }
 
-      td, th {
+      td,
+      th {
         font-size: 12px;
       }
 
       table-layout: fixed;
     }
 
-    th, td {
+    th,
+    td {
       border: 3px solid $background_div;
       border-collapse: collapse;
       padding-right: 10px;
@@ -660,12 +720,12 @@ body {
         flex-wrap: wrap;
         font-size: 0.7rem;
         a {
-            &:nth-child(2n+1) {
-              margin-left: 0%;
-            }
+          &:nth-child(2n + 1) {
+            margin-left: 0%;
+          }
 
-            width: 45%;
-            margin-left: 5%;
+          width: 45%;
+          margin-left: 5%;
         }
 
         div.image-container {
@@ -693,7 +753,8 @@ body {
           text-overflow: ellipsis;
           margin-bottom: 30px;
 
-          &:focus, &:hover {
+          &:focus,
+          &:hover {
             //outline: red solid 3px;
             article {
               background: $background_div;
@@ -706,7 +767,10 @@ body {
             width: 90%;
             height: 90%;
 
-            p, h4, h3, h2 {
+            p,
+            h4,
+            h3,
+            h2 {
               margin: 0px;
             }
 
@@ -759,18 +823,21 @@ body {
       }
     }
 
-
     div.open-browser-container.android {
       display: none;
     }
-
 
     h1 {
       text-align: center;
     }
 
     div.footer {
-      p, h1, h2, h3, h4, a {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      a {
         font-size: initial;
       }
 
@@ -778,7 +845,8 @@ body {
         padding: 7px;
       }
 
-      a.suscribe-category-rss, a.suscribe-category-rss > img {
+      a.suscribe-category-rss,
+      a.suscribe-category-rss > img {
         width: 20px;
         height: 20px;
       }
@@ -799,7 +867,8 @@ div.burguillos-logo-container {
   width: 120px;
 }
 
-div.burguillos-logo-container.active img {}
+div.burguillos-logo-container.active img {
+}
 
 div.search-overlay {
   div.search {
@@ -816,9 +885,9 @@ div.search-overlay {
     div.search {
       width: 100%;
     }
-      div.fake-text-box {
-        width: 100%;
-      }
+    div.fake-text-box {
+      width: 100%;
+    }
   }
 }
 
@@ -826,7 +895,8 @@ div.search-overlay {
   body {
     div.page-contents {
       table {
-        th, td {
+        th,
+        td {
           font-size: 20px;
         }
       }
@@ -834,17 +904,17 @@ div.search-overlay {
   }
 }
 @media (min-width: 768px) {
-    body {
-        converse-muc-sidebar {
-            display: flex !important;
-            &.hidden {
-                display: none !important;
-            }
-        }
-        div.converse-container {
-         margin-left: 15px;
-        }
+  body {
+    converse-muc-sidebar {
+      display: flex !important;
+      &.hidden {
+        display: none !important;
+      }
     }
+    div.converse-container {
+      margin-left: 15px;
+    }
+  }
 }
 
 @media (min-width: 694px) {
@@ -863,7 +933,7 @@ div.search-overlay {
       div.description {
         div.articles {
           a {
-            &:nth-child(2n+1) {
+            &:nth-child(2n + 1) {
               margin-left: 0%;
             }
 
@@ -882,12 +952,12 @@ div.search-overlay {
 
 @media (min-width: 700px) {
   body {
-      nav.mobile-foldable {
-        left: -100%;
-      }
-      nav.mobile-foldable.show {
-        left: 0;
-      }
+    nav.mobile-foldable {
+      left: -100%;
+    }
+    nav.mobile-foldable.show {
+      left: 0;
+    }
   }
 }
 
@@ -897,11 +967,11 @@ div.search-overlay {
       div.description {
         div.articles {
           a {
-            &:nth-child(2n+1) {
+            &:nth-child(2n + 1) {
               margin-left: 3%;
             }
 
-            &:nth-child(3n+1) {
+            &:nth-child(3n + 1) {
               margin-left: 0%;
             }
 
@@ -920,11 +990,11 @@ div.search-overlay {
       div.description {
         div.articles {
           a {
-            &:nth-child(2n+1) {
+            &:nth-child(2n + 1) {
               margin-left: 3%;
             }
 
-            &:nth-child(3n+1) {
+            &:nth-child(3n + 1) {
               margin-left: 0%;
             }
 
@@ -943,11 +1013,11 @@ div.search-overlay {
       div.description {
         div.articles {
           a {
-            &:nth-child(3n+1) {
+            &:nth-child(3n + 1) {
               margin-left: 3%;
             }
 
-            &:nth-child(4n+1) {
+            &:nth-child(4n + 1) {
               margin-left: 0%;
             }
 

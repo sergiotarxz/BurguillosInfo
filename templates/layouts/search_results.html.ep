@@ -82,7 +82,7 @@
                     </a>
                 </div>
 % }
-            <div class="search-results <%=$is_android && 'android'%>">
+            <div class="search-results <%=$is_android && 'search-android'%>">
                 <%= content %>
                 <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
             </div>
