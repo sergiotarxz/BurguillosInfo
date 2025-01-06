@@ -2,6 +2,33 @@ html {
   height: 100%;
   touch-action: none; }
 
+div.open-browser-container {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: #f2eb8c;
+  color: blueviolet; }
+  div.open-browser-container a.open-in-browser {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px; }
+    div.open-browser-container a.open-in-browser img {
+      display: block;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 0px;
+      margin-left: 0px; }
+    div.open-browser-container a.open-in-browser span {
+      display: block; }
+
 body {
   margin: 0;
   padding: 0;
@@ -36,6 +63,43 @@ body {
     align-items: center;
     vertical-align: middle;
     margin-bottom: 0.15em; }
+  body div.tutorial-overlay-step-1 {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 100, 0.5);
+    top: 0%;
+    z-index: 999; }
+    body div.tutorial-overlay-step-1 > .explanation {
+      position: absolute;
+      left: 10px;
+      color: aquamarine;
+      background: rgba(100, 100, 100, 0.5);
+      width: 230px;
+      text-align: center;
+      border-radius: 10px;
+      border: solid 3px black;
+      font-size: 30px;
+      top: calc(100% - 80px - 203px - 90px); }
+    body div.tutorial-overlay-step-1 > .arrow {
+      position: absolute;
+      left: 90px;
+      top: calc(100% - 80px - 203px);
+      display: block; }
+    body div.tutorial-overlay-step-1.hidden {
+      display: none; }
+  body div.search-results > div.description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #2160c4;
+    border: solid #9dc1fa 0.3rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    width: calc(100% - 20px - 0.6rem);
+    padding: 10px; }
   body div.search-overlay {
     overflow-y: scroll;
     display: none;
@@ -46,9 +110,11 @@ body {
     z-index: 3;
     top: 0;
     flex-direction: column; }
-    body div.search-overlay.active {
-      display: flex; }
+    body div.search-overlay.default div.search-results {
+      height: calc(100% - 80px - 2rem);
+      overflow-x: scroll; }
     body div.search-overlay div.search-results {
+      height: calc(100% - 80px);
       margin: 7px; }
       body div.search-overlay div.search-results img {
         width: 75px; }
@@ -57,6 +123,12 @@ body {
         flex-direction: row; }
         body div.search-overlay div.search-results div.search-result div.row-title-url-image img {
           margin: 10px; }
+      body div.search-overlay div.search-results div.search-result p {
+        background: aliceblue;
+        width: fit-content;
+        padding: 20px;
+        margin-left: 90px;
+        margin-right: 20px; }
     body div.search-overlay div.bounding-search-bar {
       position: fixed;
       top: calc(100% - 74px);
@@ -65,11 +137,6 @@ body {
       border-radius: 10px;
       height: 60px;
       display: flex; }
-      body div.search-overlay div.bounding-search-bar div.search {
-        width: calc(100% - 60px);
-        height: 60px;
-        margin-left: 0px;
-        margin-right: 0px; }
       body div.search-overlay div.bounding-search-bar a.up, body div.search-overlay div.bounding-search-bar a.down {
         display: none; }
       body div.search-overlay div.bounding-search-bar a.exit-search {
@@ -344,14 +411,9 @@ body {
       position: absolute;
       left: 80px;
       top: 10%;
-      width: Min(calc(100% - 90px * 2), 500px);
+      width: Min(calc(100% - 120px), 500px);
       height: 80%;
       border-radius: 10px; }
-    body nav.mobile-shortcuts a.menu-expand {
-      position: absolute;
-      left: Min(calc(100% - 80px), 600px);
-      top: 0;
-      align-self: end; }
   body div.page-contents {
     background: #FEFEFA;
     position: fixed;
@@ -463,44 +525,8 @@ body {
         body div.page-contents div.description a.suscribe-category-rss img {
           width: 40px;
           height: 40px; }
-    body div.page-contents div.open-browser-container {
-      display: flex;
-      justify-content: start;
-      width: 100%;
-      margin-left: 0px;
-      margin-right: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
-      background: #f2eb8c;
-      color: blueviolet; }
-      body div.page-contents div.open-browser-container a.open-in-browser {
-        text-decoration: none;
-        display: flex;
-        justify-content: space-between;
-        width: calc(100% - 20px);
-        align-items: center;
-        margin-left: 10px;
-        margin-right: 10px; }
-        body div.page-contents div.open-browser-container a.open-in-browser img {
-          display: block;
-          height: 2rem;
-          width: 2rem;
-          margin-right: 0px;
-          margin-left: 0px; }
-        body div.page-contents div.open-browser-container a.open-in-browser span {
-          display: block; }
     body div.page-contents div.open-browser-container.android {
       display: none; }
-    body div.page-contents div.easter-egg {
-      display: flex;
-      justify-content: center; }
-    body div.page-contents div.burguillos-logo-container.active {
-      border: solid 1px black;
-      border-radius: 50%;
-      filter: invert(1); }
-    body div.page-contents div.burguillos-logo-container {
-      padding: 40px;
-      width: 120px; }
     body div.page-contents h1 {
       text-align: center; }
     body div.page-contents div.footer p, body div.page-contents div.footer h1, body div.page-contents div.footer h2, body div.page-contents div.footer h3, body div.page-contents div.footer h4, body div.page-contents div.footer a {
@@ -510,6 +536,32 @@ body {
     body div.page-contents div.footer a.suscribe-category-rss, body div.page-contents div.footer a.suscribe-category-rss > img {
       width: 20px;
       height: 20px; }
+
+div.easter-egg {
+  display: flex;
+  justify-content: center; }
+
+div.burguillos-logo-container.active {
+  filter: invert(1); }
+
+div.burguillos-logo-container {
+  width: 120px; }
+
+div.search-overlay div.search {
+  width: calc(100% - 60px);
+  height: 60px;
+  margin-left: 0px;
+  margin-right: 0px; }
+
+div.search-overlay.active {
+  display: flex; }
+
+div.search-overlay.default {
+  display: flex; }
+  div.search-overlay.default div.search {
+    width: 100%; }
+  div.search-overlay.default div.fake-text-box {
+    width: 100%; }
 
 @media (min-width: 450px) {
   body div.page-contents table th, body div.page-contents table td {

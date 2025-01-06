@@ -7,30 +7,17 @@
 %
 % use BurguillosInfo::Posts;
 %
+% my $current_category = stash 'current_category';
 % my $description_og = '<div>'.$current_category->{description}.'</div>';
 % $description_og = Mojo::DOM->new($description_og)->all_text;
-% layout 'default', current_category_slug => $current_category->{slug}, description_og => $description_og;
+% layout 'search_results', current_category_slug => $current_category->{slug}, description_og => $description_og, search_term => "#$current_category->{slug}";
 % title $current_category->{title};
 <div class="description">
 	<h1><%= $current_category->{title} %></h1>
 	<%== $current_category->{description} %>
+</div>
+<div class="content">
 % my $children_categories = $current_category->{children};
-% my $attributes = $current_category->{attributes};
-% if (@$children_categories || %$attributes) {
-    <h2>Quizás te interese.</h2>
-%     for my $child_category (@$children_categories) {
-      <p><a href="/<%=$child_category->{slug}%>"><%==$child_category->{title}%></a></p>
-%     }
-%     for my $attribute_slug (keys %$attributes) {
-%         my $attribute = $attributes->{$attribute_slug};
-      <p><a href="<%="/$current_category->{slug}/atributo/$attribute->{identifier}"%>"><%==$attribute->{menu_text}%></a></p>
-%     }
-% }
 % my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
 %= include 'page/_list_posts', posts => $category_posts; 
-	<h2>Suscribete a esta categoría.</h2>
-
-	<a class="suscribe-category-rss" href="/<%=$current_category->{slug}%>.rss">
-		<img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-	</a>
 </div>

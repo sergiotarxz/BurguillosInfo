@@ -1,8 +1,9 @@
+% my $search_term = stash 'search_term' // '';
 <div class="search">
     <a href="#" class="search-icon">
         <img alt="Buscar" src="/img/search.svg"/>
     </a>
     <div class="fake-text-box">
-        <input type="text"></input>
+        <input type="text" value="<%=$search_term%>"></input>
     </div>
 </div>

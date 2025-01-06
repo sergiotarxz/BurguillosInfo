@@ -8,9 +8,12 @@
 % $description_og.='...';
 % my $base_url = config 'base_url';
 % use Time::Piece;
-
 % my $t = Time::Piece->new();
 % my $year = $t->year;
+% my $search_term = stash 'search_term' // '';
+% if ($search_term eq '#index') {
+%       $search_term = '';
+% }
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
@@ -23,7 +26,6 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBSKCCF31B"></script>
     <script type="module" src="/js/cookie.js"></script>
-%= include 'page/_ads', categories => $categories
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -61,46 +63,17 @@
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body>
+    <body>
 % if (defined $ogimage) {
-    <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
+        <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
 % }
 <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9K5VBGN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <div class="site-wrapper">
-    </div>
-    <div class="search-overlay">
-        <div class="search-results">
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9K5VBGN"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <div class="site-wrapper">
         </div>
-        <div class="bounding-search-bar">
-%= include 'page/_search_bar'
-            <a href="#" class="exit-search">
-                <img alt="Exit search" src="/img/exit.svg"/>
-            </a>
-        </div>
-    </div>
-%= include 'page/_search_tutorial'
-    <div class="complete-container">
-%= include 'page/_mobile_foldable', categories => $categories
-        <div class="contents-without-menu">
-            <div class="search-in-page">
-                <a href="#" class="down">
-                    <img alt="Next result" src="/img/down.svg"/>
-                </a>
-                <a href="#" class="up">
-                    <img alt="Previous result" src="/img/up.svg"/>
-                </a>
-            </div>
-            <div class="page-contents no-carousel">
-%= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
-                <div class="description android open-browser-container">
-                    <a href="<%= $current_route %>" class="open-in-browser">
-                        <img alt="" src="/img/firefox.svg"/>
-                        <span>Abrir en el navegador.</span>
-                    </a>
-                </div>
+        <div class="search-overlay default">
 % if ($is_android) {
                 <div class="description no-android-app open-browser-container">
                     <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
@@ -109,25 +82,13 @@
                     </a>
                 </div>
 % }
+            <div class="search-results">
                 <%= content %>
-                <div class="description android">
-                    <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
-                </div>
-                <hr/>
-                <div class="footer">
-                    <div class="description">
-                        <p>©2022-<%=$year%> Sergio Iglesias</p>
-                        <p>Enterate de todas las novedades de Burguillos.info:</p>
-                        <a class="suscribe-category-rss" href="/all.rss">
-                             <img src="/img/rss.svg" alt="Icono de suscripción rss"/>
-                        </a>
-                        <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/portrait-happy-european-woman-has-broad-smile-closes-eyes-feels-excitement-being-high-spirit_10583645.htm">Imagen Sonrisa Anuncio Burguillos Dental por Wayhomestudio</a>.</p>
-                        <p class="attribution"><a rel="nofollow noreferrer" href="https://www.freepik.com/free-photo/dentists-treat-patients-teeth_6170497.htm">Imagen Tratamiento Dental Burguillos Dental por Jcomp</a>.</p>
-                    </div>
-                </div>
+                <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
+            </div>
+            <div class="bounding-search-bar">
+%= include 'page/_search_bar', search_term => $search_term
             </div>
         </div>
-        %= include 'page/_mobile_menu', categories => $categories
-    </div>
     </body>
 </html>

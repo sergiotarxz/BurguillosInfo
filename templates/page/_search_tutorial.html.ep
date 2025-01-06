@@ -1,0 +1,4 @@
+<div class="tutorial-overlay-step-1 hidden">
+    <p class="explanation">Esta es la barra de busqueda</p>
+    <img class="arrow" src="/img/arrow-pointing-down.webp"/>
+</div>

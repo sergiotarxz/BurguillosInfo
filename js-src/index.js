@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fakeSearchInput = searchMobile.querySelector('input')
         addListenersSearch()
     }
+    addListenersSearchOverlay();
 
     const cookies = document.cookie.split(";").map((cookie) => {
         let [key, value] = cookie.split("=");
@@ -83,6 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function startSearchTutorial() {
     console.log('Showing how to use search');
+    const tutorialOverlay = document.querySelector('.tutorial-overlay-step-1');
+    if (tutorialOverlay === null) {
+        console.error('tutorialOverlay missing');
+        return;
+    }
+//    tutorialOverlay.classList.remove('hidden');
 }
 
 function markSearchTutorialAsSeen() {
@@ -174,16 +181,21 @@ function addListenersSearch() {
     const searchOverlay = document.querySelector('div.search-overlay');
     const searchInput = searchOverlay.querySelector('div.search input');
     fakeSearchInput.value = searchInput.value;
-    exitSearch.addEventListener('click', onExitSearch)
-    const search = document.querySelector('div.search-overlay div.search input');
-    if (search !== null) {
-        search.addEventListener('change', onSearchChange);
+    if (exitSearch !== null) {
+        exitSearch.addEventListener('click', onExitSearch)
     }
     const searchIconDesktop = document.querySelector('nav.desktop a.search-icon');
     if (searchIconDesktop !== null) {
         searchIconDesktop.addEventListener('click', (e) => {
             onFakeSearchClick(e)
         })
+    }
+}
+
+function addListenersSearchOverlay() {
+    const search = document.querySelector('div.search-overlay div.search input');
+    if (search !== null) {
+        search.addEventListener('change', onSearchChange);
     }
 }
 
@@ -247,8 +259,34 @@ function onSearchChange() {
       'event': 'realsearch_term_keyup',
       'term': search.value,
      });
-    fakeSearchInput.value = search.value
+    if (fakeSearchInput !== undefined && fakeSearchInput !== null) {
+        fakeSearchInput.value = search.value
+    }
+    let found = search.value.match(/^#(\S+?)(?:\:(\S+?))?$/);
     const port = _port()
+    if (found) {
+        let attributeUrlPart = found[2];
+        console.log(attributeUrlPart);
+        if (attributeUrlPart === undefined) {
+            attributeUrlPart = '';
+        }
+        console.log(attributeUrlPart);
+        if (attributeUrlPart !== '') {
+            attributeUrlPart = '/atributo/' + attributeUrlPart;
+        }
+        console.log(attributeUrlPart);
+        const checkHashstagUrl = new URL(window.location.protocol
+            + "//"
+            + window.location.hostname
+            + port
+            + '/' + found[1] + attributeUrlPart);
+        fetch(checkHashstagUrl).then((res) => {
+            if (res.status === 200) {
+                window.location = checkHashstagUrl;
+            }
+        });
+        return;
+    }
     const url = new URL(window.location.protocol
         + "//"
         + window.location.hostname
