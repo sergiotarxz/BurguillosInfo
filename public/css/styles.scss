@@ -158,6 +158,7 @@ body {
         div.row-title-url-image {
           display: flex;
           flex-direction: row;
+          overflow: hidden;
 
           img {
             margin: 10px;
@@ -209,7 +210,7 @@ body {
     display: flex;
 
     a.search-icon {
-      height: calc(100% - 40px);
+      height: 30px;
       align-self: center;
       margin: 20px;
       margin-left: 7px;
