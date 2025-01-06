@@ -11,7 +11,8 @@ div.tooltip-search-promo::after {
   margin-left: -9px;
   border-width: 9px;
   border-style: solid;
-  border-color: #390384 transparent transparent transparent; }
+  border-color: #390384 transparent transparent transparent;
+  opacity: 80%; }
 
 div.tooltip-search-promo.hidden {
   display: none; }
@@ -31,7 +32,8 @@ div.tooltip-search-promo {
   z-index: 100;
   left: 50%;
   bottom: 115%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  opacity: 80%; }
 
 div.open-browser-container {
   display: flex;

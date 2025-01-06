@@ -28,6 +28,7 @@ div.tooltip-search-promo::after {
   border-width: 9px;
   border-style: solid;
   border-color: $tooltip-search-background transparent transparent transparent;
+  opacity: 80%;
 }
 
 div.tooltip-search-promo.hidden {
@@ -51,6 +52,7 @@ div.tooltip-search-promo {
   left: 50%;
   bottom: 115%;
   transform: translateX(-50%);
+  opacity: 80%;
 }
 
 div.open-browser-container {

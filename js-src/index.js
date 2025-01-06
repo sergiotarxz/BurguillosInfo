@@ -383,7 +383,7 @@ function showResults(searchResults, searchObjects) {
 function noResults(searchResults) {
     searchResults.innerHTML = ""
     const p = document.createElement('p')
-    p.innerText = 'No se han encontrado resultados.'
+    p.innerText = 'No se han encontrado resultados, todavía, vamos a trabajar para encontrar resultados a esta busqueda, repitela en unos días.'
     searchResults.appendChild(p)
 }
 
