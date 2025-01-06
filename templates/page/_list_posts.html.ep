@@ -25,6 +25,6 @@
 %     if (length($text) > 120) {
 %          $text = substr($text, 0, 117).'...';
 %     }
-        <p><%=$text%></p>
+        <p class="search-result-content"><%=$text%></p>
     </div>
 % }

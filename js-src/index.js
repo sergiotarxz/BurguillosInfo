@@ -371,12 +371,29 @@ function showResults(searchResults, searchObjects) {
         }
 
         columnTitleUrl.appendChild(title);
+        let vendor = searchObject.vendor;
+        let hasVendor;
+        if (vendor !== null) {
+            const vendorP = document.createElement('p');
+            vendorP.classList.add('product-vendor');
+            vendorP.innerText = `Enlace promocionado de ${vendor}`;
+            columnTitleUrl.appendChild(vendorP);
+            hasVendor = true;
+        }
         columnTitleUrl.appendChild(document.createElement('br'))
         columnTitleUrl.appendChild(url)
+        if (hasVendor) {
+            const callToAction = document.createElement('a');
+            callToAction.classList.add('search-button-buy-now');
+            callToAction.innerText= `Compralo ahora en ${vendor}`;
+            callToAction.href = searchObject.url;
+            columnTitleUrl.appendChild(callToAction);
+        }
 
         rowTitleUrlImageDiv.appendChild(columnTitleUrl)
 
         searchResultContainer.appendChild(rowTitleUrlImageDiv)
+        content.classList.add('search-result-content');
         searchResultContainer.appendChild(content)
         searchResults.appendChild(searchResultContainer)
     }

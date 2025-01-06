@@ -205,7 +205,24 @@ body {
             margin: 10px;
           }
         }
-        p {
+        a.search-button-buy-now {
+          display: block;
+          margin: 30px;
+          margin-left: 30px;
+          margin-left: 10px;
+          border: solid 3px #116fa8;
+          padding: 20px;
+          border-radius: 10px;
+          background: #3e9dc2;
+          color: aliceblue;
+          font-weight: bold;
+          text-decoration: none;
+        }
+        p.product-vendor {
+          font-size: 10px;
+          color: cornflowerblue;
+        }
+        p.search-result-content {
           background: aliceblue;
           width: fit-content;
           padding: 20px;

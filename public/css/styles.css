@@ -159,7 +159,22 @@ body {
         overflow: hidden; }
         body div.search-overlay div.search-results div.search-result div.row-title-url-image img {
           margin: 10px; }
-      body div.search-overlay div.search-results div.search-result p {
+      body div.search-overlay div.search-results div.search-result a.search-button-buy-now {
+        display: block;
+        margin: 30px;
+        margin-left: 30px;
+        margin-left: 10px;
+        border: solid 3px #116fa8;
+        padding: 20px;
+        border-radius: 10px;
+        background: #3e9dc2;
+        color: aliceblue;
+        font-weight: bold;
+        text-decoration: none; }
+      body div.search-overlay div.search-results div.search-result p.product-vendor {
+        font-size: 10px;
+        color: cornflowerblue; }
+      body div.search-overlay div.search-results div.search-result p.search-result-content {
         background: aliceblue;
         width: fit-content;
         padding: 20px;

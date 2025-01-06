@@ -17,6 +17,7 @@ use Mojo::UserAgent;
 
 use BurguillosInfo::Posts;
 use BurguillosInfo::Categories;
+use BurguillosInfo::Products;
 use BurguillosInfo::IndexUtils;
 
 my $index_utils = BurguillosInfo::IndexUtils->new;
@@ -30,9 +31,11 @@ sub run ( $self, @args ) {
     my $ua             = Mojo::UserAgent->new;
     my $posts          = BurguillosInfo::Posts->new->Retrieve(0);
     my $categories     = BurguillosInfo::Categories->new->Retrieve;
+    my $products       = BurguillosInfo::Products->new->Retrieve;
     my $index          = [];
     $self->_index_posts( $index, $posts );
     $self->_index_categories( $index, $categories );
+    $self->_index_products( $index, $products );
     my $response = $ua->put( $search_backend . '/index/' . $search_index,
         {} => json => $index );
     say $response->result->body;
@@ -59,6 +62,33 @@ sub _index_categories ( $self, $index, $categories ) {
             contentNormalized => $index_utils->n( $content =~ s/\s+/ /gr ),
             url               => $url,
             urlNormalized     => $index_utils->n($url),
+            (
+                  ( defined $image )
+                ? ( urlImage => $image )
+                : ()
+            )
+
+        };
+    }
+}
+
+sub _index_products( $self, $index, $products ) {
+    my @product_keys = keys %$products;
+    for my $key (@product_keys) {
+        my $product = $products->{$key};
+        my $title   = $product->{title};
+        my $content = $product->{description};
+        my $url     = "/product/@{[$product->{slug}]}";
+        my $image   = $product->{img};
+        my $vendor  = $product->{vendor};
+        push @$index, {
+            title             => $title,
+            titleNormalized   => $index_utils->n($title),
+            content           => $content,
+            contentNormalized => $index_utils->n( $content =~ s/\s+/ /gr ),
+            url               => $url,
+            urlNormalized     => $index_utils->n($url),
+            vendor            => $vendor,
             (
                   ( defined $image )
                 ? ( urlImage => $image )

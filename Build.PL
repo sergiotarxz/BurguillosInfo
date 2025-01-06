@@ -27,6 +27,7 @@ my $build = Module::Build->new(
         'Module::Pluggable'            => 0,
         'List::AllUtils'               => 0,
         'Lingua::Stem::Snowball'       => 0,
+        'Moo'                          => 0,
     },
 );
 $build->create_build_script;

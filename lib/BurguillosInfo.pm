@@ -54,6 +54,7 @@ sub startup ($self) {
 
     #  $r->get('/:post')->to('Page#post');
     $r->get('/stats')->to('Metrics#stats');
+    $r->get('/product/:slug')->to('Product#direct_buy');
     $r->get('/search.json')->to('Search#search');
     $r->get('/farmacia-guardia.json')->to('FarmaciaGuardia#current');
     $r->get('/<:category>.rss')->to('Page#category_rss');
