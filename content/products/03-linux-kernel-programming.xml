@@ -1,0 +1,11 @@
+<product>
+    <title>Libro programación de Kernel Linux</title>
+    <description>
+        Libro en inglés para aprender a programar el Kernel de Linux, útil para
+        desarrollo de sistemas embebidos, hacking, programación de drivers...
+    </description>
+    <slug>packt-linux-kernel-programming</slug>
+    <img>/img/linux-kernel-libro.webp</img>
+    <vendor>Amazon</vendor>
+    <url>https://amzn.to/3DIdSf3</url>
+</product>

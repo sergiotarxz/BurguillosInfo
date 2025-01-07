@@ -76,6 +76,8 @@ sub startup ($self) {
             'Bar Beluche',
             'Bar Cristóbal',
             'Mesa escritorio',
+            'Linux',
+            'Libros de hacking',
         ]);
     });
 }
