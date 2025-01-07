@@ -75,6 +75,7 @@ sub startup ($self) {
             'Sonny Angel',
             'Bar Beluche',
             'Bar Cristóbal',
+            'Mesa escritorio',
         ]);
     });
 }

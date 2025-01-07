@@ -1,9 +1,11 @@
 <product>
     <title>Sonny Angel Juguete de Moda</title>
-    <description>Sonny Angel es un juguete de moda, consiste en una figura de bebé
+    <description>
+        Sonny Angel es un juguete de moda, consiste en una figura de bebé
         que se puede adherir al teléfono móvil u otras superficies.
 
-        Regalo perfecto para los más jovenes y los que todavía se sienten jovenes.</description>
+        Regalo perfecto para los más jovenes y los que todavía se sienten jovenes.
+    </description>
     <slug>sonny-angel</slug>
     <img>/img/sonny-angel.webp</img>
     <vendor>Amazon</vendor>

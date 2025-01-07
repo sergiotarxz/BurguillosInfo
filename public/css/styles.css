@@ -152,7 +152,8 @@ body {
       overflow-y: scroll;
       margin: 7px; }
       body div.search-overlay div.search-results img {
-        width: 75px; }
+        width: 75px;
+        height: fit-content; }
       body div.search-overlay div.search-results div.search-result div.row-title-url-image {
         display: flex;
         flex-direction: row;
