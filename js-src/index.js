@@ -28,6 +28,7 @@ function startSuggestions() {
         let selectedSuggestion;
         let currentLength = 0;
         let waitCounter;
+        const last3SearchSuggestions = [];
         window.setInterval(() => {
             if (--waitCounter > 0) {
                 return;
@@ -35,6 +36,15 @@ function startSuggestions() {
             if (!selectedSuggestion || currentLength > selectedSuggestion.length) {
                 selectedSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)]; 
                 currentLength = 0;
+                while (last3SearchSuggestions.includes(selectedSuggestion)) {
+                    selectedSuggestion
+                        = suggestions[Math.floor(Math.random() * suggestions.length)]; 
+                    currentLength = 0;
+                }
+                last3SearchSuggestions.push(selectedSuggestion);
+                if (last3SearchSuggestions.length > 2) {
+                    last3SearchSuggestions.shift();
+                }
                 waitCounter = 5;
                 return;
             }

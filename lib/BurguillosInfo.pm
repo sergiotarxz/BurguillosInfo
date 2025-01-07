@@ -78,6 +78,7 @@ sub startup ($self) {
             'Mesa escritorio',
             'Linux',
             'Libros de hacking',
+            'Pizzería pepin',
         ]);
     });
 }
