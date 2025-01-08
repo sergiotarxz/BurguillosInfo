@@ -77,7 +77,7 @@ sub _index_products( $self, $index, $products ) {
     for my $key (@product_keys) {
         my $product = $products->{$key};
         my $title   = $product->{title};
-        my $content = $product->{description};
+        my $content = $product->{description_text};
         my $url     = "/product/@{[$product->{slug}]}";
         my $image   = $product->{img};
         my $vendor  = $product->{vendor};

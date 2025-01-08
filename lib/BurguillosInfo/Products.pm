@@ -29,7 +29,10 @@ sub Retrieve ($self) {
         my $dom = Mojo::DOM->new->xml(1)->parse( $product_file->slurp_utf8 );
         defined( my $title = $dom->at(':root > title')->text )
           or die "Missing title at $product_file.";
-        defined( my $description = $dom->at(':root > description')->text )
+        defined( my $description = $dom->at(':root > description')->content )
+          or die "Missing description at $product_file.";
+        defined( my $description_text =
+              $dom->at(':root > description')->all_text )
           or die "Missing description at $product_file.";
         defined( my $slug = $dom->at(':root > slug')->text )
           or die "Missing slug at $product_file.";
@@ -40,12 +43,13 @@ sub Retrieve ($self) {
         defined( my $url = $dom->at(':root > url')->text )
           or die "Missing url at $product_file.";
         $cached_products->{$slug} = {
-            title       => $title,
-            description => $description,
-            slug        => $slug,
-            img         => $img,
-            vendor      => $vendor,
-            url         => $url,
+            title            => $title,
+            description      => $description,
+            description_text => $description_text,
+            slug             => $slug,
+            img              => $img,
+            vendor           => $vendor,
+            url              => $url,
         };
     }
     return $cached_products;

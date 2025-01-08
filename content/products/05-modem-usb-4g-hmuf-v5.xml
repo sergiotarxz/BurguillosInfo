@@ -1,0 +1,41 @@
+<product>
+    <title>Modem USB 4G HMUF-V5</title>
+    <description>
+        <h3>¡¡¡¡IMPORTANTE ESCOGER COLOR "WHITE RED 1PC"!!!!</h3>
+
+        <p>Te permite dar internet en cualquier sitio a través de 
+        usb a tu ordenador con una tarjeta SIM extra que puedes pedir
+        en tu operadora usando un plan Multisim usando los datos
+        de tu tarifa con la ventaja de no gastar batería del
+        movil en esta tarea.</p>
+
+        <p>También puede proveer de internet a través de wifi
+        a dispositivos cercanos como móviles u otros ordenadores.</p>
+
+        <p>Es muy importante que al usarlo cambies la clave por defecto
+        del wifi; o incluso que lo desactives si no lo necesitas.</p>
+
+        <p>Para ello deberás conectarte con tu navegador a http://192.168.100.1
+        una vez tengas el modem conectado por usb a tu ordenador para cambiar 
+        los ajustes con el usuario admin y la contraseña admin.</p>
+
+        <p>Este modelo contiene un ordenador completo en su interior
+        al que se le puede instalar un sistema operativo alternativo;
+        no obstante no recomiendo comprarlo para ese proposito ya
+        que el proceso no está documentado ni soportado en internet.</p>
+
+        <p>Bajo ningún concepto desactives la opción de usb tethering,
+        no podrás reconfigurar el modem y el vendedor no te ayudará a
+        resolver el problema. (Es solucionable, pero no por usuarios
+        sin conocimientos del uso del terminal)</p>
+
+        <p>Si has comprado este producto a través de nuestro enlace, vives
+        en Burguillos y se te estropea puedes contactar con 
+        burguillos.info en Instagram e intentaremos hacer lo
+        posible por ayudarte si el vendedor no responde.</p>
+    </description>
+    <slug>modem-4g-usb-hmuf-v5</slug>
+    <img>/img/hmuf-v5.webp</img>
+    <vendor>Aliexpress</vendor>
+    <url>https://s.click.aliexpress.com/e/_okTlQcF</url>
+</product>

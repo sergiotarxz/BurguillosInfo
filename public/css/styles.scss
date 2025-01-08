@@ -18,6 +18,58 @@ html {
   touch-action: none;
 }
 
+body.aliexpress-redirection {
+  background: azure;
+}
+
+div.warning-aliexpress {
+  display: block;
+  overflow: scroll;
+  background: white;
+  width: calc(90% - 100px);
+  border: solid 3px black;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  height: 80%;
+  padding: 50px;
+  max-width: 874px;
+  h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  div.buttons {
+    width: 50%;
+    max-width: 409px;
+    img {
+      width: 100%;
+    }
+    margin-left: 50%;
+    transform: translateX(-50%);
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 10px;
+      padding: 10px;
+      border: solid 3px black;
+      text-decoration: none;
+      font-weight: bold;
+      &.buy {
+        color: #445e45;
+        background: #a9d9ab;
+        border-color: #749d72;
+      }
+      &.back {
+        color: grey;
+        background: #ff958c;
+        border-color: #ed574b;
+      }
+    }
+  }
+}
+
 div.tooltip-search-promo::after {
   content: " ";
   position: absolute;

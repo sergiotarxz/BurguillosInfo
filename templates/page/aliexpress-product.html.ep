@@ -1,0 +1,108 @@
+<html lang="es">
+% my $product = stash 'product';
+% my $referer = stash 'referer';
+% my $description_og = $product->{description};
+% $description_og =~ s/\s+/ /g;
+% $description_og = substr $description_og, 0, 157;
+% $description_og =~ s/\s\S+$//;
+% $description_og.='...';
+% my $base_url = config 'base_url';
+% use Time::Piece;
+% my $t = Time::Piece->new();
+% my $year = $t->year;
+    <head>
+            <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P9K5VBGN');</script>
+    <!-- End Google Tag Manager -->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBSKCCF31B"></script>
+        <script type="module" src="/js/cookie.js"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-SBSKCCF31B');
+        </script>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178723521508611" crossorigin="anonymous"></script>
+% my $css_version = config 'css_version';
+          <script src="/js/bundle.js?v=<%=$css_version%>"></script>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"/>
+          <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
+          <meta charset="UTF-8"/>
+          <meta name="description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
+          <meta property="og:description" content="<%=defined $description_og ? $description_og : 'Lee más sobre: ' . title %>" />
+          <meta property="og:title" content="<%="Burguillos Info - @{[$product->{title}]}"%>"/>
+          <meta property="og:site_name" content="Burguillos Info" />
+          <meta property="og:type" content="website" />
+    % my $ogimage = stash 'ogimage';
+    % say STDERR $ogimage;
+    % my $user_agent = stash 'useragent';
+        
+        <meta property="og:url" content="<%=$base_url%><%= url_for %>"/>
+    % if (defined $ogimage) {
+    % my $url_for = url_for || '';
+          <meta itemprop="image" property="og:image" content="<%= $ogimage %>"/>
+          <meta name="image" content="<%= $ogimage %>"/>
+          <meta name="twitter:image" content="<%=$ogimage%>" />
+    % } else {
+          <meta name="image" property="og:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
+          <meta name="twitter:image" content="<%=$base_url%>/img/burguillos.webp?v=4">
+    % }
+          <meta property="og:image:alt" content="Portada de <%= title %>"/>
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="aliexpress-redirection">
+    <div class="warning-aliexpress">
+        <h1>Aviso antes de ir a Aliexpress.</h1>
+
+        <div class="buttons">
+            <img src="<%=$product->{img}%>" alt=""/>
+            <a class="buy" href="<%=$product->{url}%>">Comprar ahora</a>
+% if (defined $referer) {
+            <a class="back" href="<%=$referer%>">Volver atrás</a>
+% }
+        </div>
+
+        <h2>Compra <%=$product->{title}%> con seguridad en Aliexpress.</h1>
+
+        <div class="description"><%==$product->{description}%></div>
+
+        <h2>Lee esto antes de comprar</h2>
+
+        <p>Aliexpress es una gran tienda para obtener productos que no se pueden obtener en ningún otro sitio, pero es importante seguir estas medidas de seguridad para tener la mejor experiencia:</p> 
+
+        <ol>
+            <li>Paga siempre usando Paypal, no con la tarjeta de credito directamente: La mejor forma de tener 
+                seguridad en caso de que haya algún problema en tu pedido es usar el centro de disputas de Paypal,
+                Aliexpress no suele gestionar las devoluciones de forma tan eficaz como Paypal.</li>
+
+            <li>Si la rapidez con la que debe llegar el producto es muy importante para ti es muy recomendable
+                que escojas una opción alternativa a Aliexpress si existe, incluso si Aliexpress afirma una
+                fecha de llegada rápida es muy frecuente que haya retrasos debido a la larga cadena logística
+                detrás de Aliexpress. Esto es especialmente cierto en Navidades y otras fechas señaladas.</li>
+
+            <li>Nosotros solo promocionamos productos que consideramos interesantes y o hemos probado o hemos escuchado
+                hablar bien de ellos por gente que los ha probado, por desgracia no podemos asegurarte la misma
+                experiencia descrita debido a que no somos los vendedores.</li>
+
+            <li>Si el pedido llega usando Correos la fecha de entrega estimada no significa nada por como funciona Correos,
+                puede llegar o antes o después.</li>
+
+            <li>Lee siempre la descripción que te dejamos del producto, ya que muchos los hemos probado y
+                puede contener indicaciones importantes a la hora de usarlo o recibirlo, esto es muy importante en productos
+                de informática, especialmente en aquellos que promocionamos como productos hackeables en los
+                que instalar sistemas operativos alternativos y usables para cosas para las que no fueron
+                diseñados.</li>
+
+            <li>Si es posible graba como abres el paquete mostrando en la grabación que el paquete se encuentra correctamente 
+                sellado por si fuese necesario el video para una posible disputa en Paypal.</li>
+        </ol>
+    </div>
+</body>
+</html>
