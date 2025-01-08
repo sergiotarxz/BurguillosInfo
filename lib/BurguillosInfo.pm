@@ -79,6 +79,8 @@ sub startup ($self) {
             'Linux',
             'Libros de hacking',
             'Pizzería pepin',
+            'Modem datos moviles USB',
+            'Martillo emergencia coche',
         ]);
     });
 }
