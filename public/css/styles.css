@@ -80,6 +80,12 @@ div.tooltip-search-promo {
   bottom: 115%;
   transform: translateX(-50%);
   opacity: 80%; }
+  div.tooltip-search-promo p.exit {
+    display: block;
+    position: absolute;
+    top: calc(0% - 5px);
+    left: calc(100% - 15px);
+    transform: translatex(-50%); }
 
 div.open-browser-container {
   display: flex;
