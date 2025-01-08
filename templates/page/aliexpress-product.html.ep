@@ -61,17 +61,13 @@
     <div class="warning-aliexpress">
         <h1>Aviso antes de ir a Aliexpress.</h1>
 
-        <div class="buttons">
-            <img src="<%=$product->{img}%>" alt=""/>
-            <a class="buy" href="<%=$product->{url}%>">Comprar ahora</a>
-% if (defined $referer) {
-            <a class="back" href="<%=$referer%>">Volver atrás</a>
-% }
-        </div>
+%= include 'page/_buttons_aliexpress', product => $product, referer => $referer;
 
         <h2>Compra <%=$product->{title}%> con seguridad en Aliexpress.</h1>
 
         <div class="description"><%==$product->{description}%></div>
+
+%= include 'page/_buttons_aliexpress', product => $product, referer => $referer;
 
         <h2>Lee esto antes de comprar</h2>
 
@@ -103,6 +99,7 @@
             <li>Si es posible graba como abres el paquete mostrando en la grabación que el paquete se encuentra correctamente 
                 sellado por si fuese necesario el video para una posible disputa en Paypal.</li>
         </ol>
+%= include 'page/_buttons_aliexpress', product => $product, referer => $referer;
     </div>
 </body>
 </html>

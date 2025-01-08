@@ -25,11 +25,13 @@ div.warning-aliexpress {
   div.warning-aliexpress div.buttons {
     width: 50%;
     max-width: 409px;
+    min-width: 250px;
     margin-left: 50%;
     transform: translateX(-50%); }
     div.warning-aliexpress div.buttons img {
       width: 100%; }
     div.warning-aliexpress div.buttons a {
+      font-size: 0.8em;
       display: inline-block;
       margin-top: 20px;
       border-radius: 10px;
@@ -38,7 +40,7 @@ div.warning-aliexpress {
       text-decoration: none;
       font-weight: bold; }
       div.warning-aliexpress div.buttons a.buy {
-        color: #445E45;
+        color: #445e45;
         background: #a9d9ab;
         border-color: #749d72; }
       div.warning-aliexpress div.buttons a.back {

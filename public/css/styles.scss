@@ -43,12 +43,14 @@ div.warning-aliexpress {
   div.buttons {
     width: 50%;
     max-width: 409px;
+    min-width: 250px;
     img {
       width: 100%;
     }
     margin-left: 50%;
     transform: translateX(-50%);
     a {
+      font-size: 0.8em;
       display: inline-block;
       margin-top: 20px;
       border-radius: 10px;

@@ -1,0 +1,8 @@
+<div class="buttons">
+    <img src="<%=$product->{img}%>" alt=""/>
+    <a class="buy" href="<%=$product->{url}%>">Comprar ahora</a>
+% if (defined $referer) {
+    <a class="back" href="<%=$referer%>">Volver atrás</a>
+% }
+</div>
+
