@@ -82,6 +82,7 @@
                     </a>
                 </div>
 % }
+            <a href="/" class="brand"><img src="/img/burguillos-new-logo.svg?v=1" alt=""/> Burguillos Info</a>
             <div class="search-results <%=$is_android && 'search-android'%>">
                 <%= content %>
                 <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>

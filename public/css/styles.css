@@ -2,6 +2,16 @@ html {
   height: 100%;
   touch-action: none; }
 
+a.brand {
+  text-decoration: none;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 2em; }
+  a.brand img {
+    height: 0.8em;
+    width: fit-content; }
+
 body.aliexpress-redirection {
   background: azure; }
 
@@ -188,6 +198,8 @@ body {
     border-radius: 20px;
     width: calc(100% - 20px - 0.6rem);
     padding: 10px; }
+  body div.search-overlay.default div.search-results {
+    height: calc(100% - 80px - 37px); }
   body div.search-overlay {
     overflow-y: scroll;
     display: none;

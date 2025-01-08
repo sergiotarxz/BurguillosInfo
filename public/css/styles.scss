@@ -12,10 +12,23 @@ $background_sidebar: $background-page; //#F5F5DC;
 $color_sidebar: #dcdcf5;
 $attribution_font_size: 0.8em;
 $tooltip-search-background: #390384;
+$font_size_brand: 2em;
 
 html {
   height: 100%;
   touch-action: none;
+}
+
+a.brand {
+  text-decoration: none;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: $font_size_brand;
+  img {
+    height: 0.8em;
+    width: fit-content;
+  }
 }
 
 body.aliexpress-redirection {
@@ -234,6 +247,12 @@ body {
     width: calc(100% - 20px - 0.6rem);
     padding: 10px;
   }
+
+  div.search-overlay.default {
+      div.search-results {
+        height: calc(100% - 80px - 37px);
+      }
+   }
 
   div.search-overlay {
     overflow-y: scroll;
