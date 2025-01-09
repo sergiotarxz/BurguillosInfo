@@ -1,0 +1,43 @@
+% use Time::Piece;
+% my $t = Time::Piece->new();
+% my $year = $t->year;
+% my $embedded = stash 'embedded';
+% my $query = stash 'query';
+% my $searchObjects = stash 'searchObjects';
+% my $base_url = config 'base_url';
+% if (!$embedded) {
+%       layout 'search_results', description_og => "Resultados para '$query' en Burguillos Info", search_term => $query;
+%       title "'$query' en Burguillos Info";
+% }
+% if (scalar(@$searchObjects) == 0) {
+<p>No se han encontrado resultados, todavía, vamos a trabajar para encontrar resultados a esta busqueda, repitela en unos días.</p>
+% }
+% for my $result (@$searchObjects) {
+<div class="search-result">
+%       my $content = $result->{content};
+%       my $img = $result->{urlImage};
+%       my $title = $result->{title};
+%       my $vendor = $result->{vendor};
+%       my $url = $result->{url};
+   <div class="row-title-url-image"> 
+       <img src="<%=$img%>" alt=""/>
+       <div class="column-title-url">
+            <b><%=$title%></b>
+%       if (defined $vendor) {
+            <p class="product-vendor">Enlace promocionado de <%=$vendor%></p>
+%       }
+            <a href="<%=$url%>"><%=$base_url.$url%></a>
+%       if (defined $vendor) {
+            <a class="search-button-buy-now" href="<%=$url%>">Compralo ahora en <%=$vendor%></a> 
+%       }
+       </div>
+   </div>
+   <p class="search-result-content"><%=$content%></p>
+</div>
+% }
+<p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
+<input id="url-copy" value="<%=$base_url.url_with%>"/>
+<a href="#" onclick="document.getElementById('url-copy').select();
+   document.execCommand('copy')">
+       <img src="/img/copy-to-clipboard.webp" alt="Copy current url to clipboard"/>
+</a>
