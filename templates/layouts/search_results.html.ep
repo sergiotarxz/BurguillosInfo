@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 % my $categories = stash 'categories';
-% my $current_category_slug = stash 'current_category_slug';
 % my $description_og = stash 'description_og';
 % $description_og =~ s/\s+/ /g;
 % $description_og = substr $description_og, 0, 157;
 % $description_og =~ s/\s\S+$//;
 % $description_og.='...';
 % my $base_url = config 'base_url';
-% use Time::Piece;
-% my $t = Time::Piece->new();
-% my $year = $t->year;
 % my $search_term = stash 'search_term' // '';
 % if ($search_term eq '#index') {
 %       $search_term = '';
@@ -85,7 +81,6 @@
             <a href="/" class="brand"><img src="/img/burguillos-new-logo.svg?v=1" alt=""/> Burguillos Info</a>
             <div class="search-results <%=$is_android && 'search-android'%>">
                 <%= content %>
-                <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
             </div>
             <div class="bounding-search-bar">
 %= include 'page/_search_bar', search_term => $search_term

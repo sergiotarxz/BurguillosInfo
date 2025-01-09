@@ -58,6 +58,14 @@ function startSuggestions() {
 
 document.addEventListener("DOMContentLoaded", function () {
     startSuggestions();
+    let focusSearch = document.body.querySelector('nav.mobile-shortcuts div.search input');
+    if (focusSearch === null) {
+        focusSearch = document.body.querySelector('div.search input');
+    }
+    if (focusSearch !== null) {
+        focusSearch.focus();
+    }
+
     const menu_expand = document.querySelector('a.menu-expand');
     const mobile_foldable = document.querySelector('nav.mobile-foldable');
     const transparentFullscreenHide = document.querySelector('div.transparent-fullscreen-hide');
@@ -344,20 +352,18 @@ function onSearchChange() {
         + "//"
         + window.location.hostname
         + port
-        + '/search.json');
+        + '/search');
     url.searchParams.set('q', query);
+    url.searchParams.set('e', 1);
     fetch(url).then(async (res) => {
-        const json = await res.json()
-        if (!json.ok) {
-            noResults(searchResults);
-            return
-        }
-        console.log(json.searchObjects.length)
-        if (json.searchObjects.length < 1) {
-            noResults(searchResults);
-            return;
-        }
-        showResults(searchResults, json.searchObjects);
+        const url = new URL(window.location.protocol
+            + "//"
+            + window.location.hostname
+            + port
+            + '/search');
+        url.searchParams.set('q', query);
+        history.pushState({}, '', url);
+        searchResults.innerHTML = await res.text();
         searchResults.scrollTo(0, 0);
     })
     search.focus()
@@ -418,7 +424,6 @@ function showResults(searchResults, searchObjects) {
             columnTitleUrl.appendChild(vendorP);
             hasVendor = true;
         }
-        columnTitleUrl.appendChild(document.createElement('br'))
         columnTitleUrl.appendChild(url)
         if (hasVendor) {
             const callToAction = document.createElement('a');

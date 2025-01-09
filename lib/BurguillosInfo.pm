@@ -57,6 +57,7 @@ sub startup ($self) {
     $r->get('/product/:slug')->to('Product#direct_buy');
     $r->get('/producto/:slug')->to('Product#direct_buy');
     $r->get('/search.json')->to('Search#search');
+    $r->get('/search')->to('Search#search_user');
     $r->get('/farmacia-guardia.json')->to('FarmaciaGuardia#current');
     $r->get('/<:category>.rss')->to('Page#category_rss');
     $r->get('/:category_slug/atributo/<:attribute_slug>-preview.png')->to('Attribute#get_attribute_preview');

@@ -21,3 +21,4 @@
 % my ($category_posts) = BurguillosInfo::Posts->new->RetrieveAllPostsForCategory($current_category->{slug});
 %= include 'page/_list_posts', posts => $category_posts; 
 </div>
+<p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
