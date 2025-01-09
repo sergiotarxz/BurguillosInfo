@@ -1,0 +1,27 @@
+<product>
+    <title>Pantalla con microcontrolador ESP32</title>
+    <description>
+        <p>Esta pantalla capacitiva hackeable lleva dentro 
+        a la bestia de los desarrollos embebidos sobre microcontrolador,
+        la ESP32.</p>
+
+        <p>Tiene soporte para añadirle una tarjeta sd para poder almacenar
+        datos de tu aplicación.</p>
+
+        <p>Tenemos una en Burguillos Info por lo que cualquier duda sobre
+        como programarla nos la puedes preguntar en nuestro instagram: 
+        "burguillos.info" si la has comprado en nuestro enlace de promoción.</p>
+
+        <p>Se puede programar muy fácilmente desde Linux en C con cualquier
+        editor de texto o IDE usando el framework ESPIDF.</p>
+
+        <p>Incluye bluetooth y wifi por lo que puede convertirse
+        en el punto de control táctil de tús aplicaciones embebidas.</p>
+
+        <p>Muy similar a Cheap Yellow Display.</p>
+    </description>
+    <slug>cyd-capacitiva-esp32</slug>
+    <img>/img/cyd-esp32-capacitiva.webp</img>
+    <vendor>Aliexpress</vendor>
+    <url>https://s.click.aliexpress.com/e/_om78LIZ</url>
+</product>
