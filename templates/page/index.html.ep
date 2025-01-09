@@ -1,4 +1,5 @@
 % use Time::Piece;
+% my $base_url = config 'base_url';
 % my $t = Time::Piece->new();
 % my $year = $t->year;
 % use Data::Dumper;
@@ -25,3 +26,9 @@
 %= include 'page/_list_posts', posts => $category_posts; 
 </div>
 <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
+<input id="url-copy" value="<%=$base_url.url_with%>" style="display: none;"/>
+<a href="#" onclick="document.getElementById('url-copy').select();
+   document.execCommand('copy')">
+       <img src="/img/copy-to-clipboard.webp" alt="Copy current url to clipboard"/>
+</a>
+

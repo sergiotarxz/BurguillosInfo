@@ -19,6 +19,12 @@ html {
   touch-action: none;
 }
 
+#url-copy {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
 body nav.mobile-shortcuts {
   div.search div.fake-text-box input[type="text"] {
     position: absolute;
