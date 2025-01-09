@@ -2,6 +2,14 @@ html {
   height: 100%;
   touch-action: none; }
 
+body nav.mobile-shortcuts div.search div.fake-text-box input[type="text"] {
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%); }
+
+body nav.mobile-shortcuts div.search a.search-icon {
+  margin-top: 0px; }
+
 a.brand {
   text-decoration: none;
   color: black;
