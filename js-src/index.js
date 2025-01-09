@@ -57,6 +57,10 @@ function startSuggestions() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('popstate', (event) => {
+        console.log('refreshing');
+        window.location.reload();
+    });
     startSuggestions();
     let focusSearch = document.body.querySelector('nav.mobile-shortcuts div.search input');
     if (focusSearch === null) {
