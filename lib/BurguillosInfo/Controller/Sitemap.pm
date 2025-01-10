@@ -14,18 +14,8 @@ use XML::Twig;
 
 use Mojo::Base 'Mojolicious::Controller', '-signatures';
 
-sub sitemap ($self) {
-    my $categories = BurguillosInfo::Categories->new->Retrieve;
-    my $dom        = Mojo::DOM->new_tag(
-        'urlset',
-        xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9',
-        undef
-    );
-    $dom->xml(1);
-    for my $category_key ( keys %$categories ) {
-        $self->_append_category_dom( $dom, $category_key, $categories );
-    }
-    my $searches = [
+sub _featured_searches($self) {
+    return [
         'cristobal',
         'ermita',
         'tocinito',
@@ -39,7 +29,22 @@ sub sitemap ($self) {
         'bus',
         'autobus',
         'autobus burguillos sevilla',
+        'telefono policia local burguillos',
     ];
+}
+
+sub sitemap ($self) {
+    my $categories = BurguillosInfo::Categories->new->Retrieve;
+    my $dom        = Mojo::DOM->new_tag(
+        'urlset',
+        xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9',
+        undef
+    );
+    $dom->xml(1);
+    for my $category_key ( keys %$categories ) {
+        $self->_append_category_dom( $dom, $category_key, $categories );
+    }
+    my $searches = $self->_featured_searches;
     for my $search (@$searches) {
         $dom->child_nodes->first->append_content(
             $self->_generate_url_for_search($search) );
