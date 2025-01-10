@@ -31,6 +31,7 @@ sub normalize($self, $text) {
     $stemmer->stem_in_place(\@words);
     $decomposed = join " ", @words;
     $decomposed =~ s/\bpizzeri\b/pizz/gi;
+    $decomposed =~ s/pizz/pizz horn/gi;
     $decomposed =~ s/\bcristob\b/cristobal/gi;
     return $decomposed;
 }
