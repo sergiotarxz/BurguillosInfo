@@ -11,7 +11,7 @@
 %       layout 'search_results', description_og => "Resultados para '$query' en Burguillos Info", search_term => $query;
 % }
 % if ($query) {
-<h3>Resultados busqueda: '<%=$query%>' en Burguillos Info</h3>
+<h1>Resultados busqueda: '<%=$query%>' en Burguillos Info</h1>
     % if (scalar(@$searchObjects) == 0) {
 <p>No se han encontrado resultados, todavía, vamos a trabajar para encontrar resultados a esta busqueda, repitela en unos días.</p>
     % }
