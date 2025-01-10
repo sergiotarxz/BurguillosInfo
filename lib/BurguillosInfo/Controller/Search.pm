@@ -21,6 +21,10 @@ sub search_user($self) {
     my $ua    = Mojo::UserAgent->new;
     my $query = $self->param('q');
     my $embedded = $self->param('e');
+    my $base_url     = $self->config('base_url');
+    if (defined $query && !$query) {
+        $self->redirect_to($base_url.'/search.html');
+    }
     if ( defined $search_cache->{$query} ) {
         return $self->render(
             template => 'page/search',

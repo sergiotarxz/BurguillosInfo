@@ -35,6 +35,7 @@ sub sitemap ($self) {
         'fogon de segovia',
         'martillo para emergencias vidrio coche',
         'donde comprar sonny angel en Burguillos',
+        '',
     ];
     for my $search (@$searches) {
         $dom->child_nodes->first->append_content(
@@ -100,7 +101,9 @@ sub _generate_url_for_search ( $self, $query ) {
     my $url_tag      = Mojo::DOM->new_tag('url');
     my $base_url     = $self->config('base_url');
     my $url_resource = Mojo::URL->new("$base_url/search.html");
-    $url_resource->query( q => $query );
+    if ($query) {
+        $url_resource->query( q => $query );
+    }
     my $location_tag = Mojo::DOM->new_tag( loc => $url_resource );
     $url_tag->child_nodes->first->append_content($location_tag);
     return $url_tag;

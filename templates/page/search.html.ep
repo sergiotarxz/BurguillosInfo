@@ -9,9 +9,14 @@
 %       layout 'search_results', description_og => "Resultados para '$query' en Burguillos Info", search_term => $query;
 %       title "'$query' en Burguillos Info";
 % }
+% if ($query) {
 <h3>Resultados busqueda: '<%=$query%>' en Burguillos Info</h3>
-% if (scalar(@$searchObjects) == 0) {
+    % if (scalar(@$searchObjects) == 0) {
 <p>No se han encontrado resultados, todavía, vamos a trabajar para encontrar resultados a esta busqueda, repitela en unos días.</p>
+    % }
+% } else {
+    <p>Busca cualquier cosa en Burguillos Info, tus productos favoritos, restaurantes, bares, tiendas, ofertas...</p>
+    <p>¡Si no lo tenemos te lo conseguimos!</p>
 % }
 % for my $result (@$searchObjects) {
 <div class="search-result">
