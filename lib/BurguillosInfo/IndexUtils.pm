@@ -17,8 +17,9 @@ use Lingua::Stem::Snowball;
 sub normalize($self, $text) {
     return undef if !defined $text;
     my $decomposed = NFKD($text);
-    $decomposed =~ s/\bautobus\b/horario autobus/gi;
-    $decomposed =~ s/\bbus\b/horario autobus/gi;
+    $decomposed =~ s/\bautobus\b/horario autobus martillo/gi;
+    $decomposed =~ s/\bbus\b/horario autobus martillo/gi;
+    $decomposed =~ s/\bautobus burguillos sevilla\b/horario autobus martillo/gi;
     $decomposed =~ s/\bhack\S+\b/hack/gi;
     $decomposed =~ s/\p{NonspacingMark}//g;
     $decomposed =~ s/\bEl\b//gi;

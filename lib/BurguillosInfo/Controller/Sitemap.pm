@@ -38,6 +38,7 @@ sub sitemap ($self) {
         '',
         'bus',
         'autobus',
+        'autobus burguillos sevilla',
     ];
     for my $search (@$searches) {
         $dom->child_nodes->first->append_content(
