@@ -236,6 +236,7 @@ body {
         flex-direction: row;
         overflow: hidden; }
         body div.search-overlay div.search-results div.search-result div.row-title-url-image img {
+          aspect-ratio: 1 / 1;
           margin: 10px; }
       body div.search-overlay div.search-results div.search-result a.search-button-buy-now {
         display: block;
