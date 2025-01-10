@@ -16,7 +16,7 @@ use Mojo::Base 'Mojolicious::Controller', '-signatures';
 
 sub sitemap ($self) {
     my $categories = BurguillosInfo::Categories->new->Retrieve;
-    my $dom = Mojo::DOM->new_tag(
+    my $dom        = Mojo::DOM->new_tag(
         'urlset',
         xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9',
         undef
@@ -25,10 +25,25 @@ sub sitemap ($self) {
     for my $category_key ( keys %$categories ) {
         $self->_append_category_dom( $dom, $category_key, $categories );
     }
+    my $searches = [
+        'cristobal',
+        'ermita',
+        'tocinito',
+        'cochinito',
+        'libros de hacking',
+        'horno pizza aire libre',
+        'fogon de segovia',
+        'martillo para emergencias vidrio coche',
+        'donde comprar sonny angel en Burguillos',
+    ];
+    for my $search (@$searches) {
+        $dom->child_nodes->first->append_content(
+            $self->_generate_url_for_search($search) );
+    }
     my $xml_string = "$dom";
-    my $document = XML::Twig->new(pretty_print=> 'indented');
+    my $document   = XML::Twig->new( pretty_print => 'indented' );
     $xml_string = $document->parse($xml_string)->sprint;
-    $self->render(text => $xml_string, format => 'xml');
+    $self->render( text => $xml_string, format => 'xml' );
 }
 
 sub _append_category_dom ( $self, $dom, $category_key, $categories ) {
@@ -47,17 +62,19 @@ sub _append_category_dom ( $self, $dom, $category_key, $categories ) {
         $dom->child_nodes->first->append_content($url_post);
     }
     my $url          = Mojo::DOM->new_tag('url');
-    my $base_url   = $self->config('base_url');
+    my $base_url     = $self->config('base_url');
     my $location_tag = Mojo::DOM->new_tag( loc => "$base_url/$slug" );
     my $final_date_last_modification_category =
       _compare_dates_return_most_recent( $date_publish_category,
         $date_last_modification_category );
-    if (defined $final_date_last_modification_category) {
+    if ( defined $final_date_last_modification_category ) {
         my $last_modification_tag =
-          Mojo::DOM->new_tag( lastmod => $final_date_last_modification_category );
+          Mojo::DOM->new_tag(
+            lastmod => $final_date_last_modification_category );
         $url->child_nodes->first->append_content($last_modification_tag);
     }
-    $self->_append_attributes_category_sitemap($dom, $category_key, $categories);
+    $self->_append_attributes_category_sitemap( $dom, $category_key,
+        $categories );
     my $priority_tag = Mojo::DOM->new_tag( priority => 0.6 );
     $url->child_nodes->first->append_content($location_tag);
     $url->child_nodes->first->append_content($priority_tag);
@@ -65,15 +82,28 @@ sub _append_category_dom ( $self, $dom, $category_key, $categories ) {
     $dom->child_nodes->first->append_content($url);
 }
 
-sub _append_attributes_category_sitemap($self, $dom, $category_key, $categories) {
-    my $base_url   = $self->config('base_url');
+sub _append_attributes_category_sitemap( $self, $dom, $category_key,
+    $categories )
+{
+    my $base_url = $self->config('base_url');
     my $category = $categories->{$category_key};
-    for my $attribute (keys $category->{attributes}->%*) {
+    for my $attribute ( keys $category->{attributes}->%* ) {
         my $url          = Mojo::DOM->new_tag('url');
-        my $location_tag = Mojo::DOM->new_tag( loc => "$base_url/$category_key/atributo/$attribute" );
+        my $location_tag = Mojo::DOM->new_tag(
+            loc => "$base_url/$category_key/atributo/$attribute" );
         $url->child_nodes->first->append_content($location_tag);
         $dom->child_nodes->first->append_content($url);
     }
+}
+
+sub _generate_url_for_search ( $self, $query ) {
+    my $url_tag      = Mojo::DOM->new_tag('url');
+    my $base_url     = $self->config('base_url');
+    my $url_resource = Mojo::URL->new("$base_url/search");
+    $url_resource->query( q => $query );
+    my $location_tag = Mojo::DOM->new_tag( loc => $url_resource );
+    $url_tag->child_nodes->first->append_content($location_tag);
+    return $url_tag;
 }
 
 sub _generate_url_for_post ( $self, $post ) {
@@ -82,7 +112,7 @@ sub _generate_url_for_post ( $self, $post ) {
     my $date_last_modification_post = $post->{last_modification_date};
     my $final_date_last_modification_post =
       _compare_dates_return_most_recent( $date, $date_last_modification_post );
-    my $base_url   = $self->config('base_url');
+    my $base_url     = $self->config('base_url');
     my $url_resource = "$base_url/posts/@{[$post->{slug}]}";
     my $last_modification_tag =
       Mojo::DOM->new_tag( lastmod => $final_date_last_modification_post );
