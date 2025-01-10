@@ -366,6 +366,10 @@ function onSearchChange() {
             + port
             + '/search.html');
         url.searchParams.set('q', query);
+        document.title = `'${query}' en Burguillos Info`;
+        if (!query) {
+            document.title = `Buscador de Burguillos Info`;
+        }
         history.pushState({}, '', url);
         searchResults.innerHTML = await res.text();
         searchResults.scrollTo(0, 0);

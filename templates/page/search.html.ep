@@ -6,8 +6,9 @@
 % my $searchObjects = stash 'searchObjects';
 % my $base_url = config 'base_url';
 % if (!$embedded) {
-%       layout 'search_results', description_og => "Resultados para '$query' en Burguillos Info", search_term => $query;
 %       title "'$query' en Burguillos Info";
+%       title 'Buscador de Burguillos Info' if !$query;
+%       layout 'search_results', description_og => "Resultados para '$query' en Burguillos Info", search_term => $query;
 % }
 % if ($query) {
 <h3>Resultados busqueda: '<%=$query%>' en Burguillos Info</h3>

@@ -298,7 +298,7 @@ body {
       border-radius: 10px;
       border: solid gray 3px;
       aspect-ratio: 1 / 1;
-      width: auto; }
+      width: fit-content; }
       body div.search a.search-icon img {
         height: 80%;
         aspect-ratio: 1 / 1; }

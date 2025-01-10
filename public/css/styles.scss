@@ -268,10 +268,10 @@ body {
   }
 
   div.search-overlay.default {
-      div.search-results {
-        height: calc(100% - 80px - 37px);
-      }
-   }
+    div.search-results {
+      height: calc(100% - 80px - 37px);
+    }
+  }
 
   div.search-overlay {
     overflow-y: scroll;
@@ -382,7 +382,7 @@ body {
       border-radius: 10px;
       border: solid gray 3px;
       aspect-ratio: 1 / 1;
-      width: auto;
+      width: fit-content;
 
       img {
         height: 80%;
