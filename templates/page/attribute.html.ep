@@ -1,3 +1,7 @@
+% use Time::Piece;
+% my $t = Time::Piece->new();
+% my $year = $t->year;
+% my $base_url = config 'base_url';
 % use Data::Dumper;
 % use DateTime::Format::ISO8601;
 %
@@ -20,3 +24,9 @@
 <div class="content">
 %= include 'page/_list_posts', posts => $posts; 
 </div>
+<p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>
+<input id="url-copy" value="<%=$base_url.url_with%>"/>
+<a href="#" onclick="document.getElementById('url-copy').select();
+   document.execCommand('copy')">
+       <img src="/img/copy-to-clipboard.webp" alt="Copy current url to clipboard"/>
+</a>
