@@ -356,7 +356,7 @@ function onSearchChange() {
         + "//"
         + window.location.hostname
         + port
-        + '/search');
+        + '/search.html');
     url.searchParams.set('q', query);
     url.searchParams.set('e', 1);
     fetch(url).then(async (res) => {
@@ -364,7 +364,7 @@ function onSearchChange() {
             + "//"
             + window.location.hostname
             + port
-            + '/search');
+            + '/search.html');
         url.searchParams.set('q', query);
         history.pushState({}, '', url);
         searchResults.innerHTML = await res.text();

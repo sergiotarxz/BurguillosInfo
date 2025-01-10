@@ -99,7 +99,7 @@ sub _append_attributes_category_sitemap( $self, $dom, $category_key,
 sub _generate_url_for_search ( $self, $query ) {
     my $url_tag      = Mojo::DOM->new_tag('url');
     my $base_url     = $self->config('base_url');
-    my $url_resource = Mojo::URL->new("$base_url/search");
+    my $url_resource = Mojo::URL->new("$base_url/search.html");
     $url_resource->query( q => $query );
     my $location_tag = Mojo::DOM->new_tag( loc => $url_resource );
     $url_tag->child_nodes->first->append_content($location_tag);
