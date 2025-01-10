@@ -1,0 +1,76 @@
+<product>
+    <title>Dispositivo Hacking Modem USB 4G uz801</title>
+    <description>
+        <h3>¡¡¡¡IMPORTANTE ESCOGER COLOR "B"!!!!</h3>
+
+        <p>(!!!) Si no tienes conocimientos de informática avanzados 
+            ni ganas de aprender compra 
+            <a href="/producto/modem-4g-usb-hmuf-v5">hmuf-v5</a> que
+            tiene todo lo que debería tener un modem por defecto en
+            su lugar, debido a que este aparato aun teniendo mucho
+            mejor soporte en Linux para hacer lo que quieras
+            está muy limitado con el software que viene por defecto
+            y requiere hackearlo para poder empezar a hacer cosas chulas
+            con él.</p>
+
+        <p>Este modem 4g con soporte de tarjeta SIM, USB host mode, wifi y gps
+            con 512MB de RAM y aproximadamente 3GB útiles de espacio para
+            almacenar el software que quieras usar/crear para el dispositivo
+            es uno de los aparatos más interesantes hackeables que he
+            encontrado nunca, debido a su función original como modem
+            puede funcionar con muy poca electricidad, con lo que da
+            un puerto usb de un ordenador funciona al 100% de su capacidad,
+            por lo que puedes enchufarlo a un powerbank y que esté funcionando 
+            muchísimo tiempo.</p>
+
+        <p>Su soporte de USB host mode significa que puede simular pulsaciones
+            de teclado y ratón, proveer una red alternativa a un ordenador e
+            infinidad de usos más.</p>
+
+        <p>Es un aparato ideal tanto para pentesting como para desarrollo
+            de soluciones embebidas como control de sistemas automáticos
+            en lugares sin conexión a internet como los campos de nuestro
+            pueblo.</p>
+
+        <p>Su soporte de GPS implica que podrás usarlo para vigilar
+            la localización de tus pertencias.</p>
+
+        <p>Por defecto viene con Android, pero Postmarketos, un Linux
+            para dispositivos embebidos tiene soporte del 100% para
+            este aparato lo que te permitirá tener acceso a infinidad
+            de programas de software libre para llevar a cabo cualquier
+            uso alternativo al para el que se diseñó.</p>
+
+        <p>Antes de comprar, por favor lee 
+            <a href="https://wiki.postmarketos.org/wiki/Zhihe_series_LTE_dongles_(generic-zhihe)">
+            el artículo de la wiki de
+            Postmarketos</a> sobre este dispositivo para asegurarte 100%
+            de que encaja con tus capacidades de informática.</p>
+
+        <p>Si usas Linux, compras el producto por nuestro enlace y quieres 
+            empezar a hackear este producto para hacer realidad tu proyecto,
+            por favor contactanos antes de manipular el software
+            para que podamos ayudarte a hacer un backup del software
+            original, este paso es muy importante y muy fácil de
+            hacer mal. En caso de error sin un backup completo
+            el dispositivo quedará inutilizable y el fabricante
+            no te dará un software nuevo. (Que además es único
+            por dispositivo por ejemplo para los drivers de wifi
+            y el IMEI.)</p>
+        
+        <p>Tú no quieres tirar más de 10€ a la basura y nosotros no queremos
+            que quedes descontento con nuestra recomendación, así
+            pues contactanos, yo ya he tirado esos 10€ a la basura antes
+            para que tú no lo tengas que hacer por realizar mal el
+            backup.</p>
+
+        <p>Si has comprado este producto a través de nuestro enlace, vives
+        en Burguillos y se te estropea puedes contactar con 
+        burguillos.info en Instagram e intentaremos hacer lo
+        posible por ayudarte si el vendedor no responde.</p>
+    </description>
+    <slug>modem-4g-usb-uz801</slug>
+    <img>/img/uz801.webp</img>
+    <vendor>Aliexpress</vendor>
+    <url>https://s.click.aliexpress.com/e/_onzxQ1b</url>
+</product>
