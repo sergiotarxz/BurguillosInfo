@@ -58,8 +58,10 @@ function startSuggestions() {
 
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('popstate', (event) => {
-        console.log('refreshing');
-        window.location.reload();
+        if (event) {
+            console.log('refreshing');
+            window.location.reload();
+        }
     });
     startSuggestions();
     let focusSearch = document.body.querySelector('nav.mobile-shortcuts div.search input');
@@ -246,8 +248,9 @@ function addListenersSearch() {
     const searchOverlay = document.querySelector('div.search-overlay');
     const searchInput = searchOverlay.querySelector('div.search input');
     fakeSearchInput.value = searchInput.value;
+    const firstUrl = window.location.href;
     if (exitSearch !== null) {
-        exitSearch.addEventListener('click', onExitSearch)
+        exitSearch.addEventListener('click', (event) => { onExitSearch(event, firstUrl) })
     }
     const searchIconDesktop = document.querySelector('nav.desktop a.search-icon');
     if (searchIconDesktop !== null) {
@@ -457,10 +460,14 @@ function noResults(searchResults) {
     searchResults.appendChild(p)
 }
 
-function onExitSearch() {
+function onExitSearch(event, firstUrl) {
+    event.preventDefault();
     const searchOverlay = document.querySelector('div.search-overlay');
     if (searchOverlay !== null) {
         searchOverlay.classList.toggle('active');
+    }
+    if (!searchOverlay.classList.contains('active')) {
+        history.pushState({}, '', firstUrl);
     }
 }
 
