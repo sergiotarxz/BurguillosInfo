@@ -1,0 +1,30 @@
+<product>
+    <title>Libro Postgresql, Programa, Administra, Construye.</title>
+    <description>
+        <p>Libro en inglés para aprender a programar y administrar bases
+            de datos Postgresql, el mejor motor de bases de datos
+            de software libre.</p>
+
+        <p>Tus inventos de hacking necesitan una forma eficiente de
+            almacenar información, una correcta admistración y optimización
+            de las bases de datos es una de las formas más sencillas de 
+            aumentar el rendimiento y sacarle el máximo provecho a
+            tu aplicación.</p>
+        
+        <p>También es útil para pentesting ya que la base de datos
+            es el tesoro más preciado de las empresas y descubrir los
+            errores de seguridad que afectan a las bases de datos es
+            altamente valorado por las empresas y equipos IT.</p>
+
+        <p>Consigue un buen trabajo como DBA securizando bases de datos,
+            aumentando su rendimiento y manteniendo la integridad
+            de la información.</p>
+
+        <p>Libro excepcional que podrás releer muchas veces descubriendo
+            cada vez trucos nuevos.</p>
+    </description>
+    <slug>packt-learn-postgresql</slug>
+    <img>/img/learn-postgresql.webp</img>
+    <vendor>Amazon</vendor>
+    <url>https://amzn.to/4fOU5YA</url>
+</product>
