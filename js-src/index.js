@@ -19,6 +19,33 @@ const cookies = document.cookie.split("; ").map((cookie) => {
     return acc;
 }, {});
 
+function addEventListernerExpandDescriptionProducts() {
+    const searchResults = document.querySelectorAll('div.search-result');
+    for (const result of searchResults) {
+        const a = result.querySelector('div.row-title-url-image a');
+        if (a === null) {
+            continue;
+        }
+        if (!a.href) {
+            continue;
+        }
+        const askUrl = a.href + '.json';
+        const content = result.querySelector('div.search-result-content');
+        const expand = result.querySelector('div.search-result-content a.expand');
+        if (expand === null) {
+            continue;
+        }
+        expand.addEventListener('click', (event) => {
+            event.preventDefault();
+            fetch(askUrl).then(async (res) => {
+                const json = await res.json();
+                content.innerHTML = json.description;
+            });
+        });
+    }
+
+}
+
 function startSuggestions() {
     const searchInputs = document.querySelectorAll('div.fake-text-box input');
     const port = _port()
@@ -64,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     startSuggestions();
+    addEventListernerExpandDescriptionProducts();
     let focusSearch = document.body.querySelector('nav.mobile-shortcuts div.search input');
     if (focusSearch === null) {
         focusSearch = document.body.querySelector('div.search input');
@@ -375,89 +403,10 @@ function onSearchChange() {
         }
         history.pushState({}, '', url);
         searchResults.innerHTML = await res.text();
+        addEventListernerExpandDescriptionProducts();
         searchResults.scrollTo(0, 0);
     })
     search.focus()
-}
-
-function showResults(searchResults, searchObjects) {
-    searchResults.innerHTML = "";
-    for (let searchObject of searchObjects) {
-        const searchResultContainer = document.createElement('div')
-        searchResultContainer.classList.add('search-result')
-        const rowTitleUrlImageDiv = document.createElement('div');
-        rowTitleUrlImageDiv.classList.add('row-title-url-image');
-        const columnTitleUrl = document.createElement('div');
-        columnTitleUrl.classList.add('column-title-url');
-        const img = document.createElement('img')
-        const title = document.createElement('b')
-        const url = document.createElement('a')
-        const content = document.createElement('p')
-
-        title.innerText = searchObject.title
-        let port = window.location.port;
-        if (port !== '') {
-            port = ':' + port
-        }
-        if (searchObject.url.match(/^\//)) {
-            searchObject.url = window.location.protocol 
-                + "//" + window.location.hostname 
-                + port
-                + searchObject.url
-        }
-        let urlImage = searchObject.urlImage;
-        if (urlImage !== null && urlImage.match(/^\//)) {
-            urlImage = window.location.protocol 
-                + "//" + window.location.hostname 
-                + port
-                + urlImage
-        }
-        if (urlImage !== null) {
-            img.alt = ""
-            img.src = urlImage
-        }
-
-        url.href = searchObject.url
-        url.innerText = searchObject.url
-        content.innerText = searchObject.content
-
-        if (urlImage !== null) {
-            rowTitleUrlImageDiv.appendChild(img)
-        }
-
-        columnTitleUrl.appendChild(title);
-        let vendor = searchObject.vendor;
-        let hasVendor;
-        if (vendor !== null) {
-            const vendorP = document.createElement('p');
-            vendorP.classList.add('product-vendor');
-            vendorP.innerText = `Enlace promocionado de ${vendor}`;
-            columnTitleUrl.appendChild(vendorP);
-            hasVendor = true;
-        }
-        columnTitleUrl.appendChild(url)
-        if (hasVendor) {
-            const callToAction = document.createElement('a');
-            callToAction.classList.add('search-button-buy-now');
-            callToAction.innerText= `Compralo ahora en ${vendor}`;
-            callToAction.href = searchObject.url;
-            columnTitleUrl.appendChild(callToAction);
-        }
-
-        rowTitleUrlImageDiv.appendChild(columnTitleUrl)
-
-        searchResultContainer.appendChild(rowTitleUrlImageDiv)
-        content.classList.add('search-result-content');
-        searchResultContainer.appendChild(content)
-        searchResults.appendChild(searchResultContainer)
-    }
-}
-
-function noResults(searchResults) {
-    searchResults.innerHTML = ""
-    const p = document.createElement('p')
-    p.innerText = 'No se han encontrado resultados, todavía, vamos a trabajar para encontrar resultados a esta busqueda, repitela en unos días.'
-    searchResults.appendChild(p)
 }
 
 function onExitSearch(event, firstUrl) {

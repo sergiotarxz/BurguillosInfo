@@ -30,4 +30,13 @@ sub direct_buy($self) {
     $self->redirect_to( $product->{url} );
     return;
 }
+
+sub get_data($self) {
+    my $products = BurguillosInfo::Products->new->Retrieve;
+    my $slug     = $self->param('slug');
+    my $product  = $products->{$slug};
+    return $self->render(
+        json => $product
+    );
+}
 1;

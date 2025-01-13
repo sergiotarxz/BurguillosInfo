@@ -95,14 +95,14 @@ div.warning-aliexpress {
       text-decoration: none;
       font-weight: bold;
       &.buy {
-        color: #445e45;
+        color: #5C25A0;
         background: #a9d9ab;
-        border-color: #749d72;
+        border-color: transparent;
       }
       &.back {
-        color: grey;
+        color: #732EC8;
         background: #ff958c;
-        border-color: #ed574b;
+        border-color: transparent;
       }
     }
   }
@@ -315,11 +315,10 @@ body {
           margin: 30px;
           margin-left: 30px;
           margin-left: 10px;
-          border: solid 3px #116fa8;
           padding: 20px;
           border-radius: 10px;
-          background: #3e9dc2;
-          color: aliceblue;
+          background: #717ab9;
+          color: white;
           font-weight: bold;
           text-decoration: none;
         }
@@ -327,12 +326,21 @@ body {
           font-size: 10px;
           color: cornflowerblue;
         }
-        p.search-result-content {
+        div.search-result-content {
           background: aliceblue;
           width: fit-content;
           padding: 20px;
           margin-left: 90px;
           margin-right: 20px;
+          p {
+          }
+          a.expand {
+            color: white;
+            background: #717ab9;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px;
+          }
         }
       }
     }

@@ -56,6 +56,7 @@ sub startup ($self) {
     $r->get('/stats')->to('Metrics#stats');
     $r->get('/product/:slug')->to('Product#direct_buy');
     $r->get('/producto/:slug')->to('Product#direct_buy');
+    $r->get('/producto/<:slug>.json')->to('Product#get_data');
     $r->get('/search.json')->to('Search#search');
     $r->get('/search.html')->to('Search#search_user');
     $r->get('/farmacia-guardia.json')->to('FarmaciaGuardia#current');

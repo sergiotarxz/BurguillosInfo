@@ -33,13 +33,18 @@
 %       if (defined $vendor) {
             <p class="product-vendor">Enlace promocionado de <%=$vendor%></p>
 %       }
-            <a href="<%=$url%>"><%=$base_url.$url%></a>
+            <a href="<%=$base_url.$url%>"><%=$base_url.$url%></a>
 %       if (defined $vendor) {
-            <a class="search-button-buy-now" href="<%=$url%>">Compralo ahora en <%=$vendor%></a> 
+            <a class="search-button-buy-now" href="<%=$url%>">Visita <%=$vendor%> para saber más...</a> 
 %       }
        </div>
    </div>
-   <p class="search-result-content"><%=$content%></p>
+   <div class="search-result-content">
+       <p><%=$content%></p>
+%       if (defined $vendor) {
+       <a href="#" class="expand">Expande la descripción</a>
+%       }
+   </div>
 </div>
 % }
 <p>Burguillos Info ©2022-<%=$year%> Sergio Iglesias</p>

@@ -67,13 +67,13 @@ div.warning-aliexpress {
       text-decoration: none;
       font-weight: bold; }
       div.warning-aliexpress div.buttons a.buy {
-        color: #445e45;
+        color: #5C25A0;
         background: #a9d9ab;
-        border-color: #749d72; }
+        border-color: transparent; }
       div.warning-aliexpress div.buttons a.back {
-        color: grey;
+        color: #732EC8;
         background: #ff958c;
-        border-color: #ed574b; }
+        border-color: transparent; }
 
 div.tooltip-search-promo::after {
   content: " ";
@@ -247,22 +247,27 @@ body {
         margin: 30px;
         margin-left: 30px;
         margin-left: 10px;
-        border: solid 3px #116fa8;
         padding: 20px;
         border-radius: 10px;
-        background: #3e9dc2;
-        color: aliceblue;
+        background: #717ab9;
+        color: white;
         font-weight: bold;
         text-decoration: none; }
       body div.search-overlay div.search-results div.search-result p.product-vendor {
         font-size: 10px;
         color: cornflowerblue; }
-      body div.search-overlay div.search-results div.search-result p.search-result-content {
+      body div.search-overlay div.search-results div.search-result div.search-result-content {
         background: aliceblue;
         width: fit-content;
         padding: 20px;
         margin-left: 90px;
         margin-right: 20px; }
+        body div.search-overlay div.search-results div.search-result div.search-result-content a.expand {
+          color: white;
+          background: #717ab9;
+          text-decoration: none;
+          border-radius: 10px;
+          padding: 10px; }
     body div.search-overlay div.bounding-search-bar {
       position: fixed;
       top: calc(100% - 74px);
