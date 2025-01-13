@@ -20,10 +20,14 @@ a.brand {
   color: black;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 2em; }
+  font-size: 2em;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 5px; }
   a.brand img {
     height: 0.8em;
-    width: fit-content; }
+    width: fit-content;
+    aspect-ratio: 1 / 1; }
 
 body.aliexpress-redirection {
   background: azure; }

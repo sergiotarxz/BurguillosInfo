@@ -44,9 +44,13 @@ a.brand {
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: $font_size_brand;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 5px;
   img {
     height: 0.8em;
     width: fit-content;
+    aspect-ratio: 1 / 1;
   }
 }
 
