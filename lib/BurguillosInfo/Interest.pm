@@ -26,7 +26,16 @@ sub _build__dbh($self) {
     return BurguillosInfo::DB->connect($app);
 }
 
-sub _get_interest_cookie( $self, $c ) {
+sub set_javascript_capable( $self, $c ) {
+    my $cookie_value = $self->get_interest_cookie($c);
+    my $dbh          = $self->_dbh;
+    $dbh->do(
+'UPDATE interest_cookies SET has_javascript = true WHERE cookie_value = ?',
+        {}, $cookie_value
+    );
+}
+
+sub get_interest_cookie( $self, $c ) {
     my $cookie_value = $c->cookie( $self->_cookie_name, );
     say $cookie_value;
     if ( !defined $cookie_value ) {
@@ -41,6 +50,7 @@ VALUES (?);
             ', {}, $cookie_value );
     };
     if ($@) {
+
         # warn $@;
     }
     $c->cookie(
@@ -50,7 +60,7 @@ VALUES (?);
             expires  => time + 3600 * 24 * 390,
             samesite => 'Lax',
             (
-                  $c->config('base_url') =~ /https/
+                $c->config('base_url') =~ /https/
                 ? ( secure => 1, )
                 : ()
             ),
@@ -61,7 +71,7 @@ VALUES (?);
 }
 
 sub increment_search_interest( $self, $c, $term ) {
-    my $cookie_value = $self->_get_interest_cookie($c);
+    my $cookie_value = $self->get_interest_cookie($c);
     my $dbh          = $self->_dbh;
     $dbh->do( '
 INSERT INTO interest_searches (
@@ -80,7 +90,7 @@ DO UPDATE SET
 }
 
 sub increment_post_interest( $self, $c, $slug ) {
-    my $cookie_value = $self->_get_interest_cookie($c);
+    my $cookie_value = $self->get_interest_cookie($c);
     my $dbh          = $self->_dbh;
     $dbh->do( '
 INSERT INTO interest_posts (
@@ -99,7 +109,7 @@ DO UPDATE SET
 }
 
 sub _set_product_interest( $self, $c, $slug, $interest_value ) {
-    my $cookie_value = $self->_get_interest_cookie($c);
+    my $cookie_value = $self->get_interest_cookie($c);
     my $dbh          = $self->_dbh;
     $dbh->do( '
 INSERT INTO interest_products (

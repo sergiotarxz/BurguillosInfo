@@ -11,6 +11,8 @@ sub startup ($self) {
         around_dispatch => sub {
             my $next = shift;
             my $c    = shift;
+            my $interest = BurguillosInfo::Interest->new(app => $self);
+            $interest->get_interest_cookie($c);
             $metrics->request($c);
             if ( defined $next ) {
                 $next->();
@@ -73,6 +75,8 @@ sub startup ($self) {
     $r->get('/stats/login')->to('Metrics#login');
     $r->post('/stats/login')->to('Metrics#submit_login');
     $r->get('/search/suggestions.json', sub ($c) {
+        my $interest = BurguillosInfo::Interest->new(app => $self);
+        $interest->set_javascript_capable($c);
         return $c->render(json=> [
             'Juguetes de Moda',
             'Sonny Angel',
