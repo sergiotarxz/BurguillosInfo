@@ -15,6 +15,11 @@ sub direct_buy($self) {
     my $products = BurguillosInfo::Products->new->Retrieve;
     my $slug     = $self->param('slug');
     my $product  = $products->{$slug};
+    if (!defined $product) {
+        return $self->render( template => '404', status => 404 );
+    }
+    my $interest = BurguillosInfo::Interest->new(app => $self->app);
+    $interest->set_product_interest_visited($self, $slug);
     my $referer  = $self->req->headers->referer || '';
     my $base_url = $self->config('base_url');
     if ( $referer !~ /^$base_url/ ) {
@@ -35,6 +40,11 @@ sub get_data($self) {
     my $products = BurguillosInfo::Products->new->Retrieve;
     my $slug     = $self->param('slug');
     my $product  = $products->{$slug};
+    if (!defined $product) {
+        return $self->render( template => '404', status => 404 );
+    }
+    my $interest = BurguillosInfo::Interest->new(app => $self->app);
+    $interest->set_product_interest_got_details($self, $slug);
     return $self->render(
         json => $product
     );

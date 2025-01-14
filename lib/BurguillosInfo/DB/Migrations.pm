@@ -49,6 +49,30 @@ sub MIGRATIONS {
             id_farmacia TEXT NOT NULL
         );',
         'CREATE INDEX farmacia_guardia_index on farmacia_guardia (date, id_farmacia, uuid);',
+        'CREATE TABLE interest_cookies (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            cookie_value UUID NOT NULL UNIQUE
+        );',
+        'CREATE TABLE interest_products (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            id_cookie BIGINT NOT NULL,
+            max_interest INT NOT NULL,
+            slug TEXT NOT NULL,
+            FOREIGN KEY (id_cookie) REFERENCES interest_cookies(id),
+            UNIQUE(id_cookie, slug)
+        );',
+        'CREATE TABLE interest_posts (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            id_cookie BIGINT NOT NULL,
+            slug TEXT NOT NULL,
+            FOREIGN KEY (id_cookie) REFERENCES interest_cookies(id)
+        );',
+        'CREATE TABLE interest_searches (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            id_cookie BIGINT NOT NULL,
+            term TEXT NOT NULL,
+            FOREIGN KEY (id_cookie) REFERENCES interest_cookies(id)
+        );',
     );
 }
 

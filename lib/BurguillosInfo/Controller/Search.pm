@@ -12,6 +12,7 @@ use Mojo::UserAgent;
 
 use BurguillosInfo::IndexUtils;
 use BurguillosInfo::Posts;
+use BurguillosInfo::Interest;
 
 my $index_utils = BurguillosInfo::IndexUtils->new;
 
@@ -99,11 +100,16 @@ sub filterSearch( $self, $searchObject ) {
     my $url = $searchObject->{url};
     my ( $posts_by_categories, $posts ) = BurguillosInfo::Posts->Retrieve;
     my $slug;
+    my $interest = BurguillosInfo::Interest->new(app => $self->app);
     if ( $url =~ m{^/posts/([^/]+?)(?:\?.*)?$} ) {
         $slug = $1;
         if ( !defined $posts->{$slug} ) {
             return 0;
         }
+    }
+    if ( $url =~ m{^/producto?/([^/]+?)(?:\?.*)?$} ) {
+        $slug = $1;
+        $interest->set_product_interest_searched($self, $slug);
     }
     return 1;
 }

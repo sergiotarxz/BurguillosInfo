@@ -28,6 +28,7 @@ my $build = Module::Build->new(
         'List::AllUtils'               => 0,
         'Lingua::Stem::Snowball'       => 0,
         'Moo'                          => 0,
+        'UUID::URandom'                => 0,
     },
 );
 $build->create_build_script;
