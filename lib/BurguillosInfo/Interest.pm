@@ -28,12 +28,20 @@ sub _build__dbh($self) {
 
 sub _get_interest_cookie( $self, $c ) {
     my $cookie_value = $c->cookie( $self->_cookie_name, );
+    say $cookie_value;
     if ( !defined $cookie_value ) {
         $cookie_value = create_uuid_hex();
+        say $cookie_value;
+    }
+    eval {
         $self->_dbh->do( '
 INSERT INTO interest_cookies
     (cookie_value)
-VALUES (?);', {}, $cookie_value );
+VALUES (?);
+            ', {}, $cookie_value );
+    };
+    if ($@) {
+        # warn $@;
     }
     $c->cookie(
         $self->_cookie_name,
@@ -41,11 +49,53 @@ VALUES (?);', {}, $cookie_value );
         {
             expires  => time + 3600 * 24 * 390,
             samesite => 'Lax',
-            secure => 1,
+            (
+                  $c->config('base_url') =~ /https/
+                ? ( secure => 1, )
+                : ()
+            ),
         }
     );
 
     return $cookie_value;
+}
+
+sub increment_search_interest( $self, $c, $term ) {
+    my $cookie_value = $self->_get_interest_cookie($c);
+    my $dbh          = $self->_dbh;
+    $dbh->do( '
+INSERT INTO interest_searches (
+        id_cookie,
+        term,
+        count
+    )
+SELECT id, ?, 1 
+    FROM interest_cookies
+    WHERE cookie_value = ?
+ON CONFLICT (id_cookie, term)
+DO UPDATE SET
+    count
+        = interest_searches.count + 1;
+', {}, $term, $cookie_value );
+}
+
+sub increment_post_interest( $self, $c, $slug ) {
+    my $cookie_value = $self->_get_interest_cookie($c);
+    my $dbh          = $self->_dbh;
+    $dbh->do( '
+INSERT INTO interest_posts (
+        id_cookie,
+        slug,
+        count
+    )
+SELECT id, ?, 1 
+    FROM interest_cookies
+    WHERE cookie_value = ?
+ON CONFLICT (id_cookie, slug)
+DO UPDATE SET
+    count
+        = interest_posts.count + 1;
+', {}, $slug, $cookie_value );
 }
 
 sub _set_product_interest( $self, $c, $slug, $interest_value ) {
@@ -61,12 +111,12 @@ SELECT id, ?, ?
     FROM interest_cookies
     WHERE cookie_value = ?
 ON CONFLICT (id_cookie, slug)
-    DO UPDATE SET
-        max_interest
-            = GREATEST(
-                EXCLUDED.max_interest,
-                interest_products.max_interest
-            );
+DO UPDATE SET
+    max_interest
+        = GREATEST(
+            EXCLUDED.max_interest,
+            interest_products.max_interest
+        );
         ', {}, $interest_value, $slug, $cookie_value );
 }
 

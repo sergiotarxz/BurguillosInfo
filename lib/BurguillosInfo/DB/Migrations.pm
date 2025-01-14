@@ -73,6 +73,10 @@ sub MIGRATIONS {
             term TEXT NOT NULL,
             FOREIGN KEY (id_cookie) REFERENCES interest_cookies(id)
         );',
+        'ALTER TABLE interest_posts ADD column count BIGINT NOT NULL;',
+        'ALTER TABLE interest_posts ADD CONSTRAINT interest_post_unique_constraint UNIQUE (id_cookie, slug);',
+        'ALTER TABLE interest_searches ADD column count BIGINT NOT NULL;',
+        'ALTER TABLE interest_searches ADD CONSTRAINT interest_search_unique_constraint UNIQUE (id_cookie, term);',
     );
 }
 

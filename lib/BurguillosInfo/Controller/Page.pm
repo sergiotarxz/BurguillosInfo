@@ -126,6 +126,8 @@ sub post {
         $self->render( template => '404', status => 404 );
         return;
     }
+    my $interest = BurguillosInfo::Interest->new(app => $self->app);
+    $interest->increment_post_interest($self, $slug);
     my $current_category = $categories->{ $post->{category} };
     my $base_url         = $self->config('base_url');
     $self->stash(
