@@ -493,6 +493,7 @@ function addListenerOpenInBrowserButton(android) {
   });
 }
 function executeAndroidAppExclusiveCode(android) {
+  const port = _port();
   const url = new URL(
     window.location.protocol +
       "//" +
