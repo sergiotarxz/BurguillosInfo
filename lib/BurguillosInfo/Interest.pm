@@ -26,6 +26,15 @@ sub _build__dbh($self) {
     return BurguillosInfo::DB->connect($app);
 }
 
+sub set_is_android_app( $self, $c ) {
+    my $cookie_value = $self->get_interest_cookie($c);
+    my $dbh          = $self->_dbh;
+    $dbh->do(
+'UPDATE interest_cookies SET is_android_app = true WHERE cookie_value = ?',
+        {}, $cookie_value
+    );
+}
+
 sub set_javascript_capable( $self, $c ) {
     my $cookie_value = $self->get_interest_cookie($c);
     my $dbh          = $self->_dbh;

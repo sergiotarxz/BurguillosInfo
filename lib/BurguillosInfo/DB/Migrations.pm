@@ -78,6 +78,7 @@ sub MIGRATIONS {
         'ALTER TABLE interest_searches ADD column count BIGINT NOT NULL;',
         'ALTER TABLE interest_searches ADD CONSTRAINT interest_search_unique_constraint UNIQUE (id_cookie, term);',
         'ALTER TABLE interest_cookies ADD column has_javascript BOOLEAN DEFAULT false NOT NULL;',
+        'ALTER TABLE interest_cookies ADD column is_android_app BOOLEAN DEFAULT false NOT NULL;',
     );
 }
 

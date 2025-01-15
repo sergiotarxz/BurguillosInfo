@@ -74,6 +74,11 @@ sub startup ($self) {
     $r->get('/filtros/:slug')->to('Filter#get');
     $r->get('/stats/login')->to('Metrics#login');
     $r->post('/stats/login')->to('Metrics#submit_login');
+    $r->get('/ping/i-am-android-app', sub ($c) {
+        my $interest = BurguillosInfo::Interest->new(app => $self);
+        $interest->set_is_android_app($c);
+        return $c->render(json => {ok => 1});
+    });
     $r->get('/search/suggestions.json', sub ($c) {
         my $interest = BurguillosInfo::Interest->new(app => $self);
         $interest->set_javascript_capable($c);
@@ -87,6 +92,7 @@ sub startup ($self) {
             'Libros de hacking',
             'Pizzería pepin',
             'Modem datos moviles USB',
+            'Modem USB 4G',
             'Martillo emergencia coche',
         ]);
     });
