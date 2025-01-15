@@ -95,14 +95,14 @@
             </div>
             <div class="page-contents no-carousel">
 %= include 'page/_desktop_menu', categories => $categories, current_category_slug => $current_category_slug
-                <div class="description android open-browser-container">
+                <div class="android open-browser-container">
                     <a href="<%= $current_route %>" class="open-in-browser">
                         <img alt="" src="/img/firefox.svg"/>
                         <span>Abrir en el navegador.</span>
                     </a>
                 </div>
 % if ($is_android) {
-                <div class="description no-android-app open-browser-container">
+                <div class="no-android-app open-browser-container">
                     <a href="https://play.google.com/store/apps/details?id=info.burguillos.bi" class="open-in-browser">
                         <img alt="" src="/img/play-store.svg"/>
                         <span>Prueba nuestra aplicación para Android. Más fácil, mejor.</span>
