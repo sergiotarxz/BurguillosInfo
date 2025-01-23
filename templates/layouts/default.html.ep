@@ -13,25 +13,8 @@
 % my $year = $t->year;
 <html lang="es">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P9K5VBGN');</script>
-<!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBSKCCF31B"></script>
     <script type="module" src="/js/cookie.js"></script>
 %= include 'page/_ads', categories => $categories
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-SBSKCCF31B');
-    </script>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178723521508611" crossorigin="anonymous"></script>
 % my $css_version = config 'css_version';
       <script src="/js/bundle.js?v=<%=$css_version%>"></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"/>
@@ -65,10 +48,6 @@
 % if (defined $ogimage) {
     <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
 % }
-<!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9K5VBGN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <div class="site-wrapper">
     </div>
     <div class="search-overlay">
