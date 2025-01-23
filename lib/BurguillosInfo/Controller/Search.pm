@@ -19,8 +19,10 @@ my $index_utils = BurguillosInfo::IndexUtils->new;
 my $search_cache = {};
 
 sub _render_search( $self, $embedded, $query ) {
-    my $interest = BurguillosInfo::Interest->new( app => $self->app );
-    $interest->increment_search_interest( $self, $query );
+    if (!$self->config('base_url') =~ /onion/) {
+        my $interest = BurguillosInfo::Interest->new( app => $self->app );
+        $interest->increment_search_interest( $self, $query );
+    }
     my $searchObjects = $search_cache->{$query};
     $searchObjects = [ grep {  $self->filterSearch($_) } @$searchObjects ];
     $search_cache->{$query} = $searchObjects;
