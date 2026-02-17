@@ -19,7 +19,7 @@ my $index_utils = BurguillosInfo::IndexUtils->new;
 my $search_cache = {};
 
 sub _render_search( $self, $embedded, $query ) {
-    if (!$self->config('base_url') =~ /onion/) {
+    if ($self->config('base_url') !~ /onion/) {
         my $interest = BurguillosInfo::Interest->new( app => $self->app );
         $interest->increment_search_interest( $self, $query );
     }
