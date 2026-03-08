@@ -5,7 +5,10 @@
             <img alt="Buscar" src="/img/search.svg"/>
         </button>
         <div class="fake-text-box">
-            <input type="text" value="<%=$search_term%>" name="q"></input>
+            <input id="main-search" type="text" value="<%=$search_term%>" name="q"></input>
+            <button style="display: none;" type="submit" class="search-icon">
+                <img alt="Buscar" src="/img/search.svg"/>
+            </button>
             <div class="tooltip-search-promo">
                 <p class="exit">x</p>
                 <p>Puedes buscar cualquier producto que quieras comprar en internet aquí.</p>

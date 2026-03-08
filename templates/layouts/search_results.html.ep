@@ -46,6 +46,8 @@
 % if (defined $ogimage) {
         <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
 % }
+        <a style="display: none;" href="#main-content">Jump to main content</a>
+        <a style="display: none;" href="#main-search">Jump to search</a>
         <div class="site-wrapper">
         </div>
         <div class="search-overlay default">
@@ -57,7 +59,7 @@
                     </a>
                 </div>
 % }
-            <a href="/" class="brand"><img src="/img/burguillos-new-logo.svg?v=1" alt=""/> Burguillos Info</a>
+            <a id="main-content" href="/" class="brand"><img src="/img/burguillos-new-logo.svg?v=1" alt=""/> Burguillos Info</a>
             <div class="search-results <%=$is_android && 'search-android'%>">
                 <%= content %>
             </div>

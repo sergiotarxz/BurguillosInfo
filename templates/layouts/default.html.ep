@@ -45,6 +45,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <a style="display: none;" href="#main-content">Jump to main content</a>
+    <a style="display: none;" href="#main-search">Jump to search</a>
 % if (defined $ogimage) {
     <img style="display: none;" src="<%= $ogimage %>" alt="Portada de <%= title %>"/>
 % }
@@ -88,6 +90,7 @@
                     </a>
                 </div>
 % }
+                <div style="display:none;" id="main-content">Welcome to contetn</div>
                 <%= content %>
                 <div class="description android">
                     <a href="#" class="pin-to-home">Añade esta página a la pantalla de inicio de tu móvil.</a>
