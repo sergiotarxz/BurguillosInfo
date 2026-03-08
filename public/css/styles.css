@@ -297,7 +297,7 @@ body {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      height: 30px;
+      height: 80%;
       align-self: center;
       display: flex;
       background: aliceblue;
