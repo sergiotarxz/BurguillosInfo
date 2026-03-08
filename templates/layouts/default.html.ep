@@ -13,11 +13,9 @@
 % my $year = $t->year;
 <html lang="es">
   <head>
-    <script type="module" src="/js/cookie.js"></script>
 %= include 'page/_ads', categories => $categories
 % my $css_version = config 'css_version';
       <script src="/js/bundle.js?v=<%=$css_version%>"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"/>
       <link rel="stylesheet" href="/css/styles.css?v=<%=$css_version%>"/>
       <title><%= title %></title>
       <meta charset="UTF-8"/>

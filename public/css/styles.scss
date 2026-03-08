@@ -32,7 +32,7 @@ body nav.mobile-shortcuts {
     transform: translateY(-50%);
   }
   div.search {
-    a.search-icon {
+    button.search-icon {
       margin-top: 0px;
     }
   }
@@ -380,11 +380,11 @@ body {
     margin-right: 10px;
     display: flex;
 
-    a.search-icon {
+    button.search-icon {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      height: 30px;
+      height: 80%;
       align-self: center;
       display: flex;
       background: aliceblue;
@@ -563,7 +563,7 @@ body {
       vertical-align: middle;
     }
 
-    a.search-icon {
+    button.search-icon {
       width: 60px;
       height: 60px;
       display: flex;
