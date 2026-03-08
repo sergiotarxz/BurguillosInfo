@@ -1,13 +1,15 @@
 % my $search_term = stash 'search_term' // '';
 <div class="search">
-    <a href="#" class="search-icon">
-        <img alt="Buscar" src="/img/search.svg"/>
-    </a>
-    <div class="fake-text-box">
-        <input type="text" value="<%=$search_term%>"></input>
-        <div class="tooltip-search-promo">
-            <p class="exit">x</p>
-            <p>Puedes buscar cualquier producto que quieras comprar en internet aquí.</p>
+    <form class="search-form" method="get" action="/search.html">
+        <button type="submit" class="search-icon">
+            <img alt="Buscar" src="/img/search.svg"/>
+        </button>
+        <div class="fake-text-box">
+            <input type="text" value="<%=$search_term%>" name="q"></input>
+            <div class="tooltip-search-promo">
+                <p class="exit">x</p>
+                <p>Puedes buscar cualquier producto que quieras comprar en internet aquí.</p>
+            </div>
         </div>
-    </div>
+    </form>
 </div>

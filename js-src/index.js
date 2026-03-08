@@ -245,7 +245,11 @@ function fillFarmaciaGuardia() {
 function addListenersSearch() {
   const searchInPage = document.querySelector("div.search-in-page");
   if (searchMobile !== null) {
-    const searchIcon = searchMobile.querySelector("a.search-icon");
+    const searchForm = searchMobile.querySelector('form.search-form');
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+    const searchIcon = searchMobile.querySelector("button.search-icon");
     searchIcon.addEventListener("click", (e) => {
       const searchOverlay = document.querySelector("div.search-overlay");
       const searchInput = searchOverlay.querySelector("div.search input");
