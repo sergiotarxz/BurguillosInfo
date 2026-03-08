@@ -12,7 +12,7 @@ body nav.mobile-shortcuts div.search div.fake-text-box input[type="text"] {
   top: 47%;
   transform: translateY(-50%); }
 
-body nav.mobile-shortcuts div.search a.search-icon {
+body nav.mobile-shortcuts div.search button.search-icon {
   margin-top: 0px; }
 
 a.brand {
@@ -293,7 +293,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     display: flex; }
-    body div.search a.search-icon {
+    body div.search button.search-icon {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -309,7 +309,7 @@ body {
       border: solid gray 3px;
       aspect-ratio: 1 / 1;
       width: fit-content; }
-      body div.search a.search-icon img {
+      body div.search button.search-icon img {
         height: 80%;
         aspect-ratio: 1 / 1; }
     body div.search div.fake-text-box {
@@ -418,13 +418,13 @@ body {
     display: none; }
     body nav.desktop a {
       vertical-align: middle; }
-    body nav.desktop a.search-icon {
+    body nav.desktop button.search-icon {
       width: 60px;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center; }
-      body nav.desktop a.search-icon img {
+      body nav.desktop button.search-icon img {
         background: aliceblue;
         border-radius: 10px;
         padding: 10%;
